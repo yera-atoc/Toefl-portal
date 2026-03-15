@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 5: Articles, Prepositions & Word Form</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --main: #633806;
+    --main-mid: #BA7517;
+    --main-light: #FAEEDA;
+    --main-pale: #fffdf5;
+    --green-dark: #085041;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --blue-pale: #f0f6fd;
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --coral: #993C1D;
+    --coral-mid: #D85A30;
+    --coral-light: #FAECE7;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #fff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); padding-bottom: 60px; }
+
+  .hero { background: linear-gradient(135deg, #3d2000 0%, #7a4a0a 100%); position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(239,159,39,0.2) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(186,117,23,0.15) 0%, transparent 40%); }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 36px 24px 28px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #FAC775; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #EF9F27; display: inline-block; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: #FAC775; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.1); color: #FAEEDA; border: 1px solid rgba(255,255,255,0.15); }
+  .progress-track { height: 3px; background: rgba(255,255,255,0.15); }
+  .progress-fill { height: 3px; background: #EF9F27; transition: width 0.5s; }
+
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs { max-width: 720px; margin: 0 auto; display: flex; overflow-x: auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 14px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-left: none; border-right: none; border-top: none; }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: var(--main); border-bottom-color: var(--main-mid); }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .section-intro { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .gram-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .gc-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .gc-icon { width: 32px; height: 32px; border-radius: 8px; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .ic-amber { background: var(--main-mid); }
+  .ic-blue { background: var(--blue); }
+  .ic-coral { background: var(--coral-mid); }
+  .ic-green { background: var(--green-dark); }
+  .gc-body { padding: 16px; }
+  .ru-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+
+  .formula-box { background: #3d2000; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; font-size: 14px; color: #FAC775; line-height: 1.7; }
+  .formula-note { font-size: 12px; color: rgba(250,199,117,0.65); margin-top: 6px; font-style: italic; }
+
+  .ex-wrong { background: var(--red-light); border: 1px solid #F7C1C1; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #501313; line-height: 1.6; margin-bottom: 8px; }
+  .ex-correct { background: var(--green-light); border: 1px solid #9FE1CB; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #04342C; line-height: 1.6; margin-bottom: 8px; }
+  .ex-neutral { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 8px; }
+  .ex-label { font-weight: 700; margin-right: 6px; }
+
+  .hl-a { color: var(--main-mid); font-weight: 600; }
+  .hl-b { color: var(--blue); font-weight: 600; }
+  .hl-g { color: var(--green-dark); font-weight: 600; }
+  .hl-r { color: var(--red); font-weight: 600; }
+  .hl-c { color: var(--coral-mid); font-weight: 600; }
+  .hl-p { color: var(--purple); font-weight: 600; }
+
+  .tip-box { border-left: 3px solid var(--main-mid); background: var(--main-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--main); line-height: 1.6; margin-top: 12px; }
+  .warn-box { border-left: 3px solid var(--red); background: var(--red-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #A32D2D; line-height: 1.6; margin-top: 10px; }
+  .note-box { border-left: 3px solid var(--blue); background: var(--blue-pale); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--blue); line-height: 1.6; margin-top: 10px; }
+
+  /* Article table */
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+  .art-table th { background: #3d2000; color: #FAC775; font-weight: 600; padding: 9px 12px; text-align: left; }
+  .art-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; background: var(--white); line-height: 1.6; }
+  .art-table tr:nth-child(even) td { background: #fafaf8; }
+  .art-kw { font-weight: 600; color: var(--text); font-size: 14px; }
+
+  /* Word form grid */
+  .wf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0; }
+  .wf-cell { background: var(--bg); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center; border: 1px solid var(--border); }
+  .wf-pos { font-size: 10px; font-weight: 600; color: var(--text-light); letter-spacing: 0.05em; margin-bottom: 4px; }
+  .wf-word { font-size: 13px; font-weight: 500; color: var(--text); }
+  .wf-n { border-top: 3px solid var(--main-mid); }
+  .wf-v { border-top: 3px solid var(--blue); }
+  .wf-adj { border-top: 3px solid var(--green-mid); }
+  .wf-adv { border-top: 3px solid var(--purple); }
+
+  /* Preposition cards */
+  .prep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .prep-card { background: var(--bg); border-radius: var(--radius-sm); padding: 12px; border: 1px solid var(--border); }
+  .prep-title { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.04em; }
+  .prep-item { font-size: 13px; color: var(--text); margin-bottom: 5px; line-height: 1.5; }
+  .prep-key { font-weight: 600; color: var(--main-mid); }
+
+  /* WE format */
+  .we-sentence { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 14px; font-style: italic; padding: 12px 14px; background: #f9f9f7; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .underlined { text-decoration: underline; font-weight: 500; font-style: normal; cursor: pointer; }
+  .opt-a { color: var(--main-mid); }
+  .opt-b { color: var(--blue); }
+  .opt-c { color: var(--green-dark); }
+  .opt-d { color: var(--purple); }
+
+  /* Practice */
+  .pq-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .pq-header { padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+  .tp-art { background: var(--main-light); color: var(--main); }
+  .tp-pre { background: var(--blue-light); color: var(--blue); }
+  .tp-wf { background: var(--green-light); color: var(--green-dark); }
+  .tp-mix { background: var(--coral-light); color: var(--coral); }
+
+  .pq-body { padding: 16px; }
+  .pq-instr { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+
+  /* WE question format */
+  .we-q { font-size: 15px; line-height: 2; margin-bottom: 16px; padding: 14px 16px; background: #f9f9f7; border-radius: var(--radius-sm); border: 1px solid var(--border); color: var(--text); font-style: italic; }
+  .ul-a { text-decoration: underline; color: var(--main-mid); font-weight: 500; font-style: normal; }
+  .ul-b { text-decoration: underline; color: var(--blue); font-weight: 500; font-style: normal; }
+  .ul-c { text-decoration: underline; color: var(--green-dark); font-weight: 500; font-style: normal; }
+  .ul-d { text-decoration: underline; color: var(--purple); font-weight: 500; font-style: normal; }
+
+  .we-instr { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .we-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .we-opt { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; cursor: pointer; background: var(--white); text-align: left; width: 100%; transition: all 0.15s; color: var(--text); font-family: 'DM Sans', sans-serif; display: flex; align-items: center; gap: 8px; }
+  .we-opt:hover:not(:disabled) { border-color: var(--main-mid); background: var(--main-pale); }
+  .we-opt .ol { font-weight: 700; flex-shrink: 0; min-width: 18px; }
+  .ol-a { color: var(--main-mid); }
+  .ol-b { color: var(--blue); }
+  .ol-c { color: var(--green-dark); }
+  .ol-d { color: var(--purple); }
+  .we-opt.correct { background: var(--green-light); border-color: var(--green-mid); color: #04342C; }
+  .we-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .we-opt:disabled { cursor: default; }
+
+  .pq-explain { margin-top: 14px; padding: 14px 16px; background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.7; color: var(--text-muted); display: none; border-left: 3px solid var(--main-mid); }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--green-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+  .explain-rule { background: var(--main-light); color: var(--main); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 12px; margin-top: 8px; font-weight: 500; }
+
+  .score-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; margin-top: 8px; display: none; }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--main-mid); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--main-mid); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  .tip-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-num { width: 32px; height: 32px; border-radius: 50%; background: #3d2000; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .btn-primary { display: block; width: 100%; background: #3d2000; color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 20px; text-align: center; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  @media (max-width: 540px) {
+    .hero-title { font-size: 24px; }
+    .wf-grid { grid-template-columns: repeat(2, 1fr); }
+    .prep-grid { grid-template-columns: 1fr; }
+    .we-opts { grid-template-columns: 1fr; }
+    .tab { padding: 12px 12px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP · Урок 5 из 14 · Section II Part 2</div>
+    <div class="hero-title">Written Expression:<br>Articles, Prepositions & Word Form</div>
+    <div class="hero-sub">Три самые частые темы в Part 2 — поиск ошибок<br>Объяснение на русском · Примеры как на тесте</div>
+    <div class="hero-pills">
+      <span class="hero-pill">📖 Артикли</span>
+      <span class="hero-pill">🔗 Предлоги</span>
+      <span class="hero-pill">🔤 Форма слова</span>
+      <span class="hero-pill">✏️ 9 вопросов</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('articles',this)">📖 Артикли</button>
+    <button class="tab" onclick="showTab('prepositions',this)">🔗 Предлоги</button>
+    <button class="tab" onclick="showTab('wordform',this)">🔤 Форма слова</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== ARTICLES ===== -->
+  <div class="section active" id="tab-articles">
+    <div class="section-title">Что такое Written Expression (Part 2)?</div>
+    <div class="section-intro">
+      <strong>Part 2</strong> — это 25 предложений. В каждом подчёркнуты четыре части (A, B, C, D). Одна из них содержит <strong>грамматическую ошибку</strong> — нужно её найти. Нет правильных и неправильных слов для замены — только буква ошибки.<br><br>
+      Сегодня изучаем три самые частые темы: <strong>артикли, предлоги, форма слова</strong> — они появляются в каждом тесте.
+    </div>
+
+    <div class="section-title" style="font-size:18px">Артикли: a / an / the / ∅</div>
+    <p class="ru-text" style="margin-bottom:20px">Артикли — одна из самых сложных тем для носителей русского языка, потому что в русском артиклей нет. TOEFL проверяет три основных правила.</p>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-amber">A/AN</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Неопределённый артикль: a / an</div>
+          <div style="font-size:12px;color:var(--text-muted)">«один из» — впервые упоминается, неконкретный</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          <strong>«a»</strong> — перед согласным звуком · <strong>«an»</strong> — перед гласным звуком (не буквой!)<br>
+          Используется: впервые упомянутый предмет · один из многих · профессия · неконкретный предмет
+        </div>
+        <div class="formula-box">
+          a + согласный ЗВУК: <strong>a</strong> university (ю-нивёрсити — звук «й»!)<br>
+          an + гласный ЗВУК: <strong>an</strong> hour (аур — звук «а»!), <strong>an</strong> MBA<br>
+          <div class="formula-note">Важен ЗВУК, а не буква: «a university» (не «an»), «an hour» (не «a»)</div>
+        </div>
+        <div class="ex-correct"><span class="ex-label">✅</span> She found <span class="hl-a">a</span> solution to the problem. (впервые, одна из многих)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> He is <span class="hl-a">an</span> engineer. (профессия)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> It took <span class="hl-a">an</span> hour to complete the test.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She studied at <span class="hl-r">an</span> university. (university = «ю» — согласный звук → «a»)</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-amber">THE</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Определённый артикль: the</div>
+          <div style="font-size:12px;color:var(--text-muted)">«тот самый» — конкретный, известный, единственный</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">«The» употребляется когда говорящий и слушающий знают <em>о каком именно предмете</em> идёт речь.</div>
+        <table class="art-table">
+          <tr><th>Случай</th><th>Пример</th></tr>
+          <tr><td>Единственный в своём роде</td><td style="font-style:italic"><span class="hl-a">the</span> Sun, <span class="hl-a">the</span> Moon, <span class="hl-a">the</span> President</td></tr>
+          <tr><td>Упомянут раньше в тексте</td><td style="font-style:italic">I saw <em>a dog</em>. <span class="hl-a">The dog</span> was barking.</td></tr>
+          <tr><td>Уточнён фразой/придаточным</td><td style="font-style:italic"><span class="hl-a">The</span> book <em>that she wrote</em> was famous.</td></tr>
+          <tr><td>Горы, реки, океаны, группы</td><td style="font-style:italic"><span class="hl-a">the</span> Alps, <span class="hl-a">the</span> Amazon, <span class="hl-a">the</span> Pacific</td></tr>
+          <tr><td>Супerlative (превосходная)</td><td style="font-style:italic"><span class="hl-a">the</span> most important discovery</td></tr>
+        </table>
+        <div class="warn-box">⚠️ <strong>Без артикля (∅):</strong><br>
+          Собственные имена: <em>Darwin, Paris, China</em> (не «the Darwin»)<br>
+          Языки и предметы: <em>English, biology, mathematics</em><br>
+          Еда/абстрактные понятия в общем: <em>Water is essential. Love is blind.</em><br>
+          Множ.ч. в общем смысле: <em>Cats are independent animals.</em>
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-amber">!</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Частые ошибки с артиклями на TOEFL</div>
+          <div style="font-size:12px;color:var(--text-muted)">Именно это проверяют в Part 2</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ex-wrong"><span class="ex-label">❌</span> Scientists study <span class="hl-r">the</span> nature. → <span class="hl-g">∅ nature</span> (абстрактное в общем смысле)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She studies <span class="hl-r">the</span> biology. → <span class="hl-g">∅ biology</span> (название предмета)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> <span class="hl-r">The</span> gold is a precious metal. → <span class="hl-g">∅ Gold</span> (вещество в общем)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> He visited <span class="hl-r">the</span> France. → <span class="hl-g">∅ France</span> (названия стран без артикля)</div>
+        <div class="ex-correct" style="margin-top:6px"><span class="ex-label">✅</span> исключения со «the»: <span class="hl-a">the</span> United States, <span class="hl-a">the</span> Netherlands, <span class="hl-a">the</span> Philippines (страны с «united/republic/islands»)</div>
+        <div class="tip-box">💡 <strong>Быстрая проверка артикля на тесте:</strong><br>
+          1. Это единственный предмет/конкретный? → <strong>the</strong><br>
+          2. Это первое упоминание/один из многих? → <strong>a/an</strong><br>
+          3. Это абстрактное, название, язык, вещество в общем? → <strong>∅</strong>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('prepositions',document.querySelectorAll('.tab')[1])">Дальше: Предлоги →</button>
+  </div>
+
+  <!-- ===== PREPOSITIONS ===== -->
+  <div class="section" id="tab-prepositions">
+    <div class="section-title">Предлоги</div>
+    <div class="section-intro">
+      Предлоги в английском нельзя угадать логикой — их нужно <strong>запомнить</strong>. TOEFL проверяет предлоги в двух контекстах: предлоги времени/места и фиксированные сочетания (collocations).
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--blue-pale)">
+        <div class="gc-icon ic-blue">⏰</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--blue)">Предлоги времени: at / in / on</div>
+          <div style="font-size:12px;color:var(--text-muted)">Три предлога — три уровня точности</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="formula-box" style="background:#0C447C;color:#B5D4F4">
+          <strong>AT</strong> — точное время: at 3 o'clock · at noon · at midnight · at night<br>
+          <strong>ON</strong> — день: on Monday · on July 4th · on my birthday<br>
+          <strong>IN</strong> — период: in the morning · in 2024 · in July · in the 20th century
+          <div class="formula-note" style="color:rgba(181,212,244,0.6)">Подсказка: AT (точка) → ON (день) → IN (период) — от меньшего к большему</div>
+        </div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The meeting is <span class="hl-b">at</span> 9 a.m. <span class="hl-b">on</span> Monday <span class="hl-b">in</span> January.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She arrived <span class="hl-r">in</span> midnight. → <span class="hl-g">at</span> midnight</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> He was born <span class="hl-r">at</span> 1990. → <span class="hl-g">in</span> 1990</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The lecture is <span class="hl-r">in</span> Monday. → <span class="hl-g">on</span> Monday</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--blue-pale)">
+        <div class="gc-icon ic-blue">📍</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--blue)">Предлоги места: at / in / on</div>
+          <div style="font-size:12px;color:var(--text-muted)">Те же три предлога — другой смысл</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-title" style="color:var(--blue)">AT — точка, адрес</div>
+            <div class="prep-item"><span class="prep-key">at</span> the bus stop</div>
+            <div class="prep-item"><span class="prep-key">at</span> the corner</div>
+            <div class="prep-item"><span class="prep-key">at</span> 42 Main Street</div>
+            <div class="prep-item"><span class="prep-key">at</span> the top/bottom</div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title" style="color:var(--blue)">IN — внутри пространства</div>
+            <div class="prep-item"><span class="prep-key">in</span> the box / room</div>
+            <div class="prep-item"><span class="prep-key">in</span> Paris / France</div>
+            <div class="prep-item"><span class="prep-key">in</span> the newspaper</div>
+            <div class="prep-item"><span class="prep-key">in</span> the world</div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title" style="color:var(--blue)">ON — поверхность</div>
+            <div class="prep-item"><span class="prep-key">on</span> the table / floor</div>
+            <div class="prep-item"><span class="prep-key">on</span> the wall</div>
+            <div class="prep-item"><span class="prep-key">on</span> page 5</div>
+            <div class="prep-item"><span class="prep-key">on</span> television / radio</div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title" style="color:var(--coral-mid)">Особые случаи</div>
+            <div class="prep-item"><span class="prep-key" style="color:var(--coral-mid)">in</span> a book (внутри)</div>
+            <div class="prep-item"><span class="prep-key" style="color:var(--coral-mid)">on</span> a bus/train (транспорт)</div>
+            <div class="prep-item"><span class="prep-key" style="color:var(--coral-mid)">in</span> a taxi/car (личный)</div>
+            <div class="prep-item"><span class="prep-key" style="color:var(--coral-mid)">at</span> school/work (место деятельности)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--blue-pale)">
+        <div class="gc-icon ic-blue">🔒</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--blue)">Фиксированные сочетания — Collocations</div>
+          <div style="font-size:12px;color:var(--text-muted)">Эти предлоги нужно просто запомнить</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">В английском многие слова требуют конкретного предлога — логика не поможет, только запоминание. TOEFL часто проверяет именно эти сочетания.</div>
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-title">Verb + preposition</div>
+            <div class="prep-item">depend <span class="prep-key">on</span></div>
+            <div class="prep-item">consist <span class="prep-key">of</span></div>
+            <div class="prep-item">result <span class="prep-key">in</span> / <span class="prep-key">from</span></div>
+            <div class="prep-item">differ <span class="prep-key">from</span></div>
+            <div class="prep-item">refer <span class="prep-key">to</span></div>
+            <div class="prep-item">contribute <span class="prep-key">to</span></div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title">Adj + preposition</div>
+            <div class="prep-item">responsible <span class="prep-key">for</span></div>
+            <div class="prep-item">similar <span class="prep-key">to</span></div>
+            <div class="prep-item">different <span class="prep-key">from</span></div>
+            <div class="prep-item">interested <span class="prep-key">in</span></div>
+            <div class="prep-item">capable <span class="prep-key">of</span></div>
+            <div class="prep-item">aware <span class="prep-key">of</span></div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title">Noun + preposition</div>
+            <div class="prep-item">increase <span class="prep-key">in</span></div>
+            <div class="prep-item">decrease <span class="prep-key">in</span></div>
+            <div class="prep-item">reason <span class="prep-key">for</span></div>
+            <div class="prep-item">advantage <span class="prep-key">of</span></div>
+            <div class="prep-item">effect <span class="prep-key">on</span></div>
+          </div>
+          <div class="prep-card">
+            <div class="prep-title" style="color:var(--red)">Частые ошибки</div>
+            <div class="prep-item"><span class="hl-r">different than</span> → <span class="hl-g">different from</span></div>
+            <div class="prep-item"><span class="hl-r">similar with</span> → <span class="hl-g">similar to</span></div>
+            <div class="prep-item"><span class="hl-r">consist in</span> → <span class="hl-g">consist of</span></div>
+            <div class="prep-item"><span class="hl-r">depend of</span> → <span class="hl-g">depend on</span></div>
+          </div>
+        </div>
+        <div class="tip-box">💡 <strong>result in vs result from:</strong><br>
+          «result <span class="hl-a">in</span>» = приводит к чему-то (причина → последствие)<br>
+          «result <span class="hl-a">from</span>» = происходит из-за чего-то (следствие ← причина)<br>
+          <em>«The accident resulted <span class="hl-a">from</span> fatigue.»</em> (авария ← усталость)<br>
+          <em>«Fatigue resulted <span class="hl-a">in</span> the accident.»</em> (усталость → авария)
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('wordform',document.querySelectorAll('.tab')[2])">Дальше: Форма слова →</button>
+  </div>
+
+  <!-- ===== WORD FORM ===== -->
+  <div class="section" id="tab-wordform">
+    <div class="section-title">Форма слова (Word Form)</div>
+    <div class="section-intro">
+      <strong>Word form</strong> — это одна из самых частых ошибок в Part 2. Нужное слово в предложении, но в <em>неправильной форме</em>: существительное вместо прилагательного, глагол вместо наречия и т.д.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--green-light);background:#f0faf6">
+        <div class="gc-icon ic-green">4</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--green-dark)">Четыре части речи и их суффиксы</div>
+          <div style="font-size:12px;color:var(--text-muted)">Noun · Verb · Adjective · Adverb</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Одна корневая форма даёт четыре разных слова. TOEFL подставляет одно вместо другого — нужно определить какая часть речи нужна по контексту.</div>
+
+        <div style="margin-bottom:16px">
+          <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px">Пример семейства слов:</div>
+          <div class="wf-grid">
+            <div class="wf-cell wf-n"><div class="wf-pos">NOUN</div><div class="wf-word">science</div></div>
+            <div class="wf-cell wf-v"><div class="wf-pos">VERB</div><div class="wf-word">—</div></div>
+            <div class="wf-cell wf-adj"><div class="wf-pos">ADJECTIVE</div><div class="wf-word">scientific</div></div>
+            <div class="wf-cell wf-adv"><div class="wf-pos">ADVERB</div><div class="wf-word">scientifically</div></div>
+          </div>
+          <div class="wf-grid">
+            <div class="wf-cell wf-n"><div class="wf-pos">NOUN</div><div class="wf-word">success</div></div>
+            <div class="wf-cell wf-v"><div class="wf-pos">VERB</div><div class="wf-word">succeed</div></div>
+            <div class="wf-cell wf-adj"><div class="wf-pos">ADJECTIVE</div><div class="wf-word">successful</div></div>
+            <div class="wf-cell wf-adv"><div class="wf-pos">ADVERB</div><div class="wf-word">successfully</div></div>
+          </div>
+          <div class="wf-grid">
+            <div class="wf-cell wf-n"><div class="wf-pos">NOUN</div><div class="wf-word">importance</div></div>
+            <div class="wf-cell wf-v"><div class="wf-pos">VERB</div><div class="wf-word">—</div></div>
+            <div class="wf-cell wf-adj"><div class="wf-pos">ADJECTIVE</div><div class="wf-word">important</div></div>
+            <div class="wf-cell wf-adv"><div class="wf-pos">ADVERB</div><div class="wf-word">importantly</div></div>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto">
+          <table class="art-table">
+            <tr><th>Часть речи</th><th>Суффиксы</th><th>Примеры</th></tr>
+            <tr>
+              <td><span style="color:var(--main-mid);font-weight:600">Noun (сущ.)</span></td>
+              <td>-tion, -ity, -ness, -ment, -ance, -ence, -er, -or, -ist</td>
+              <td style="font-style:italic">discovery, ability, happiness, development</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--blue);font-weight:600">Verb (глагол)</span></td>
+              <td>-ize, -ify, -en, -ate</td>
+              <td style="font-style:italic">modernize, classify, strengthen, motivate</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--green-dark);font-weight:600">Adjective (прил.)</span></td>
+              <td>-ful, -less, -ous, -al, -ic, -ive, -able, -ible, -ant, -ent</td>
+              <td style="font-style:italic">powerful, careless, famous, natural, active</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--purple);font-weight:600">Adverb (нар.)</span></td>
+              <td>-ly (почти всегда)</td>
+              <td style="font-style:italic">quickly, carefully, significantly</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:#f0faf6">
+        <div class="gc-icon ic-green">?</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--green-dark)">Как определить нужную часть речи</div>
+          <div style="font-size:12px;color:var(--text-muted)">Алгоритм для Part 2</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Смотри на позицию слова в предложении — она подскажет нужную часть речи:</div>
+        <div class="formula-box" style="font-size:13px;line-height:1.9">
+          После <strong>to be (is/was/are)</strong> или после <strong>noun</strong> → <span style="color:#FAC775">прилагательное</span><br>
+          После <strong>глагола</strong> или после <strong>прилагательного</strong> → <span style="color:#FAC775">наречие</span><br>
+          Перед <strong>глаголом</strong> или после <strong>артикля/предлога</strong> → <span style="color:#FAC775">существительное</span><br>
+          Место <strong>сказуемого</strong> → <span style="color:#FAC775">глагол</span>
+        </div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The discovery was <span class="hl-r">importance</span> for science. → после «was» нужно прилагательное</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The discovery was <span class="hl-g">important</span> for science.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She spoke very <span class="hl-r">clear</span>. → после глагола нужно наречие</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> She spoke very <span class="hl-g">clearly</span>.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The <span class="hl-r">succeed</span> of the experiment surprised everyone. → после «the» нужно существительное</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The <span class="hl-g">success</span> of the experiment surprised everyone.</div>
+        <div class="tip-box">💡 <strong>Быстрый тест:</strong> посмотри что стоит перед и после подчёркнутого слова — это моментально показывает какая часть речи нужна.</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ===== PRACTICE ===== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 9 вопросов</div>
+    <div class="section-intro">
+      Формат точно как Part 2 на тесте: предложение с четырьмя подчёркнутыми частями (A, B, C, D). Одна из них содержит ошибку — найди её.
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 1 / 9</span><span class="pq-type tp-art">Article</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed for the sentence to be correct.</div>
+        <div class="we-q">
+          <span class="ul-a">(A) An</span> important discovery was made by <span class="ul-b">(B) the</span> scientists working at <span class="ul-c">(C) an</span> university in <span class="ul-d">(D) the</span> United States.
+        </div>
+        <div class="we-opts" id="q1-opts">
+          <button class="we-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol ol-a">A</span> An</button>
+          <button class="we-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol ol-b">B</span> the</button>
+          <button class="we-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol ol-c">C</span> an</button>
+          <button class="we-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol ol-d">D</span> the</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: C — «an» нужно заменить на «a»</div>
+          «University» начинается с буквы «u», но произносится как «ю-нивёрсити» — первый <strong>звук согласный</strong> («й»). Поэтому нужен артикль <strong>«a»</strong>, не «an».<br><br>
+          <div class="explain-rule">📌 Правило: артикль определяется ЗВУКОМ, не буквой. «a university», «a useful tool», «a European country».</div>
+          <div class="explain-wrong">❌ A — «An important» правильно (important начинается с гласного звука «и»)<br>❌ B — «the scientists» правильно (конкретные учёные)<br>❌ D — «the United States» правильно (страна с «United» → всегда «the»)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 2 / 9</span><span class="pq-type tp-art">Article</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          <span class="ul-a">(A) The</span> gold has been valued throughout <span class="ul-b">(B) the</span> history as <span class="ul-c">(C) a</span> symbol of <span class="ul-d">(D) the</span> wealth and power.
+        </div>
+        <div class="we-opts" id="q2-opts">
+          <button class="we-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol ol-a">A</span> The gold</button>
+          <button class="we-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol ol-b">B</span> the history</button>
+          <button class="we-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol ol-c">C</span> a symbol</button>
+          <button class="we-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol ol-d">D</span> the wealth</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «The gold» → «Gold»</div>
+          «Gold» здесь — вещество в общем смысле («золото вообще», не конкретный кусок золота). Перед веществами в общем значении артикль не нужен.<br><br>
+          <div class="explain-rule">📌 Вещества и материалы в общем смысле: ∅ water, ∅ gold, ∅ oxygen, ∅ iron — без артикля.</div>
+          <div class="explain-wrong">❌ B — «throughout the history» — правильно (история как установленная область)<br>❌ C — «a symbol» — правильно (один из возможных символов)<br>❌ D — «the wealth» — правильно (конкретное богатство, уточнённое контекстом)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 3 / 9</span><span class="pq-type tp-pre">Preposition</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The conference <span class="ul-a">(A) on</span> climate change will be held <span class="ul-b">(B) in</span> Monday <span class="ul-c">(C) at</span> 9 a.m. <span class="ul-d">(D) in</span> the main auditorium.
+        </div>
+        <div class="we-opts" id="q3-opts">
+          <button class="we-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol ol-a">A</span> on</button>
+          <button class="we-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol ol-b">B</span> in Monday</button>
+          <button class="we-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol ol-c">C</span> at</button>
+          <button class="we-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol ol-d">D</span> in</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «in Monday» → «on Monday»</div>
+          День недели требует предлога <strong>«on»</strong>: on Monday, on Tuesday, on Friday. «In» — для периодов (in January, in 2024), не для конкретного дня.<br><br>
+          <div class="explain-rule">📌 ON + день: on Monday, on weekends, on my birthday. IN + период: in the morning, in July, in 2024.</div>
+          <div class="explain-wrong">❌ A — «conference on climate change» — правильно (тема конференции)<br>❌ C — «at 9 a.m.» — правильно (точное время → at)<br>❌ D — «in the main auditorium» — правильно (внутри помещения → in)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 4 / 9</span><span class="pq-type tp-pre">Preposition — Collocation</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The outcome of the experiment was <span class="ul-a">(A) different than</span> expected, <span class="ul-b">(B) resulting in</span> a major revision <span class="ul-c">(C) of</span> the original <span class="ul-d">(D) theory</span>.
+        </div>
+        <div class="we-opts" id="q4-opts">
+          <button class="we-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol ol-a">A</span> different than</button>
+          <button class="we-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol ol-b">B</span> resulting in</button>
+          <button class="we-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol ol-c">C</span> of</button>
+          <button class="we-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol ol-d">D</span> theory</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «different than» → «different from»</div>
+          Прилагательное «different» всегда сочетается с предлогом <strong>«from»</strong>, никогда «than». «Different than» — одна из самых частых ошибок на TOEFL.<br><br>
+          <div class="explain-rule">📌 Collocation: different FROM (не than). Similar TO (не with). Responsible FOR. Capable OF.</div>
+          <div class="explain-wrong">❌ B — «resulting in» — правильно (привело к пересмотру — следствие)<br>❌ C — «revision of the theory» — правильно (предлог «of» в значении принадлежности)<br>❌ D — «theory» — существительное, грамматически верно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 5 / 9</span><span class="pq-type tp-wf">Word Form</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The <span class="ul-a">(A) succeed</span> of the Apollo program <span class="ul-b">(B) demonstrated</span> that humans were <span class="ul-c">(C) capable</span> of achieving <span class="ul-d">(D) extraordinary</span> goals.
+        </div>
+        <div class="we-opts" id="q5-opts">
+          <button class="we-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol ol-a">A</span> succeed</button>
+          <button class="we-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol ol-b">B</span> demonstrated</button>
+          <button class="we-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol ol-c">C</span> capable</button>
+          <button class="we-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol ol-d">D</span> extraordinary</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «succeed» → «success»</div>
+          После артикля «The» нужно <strong>существительное</strong>. «Succeed» — это глагол. Существительная форма — <strong>«success»</strong>.<br><br>
+          <div class="explain-rule">📌 The + [существительное]. Позиция после артикля всегда требует noun. «succeed» (verb) → «success» (noun).</div>
+          <div class="explain-wrong">❌ B — «demonstrated» — правильно (глагол-сказуемое в Past Simple)<br>❌ C — «capable» — правильно (прилагательное после «were»)<br>❌ D — «extraordinary» — правильно (прилагательное перед «goals»)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 6 / 9</span><span class="pq-type tp-wf">Word Form</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The researchers <span class="ul-a">(A) worked</span> <span class="ul-b">(B) extreme</span> hard to analyze the data <span class="ul-c">(C) collected</span> during <span class="ul-d">(D) the</span> three-year study.
+        </div>
+        <div class="we-opts" id="q6-opts">
+          <button class="we-opt" onclick="answer(6,'A')" id="q6-A"><span class="ol ol-a">A</span> worked</button>
+          <button class="we-opt" onclick="answer(6,'B')" id="q6-B"><span class="ol ol-b">B</span> extreme</button>
+          <button class="we-opt" onclick="answer(6,'C')" id="q6-C"><span class="ol ol-c">C</span> collected</button>
+          <button class="we-opt" onclick="answer(6,'D')" id="q6-D"><span class="ol ol-d">D</span> the</button>
+        </div>
+        <div class="pq-explain" id="q6-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «extreme» → «extremely»</div>
+          «Extreme» — прилагательное. Но оно модифицирует другое прилагательное «hard» → нужно <strong>наречие</strong> «extremely».<br><br>
+          <div class="explain-rule">📌 Наречие модифицирует глагол, прилагательное или другое наречие. «worked extremely hard» — наречие+наречие.</div>
+          <div class="explain-wrong">❌ A — «worked» — правильно (глагол Past Simple)<br>❌ C — «collected» — правильно (причастие, сокращённое «that was collected»)<br>❌ D — «the three-year study» — правильно (конкретное исследование)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 7 / 9</span><span class="pq-type tp-wf">Word Form</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          Darwin's <span class="ul-a">(A) theory</span> of evolution was <span class="ul-b">(B) initial</span> met with <span class="ul-c">(C) considerable</span> resistance from <span class="ul-d">(D) the</span> scientific community.
+        </div>
+        <div class="we-opts" id="q7-opts">
+          <button class="we-opt" onclick="answer(7,'A')" id="q7-A"><span class="ol ol-a">A</span> theory</button>
+          <button class="we-opt" onclick="answer(7,'B')" id="q7-B"><span class="ol ol-b">B</span> initial</button>
+          <button class="we-opt" onclick="answer(7,'C')" id="q7-C"><span class="ol ol-c">C</span> considerable</button>
+          <button class="we-opt" onclick="answer(7,'D')" id="q7-D"><span class="ol ol-d">D</span> the</button>
+        </div>
+        <div class="pq-explain" id="q7-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «initial» → «initially»</div>
+          «Initial» — прилагательное. Но оно стоит перед глаголом «met» и модифицирует всё действие → нужно <strong>наречие</strong> «initially» (первоначально).<br><br>
+          <div class="explain-rule">📌 Наречие (adverb) модифицирует глагол или всё предложение. «was initially met» — наречие при пассивном глаголе.</div>
+          <div class="explain-wrong">❌ A — «theory» — существительное, правильно<br>❌ C — «considerable» — прилагательное перед «resistance», правильно<br>❌ D — «the scientific community» — правильно (конкретное сообщество)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 8 / 9</span><span class="pq-type tp-mix">Mixed</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          An increase <span class="ul-a">(A) on</span> the average global temperature <span class="ul-b">(B) has contributed</span> to <span class="ul-c">(C) the</span> more frequent <span class="ul-d">(D) occurrence</span> of extreme weather events.
+        </div>
+        <div class="we-opts" id="q8-opts">
+          <button class="we-opt" onclick="answer(8,'A')" id="q8-A"><span class="ol ol-a">A</span> on</button>
+          <button class="we-opt" onclick="answer(8,'B')" id="q8-B"><span class="ol ol-b">B</span> has contributed</button>
+          <button class="we-opt" onclick="answer(8,'C')" id="q8-C"><span class="ol ol-c">C</span> the</button>
+          <button class="we-opt" onclick="answer(8,'D')" id="q8-D"><span class="ol ol-d">D</span> occurrence</button>
+        </div>
+        <div class="pq-explain" id="q8-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «increase on» → «increase in»</div>
+          Существительное «increase» требует предлога <strong>«in»</strong>: an increase <em>in</em> temperature / price / population. «On» здесь неверно.<br><br>
+          <div class="explain-rule">📌 Collocations: increase IN / decrease IN / rise IN / drop IN — все с «in»! «An increase in temperature» = рост температуры.</div>
+          <div class="explain-wrong">❌ B — «has contributed» — правильно (Present Perfect, продолжающееся влияние)<br>❌ C — «the more frequent occurrence» — правильно (конкретный факт)<br>❌ D — «occurrence» — правильно (существительное от «occur»)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 9 / 9</span><span class="pq-type tp-mix">Mixed — сложный</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The <span class="ul-a">(A) comparative</span> study revealed that the migration patterns of <span class="ul-b">(B) the</span> Arctic terns are <span class="ul-c">(C) significance</span> longer than <span class="ul-d">(D) those</span> of any other bird species.
+        </div>
+        <div class="we-opts" id="q9-opts">
+          <button class="we-opt" onclick="answer(9,'A')" id="q9-A"><span class="ol ol-a">A</span> comparative</button>
+          <button class="we-opt" onclick="answer(9,'B')" id="q9-B"><span class="ol ol-b">B</span> the</button>
+          <button class="we-opt" onclick="answer(9,'C')" id="q9-C"><span class="ol ol-c">C</span> significance</button>
+          <button class="we-opt" onclick="answer(9,'D')" id="q9-D"><span class="ol ol-d">D</span> those</button>
+        </div>
+        <div class="pq-explain" id="q9-explain">
+          <div class="explain-correct">✅ Верный ответ: C — «significance» → «significantly»</div>
+          «Significance» — существительное. Но оно стоит перед прилагательным «longer» и должно его модифицировать → нужно <strong>наречие</strong> «significantly» (значительно).<br><br>
+          <div class="explain-rule">📌 Наречие + прилагательное: «significantly longer», «extremely important», «highly unlikely».</div>
+          <div class="explain-wrong">❌ A — «comparative study» — прилагательное перед noun, правильно<br>❌ B — «the Arctic terns» — правильно (конкретный вид птиц)<br>❌ D — «those of any other bird species» — правильно (those = migration patterns, мн.ч.)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/9</div>
+      <div class="score-label">Результат · Articles, Prepositions, Word Form · Урок 5</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Стратегия →</button>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия для Written Expression</div>
+    <div class="section-intro">Part 2 — это не «найди неправильное слово наугад». Это система. Вот как решать каждый вопрос за 30–40 секунд.</div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Алгоритм: сначала смотри на ГЛАГОЛ</div>
+        <div class="tip-body">Первым делом найди подлежащее и сказуемое. Проверь согласование числа. Потом форму глагола (время, актив/пассив). Ошибки в глаголе — самые частые в Part 2.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Проверяй слова после «the» и «a/an»</div>
+        <div class="tip-body">После артикля должно быть существительное (или прилагательное + существительное). Если там стоит глагол или наречие — это ошибка Word Form. Это быстрая проверка за 3 секунды.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Слова перед прилагательным — проверяй наречие</div>
+        <div class="tip-body">Если подчёркнутое слово стоит перед прилагательным — оно должно быть наречием (-ly). «extreme important» → ошибка (нужно «extremely»). Эта ловушка встречается в каждом тесте.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">«Different from», «similar to» — запомни раз и навсегда</div>
+        <div class="tip-body">Самые частые ошибки предлогов на TOEFL: «different THAN» (ошибка → FROM), «similar WITH» (ошибка → TO), «depend OF» (ошибка → ON). Если видишь эти слова подчёркнутыми — сразу проверяй предлог.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">Читай предложение с каждым вариантом мысленно</div>
+        <div class="tip-body">Если не можешь сразу найти ошибку — мысленно замени каждое подчёркнутое слово на правильный вариант. То, что «режет слух» или нарушает правило — это ошибка. Не трать больше 45 секунд на один вопрос.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="background:var(--main-pale);border:1px solid #FAC775;border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--main);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:var(--main);line-height:1.9;opacity:0.85;">
+        1. Выучи все collocations из урока (different from, similar to, result in/from, depend on, consist of)<br>
+        2. Составь 10 предложений — по 2 на каждую тему (артикль, предлог времени, предлог места, форма слова)<br>
+        3. Пройди Unit 10–12 из Longman Preparation Course (Written Expression: Articles + Prepositions)<br>
+        4. Для каждого слова в списке: discover, simple, active, significance — запиши все 4 формы (noun/verb/adj/adv)
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:8px;letter-spacing:0.04em;">ПРОГРЕСС · SECTION II</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:2;">
+        ✅ Урок 3 — Clause & Verb Patterns<br>
+        ✅ Урок 4 — Parallel, Comparatives, Connectors<br>
+        ✅ Урок 5 — Articles, Prepositions, Word Form<br>
+        ⬜ Урок 6 — Verb Tense, Agreement, Pronouns<br>
+        ⬜ Урок 7 — Advanced Clauses & Reduction<br>
+        ⬜ Урок 8 — Grammar Mini-Test
+      </div>
+    </div>
+
+    <button class="btn-primary">✅ Урок 5 завершён!</button>
+    <div style="margin-top:10px;padding:16px;background:var(--main-pale);border:1px solid #FAC775;border-radius:var(--radius);font-size:14px;color:var(--main);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 6 — Verb Tense, Subject-Verb Agreement & Pronouns</strong><br>
+      <span style="font-size:13px;opacity:0.8;">Попроси своего преподавателя отправить Урок 6</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const correct = {1:'C',2:'A',3:'B',4:'A',5:'A',6:'B',7:'B',8:'A',9:'C'};
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+  document.querySelectorAll('#q'+q+'-opts .we-opt').forEach(b => b.disabled = true);
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+  if (choice === correct[q]) { chosen.classList.add('correct'); score++; }
+  else { chosen.classList.add('wrong'); correctBtn.classList.add('correct'); }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (done / 9 * 100) + '%';
+  if (done === 9) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson5', 'Урок 5: Articles, Prepositions & Word Form', score, 9, Math.round(score/9*100));
+    document.getElementById('score-display').textContent = score + '/9';
+    document.getElementById('score-bar').style.width = (score / 9 * 100) + '%';
+    const msgs = ['Повтори все три темы — особенно collocations.','Неплохое начало! Повтори артикли.','Хорошо! Ещё практики с предлогами.','Хорошо! Почти на уровне.','Отлично! Уверенный результат.','Отлично! Почти идеально.','Превосходно! Все правильно!','Превосходно! Все правильно!','Превосходно! Все правильно!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['articles','prepositions','wordform','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 12: Full Passage Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;
+--ink:#1C1917;--ink-mid:#44403C;
+--teal:#065F46;--teal-mid:#059669;--teal-bg:#ECFDF5;--teal-brd:#6EE7B7;
+--blue:#1E40AF;--blue-mid:#2563EB;--blue-bg:#EFF6FF;--blue-brd:#BFDBFE;
+--amber:#92400E;--amber-mid:#D97706;--amber-bg:#FFFBEB;--amber-brd:#FDE68A;
+--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;
+--rd:#991B1B;--rd-bg:#FEF2F2;--rd-brd:#FECACA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+
+.hero{background:linear-gradient(135deg,#1C1917,#292524,#57534E);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 20% 60%,rgba(5,150,105,.15),transparent 50%),radial-gradient(circle at 80% 20%,rgba(37,99,235,.1),transparent 45%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:36px 24px 28px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#D6D3D1;letter-spacing:.05em;margin-bottom:14px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#6EE7B7;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:8px}
+.hsub{font-size:15px;color:#A8A29E;line-height:1.5;margin-bottom:20px}
+.hpills{display:flex;gap:8px;flex-wrap:wrap}
+.hpill{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.08);color:#E7E5E4;border:1px solid rgba(255,255,255,.12)}
+.pt{height:3px;background:rgba(255,255,255,.12);margin-top:20px;border-radius:2px}
+.pf{height:3px;background:#6EE7B7;border-radius:2px;width:0%;transition:width .4s}
+
+/* Tabs */
+.tabs-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.tabs{max-width:720px;margin:0 auto;display:flex;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:all .15s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab.active{color:var(--teal);border-bottom-color:var(--teal-mid)}
+
+.content{max-width:720px;margin:0 auto;padding:24px 20px}
+.section{display:none}.section.active{display:block}
+.sec-title{font-family:'Lora',serif;font-size:22px;color:var(--text);margin-bottom:8px}
+.sec-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+
+/* Timer */
+.timer-box{background:#1C1917;border-radius:var(--r);padding:18px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.tdisplay{font-family:'Lora',serif;font-size:38px;color:#6EE7B7;min-width:80px;font-weight:600;line-height:1}
+.tlabel{font-size:14px;color:#A8A29E;line-height:1.5}
+.tbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:var(--rsm);padding:7px 14px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-right:6px;transition:background .15s}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.tbtn:disabled{opacity:.4;cursor:default}
+
+/* Passage */
+.passage{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:20px 22px;margin-bottom:20px;font-family:'Lora',serif;font-size:14px;line-height:1.95;color:#1C1917}
+.passage p{margin-bottom:12px}
+.passage p:last-child{margin-bottom:0}
+.plbl{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+
+/* Questions */
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px}
+.qh{padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:12px;font-weight:600;color:var(--muted)}
+.qt{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px}
+.tmi{background:#CCFBF1;color:#042F2E}.tdt{background:#DCFCE7;color:#166534}.tinf{background:#E0E7FF;color:#3730A3}.tvc{background:#DBEAFE;color:#1E40AF}.tnf{background:#FFE4E6;color:#9F1239}.trf{background:#EDE9FE;color:#5B21B6}
+.qbody{padding:16px}
+.q-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--rsm);padding:10px 14px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .15s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:18px}
+.opt:hover:not([disabled]){border-color:var(--teal-mid);background:var(--teal-bg)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--rd-bg);border-color:var(--rd-brd);color:var(--rd)}
+.opt.ng .L{color:var(--rd)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:10px;padding:11px 14px;background:var(--amber-bg);border-radius:var(--rsm);font-size:13px;line-height:1.7;color:var(--amber);border-left:3px solid var(--amber-mid);display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;font-size:13px;margin-bottom:4px}
+.erule{background:#FEF3C7;border-radius:4px;padding:4px 8px;font-size:12px;margin-top:5px;font-weight:500;color:var(--amber)}
+
+/* Score */
+.score-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-top:16px;display:none}
+.score-panel.show{display:block}
+.score-big{font-family:'Lora',serif;font-size:52px;color:var(--teal-mid);line-height:1}
+.score-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+.score-bw{margin:14px 0;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-b{height:8px;background:var(--teal-mid);border-radius:4px;transition:width 1s ease;width:0%}
+.score-msg{font-size:14px;color:var(--text);font-weight:500;margin-top:8px}
+.score-types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.st-cell{background:var(--bg);border-radius:var(--rsm);padding:12px;text-align:center}
+.st-n{font-family:'Lora',serif;font-size:26px;font-weight:600}
+.st-l{font-size:11px;color:var(--muted);margin-top:2px}
+
+.btn-p{display:block;width:100%;background:#1C1917;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:500;cursor:pointer;margin-top:16px;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn-p:hover{opacity:.88}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.tip-box{border-left:3px solid var(--teal-mid);background:var(--teal-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--teal);line-height:1.6;margin-top:12px}
+.next-box{padding:16px;background:var(--teal-bg);border:1px solid var(--teal-brd);border-radius:var(--r);font-size:14px;color:var(--teal);line-height:1.6;text-align:center;margin-top:12px}
+.summary-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:16px}
+.sc-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:12px}
+.sc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.sc-row:last-child{border-bottom:none}
+.sc-check{color:var(--teal-mid);font-weight:600}
+
+@media(max-width:480px){.htitle{font-size:24px}.score-types{grid-template-columns:1fr 1fr}.tab{padding:12px 10px;font-size:12px}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 12 из 14 · Section III</div>
+    <div class="htitle">Full Passage Practice</div>
+    <div class="hsub">2 полных текста · 10 вопросов каждый · Условия реального теста</div>
+    <div class="hpills">
+      <span class="hpill">📄 Текст 1: Астрономия</span>
+      <span class="hpill">📄 Текст 2: Социология</span>
+      <span class="hpill">⏱️ 11 мин × 2</span>
+      <span class="hpill">✅ Все типы вопросов</span>
+    </div>
+    <div class="pt"><div class="pf" id="progress"></div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('instr',this)">📋 Инструкция</button>
+    <button class="tab" onclick="showTab('p1',this)">📄 Текст 1</button>
+    <button class="tab" onclick="showTab('p2',this)">📄 Текст 2</button>
+    <button class="tab" onclick="showTab('results',this)">📊 Результаты</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- INSTRUCTIONS -->
+<div class="section active" id="tab-instr">
+  <div class="sec-title">Финальная практика Reading</div>
+  <div class="sec-intro">Это симуляция двух реальных текстов Section III TOEFL ITP. Все типы вопросов: Main Idea, Detail, Inference, Vocabulary, Reference, NOT/EXCEPT.</div>
+
+  <div class="summary-card">
+    <div class="sc-title">📋 Условия теста</div>
+    <div class="sc-row"><span>Количество текстов</span><span class="sc-check">2 текста</span></div>
+    <div class="sc-row"><span>Вопросов в каждом</span><span class="sc-check">10 вопросов</span></div>
+    <div class="sc-row"><span>Рекомендуемое время</span><span class="sc-check">11 минут на текст</span></div>
+    <div class="sc-row"><span>Ответы</span><span class="sc-check">Показываются сразу (учебный режим)</span></div>
+    <div class="sc-row"><span>Темы</span><span class="sc-check">Текст 1: Астрономия · Текст 2: Урбанизация</span></div>
+  </div>
+
+  <div class="summary-card">
+    <div class="sc-title">🎯 Типы вопросов в этом уроке</div>
+    <div class="sc-row"><span>Main Idea</span><span style="background:#CCFBF1;color:#042F2E;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">2 вопроса</span></div>
+    <div class="sc-row"><span>Detail (Specific Fact)</span><span style="background:#DCFCE7;color:#166534;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">6 вопросов</span></div>
+    <div class="sc-row"><span>Inference</span><span style="background:#E0E7FF;color:#3730A3;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">4 вопроса</span></div>
+    <div class="sc-row"><span>Vocabulary in Context</span><span style="background:#DBEAFE;color:#1E40AF;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">4 вопроса</span></div>
+    <div class="sc-row"><span>NOT / EXCEPT</span><span style="background:#FFE4E6;color:#9F1239;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">2 вопроса</span></div>
+    <div class="sc-row"><span>Reference</span><span style="background:#EDE9FE;color:#5B21B6;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600">2 вопроса</span></div>
+  </div>
+
+  <div class="tip-box">💡 <strong>Как работать:</strong> Запусти таймер → прочитай вопросы → прочитай текст → отвечай. При каждом ответе сразу видишь правильно или нет + объяснение. После обоих текстов переходи в «Результаты» для итогового анализа.</div>
+
+  <button class="btn-p" onclick="showTab('p1',document.querySelectorAll('.tab')[1])">Начать Текст 1 →</button>
+</div>
+
+<!-- TEXT 1 -->
+<div class="section" id="tab-p1">
+  <div class="sec-title">Текст 1 — Астрономия</div>
+
+  <div class="timer-box">
+    <div><div class="tdisplay" id="t1-display">11:00</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">оставшееся время</div></div>
+    <div style="flex:1">
+      <div class="tlabel">Запусти таймер и начинай читать</div>
+      <div style="margin-top:8px">
+        <button class="tbtn" id="t1-start" onclick="startTimer(1)">▶ Старт</button>
+        <button class="tbtn" onclick="resetTimer(1)">↺ Сброс</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="passage">
+    <div class="plbl">📄 Текст 1 · ~280 слов · Прочитай перед ответами</div>
+    <p>For centuries, astronomers relied on optical telescopes to observe the universe, limited to detecting only the narrow band of electromagnetic radiation visible to the human eye. The development of radio astronomy in the 1930s fundamentally changed this situation by opening an entirely new window on the cosmos. Radio telescopes can detect radio waves emitted by astronomical objects across vast distances, revealing phenomena that optical instruments cannot observe.</p>
+    <p>One of the most significant early discoveries of radio astronomy was the detection of quasars — extremely luminous objects found at the edges of the observable universe. Quasars emit enormous amounts of energy, far exceeding that produced by entire galaxies. Scientists now believe that quasars are powered by supermassive black holes at the centers of distant galaxies, with the black holes consuming surrounding matter and releasing tremendous energy in the process.</p>
+    <p>Radio astronomy has also contributed to our understanding of the cosmic microwave background (CMB) — the faint radiation that permeates the entire universe. This radiation is considered the afterglow of the Big Bang, the event that scientists believe created the universe approximately 13.8 billion years ago. By studying the slight temperature variations in the CMB, cosmologists have been able to piece together a detailed picture of the early universe and its subsequent evolution.</p>
+    <p>Despite the remarkable achievements of radio astronomy, the field faces significant challenges. Radio telescopes must be enormous to achieve adequate resolution, and they are vulnerable to interference from human-made radio signals. Nevertheless, advances in technology have enabled astronomers to link multiple telescopes across different continents, creating what is effectively a telescope the size of the Earth itself.</p>
+  </div>
+
+  <!-- P1 Questions -->
+  <div class="qb"><div class="qh"><span class="qn">T1 · 1 / 10</span><span class="qt tmi">Main Idea</span></div><div class="qbody">
+    <div class="q-text">What is the passage mainly about?</div>
+    <div class="opts" id="p1o1">
+      <button class="opt" onclick="pick('p1',1,'A')" id="p1q1A"><span class="L">A</span>The history and limitations of optical telescopes</button>
+      <button class="opt" onclick="pick('p1',1,'B')" id="p1q1B"><span class="L">B</span>The development of radio astronomy and its contributions to our understanding of the universe</button>
+      <button class="opt" onclick="pick('p1',1,'C')" id="p1q1C"><span class="L">C</span>The discovery of quasars and supermassive black holes</button>
+      <button class="opt" onclick="pick('p1',1,'D')" id="p1q1D"><span class="L">D</span>How the Big Bang created cosmic microwave background radiation</button>
+    </div>
+    <div class="exp" id="p1e1"><div class="eok">✅ B</div>Текст охватывает: историю радиоастрономии, квазары, CMB и трудности. Всё это — вклад радиоастрономии в понимание вселенной. C и D — детали из одного абзаца.<div class="erule">📌 Main Idea охватывает весь текст.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 2 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, when was radio astronomy developed?</div>
+    <div class="opts" id="p1o2">
+      <button class="opt" onclick="pick('p1',2,'A')" id="p1q2A"><span class="L">A</span>In the late 19th century</button>
+      <button class="opt" onclick="pick('p1',2,'B')" id="p1q2B"><span class="L">B</span>In the 1930s</button>
+      <button class="opt" onclick="pick('p1',2,'C')" id="p1q2C"><span class="L">C</span>After World War II</button>
+      <button class="opt" onclick="pick('p1',2,'D')" id="p1q2D"><span class="L">D</span>In the 1960s</button>
+    </div>
+    <div class="exp" id="p1e2"><div class="eok">✅ B — in the 1930s</div>Абзац 1: «The development of radio astronomy in the 1930s».<div class="erule">📌 Scan: «radio astronomy» → абзац 1 → «in the 1930s».</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 3 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what do scientists believe powers quasars?</div>
+    <div class="opts" id="p1o3">
+      <button class="opt" onclick="pick('p1',3,'A')" id="p1q3A"><span class="L">A</span>Nuclear fusion reactions similar to those in ordinary stars</button>
+      <button class="opt" onclick="pick('p1',3,'B')" id="p1q3B"><span class="L">B</span>The collision of entire galaxies</button>
+      <button class="opt" onclick="pick('p1',3,'C')" id="p1q3C"><span class="L">C</span>Supermassive black holes consuming surrounding matter</button>
+      <button class="opt" onclick="pick('p1',3,'D')" id="p1q3D"><span class="L">D</span>Explosions left over from the Big Bang</button>
+    </div>
+    <div class="exp" id="p1e3"><div class="eok">✅ C</div>Абзац 2: «quasars are powered by supermassive black holes... consuming surrounding matter and releasing tremendous energy».<div class="erule">📌 Scan: «quasars», «powered» → абзац 2 → ответ C.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 4 / 10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«luminous»</strong> (paragraph 2) is closest in meaning to...</div>
+    <div class="opts" id="p1o4">
+      <button class="opt" onclick="pick('p1',4,'A')" id="p1q4A"><span class="L">A</span>distant</button>
+      <button class="opt" onclick="pick('p1',4,'B')" id="p1q4B"><span class="L">B</span>ancient</button>
+      <button class="opt" onclick="pick('p1',4,'C')" id="p1q4C"><span class="L">C</span>bright</button>
+      <button class="opt" onclick="pick('p1',4,'D')" id="p1q4D"><span class="L">D</span>massive</button>
+    </div>
+    <div class="exp" id="p1e4"><div class="eok">✅ C — bright</div>Контекст: «extremely luminous objects... emit enormous amounts of energy, far exceeding that produced by entire galaxies». Огромная энергия → яркий свет. «luminous» = светящийся, яркий.<div class="erule">📌 lumen (лат.) = свет → luminous = light-producing = bright.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 5 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what is the cosmic microwave background?</div>
+    <div class="opts" id="p1o5">
+      <button class="opt" onclick="pick('p1',5,'A')" id="p1q5A"><span class="L">A</span>The light emitted by distant quasars</button>
+      <button class="opt" onclick="pick('p1',5,'B')" id="p1q5B"><span class="L">B</span>Radiation considered to be the afterglow of the Big Bang</button>
+      <button class="opt" onclick="pick('p1',5,'C')" id="p1q5C"><span class="L">C</span>Radio waves produced by supermassive black holes</button>
+      <button class="opt" onclick="pick('p1',5,'D')" id="p1q5D"><span class="L">D</span>Interference from human-made radio signals</button>
+    </div>
+    <div class="exp" id="p1e5"><div class="eok">✅ B</div>Абзац 3: «This radiation is considered the afterglow of the Big Bang».<div class="erule">📌 Scan: «cosmic microwave background» → абзац 3 → «afterglow of the Big Bang».</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 6 / 10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«permeates»</strong> (paragraph 3) is closest in meaning to...</div>
+    <div class="opts" id="p1o6">
+      <button class="opt" onclick="pick('p1',6,'A')" id="p1q6A"><span class="L">A</span>originates from</button>
+      <button class="opt" onclick="pick('p1',6,'B')" id="p1q6B"><span class="L">B</span>spreads throughout</button>
+      <button class="opt" onclick="pick('p1',6,'C')" id="p1q6C"><span class="L">C</span>is produced by</button>
+      <button class="opt" onclick="pick('p1',6,'D')" id="p1q6D"><span class="L">D</span>reflects off</button>
+    </div>
+    <div class="exp" id="p1e6"><div class="eok">✅ B — spreads throughout</div>«faint radiation that permeates the entire universe» — CMB присутствует везде во вселенной. «permeate» = проникать повсюду, пронизывать.<div class="erule">📌 Контекст: «entire universe» → permeates = spreads throughout (заполняет всё).</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 7 / 10</span><span class="qt trf">Reference</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«they»</strong> in paragraph 4 («they are vulnerable to interference») refers to...</div>
+    <div class="opts" id="p1o7">
+      <button class="opt" onclick="pick('p1',7,'A')" id="p1q7A"><span class="L">A</span>astronomers</button>
+      <button class="opt" onclick="pick('p1',7,'B')" id="p1q7B"><span class="L">B</span>radio telescopes</button>
+      <button class="opt" onclick="pick('p1',7,'C')" id="p1q7C"><span class="L">C</span>radio signals</button>
+      <button class="opt" onclick="pick('p1',7,'D')" id="p1q7D"><span class="L">D</span>continents</button>
+    </div>
+    <div class="exp" id="p1e7"><div class="eok">✅ B — radio telescopes</div>Абзац 4: «Radio telescopes must be enormous... and they are vulnerable to interference». «They» → «Radio telescopes» (мн.ч., ближайшее сущ.).<div class="erule">📌 Алгоритм: they (мн.ч.) → ближайший мн.ч. noun перед ним → Radio telescopes ✓</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 8 / 10</span><span class="qt tnf">NOT / EXCEPT</span></div><div class="qbody">
+    <div class="q-text">According to the passage, all of the following are true about radio telescopes EXCEPT...</div>
+    <div class="opts" id="p1o8">
+      <button class="opt" onclick="pick('p1',8,'A')" id="p1q8A"><span class="L">A</span>They can detect phenomena that optical telescopes cannot</button>
+      <button class="opt" onclick="pick('p1',8,'B')" id="p1q8B"><span class="L">B</span>They must be very large to work effectively</button>
+      <button class="opt" onclick="pick('p1',8,'C')" id="p1q8C"><span class="L">C</span>They are unaffected by human-made radio signals</button>
+      <button class="opt" onclick="pick('p1',8,'D')" id="p1q8D"><span class="L">D</span>Multiple telescopes can be linked across continents</button>
+    </div>
+    <div class="exp" id="p1e8"><div class="eok">✅ C — They are unaffected by human-made radio signals</div>Текст говорит НАОБОРОТ: «they are vulnerable to interference from human-made radio signals». A ✓ (абз.1), B ✓ (абз.4), D ✓ (абз.4). C противоречит тексту = ответ.<div class="erule">📌 EXCEPT: найди три верных варианта → четвёртый который противоречит = ответ.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 9 / 10</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">It can be inferred from the passage that before radio astronomy, scientists...</div>
+    <div class="opts" id="p1o9">
+      <button class="opt" onclick="pick('p1',9,'A')" id="p1q9A"><span class="L">A</span>had no understanding of the universe at all</button>
+      <button class="opt" onclick="pick('p1',9,'B')" id="p1q9B"><span class="L">B</span>were unable to detect quasars and cosmic microwave background radiation</button>
+      <button class="opt" onclick="pick('p1',9,'C')" id="p1q9C"><span class="L">C</span>had already discovered the Big Bang theory</button>
+      <button class="opt" onclick="pick('p1',9,'D')" id="p1q9D"><span class="L">D</span>used only spacecraft to observe the universe</button>
+    </div>
+    <div class="exp" id="p1e9"><div class="eok">✅ B</div>Текст: радиоастрономия «opened an entirely new window» и позволила обнаружить квазары и CMB. Вывод: до неё эти явления были недоступны для наблюдения.<div class="erule">📌 «entirely new window» → до этого таких наблюдений не было → вывод B логически следует.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1 · 10 / 10</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">What can be inferred about the technique of linking multiple telescopes across continents?</div>
+    <div class="opts" id="p1o10">
+      <button class="opt" onclick="pick('p1',10,'A')" id="p1q10A"><span class="L">A</span>It was invented to reduce the cost of building individual telescopes</button>
+      <button class="opt" onclick="pick('p1',10,'B')" id="p1q10B"><span class="L">B</span>It helped solve the problem of needing very large telescopes for high resolution</button>
+      <button class="opt" onclick="pick('p1',10,'C')" id="p1q10C"><span class="L">C</span>It eliminated all interference from human-made signals</button>
+      <button class="opt" onclick="pick('p1',10,'D')" id="p1q10D"><span class="L">D</span>It replaced the need for optical telescopes entirely</button>
+    </div>
+    <div class="exp" id="p1e10"><div class="eok">✅ B</div>Текст: telescopes «must be enormous to achieve adequate resolution» (проблема) → «advances... enabled astronomers to link multiple telescopes... creating a telescope the size of the Earth» (решение). Связь: размер → разрешение → решение через сеть телескопов.<div class="erule">📌 «enormous... adequate resolution» (проблема) + «link multiple telescopes» (решение) = вывод B.</div></div>
+  </div></div>
+
+  <div class="score-panel" id="p1-score">
+    <div class="score-big" id="p1-big">—</div>
+    <div class="score-lbl">из 10 · Текст 1 — Астрономия</div>
+    <div class="score-bw"><div class="score-b" id="p1-bar"></div></div>
+    <div class="score-msg" id="p1-msg"></div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('p2',document.querySelectorAll('.tab')[2])">Перейти к Тексту 2 →</button>
+</div>
+
+<!-- TEXT 2 -->
+<div class="section" id="tab-p2">
+  <div class="sec-title">Текст 2 — Социология / Урбанизация</div>
+
+  <div class="timer-box">
+    <div><div class="tdisplay" id="t2-display">11:00</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">оставшееся время</div></div>
+    <div style="flex:1">
+      <div class="tlabel">Запусти таймер и начинай читать</div>
+      <div style="margin-top:8px">
+        <button class="tbtn" id="t2-start" onclick="startTimer(2)">▶ Старт</button>
+        <button class="tbtn" onclick="resetTimer(2)">↺ Сброс</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="passage">
+    <div class="plbl">📄 Текст 2 · ~290 слов · Прочитай перед ответами</div>
+    <p>Urbanization — the process by which populations move from rural to urban areas — has been one of the most transformative demographic shifts of the modern era. In 1800, only three percent of the world's population lived in cities. Today, more than half of humanity resides in urban areas, and projections suggest that this proportion will rise to nearly seventy percent by 2050.</p>
+    <p>The driving forces behind urbanization are primarily economic. Cities concentrate industries, services, and employment opportunities in ways that rural areas typically cannot match. Migrants from rural regions are drawn to cities by the prospect of higher wages, better access to education, and improved healthcare facilities. This phenomenon, known as rural-to-urban migration, has been particularly pronounced in developing nations across Asia, Africa, and Latin America.</p>
+    <p>However, rapid urbanization has also generated significant social and environmental challenges. Many cities in the developing world struggle with inadequate housing, insufficient infrastructure, and overwhelmed public services. The growth of informal settlements — commonly known as slums — represents one of the most visible consequences of unmanaged urban expansion. These areas often lack basic amenities such as clean water, sanitation, and reliable electricity.</p>
+    <p>Despite these challenges, many urban planners and economists argue that well-managed cities offer the most sustainable path toward global development. Dense urban environments are inherently more energy-efficient than dispersed rural populations, as people living in close proximity require fewer resources for transportation and heating. Furthermore, cities foster innovation through the concentration of educated workers and diverse industries. The key challenge facing the twenty-first century, therefore, is not urbanization itself but ensuring that it proceeds in an equitable and sustainable manner.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 1 / 10</span><span class="qt tmi">Main Idea</span></div><div class="qbody">
+    <div class="q-text">What is the main topic of the passage?</div>
+    <div class="opts" id="p2o1">
+      <button class="opt" onclick="pick('p2',1,'A')" id="p2q1A"><span class="L">A</span>The environmental dangers of city living</button>
+      <button class="opt" onclick="pick('p2',1,'B')" id="p2q1B"><span class="L">B</span>Why people prefer cities to rural areas</button>
+      <button class="opt" onclick="pick('p2',1,'C')" id="p2q1C"><span class="L">C</span>The causes, challenges, and potential benefits of urbanization</button>
+      <button class="opt" onclick="pick('p2',1,'D')" id="p2q1D"><span class="L">D</span>The growth of informal settlements in developing countries</button>
+    </div>
+    <div class="exp" id="p2e1"><div class="eok">✅ C</div>Текст охватывает: статистику урбанизации, экономические причины, социальные/экологические проблемы, потенциальные преимущества. Всё это = причины, проблемы и возможности урбанизации.<div class="erule">📌 A, B, D — детали. C = весь текст.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 2 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what percentage of the world's population lived in cities in 1800?</div>
+    <div class="opts" id="p2o2">
+      <button class="opt" onclick="pick('p2',2,'A')" id="p2q2A"><span class="L">A</span>About ten percent</button>
+      <button class="opt" onclick="pick('p2',2,'B')" id="p2q2B"><span class="L">B</span>About three percent</button>
+      <button class="opt" onclick="pick('p2',2,'C')" id="p2q2C"><span class="L">C</span>More than fifty percent</button>
+      <button class="opt" onclick="pick('p2',2,'D')" id="p2q2D"><span class="L">D</span>Nearly seventy percent</button>
+    </div>
+    <div class="exp" id="p2e2"><div class="eok">✅ B — about three percent</div>Абзац 1: «In 1800, only three percent of the world's population lived in cities».<div class="erule">📌 Scan: «1800» → абзац 1 → «three percent».</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 3 / 10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«pronounced»</strong> (paragraph 2) is closest in meaning to...</div>
+    <div class="opts" id="p2o3">
+      <button class="opt" onclick="pick('p2',3,'A')" id="p2q3A"><span class="L">A</span>spoken aloud</button>
+      <button class="opt" onclick="pick('p2',3,'B')" id="p2q3B"><span class="L">B</span>noticeable and strong</button>
+      <button class="opt" onclick="pick('p2',3,'C')" id="p2q3C"><span class="L">C</span>officially announced</button>
+      <button class="opt" onclick="pick('p2',3,'D')" id="p2q3D"><span class="L">D</span>gradually decreasing</button>
+    </div>
+    <div class="exp" id="p2e3"><div class="eok">✅ B — noticeable and strong</div>Контекст: «This phenomenon... has been particularly pronounced in developing nations» — в развивающихся странах эта тенденция особенно заметна и сильна. «Pronounced» здесь = выраженный, заметный.<div class="erule">📌 «particularly pronounced» = особенно заметный/выраженный (не «произносить вслух»). Всегда смотри на контекст!</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 4 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what are informal settlements often lacking?</div>
+    <div class="opts" id="p2o4">
+      <button class="opt" onclick="pick('p2',4,'A')" id="p2q4A"><span class="L">A</span>Schools and universities</button>
+      <button class="opt" onclick="pick('p2',4,'B')" id="p2q4B"><span class="L">B</span>Clean water, sanitation, and reliable electricity</button>
+      <button class="opt" onclick="pick('p2',4,'C')" id="p2q4C"><span class="L">C</span>Access to public transportation</button>
+      <button class="opt" onclick="pick('p2',4,'D')" id="p2q4D"><span class="L">D</span>Employment opportunities</button>
+    </div>
+    <div class="exp" id="p2e4"><div class="eok">✅ B</div>Абзац 3: «These areas often lack basic amenities such as clean water, sanitation, and reliable electricity».<div class="erule">📌 Scan: «informal settlements» → абзац 3 → «lack... clean water, sanitation, and reliable electricity».</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 5 / 10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«inherently»</strong> (paragraph 4) is closest in meaning to...</div>
+    <div class="opts" id="p2o5">
+      <button class="opt" onclick="pick('p2',5,'A')" id="p2q5A"><span class="L">A</span>recently</button>
+      <button class="opt" onclick="pick('p2',5,'B')" id="p2q5B"><span class="L">B</span>by nature</button>
+      <button class="opt" onclick="pick('p2',5,'C')" id="p2q5C"><span class="L">C</span>surprisingly</button>
+      <button class="opt" onclick="pick('p2',5,'D')" id="p2q5D"><span class="L">D</span>temporarily</button>
+    </div>
+    <div class="exp" id="p2e5"><div class="eok">✅ B — by nature</div>«Dense urban environments are inherently more energy-efficient» — это фундаментальное свойство городов, не случайное. «inherently» = по своей природе, изначально.<div class="erule">📌 inherit (наследовать) → inherent = присущий по природе → inherently = by nature, fundamentally.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 6 / 10</span><span class="qt trf">Reference</span></div><div class="qbody">
+    <div class="q-text">In paragraph 4, «it» in the phrase «ensuring that it proceeds in an equitable manner» refers to...</div>
+    <div class="opts" id="p2o6">
+      <button class="opt" onclick="pick('p2',6,'A')" id="p2q6A"><span class="L">A</span>global development</button>
+      <button class="opt" onclick="pick('p2',6,'B')" id="p2q6B"><span class="L">B</span>urbanization</button>
+      <button class="opt" onclick="pick('p2',6,'C')" id="p2q6C"><span class="L">C</span>innovation</button>
+      <button class="opt" onclick="pick('p2',6,'D')" id="p2q6D"><span class="L">D</span>transportation</button>
+    </div>
+    <div class="exp" id="p2e6"><div class="eok">✅ B — urbanization</div>«the key challenge is not urbanization itself but ensuring that it proceeds...» — «it» = «urbanization» (ед.ч., ближайшее существительное с тем же числом).<div class="erule">📌 «not urbanization itself but ensuring that IT proceeds» → it = urbanization (логическая и грамматическая связь).</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 7 / 10</span><span class="qt tnf">NOT / EXCEPT</span></div><div class="qbody">
+    <div class="q-text">According to the passage, all of the following are reasons why people migrate to cities EXCEPT...</div>
+    <div class="opts" id="p2o7">
+      <button class="opt" onclick="pick('p2',7,'A')" id="p2q7A"><span class="L">A</span>Higher wages</button>
+      <button class="opt" onclick="pick('p2',7,'B')" id="p2q7B"><span class="L">B</span>Better access to education</button>
+      <button class="opt" onclick="pick('p2',7,'C')" id="p2q7C"><span class="L">C</span>Escaping natural disasters</button>
+      <button class="opt" onclick="pick('p2',7,'D')" id="p2q7D"><span class="L">D</span>Improved healthcare facilities</button>
+    </div>
+    <div class="exp" id="p2e7"><div class="eok">✅ C — Escaping natural disasters</div>Абзац 2 называет причины: higher wages ✓, better access to education ✓, improved healthcare ✓. «Natural disasters» в тексте НЕ упоминаются.<div class="erule">📌 EXCEPT: A ✓, B ✓, D ✓ в тексте → C ✗ (не упоминается) = ответ.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 8 / 10</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, why are dense urban environments considered more energy-efficient?</div>
+    <div class="opts" id="p2o8">
+      <button class="opt" onclick="pick('p2',8,'A')" id="p2q8A"><span class="L">A</span>They use more renewable energy sources</button>
+      <button class="opt" onclick="pick('p2',8,'B')" id="p2q8B"><span class="L">B</span>People living close together need fewer resources for transportation and heating</button>
+      <button class="opt" onclick="pick('p2',8,'C')" id="p2q8C"><span class="L">C</span>City governments enforce strict environmental regulations</button>
+      <button class="opt" onclick="pick('p2',8,'D')" id="p2q8D"><span class="L">D</span>Urban residents consume less food than rural populations</button>
+    </div>
+    <div class="exp" id="p2e8"><div class="eok">✅ B</div>Абзац 4: «people living in close proximity require fewer resources for transportation and heating».<div class="erule">📌 Scan: «energy-efficient» → абзац 4 → «fewer resources for transportation and heating» = ответ B.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 9 / 10</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">It can be inferred from the passage that the author views urbanization as...</div>
+    <div class="opts" id="p2o9">
+      <button class="opt" onclick="pick('p2',9,'A')" id="p2q9A"><span class="L">A</span>a purely negative phenomenon that should be reversed</button>
+      <button class="opt" onclick="pick('p2',9,'B')" id="p2q9B"><span class="L">B</span>a complex process with both problems and opportunities</button>
+      <button class="opt" onclick="pick('p2',9,'C')" id="p2q9C"><span class="L">C</span>a temporary trend that will reverse in the coming decades</button>
+      <button class="opt" onclick="pick('p2',9,'D')" id="p2q9D"><span class="L">D</span>something that affects only developing countries</button>
+    </div>
+    <div class="exp" id="p2e9"><div class="eok">✅ B</div>Текст описывает и проблемы (абз. 3) и преимущества (абз. 4). Последнее предложение: «the key challenge is not urbanization itself but ensuring that it proceeds in an equitable and sustainable manner» → урбанизация не плохая — нужно управлять ею правильно.<div class="erule">📌 Balanced attitude: проблемы + возможности + вывод о управлении = сложный процесс с двумя сторонами.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2 · 10 / 10</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">What can be inferred about cities and innovation from the passage?</div>
+    <div class="opts" id="p2o10">
+      <button class="opt" onclick="pick('p2',10,'A')" id="p2q10A"><span class="L">A</span>Innovation occurs only in the largest cities in the world</button>
+      <button class="opt" onclick="pick('p2',10,'B')" id="p2q10B"><span class="L">B</span>The concentration of people and industries in cities creates conditions favorable to innovation</button>
+      <button class="opt" onclick="pick('p2',10,'C')" id="p2q10C"><span class="L">C</span>Rural areas are incapable of producing innovative ideas</button>
+      <button class="opt" onclick="pick('p2',10,'D')" id="p2q10D"><span class="L">D</span>Innovation in cities is primarily driven by government investment</button>
+    </div>
+    <div class="exp" id="p2e10"><div class="eok">✅ B</div>Текст: «cities foster innovation through the concentration of educated workers and diverse industries». Вывод: концентрация людей и индустрий → условия для инноваций.<div class="erule">📌 «foster innovation through concentration» → вывод: концентрация создаёт благоприятные условия = ответ B.</div></div>
+  </div></div>
+
+  <div class="score-panel" id="p2-score">
+    <div class="score-big" id="p2-big">—</div>
+    <div class="score-lbl">из 10 · Текст 2 — Урбанизация</div>
+    <div class="score-bw"><div class="score-b" id="p2-bar"></div></div>
+    <div class="score-msg" id="p2-msg"></div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('results',document.querySelectorAll('.tab')[3])">Посмотреть итоговые результаты →</button>
+</div>
+
+<!-- RESULTS -->
+<div class="section" id="tab-results">
+  <div class="sec-title">Итоговые результаты</div>
+  <div class="sec-intro">Результаты обоих текстов. Нажми «Рассчитать» после завершения обоих текстов.</div>
+
+  <div id="results-placeholder" style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:16px">
+    <div style="font-size:40px;margin-bottom:12px">📊</div>
+    <div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">Пройди оба текста</div>
+    <div style="font-size:14px;color:var(--muted)">После ответов на все вопросы результаты появятся здесь</div>
+    <button class="btn-p" style="max-width:300px;margin:16px auto 0" onclick="calcResults()">Рассчитать результаты →</button>
+  </div>
+
+  <div id="results-content" style="display:none">
+    <div style="background:#1C1917;border-radius:var(--r);padding:28px;text-align:center;margin-bottom:16px;color:#fff">
+      <div style="font-family:'Lora',serif;font-size:64px;color:#fff;line-height:1" id="total-score">—</div>
+      <div style="font-size:15px;color:#A8A29E;margin-top:4px">из 20 вопросов · Full Passage Practice</div>
+      <div style="font-size:26px;font-weight:600;color:#6EE7B7;margin-top:6px" id="total-pct">—</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.65);margin-top:8px;line-height:1.6" id="total-msg"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;text-align:center">
+        <div style="font-family:'Lora',serif;font-size:32px;color:var(--teal-mid)" id="r-p1">—</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">Текст 1 (из 10)</div>
+        <div style="margin-top:8px;height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div id="bar-p1" style="height:6px;background:var(--teal-mid);border-radius:3px;transition:width 1s ease;width:0%"></div></div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;text-align:center">
+        <div style="font-family:'Lora',serif;font-size:32px;color:var(--blue-mid)" id="r-p2">—</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">Текст 2 (из 10)</div>
+        <div style="margin-top:8px;height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div id="bar-p2" style="height:6px;background:var(--blue-mid);border-radius:3px;transition:width 1s ease;width:0%"></div></div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:16px">
+      <div style="font-size:15px;font-weight:600;margin-bottom:14px">Разбивка по типам вопросов</div>
+      <div id="type-breakdown"></div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:16px">
+      <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:.04em">ПРОГРЕСС · SECTION III</div>
+      <div style="font-size:14px;color:var(--muted);line-height:2">
+        ✅ Урок 9 — Main Idea, Detail, Inference<br>
+        ✅ Урок 10 — Vocabulary, Reference, NOT/EXCEPT<br>
+        ✅ Урок 11 — Academic Vocabulary &amp; Speed Reading<br>
+        ✅ Урок 12 — Full Passage Practice<br>
+        ⬜ Урок 13 — Test Strategy &amp; Time Management<br>
+        ⬜ Урок 14 — Full Mock Test
+      </div>
+    </div>
+
+    <button class="btn-p">✅ Урок 12 завершён!</button>
+    <div class="next-box">
+      Следующий: <strong>Урок 13 — Test Strategy &amp; Time Management</strong><br>
+      <span style="font-size:13px;opacity:.8">Попроси своего преподавателя отправить Урок 13</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<script>
+// ── Answer keys ──
+const KEYS = {
+  p1: {1:'B',2:'B',3:'C',4:'C',5:'B',6:'B',7:'B',8:'C',9:'B',10:'B'},
+  p2: {1:'C',2:'B',3:'B',4:'B',5:'B',6:'B',7:'C',8:'B',9:'B',10:'B'}
+};
+const QTYPES = {
+  p1: {1:'Main Idea',2:'Detail',3:'Detail',4:'Vocabulary',5:'Detail',6:'Vocabulary',7:'Reference',8:'NOT/EXCEPT',9:'Inference',10:'Inference'},
+  p2: {1:'Main Idea',2:'Detail',3:'Vocabulary',4:'Detail',5:'Vocabulary',6:'Reference',7:'NOT/EXCEPT',8:'Detail',9:'Inference',10:'Inference'}
+};
+const scores = {p1:{}, p2:{}};
+const counts = {p1:0, p2:0};
+const total = {p1:10, p2:10};
+
+function pick(passage, q, letter) {
+  const key = passage+'q'+q;
+  if(scores[passage][q] !== undefined) return;
+
+  const correct = KEYS[passage][q];
+  const chosenBtn = document.getElementById(passage+'q'+q+letter);
+  const correctBtn = document.getElementById(passage+'q'+q+correct);
+
+  document.querySelectorAll('#'+passage+'o'+q+' .opt').forEach(b => b.disabled = true);
+
+  if(letter === correct) {
+    if(chosenBtn) chosenBtn.classList.add('ok');
+    scores[passage][q] = 1;
+  } else {
+    if(chosenBtn) chosenBtn.classList.add('ng');
+    if(correctBtn) correctBtn.classList.add('ok');
+    scores[passage][q] = 0;
+  }
+
+  document.getElementById(passage+'e'+q).classList.add('show');
+  counts[passage]++;
+
+  // Update global progress
+  const done = counts.p1 + counts.p2;
+  document.getElementById('progress').style.width = (done/20*100)+'%';
+
+  // Show passage score when done
+  if(counts[passage] === total[passage]) {
+    const s = Object.values(scores[passage]).reduce((a,b)=>a+b,0);
+    const panel = document.getElementById(passage+'-score');
+    panel.classList.add('show');
+    document.getElementById(passage+'-big').textContent = s+'/10';
+    setTimeout(()=>document.getElementById(passage+'-bar').style.width=(s/10*100)+'%',300);
+    const msgs = ['Повтори стратегии Reading.','Обрати внимание на слабые типы.','Хорошо! Ещё практики.','Хорошо!','Отлично!','Отлично!','Превосходно!','Превосходно!','Превосходно!','Превосходно!'];
+    document.getElementById(passage+'-msg').textContent = msgs[s] || 'Превосходно!';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function calcResults() {
+  const s1 = Object.values(scores.p1).reduce((a,b)=>a+b,0);
+  const s2 = Object.values(scores.p2).reduce((a,b)=>a+b,0);
+  const total_score = s1 + s2;
+  const pct = Math.round(total_score/20*100);
+
+  document.getElementById('results-placeholder').style.display='none';
+  document.getElementById('results-content').style.display='block';
+
+  document.getElementById('total-score').textContent = total_score+'/20';
+  sendResult('lesson12', 'Урок 12: Full Passage Practice', total_score, 20, pct);
+  document.getElementById('total-pct').textContent = pct+'%';
+  const msg = pct>=90?'Отличный результат! Reading раздел уверенно сдан.':pct>=75?'Хорошо! Повтори слабые типы вопросов.':pct>=60?'Неплохо. Продолжай практиковаться.':'Повтори уроки 9–11 и попробуй снова.';
+  document.getElementById('total-msg').textContent = msg;
+
+  document.getElementById('r-p1').textContent = s1+'/10';
+  document.getElementById('r-p2').textContent = s2+'/10';
+  setTimeout(()=>{
+    document.getElementById('bar-p1').style.width=(s1/10*100)+'%';
+    document.getElementById('bar-p2').style.width=(s2/10*100)+'%';
+  },300);
+
+  // Type breakdown
+  const typeStats = {};
+  ['p1','p2'].forEach(p=>{
+    for(let q=1;q<=10;q++){
+      const t = QTYPES[p][q];
+      if(!typeStats[t]) typeStats[t]={ok:0,tot:0};
+      typeStats[t].tot++;
+      if(scores[p][q]===1) typeStats[t].ok++;
+    }
+  });
+  const container = document.getElementById('type-breakdown');
+  container.innerHTML='';
+  Object.entries(typeStats).forEach(([type,s])=>{
+    const p=Math.round(s.ok/s.tot*100);
+    const col=p>=80?'#059669':p>=60?'#D97706':'#DC2626';
+    container.innerHTML+=`<div style="display:flex;align-items:center;gap:10px;margin-bottom:9px">
+      <div style="font-size:13px;color:var(--muted);min-width:140px">${type}</div>
+      <div style="flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden"><div style="height:7px;border-radius:4px;background:${col};width:${p}%;transition:width 1s ease"></div></div>
+      <div style="font-size:13px;font-weight:600;color:${col};min-width:36px;text-align:right">${s.ok}/${s.tot}</div>
+    </div>`;
+  });
+
+  document.getElementById('results-content').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Timers
+const timers = {1:{sec:660,running:false,interval:null}, 2:{sec:660,running:false,interval:null}};
+
+function startTimer(n) {
+  const t = timers[n];
+  if(t.running) return;
+  t.running = true;
+  document.getElementById('t'+n+'-start').disabled = true;
+  document.getElementById('t'+n+'-start').textContent = '▶ Идёт...';
+  t.interval = setInterval(()=>{
+    t.sec--;
+    const d = document.getElementById('t'+n+'-display');
+    if(t.sec<=0){
+      clearInterval(t.interval);
+      d.textContent='0:00';
+      d.style.color='#F87171';
+      return;
+    }
+    const m=Math.floor(t.sec/60), s=t.sec%60;
+    d.textContent=m+':'+(s<10?'0':'')+s;
+    if(t.sec<=60) d.style.color='#FBBF24';
+    if(t.sec<=30) d.style.color='#F87171';
+  },1000);
+}
+
+function resetTimer(n) {
+  const t = timers[n];
+  clearInterval(t.interval);
+  t.running=false; t.sec=660;
+  const d = document.getElementById('t'+n+'-display');
+  d.textContent='11:00';
+  d.style.color='#6EE7B7';
+  const btn = document.getElementById('t'+n+'-start');
+  btn.disabled=false;
+  btn.textContent='▶ Старт';
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  else{const ids=['instr','p1','p2','results'];document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

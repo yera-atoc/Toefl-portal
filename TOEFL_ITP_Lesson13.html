@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 13: Test Strategy & Time Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;
+--navy:#0C2340;--navy-mid:#1E3A5F;--navy-bg:#EFF6FF;--navy-brd:#BFDBFE;
+--gold:#78350F;--gold-mid:#B45309;--gold-bg:#FFFBEB;--gold-brd:#FDE68A;
+--teal:#065F46;--teal-mid:#059669;--teal-bg:#ECFDF5;--teal-brd:#6EE7B7;
+--red:#991B1B;--red-mid:#DC2626;--red-bg:#FEF2F2;--red-brd:#FECACA;
+--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;
+--purple:#4C1D95;--purple-mid:#7C3AED;--purple-bg:#F5F3FF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+
+.hero{background:linear-gradient(135deg,#0C2340 0%,#1E3A5F 60%,#1e40af 100%);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 20% 60%,rgba(30,58,95,.4),transparent 50%),radial-gradient(circle at 80% 20%,rgba(180,83,9,.15),transparent 45%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:36px 24px 28px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#BAE6FD;letter-spacing:.05em;margin-bottom:14px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#FCD34D;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:8px}
+.hsub{font-size:15px;color:#BAE6FD;line-height:1.5;margin-bottom:20px}
+.hpills{display:flex;gap:8px;flex-wrap:wrap}
+.hpill{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.08);color:#E0F2FE;border:1px solid rgba(255,255,255,.12)}
+.pt{height:3px;background:rgba(255,255,255,.12);margin-top:20px;border-radius:2px}
+.pf{height:3px;background:#FCD34D;border-radius:2px;width:0%;transition:width .4s}
+
+.tabs-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.tabs{max-width:720px;margin:0 auto;display:flex;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:all .15s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab.active{color:var(--navy-mid);border-bottom-color:var(--navy-mid)}
+
+.content{max-width:720px;margin:0 auto;padding:24px 20px}
+.section{display:none}.section.active{display:block}
+.sec-title{font-family:'Lora',serif;font-size:22px;color:var(--text);margin-bottom:8px}
+.sec-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.tlbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px;margin-top:28px;display:flex;align-items:center;gap:8px}
+.tlbl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Section overview cards */
+.sect-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.sc-head{padding:14px 18px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border)}
+.sc-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;font-family:'Lora',serif}
+.s1{background:var(--navy-mid)}.s2{background:var(--gold-mid)}.s3{background:var(--teal-mid)}
+.sc-title{font-size:16px;font-weight:600;color:var(--text)}
+.sc-meta{font-size:13px;color:var(--muted);margin-top:2px}
+.sc-body{padding:16px}
+.sc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.sc-row:last-child{border-bottom:none}
+.sc-val{font-weight:600;color:var(--text)}
+.sc-note{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Timeline */
+.timeline{margin:16px 0}
+.tl-item{display:flex;gap:14px;margin-bottom:0}
+.tl-left{display:flex;flex-direction:column;align-items:center;width:40px;flex-shrink:0}
+.tl-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.tl-line{width:2px;flex:1;background:var(--border);margin:4px auto 0}
+.tl-item:last-child .tl-line{display:none}
+.tl-content{padding-bottom:20px;flex:1}
+.tl-time{font-size:12px;font-weight:700;color:var(--navy-mid);margin-bottom:4px}
+.tl-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Strategy cards */
+.strat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
+.strat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:2px}
+.si-navy{background:var(--navy-bg);border:1px solid var(--navy-brd)}
+.si-gold{background:var(--gold-bg);border:1px solid var(--gold-brd)}
+.si-teal{background:var(--teal-bg);border:1px solid var(--teal-brd)}
+.si-red{background:var(--red-bg);border:1px solid var(--red-brd)}
+.strat-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.strat-body{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* Traps */
+.trap-card{background:var(--white);border:1px solid var(--red-brd);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;border-left:4px solid var(--red-mid)}
+.trap-title{font-size:14px;font-weight:600;color:var(--red-mid);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.trap-body{font-size:13px;color:var(--muted);line-height:1.6}
+.fix-card{background:var(--teal-bg);border:1px solid var(--teal-brd);border-radius:var(--rsm);padding:8px 12px;font-size:12px;color:var(--teal);margin-top:6px}
+
+/* Quiz */
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.qh{padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:12px;font-weight:600;color:var(--muted)}
+.qt{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--navy-bg);color:var(--navy-mid)}
+.qbody{padding:16px}
+.q-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .15s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:18px}
+.opt:hover:not([disabled]){border-color:var(--navy-mid);background:var(--navy-bg)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--red-bg);border-color:var(--red-brd);color:var(--red)}
+.opt.ng .L{color:var(--red)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:10px;padding:11px 14px;background:var(--gold-bg);border-radius:var(--rsm);font-size:13px;line-height:1.7;color:var(--gold);border-left:3px solid var(--gold-mid);display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;font-size:13px;margin-bottom:4px}
+.erule{background:#FEF3C7;border-radius:4px;padding:4px 8px;font-size:12px;margin-top:5px;font-weight:500;color:var(--gold)}
+
+.score-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-top:8px;display:none}
+.score-card.show{display:block}
+.score-big{font-family:'Lora',serif;font-size:52px;color:var(--navy-mid);line-height:1}
+.score-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+.score-bw{margin:14px 0;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-b{height:8px;background:var(--navy-mid);border-radius:4px;transition:width 1s ease;width:0%}
+.score-msg{font-size:14px;color:var(--text);font-weight:500;margin-top:8px}
+
+.btn-p{display:block;width:100%;background:#0C2340;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:500;cursor:pointer;margin-top:20px;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn-p:hover{opacity:.88}
+.tip-box{border-left:3px solid var(--gold-mid);background:var(--gold-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--gold);line-height:1.6;margin-top:12px}
+.warn-box{border-left:3px solid var(--red-mid);background:var(--red-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--red);line-height:1.6;margin-top:10px}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.next-box{padding:16px;background:var(--navy-bg);border:1px solid var(--navy-brd);border-radius:var(--r);font-size:14px;color:var(--navy-mid);line-height:1.6;text-align:center;margin-top:10px}
+
+/* Score prediction */
+.predict-box{background:#0C2340;border-radius:var(--r);padding:24px;margin-bottom:16px;color:#fff}
+.pb-title{font-size:16px;font-weight:600;color:#FCD34D;margin-bottom:16px}
+.pb-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.pb-sect{font-size:13px;color:#BAE6FD;min-width:120px}
+.pb-bar-w{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:5px;overflow:hidden}
+.pb-bar{height:10px;border-radius:5px;transition:width 1.2s ease;width:0%}
+.pb-score{font-size:13px;font-weight:700;color:#fff;min-width:80px;text-align:right}
+
+@media(max-width:480px){.htitle{font-size:24px}.tab{padding:12px 10px;font-size:12px}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 13 из 14 · Стратегия</div>
+    <div class="htitle">Test Strategy &<br>Time Management</div>
+    <div class="hsub">Полная стратегия на весь тест · Тайминг по секциям<br>Ловушки и как их избежать · Психология экзамена</div>
+    <div class="hpills">
+      <span class="hpill">⏱️ Тайминг</span>
+      <span class="hpill">🎯 Стратегии</span>
+      <span class="hpill">⚠️ Ловушки</span>
+      <span class="hpill">🧠 Психология</span>
+      <span class="hpill">📊 Прогноз балла</span>
+    </div>
+    <div class="pt"><div class="pf" id="progress"></div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('overview',this)">📋 Обзор теста</button>
+    <button class="tab" onclick="showTab('timing',this)">⏱️ Тайминг</button>
+    <button class="tab" onclick="showTab('traps',this)">⚠️ Ловушки</button>
+    <button class="tab" onclick="showTab('psychology',this)">🧠 Психология</button>
+    <button class="tab" onclick="showTab('quiz',this)">✅ Проверь себя</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+<div class="section active" id="tab-overview">
+  <div class="sec-title">Структура TOEFL ITP</div>
+  <div class="sec-intro">Прежде чем разрабатывать стратегию — нужно точно знать что тебя ждёт. Вот полная картина теста.</div>
+
+  <div class="sect-card">
+    <div class="sc-head" style="background:#EFF6FF">
+      <div class="sc-badge s1">I</div>
+      <div>
+        <div class="sc-title">Section I — Listening Comprehension</div>
+        <div class="sc-meta">50 вопросов · 30–40 минут · Аудио</div>
+      </div>
+    </div>
+    <div class="sc-body">
+      <div class="sc-row"><span>Part A — Short Conversations</span><span class="sc-val">30 вопросов</span></div>
+      <div class="sc-row"><span>Part B — Longer Conversations</span><span class="sc-val">8 вопросов</span></div>
+      <div class="sc-row"><span>Part C — Talks / Lectures</span><span class="sc-val">12 вопросов</span></div>
+      <div class="sc-row"><span>Вес в итоговом балле</span><span class="sc-val">~33%</span></div>
+      <div class="sc-note" style="padding-top:8px">⚠️ Нельзя перематывать и переслушивать. Каждый вопрос — только один раз.</div>
+    </div>
+  </div>
+
+  <div class="sect-card">
+    <div class="sc-head" style="background:var(--gold-bg)">
+      <div class="sc-badge s2">II</div>
+      <div>
+        <div class="sc-title">Section II — Structure & Written Expression</div>
+        <div class="sc-meta">40 вопросов · 25 минут</div>
+      </div>
+    </div>
+    <div class="sc-body">
+      <div class="sc-row"><span>Part 1 — Structure (пропуск)</span><span class="sc-val">15 вопросов</span></div>
+      <div class="sc-row"><span>Part 2 — Written Expression (ошибка)</span><span class="sc-val">25 вопросов</span></div>
+      <div class="sc-row"><span>Рекомендуемое время на вопрос</span><span class="sc-val">~37 сек</span></div>
+      <div class="sc-row"><span>Вес в итоговом балле</span><span class="sc-val">~33%</span></div>
+    </div>
+  </div>
+
+  <div class="sect-card">
+    <div class="sc-head" style="background:var(--teal-bg)">
+      <div class="sc-badge s3">III</div>
+      <div>
+        <div class="sc-title">Section III — Reading Comprehension</div>
+        <div class="sc-meta">50 вопросов · 55 минут</div>
+      </div>
+    </div>
+    <div class="sc-body">
+      <div class="sc-row"><span>Количество текстов</span><span class="sc-val">5 текстов</span></div>
+      <div class="sc-row"><span>Вопросов на текст</span><span class="sc-val">10 вопросов</span></div>
+      <div class="sc-row"><span>Рекомендуемое время на текст</span><span class="sc-val">11 минут</span></div>
+      <div class="sc-row"><span>Вес в итоговом балле</span><span class="sc-val">~33%</span></div>
+    </div>
+  </div>
+
+  <div class="tlbl">Как считается балл TOEFL ITP</div>
+  <div class="predict-box" id="score-predictor">
+    <div class="pb-title">📊 Шкала баллов</div>
+    <div class="pb-row">
+      <div class="pb-sect">Section I (Listening)</div>
+      <div class="pb-bar-w"><div class="pb-bar" data-w="68" style="background:#60A5FA"></div></div>
+      <div class="pb-score">31–68 баллов</div>
+    </div>
+    <div class="pb-row">
+      <div class="pb-sect">Section II (Grammar)</div>
+      <div class="pb-bar-w"><div class="pb-bar" data-w="68" style="background:#FCD34D"></div></div>
+      <div class="pb-score">31–68 баллов</div>
+    </div>
+    <div class="pb-row">
+      <div class="pb-sect">Section III (Reading)</div>
+      <div class="pb-bar-w"><div class="pb-bar" data-w="67" style="background:#6EE7B7"></div></div>
+      <div class="pb-score">31–67 баллов</div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:12px;margin-top:4px;font-size:13px;color:#BAE6FD;line-height:1.8">
+      <strong style="color:#FCD34D">Итоговый балл</strong> = сумма трёх секций × коэффициент ≈ <strong style="color:#fff">310–677 баллов</strong><br>
+      Цель ученицы: <strong style="color:#6EE7B7">500 баллов</strong> ≈ ~57% правильных ответов по каждой секции
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('timing',document.querySelectorAll('.tab')[1])">Дальше: Тайминг →</button>
+</div>
+
+<!-- TIMING -->
+<div class="section" id="tab-timing">
+  <div class="sec-title">Управление временем</div>
+  <div class="sec-intro">Время — главный враг на TOEFL ITP. Большинство студентов знают материал, но не успевают. Вот точный план по каждой секции.</div>
+
+  <div class="tlbl">Section I — Listening (30–40 мин)</div>
+  <div class="strat-card">
+    <div class="strat-icon si-navy">🎧</div>
+    <div>
+      <div class="strat-title">Listening — нет контроля над временем</div>
+      <div class="strat-body">Аудио идёт автоматически — ты не можешь ускорить или замедлить. Твоя задача: <strong>максимальная концентрация с первой секунды</strong>. Не отвлекайся, не перечитывай варианты пока говорит аудио — слушай.<br><br>Пока читают следующий вопрос — быстро отвечай на предыдущий. Не трать на это больше 5 секунд.</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Section II — Grammar (25 мин = 40 вопросов)</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--gold-mid)"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">0–9 мин · Вопросы 1–15 (Part 1)</div>
+        <div class="tl-title">Structure — 36 секунд на вопрос</div>
+        <div class="tl-desc">Прочитай пропуск → посмотри что перед и после → выбери. Если не уверен за 20 секунд — отмечай лучшую догадку и двигайся. Не зависай.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--gold-mid)"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">9–25 мин · Вопросы 16–40 (Part 2)</div>
+        <div class="tl-title">Written Expression — 38 секунд на вопрос</div>
+        <div class="tl-desc">Прочитай предложение → найди ошибку → выбери букву. Проверяй в порядке: глагол → форма слова → параллелизм → предлог/артикль. Если не видишь — угадывай и двигайся.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--gold-mid)"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">Последние 2 мин · если есть время</div>
+        <div class="tl-title">Быстрая проверка</div>
+        <div class="tl-desc">Только пропущенные или неуверенные ответы. Не меняй уверенные ответы — первая реакция обычно правильная.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tlbl">Section III — Reading (55 мин = 50 вопросов)</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--teal-mid)"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">0:00–0:30 · Вопросы</div>
+        <div class="tl-title">Просмотри все 10 вопросов к тексту</div>
+        <div class="tl-desc">Запомни ключевые слова из Detail-вопросов — именно их будешь искать при чтении текста. Это сэкономит 1–2 минуты на текст.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--teal-mid)"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">0:30–2:30 · Текст</div>
+        <div class="tl-title">Читай первые предложения абзацев + scan ключевых деталей</div>
+        <div class="tl-desc">Не читай весь текст слово за словом. Первое предложение каждого абзаца = тема абзаца. Попутно scan по ключевым словам из вопросов.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--teal-mid)"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-time">2:30–11:00 · Ответы</div>
+        <div class="tl-title">Отвечай на 10 вопросов (~45 сек каждый)</div>
+        <div class="tl-desc">Main Idea — первые 10 сек. Detail — scan + 30 сек. Inference — 45 сек. NOT/EXCEPT — проверь каждый вариант. Если застрял 50+ сек — угадывай и двигайся.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">💡 <strong>Правило 50 секунд:</strong> если на любом вопросе прошло 50 секунд и ты не уверен — отмечай лучшую из оставшихся догадок и двигайся. Один трудный вопрос не стоит потери времени на три лёгких.</div>
+
+  <button class="btn-p" onclick="showTab('traps',document.querySelectorAll('.tab')[2])">Дальше: Ловушки →</button>
+</div>
+
+<!-- TRAPS -->
+<div class="section" id="tab-traps">
+  <div class="sec-title">Типичные ловушки TOEFL ITP</div>
+  <div class="sec-intro">ETS (составители TOEFL) систематически используют одни и те же ловушки. Зная их — ты уже защищён от самых частых ошибок.</div>
+
+  <div class="tlbl">Section I — Listening</div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 1: Похожее звучание</div>
+    <div class="trap-body">В диалоге звучит «He said he <em>can't</em> make it» — ты слышишь «<em>can</em> make it». Особенно опасно в конце фразы при быстром темпе. <br>В ответах ETS предлагает вариант с «can» как ловушку.</div>
+    <div class="fix-card">✅ Решение: всегда слушай до конца фразы. «Can't» и «can» звучат похоже — обращай внимание на интонацию (падение = can't).</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 2: Идиомы буквально</div>
+    <div class="trap-body">«She's under the weather» — не значит что она под дождём. «Break a leg» — не сломать ногу. ETS проверяет знание идиом, предлагая буквальный перевод как ловушку.</div>
+    <div class="fix-card">✅ Решение: учи частые идиомы TOEFL. Если не знаешь — ищи вариант с общим смыслом ситуации, не буквальный.</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 3: Двойное отрицание</div>
+    <div class="trap-body">«It's not unlike what we discussed» = «It IS like what we discussed». Двойное отрицание = утверждение. ETS часто проверяет это.</div>
+    <div class="fix-card">✅ Решение: слыша «not» + отрицательное слово — сразу переводи в позитив. not + unlike = similar.</div>
+  </div>
+
+  <div class="tlbl">Section II — Grammar</div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 4: «of-фраза» скрывает подлежащее</div>
+    <div class="trap-body">«The quality of the products <em>are</em> excellent» — кажется что «products» = мн.ч. → are. Но подлежащее «The quality» (ед.ч.) → «is».</div>
+    <div class="fix-card">✅ Решение: мысленно зачеркни всё от «of» до глагола — останется настоящее подлежащее.</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 5: Похожая форма, другая часть речи</div>
+    <div class="trap-body">«The government took a decision <em>quick</em>» — кажется верным. Но «quick» — прилагательное, а нужно наречие «quickly» (модифицирует глагол «took»).</div>
+    <div class="fix-card">✅ Решение: для каждого подчёркнутого слова определи часть речи которая нужна по позиции в предложении.</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 6: Правильное слово, но неверная форма</div>
+    <div class="trap-body">«He is <em>more faster</em> than his brother» — оба варианта относятся к скорости, но «more faster» — двойная сравнительная степень.</div>
+    <div class="fix-card">✅ Решение: при виде сравнительных конструкций сразу проверяй нет ли «more + -er» или «most + -est» одновременно.</div>
+  </div>
+
+  <div class="tlbl">Section III — Reading</div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 7: Слова из текста — не значит верный ответ</div>
+    <div class="trap-body">ETS намеренно вставляет слова из текста в НЕВЕРНЫЕ варианты. Видишь знакомое слово → кажется верным → выбираешь → неверно. Смысл другой.</div>
+    <div class="fix-card">✅ Решение: проверяй СМЫСЛ, а не слова. Правильный ответ — перефраз, а не копия.</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 8: «Almost true» варианты</div>
+    <div class="trap-body">Вариант верен на 90% — но одно слово меняет смысл: «always» вместо «usually», «all» вместо «most», «impossible» вместо «difficult». TOEFL систематически использует такие варианты.</div>
+    <div class="fix-card">✅ Решение: читай варианты внимательно до последнего слова. Абсолютные слова (always, never, all, none) — почти всегда ловушка.</div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-title">⚠️ Ловушка 9: Пропустить NOT/EXCEPT</div>
+    <div class="trap-body">Читаешь вопрос быстро, не замечаешь «EXCEPT» → ищешь что ЕСТЬ в тексте → находишь → выбираешь → неверно (потому что нужно что НЕТ).</div>
+    <div class="fix-card">✅ Решение: ПРИ ВИДЕ NOT/EXCEPT — сразу обведи это слово карандашом. Физическое действие помогает не забыть.</div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('psychology',document.querySelectorAll('.tab')[3])">Дальше: Психология →</button>
+</div>
+
+<!-- PSYCHOLOGY -->
+<div class="section" id="tab-psychology">
+  <div class="sec-title">Психология экзамена</div>
+  <div class="sec-intro">Знание материала — половина успеха. Вторая половина — правильный настрой в день теста. Вот что работает.</div>
+
+  <div class="tlbl">До теста</div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-navy">📅</div>
+    <div>
+      <div class="strat-title">За 2 дня до теста — только лёгкое повторение</div>
+      <div class="strat-body">Не учи ничего нового за 2 дня до теста. Мозг не усваивает новый материал в стрессе. Только повтори ключевые стратегии (эта таблица) и несколько слов из AWL.</div>
+    </div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-gold">😴</div>
+    <div>
+      <div class="strat-title">Ночь перед тестом — спи 7–8 часов</div>
+      <div class="strat-body">Сон важнее последнего часа зубрёжки. Уставший мозг делает больше ошибок из-за невнимательности. Ложись в обычное время — не ложись раньше обычного (не заснёшь).</div>
+    </div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-teal">🍎</div>
+    <div>
+      <div class="strat-title">Утро теста — нормально поешь</div>
+      <div class="strat-body">Лёгкий завтрак за 1–1,5 часа до теста. Голодный мозг хуже концентрируется. Избегай кофе если не привык — кофеиновая тревожность мешает Listening.</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Во время теста</div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-navy">🎯</div>
+    <div>
+      <div class="strat-title">Один вопрос за раз</div>
+      <div class="strat-body">Не думай о предыдущих вопросах и не беспокойся о следующих. Каждый вопрос — отдельная задача. Сделал ошибку — забудь, двигайся дальше. Застревание в мыслях об ошибках разрушает концентрацию.</div>
+    </div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-gold">🌬️</div>
+    <div>
+      <div class="strat-title">Если паникуешь — дыши</div>
+      <div class="strat-body">Почувствовал тревогу или «белый экран» в голове? 4 секунды вдох → 4 секунды выдох × 3 раза. Это физически снижает стресс-реакцию. Занимает 25 секунд — стоит того.</div>
+    </div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-teal">✏️</div>
+    <div>
+      <div class="strat-title">Угадывай — не оставляй пустым</div>
+      <div class="strat-body">В TOEFL ITP нет штрафа за неверный ответ. Пустой ответ = 0 баллов гарантированно. Угадка = 25% шанс на балл. Всегда выбирай что-то — даже если совсем не знаешь.</div>
+    </div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-icon si-red">🔄</div>
+    <div>
+      <div class="strat-title">Не меняй уверенные ответы</div>
+      <div class="strat-body">Исследования показывают: первая интуиция правильна чаще, чем повторный анализ при стрессе. Меняй ответ только если нашёл конкретную причину для изменения — не просто «кажется».</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Прогноз балла — что нужно для 500</div>
+  <div style="background:#0C2340;border-radius:var(--r);padding:20px;margin-bottom:16px;color:#fff">
+    <div style="font-size:14px;color:#FCD34D;font-weight:600;margin-bottom:14px">Сколько нужно правильных ответов для 500 баллов?</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center">
+      <div style="background:rgba(255,255,255,.08);border-radius:var(--rsm);padding:12px">
+        <div style="font-size:11px;color:#BAE6FD;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Section I</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#60A5FA">~28</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5)">из 50 (~56%)</div>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:var(--rsm);padding:12px">
+        <div style="font-size:11px;color:#FDE68A;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Section II</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#FCD34D">~22</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5)">из 40 (~55%)</div>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:var(--rsm);padding:12px">
+        <div style="font-size:11px;color:#6EE7B7;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Section III</div>
+        <div style="font-family:'Lora',serif;font-size:28px;color:#6EE7B7">~28</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5)">из 50 (~56%)</div>
+      </div>
+    </div>
+    <div style="font-size:13px;color:#A8A29E;margin-top:14px;line-height:1.7">Это <strong style="color:#fff">достижимая цель</strong>. Ты уже прошла 12 уроков подготовки. Урок 14 — полный пробный тест чтобы проверить свой уровень.</div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('quiz',document.querySelectorAll('.tab')[4])">Дальше: Проверь себя →</button>
+</div>
+
+<!-- QUIZ -->
+<div class="section" id="tab-quiz">
+  <div class="sec-title">Проверь себя — стратегия теста</div>
+  <div class="sec-intro">8 вопросов на знание стратегии. Ответ появляется сразу после выбора.</div>
+
+  <div class="qb"><div class="qh"><span class="qn">1 / 8</span><span class="qt">Тайминг</span></div><div class="qbody">
+    <div class="q-text">Сколько времени рекомендуется тратить на один текст в Section III (Reading)?</div>
+    <div class="opts" id="o1">
+      <button class="opt" onclick="pick(1,'A')" id="q1A"><span class="L">A</span>5 минут</button>
+      <button class="opt" onclick="pick(1,'B')" id="q1B"><span class="L">B</span>11 минут</button>
+      <button class="opt" onclick="pick(1,'C')" id="q1C"><span class="L">C</span>15 минут</button>
+      <button class="opt" onclick="pick(1,'D')" id="q1D"><span class="L">D</span>20 минут</button>
+    </div>
+    <div class="exp" id="e1"><div class="eok">✅ B — 11 минут</div>5 текстов × 11 минут = 55 минут — точно в рамках отведённого времени.<div class="erule">📌 Формула: 30 сек вопросы + 2 мин чтение + 8 мин ответы = 11 мин.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">2 / 8</span><span class="qt">Стратегия</span></div><div class="qbody">
+    <div class="q-text">Что нужно сделать ПЕРВЫМ при работе с каждым текстом Reading?</div>
+    <div class="opts" id="o2">
+      <button class="opt" onclick="pick(2,'A')" id="q2A"><span class="L">A</span>Прочитать весь текст от начала до конца</button>
+      <button class="opt" onclick="pick(2,'B')" id="q2B"><span class="L">B</span>Посмотреть на заголовок текста</button>
+      <button class="opt" onclick="pick(2,'C')" id="q2C"><span class="L">C</span>Просмотреть все вопросы к тексту</button>
+      <button class="opt" onclick="pick(2,'D')" id="q2D"><span class="L">D</span>Начать отвечать на вопросы сразу</button>
+    </div>
+    <div class="exp" id="e2"><div class="eok">✅ C — просмотреть все вопросы</div>Знай что искать ДО чтения текста. Это позволяет при чтении сразу замечать нужные детали и экономит время на поиск потом.<div class="erule">📌 Вопросы сначала → текст → ответы.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">3 / 8</span><span class="qt">Ловушка</span></div><div class="qbody">
+    <div class="q-text">Ты видишь в варианте ответа слова из текста. Это значит что вариант...</div>
+    <div class="opts" id="o3">
+      <button class="opt" onclick="pick(3,'A')" id="q3A"><span class="L">A</span>Скорее всего правильный</button>
+      <button class="opt" onclick="pick(3,'B')" id="q3B"><span class="L">B</span>Может быть ловушкой — нужно проверить смысл</button>
+      <button class="opt" onclick="pick(3,'C')" id="q3C"><span class="L">C</span>Точно неправильный</button>
+      <button class="opt" onclick="pick(3,'D')" id="q3D"><span class="L">D</span>Подходит только для Detail-вопросов</button>
+    </div>
+    <div class="exp" id="e3"><div class="eok">✅ B — может быть ловушкой</div>ETS намеренно вставляет слова из текста в неверные варианты. Слова те же — смысл другой. Всегда проверяй смысл, не только слова.<div class="erule">📌 Правильный ответ — обычно перефраз (другие слова, тот же смысл), а не копия.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">4 / 8</span><span class="qt">Угадывание</span></div><div class="qbody">
+    <div class="q-text">Что лучше сделать если совсем не знаешь ответ на вопрос TOEFL ITP?</div>
+    <div class="opts" id="o4">
+      <button class="opt" onclick="pick(4,'A')" id="q4A"><span class="L">A</span>Оставить пустым</button>
+      <button class="opt" onclick="pick(4,'B')" id="q4B"><span class="L">B</span>Потратить сколько угодно времени пока не найдёшь ответ</button>
+      <button class="opt" onclick="pick(4,'C')" id="q4C"><span class="L">C</span>Выбрать любой вариант и двигаться дальше</button>
+      <button class="opt" onclick="pick(4,'D')" id="q4D"><span class="L">D</span>Перепрыгнуть и вернуться в конце</button>
+    </div>
+    <div class="exp" id="e4"><div class="eok">✅ C — выбрать любой вариант и двигаться</div>В TOEFL ITP нет штрафа за неверный ответ. Пустой = 0 баллов. Угадка = 25% шанс. Всегда выбирай что-то.<div class="erule">📌 No penalty for wrong answers → всегда выбирай вариант.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">5 / 8</span><span class="qt">Grammar</span></div><div class="qbody">
+    <div class="q-text">В Section II ты видишь вопрос и не можешь найти ответ за 20 секунд. Что делать?</div>
+    <div class="opts" id="o5">
+      <button class="opt" onclick="pick(5,'A')" id="q5A"><span class="L">A</span>Продолжать думать пока не придёт ответ</button>
+      <button class="opt" onclick="pick(5,'B')" id="q5B"><span class="L">B</span>Исключить явно неверные варианты и выбрать лучшую догадку</button>
+      <button class="opt" onclick="pick(5,'C')" id="q5C"><span class="L">C</span>Оставить пустым и перейти дальше</button>
+      <button class="opt" onclick="pick(5,'D')" id="q5D"><span class="L">D</span>Всегда выбирать вариант B</span></button>
+    </div>
+    <div class="exp" id="e5"><div class="eok">✅ B — исключи неверные и выбери лучшую догадку</div>Elimination strategy: убери 1–2 явно неверных варианта → выбери из оставшихся. Это повышает шанс с 25% до 33–50%.<div class="erule">📌 Правило 50 секунд: застрял дольше → лучшая догадка → следующий вопрос.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">6 / 8</span><span class="qt">Ловушка</span></div><div class="qbody">
+    <div class="q-text">Ты видишь вопрос: «All of the following are true EXCEPT...» Что нужно сделать первым?</div>
+    <div class="opts" id="o6">
+      <button class="opt" onclick="pick(6,'A')" id="q6A"><span class="L">A</span>Найти вариант который звучит наиболее правдоподобно</span></button>
+      <button class="opt" onclick="pick(6,'B')" id="q6B"><span class="L">B</span>Обвести слово EXCEPT карандашом чтобы не забыть</button>
+      <button class="opt" onclick="pick(6,'C')" id="q6C"><span class="L">C</span>Выбрать вариант который упоминается в первом предложении текста</button>
+      <button class="opt" onclick="pick(6,'D')" id="q6D"><span class="L">D</span>Пропустить вопрос — он слишком сложный</button>
+    </div>
+    <div class="exp" id="e6"><div class="eok">✅ B — обвести EXCEPT</div>Физическое действие (обвести слово) помогает не забыть изменённую логику. Потом проверяй каждый вариант по тексту: три должны БЫТЬ в тексте, один — нет.<div class="erule">📌 EXCEPT → обведи → проверь каждый вариант → тот которого нет = ответ.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">7 / 8</span><span class="qt">Психология</span></div><div class="qbody">
+    <div class="q-text">Ты сделал несколько ошибок подряд и чувствуешь панику. Лучшее действие — это...</div>
+    <div class="opts" id="o7">
+      <button class="opt" onclick="pick(7,'A')" id="q7A"><span class="L">A</span>Вернуться и исправить все предыдущие ответы</button>
+      <button class="opt" onclick="pick(7,'B')" id="q7B"><span class="L">B</span>Сделать 3 глубоких вдоха, сфокусироваться на следующем вопросе</button>
+      <button class="opt" onclick="pick(7,'C')" id="q7C"><span class="L">C</span>Пропустить оставшиеся вопросы чтобы сберечь время</button>
+      <button class="opt" onclick="pick(7,'D')" id="q7D"><span class="L">D</span>Думать о допущенных ошибках чтобы не повторить их</button>
+    </div>
+    <div class="exp" id="e7"><div class="eok">✅ B — 3 глубоких вдоха, фокус на следующем вопросе</div>Паника блокирует рабочую память. 4 сек вдох + 4 сек выдох × 3 физически снижает стресс-реакцию за ~25 секунд. Думать об ошибках — худшее что можно сделать.<div class="erule">📌 Один вопрос за раз. Прошлые ошибки не изменить — следующий вопрос можно сделать правильно.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">8 / 8</span><span class="qt">Стратегия</span></div><div class="qbody">
+    <div class="q-text">Когда лучше всего изменить уже выбранный ответ?</div>
+    <div class="opts" id="o8">
+      <button class="opt" onclick="pick(8,'A')" id="q8A"><span class="L">A</span>Когда появляется малейшее сомнение</button>
+      <button class="opt" onclick="pick(8,'B')" id="q8B"><span class="L">B</span>Всегда — второй ответ обычно правильнее первого</button>
+      <button class="opt" onclick="pick(8,'C')" id="q8C"><span class="L">C</span>Только если нашёл конкретную причину (новое понимание)</button>
+      <button class="opt" onclick="pick(8,'D')" id="q8D"><span class="L">D</span>Никогда — первый ответ всегда правильный</button>
+    </div>
+    <div class="exp" id="e8"><div class="eok">✅ C — только если нашёл конкретную причину</div>Исследования показывают: при стрессе повторный анализ часто ухудшает результат. Первая интуиция точнее если у тебя достаточно знаний. Меняй только если нашёл реальную ошибку, не просто «кажется».<div class="erule">📌 Сомнение ≠ причина. Конкретное «здесь нарушен параллелизм» = причина.</div></div>
+  </div></div>
+
+  <div class="score-card" id="score-card">
+    <div class="score-big" id="score-display">—</div>
+    <div class="score-lbl">из 8 вопросов · Стратегия · Урок 13</div>
+    <div class="score-bw"><div class="score-b" id="score-bar"></div></div>
+    <div class="score-msg" id="score-msg"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:16px">
+    <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:.04em">ПРОГРЕСС · ВЕСЬ КУРС</div>
+    <div style="font-size:14px;color:var(--muted);line-height:2">
+      ✅ Уроки 1–2 — Listening (Section I)<br>
+      ✅ Уроки 3–8 — Grammar (Section II)<br>
+      ✅ Уроки 9–12 — Reading (Section III)<br>
+      ✅ Урок 13 — Test Strategy &amp; Psychology<br>
+      ⬜ Урок 14 — Full Mock Test (140 вопросов)
+    </div>
+  </div>
+
+  <button class="btn-p">✅ Урок 13 завершён!</button>
+  <div class="next-box">
+    Следующий: <strong>Урок 14 — Full Mock Test · 140 вопросов · Полная симуляция TOEFL ITP</strong><br>
+    <span style="font-size:13px;opacity:.8">Попроси своего преподавателя отправить финальный урок</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+const ANS={1:'B',2:'C',3:'B',4:'C',5:'B',6:'B',7:'B',8:'C'};
+const picked={};
+let score=0;
+
+function pick(q,letter){
+  if(picked[q]) return;
+  picked[q]=letter;
+  document.querySelectorAll('#o'+q+' .opt').forEach(b=>{b.disabled=true;});
+  const btn=document.getElementById('q'+q+letter);
+  const correct=ANS[q];
+  const cb=document.getElementById('q'+q+correct);
+  if(letter===correct){if(btn)btn.classList.add('ok');score++;}
+  else{if(btn)btn.classList.add('ng');if(cb)cb.classList.add('ok');}
+  document.getElementById('e'+q).classList.add('show');
+  const done=Object.keys(picked).length;
+  document.getElementById('progress').style.width=(done/8*100)+'%';
+  if(done===8){
+    const card=document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson13', 'Урок 13: Test Strategy & Time Management', score, 8, Math.round(score/8*100));
+    document.getElementById('score-display').textContent=score+'/8';
+    setTimeout(()=>document.getElementById('score-bar').style.width=(score/8*100)+'%',300);
+    const msgs=['Перечитай стратегии ещё раз.','Повтори ключевые пункты.','Хорошо! Ещё немного.','Хорошо!','Отлично!','Отлично!','Превосходно!','Превосходно!'];
+    document.getElementById('score-msg').textContent=msgs[score];
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  else{const ids=['overview','timing','traps','psychology','quiz'];document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Animate bars on load
+setTimeout(()=>document.querySelectorAll('.pb-bar').forEach(b=>b.style.width=b.dataset.w+'%'),500);
+</script>
+</body>
+</html>

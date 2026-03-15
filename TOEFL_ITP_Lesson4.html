@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 4: Parallel Structure, Comparatives & Connectors</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0F6E56;
+    --teal-mid: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-pale: #f0faf6;
+    --amber: #BA7517;
+    --amber-mid: #EF9F27;
+    --amber-light: #FAEEDA;
+    --amber-pale: #fffdf5;
+    --coral: #993C1D;
+    --coral-mid: #D85A30;
+    --coral-light: #FAECE7;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --green-dark: #085041;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+
+  .hero { background: linear-gradient(135deg, #0a3d2e 0%, #0F6E56 100%); padding: 0; position: relative; overflow: hidden; }
+  .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 10% 60%, rgba(29,158,117,0.25) 0%, transparent 45%), radial-gradient(circle at 90% 10%, rgba(239,159,39,0.12) 0%, transparent 40%); }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 36px 24px 28px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #9FE1CB; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #5DCAA5; display: inline-block; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: #9FE1CB; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.1); color: #E1F5EE; border: 1px solid rgba(255,255,255,0.15); }
+  .progress-track { height: 3px; background: rgba(255,255,255,0.15); }
+  .progress-fill { height: 3px; background: #5DCAA5; transition: width 0.5s; }
+
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs { max-width: 720px; margin: 0 auto; display: flex; overflow-x: auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 14px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-left: none; border-right: none; border-top: none; }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: var(--teal); border-bottom-color: var(--teal-mid); }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .section-intro { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .gram-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .gc-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .gc-icon { width: 32px; height: 32px; border-radius: 8px; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .ic-teal { background: var(--teal); }
+  .ic-amber { background: var(--amber); }
+  .ic-coral { background: var(--coral-mid); }
+  .ic-blue { background: var(--blue); }
+  .gc-h-teal { background: var(--teal-pale); }
+  .gc-h-amber { background: var(--amber-pale); }
+  .gc-h-coral { background: var(--coral-light); }
+  .gc-h-blue { background: var(--blue-light); }
+  .gc-title-teal { color: var(--teal); font-size: 14px; font-weight: 600; }
+  .gc-title-amber { color: var(--amber); font-size: 14px; font-weight: 600; }
+  .gc-title-coral { color: var(--coral); font-size: 14px; font-weight: 600; }
+  .gc-title-blue { color: var(--blue); font-size: 14px; font-weight: 600; }
+  .gc-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+  .gc-body { padding: 16px; }
+
+  .ru-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+  .formula-box { background: #0a3d2e; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; font-family: 'DM Serif Display', serif; font-size: 15px; color: #9FE1CB; text-align: center; letter-spacing: 0.02em; line-height: 1.6; }
+  .formula-note { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(159,225,203,0.7); margin-top: 6px; font-style: italic; }
+
+  .ex-wrong { background: var(--red-light); border: 1px solid #F7C1C1; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #501313; line-height: 1.6; margin-bottom: 8px; }
+  .ex-correct { background: var(--green-light); border: 1px solid #9FE1CB; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #04342C; line-height: 1.6; margin-bottom: 8px; }
+  .ex-neutral { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 8px; }
+  .ex-label { font-weight: 700; margin-right: 6px; }
+
+  .hl-t { color: var(--teal); font-weight: 600; }
+  .hl-a { color: var(--amber); font-weight: 600; }
+  .hl-c { color: var(--coral-mid); font-weight: 600; }
+  .hl-b { color: var(--blue); font-weight: 600; }
+  .hl-r { color: var(--red); font-weight: 600; }
+  .hl-g { color: var(--green-dark); font-weight: 600; }
+
+  .tip-box { border-left: 3px solid var(--amber-mid); background: var(--amber-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #5a3a00; line-height: 1.6; margin-top: 12px; }
+  .warn-box { border-left: 3px solid var(--red); background: var(--red-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #A32D2D; line-height: 1.6; margin-top: 10px; }
+  .note-box { border-left: 3px solid var(--teal-mid); background: var(--teal-pale); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--teal); line-height: 1.6; margin-top: 10px; }
+
+  /* Parallel structure visual */
+  .parallel-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 12px 0; align-items: center; }
+  .pg-connector { font-size: 13px; font-weight: 700; color: var(--teal); text-align: right; }
+  .pg-item-box { background: var(--teal-pale); border: 1px solid #9FE1CB; border-radius: var(--radius-sm); padding: 7px 12px; font-size: 13px; font-style: italic; color: var(--text); }
+  .pg-item-box.wrong-item { background: var(--red-light); border-color: #F7C1C1; }
+  .pg-item-box.right-item { background: var(--green-light); border-color: #9FE1CB; }
+
+  /* Connector table */
+  .conn-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+  .conn-table th { background: #0a3d2e; color: #9FE1CB; font-weight: 600; padding: 9px 12px; text-align: left; }
+  .conn-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; background: var(--white); }
+  .conn-table tr:nth-child(even) td { background: #fafaf8; }
+  .conn-word { font-weight: 600; color: var(--text); }
+
+  /* Comparison table */
+  .comp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .comp-cell { background: var(--bg); border-radius: var(--radius-sm); padding: 10px 12px; border: 1px solid var(--border); }
+  .comp-label { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 5px; }
+  .comp-en { font-size: 13px; font-style: italic; line-height: 1.5; color: var(--text); }
+  .comp-ru { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+  /* Practice */
+  .pq-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .pq-header { padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+  .tp-par { background: var(--teal-light); color: var(--teal); }
+  .tp-com { background: var(--amber-light); color: var(--amber); }
+  .tp-con { background: var(--blue-light); color: var(--blue); }
+  .tp-mix { background: var(--coral-light); color: var(--coral); }
+
+  .pq-body { padding: 16px; }
+  .pq-instr { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+  .pq-sentence { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 14px; font-style: italic; padding: 12px 14px; background: #f9f9f7; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .pq-question { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .pq-options { display: flex; flex-direction: column; gap: 8px; }
+  .pq-opt { display: flex; align-items: flex-start; gap: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 14px; font-size: 14px; cursor: pointer; background: var(--white); text-align: left; width: 100%; transition: all 0.15s; color: var(--text); font-family: 'DM Sans', sans-serif; }
+  .pq-opt:hover:not(:disabled) { border-color: var(--teal-mid); background: var(--teal-pale); }
+  .pq-opt .ol { font-weight: 600; color: var(--text-muted); flex-shrink: 0; min-width: 18px; }
+  .pq-opt.correct { background: var(--green-light); border-color: var(--green-mid); color: #04342C; }
+  .pq-opt.correct .ol { color: var(--green-dark); }
+  .pq-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .pq-opt.wrong .ol { color: var(--red); }
+  .pq-opt:disabled { cursor: default; }
+
+  .pq-explain { margin-top: 14px; padding: 14px 16px; background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.7; color: var(--text-muted); display: none; border-left: 3px solid var(--teal-mid); }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--green-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+  .explain-rule { background: var(--teal-light); color: var(--teal); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 12px; margin-top: 8px; font-weight: 500; }
+
+  .score-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; margin-top: 8px; display: none; }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--teal); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--teal-mid); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  .tip-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-num { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .btn-primary { display: block; width: 100%; background: var(--teal); color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 20px; text-align: center; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary { display: block; width: 100%; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 10px; text-align: center; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
+  .btn-secondary:hover { background: var(--bg); }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 24px; }
+    .comp-row { grid-template-columns: 1fr; }
+    .tab { padding: 12px 14px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP · Урок 4 из 14 · Section II</div>
+    <div class="hero-title">Parallel Structure,<br>Comparatives & Connectors</div>
+    <div class="hero-sub">Section II · Part 1 — продолжение<br>Три важнейшие структуры: параллелизм, сравнения, союзы</div>
+    <div class="hero-pills">
+      <span class="hero-pill">📖 3 темы</span>
+      <span class="hero-pill">⚠️ Ловушки</span>
+      <span class="hero-pill">✏️ 8 вопросов</span>
+      <span class="hero-pill">💡 Стратегия</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('theory',this)">📖 Параллелизм</button>
+    <button class="tab" onclick="showTab('compare',this)">📊 Сравнения</button>
+    <button class="tab" onclick="showTab('connect',this)">🔗 Союзы</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== PARALLEL STRUCTURE ===== -->
+  <div class="section active" id="tab-theory">
+    <div class="section-title">Параллельная структура</div>
+    <div class="section-intro">
+      <strong>Parallel structure (параллелизм)</strong> — одно из самых частых правил в Section II. Смысл простой: если в предложении перечисляются несколько элементов, они должны быть <strong>одной грамматической формы</strong>. Это проверяется и в Part 1, и особенно в Part 2.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-teal">
+        <div class="gc-icon ic-teal">∥</div>
+        <div><div class="gc-title-teal">Основное правило параллелизма</div><div class="gc-sub">Одинаковые конструкции в списке</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Если в предложении есть <strong>and / or / but</strong> — все элементы по обе стороны должны быть одной формы: noun + noun, verb + verb, adjective + adjective, -ing + -ing и т.д.
+        </div>
+        <div class="formula-box">
+          X and/or/but Y → X и Y должны быть одной формы
+          <div class="formula-note">noun + noun · verb + verb · adj + adj · -ing + -ing · to do + to do</div>
+        </div>
+
+        <div class="ru-text" style="margin-top:12px">Посмотри как работает параллелизм визуально:</div>
+
+        <div style="margin-bottom:14px">
+          <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">❌ Неверно — разные формы:</div>
+          <div class="parallel-grid">
+            <div class="pg-connector">She likes</div><div class="pg-item-box wrong-item"><span class="hl-r">reading</span> books</div>
+            <div class="pg-connector">and</div><div class="pg-item-box wrong-item"><span class="hl-r">to swim</span> in the lake</div>
+            <div class="pg-connector">and</div><div class="pg-item-box wrong-item"><span class="hl-r">she hikes</span> on weekends.</div>
+          </div>
+        </div>
+        <div style="margin-bottom:14px">
+          <div style="font-size:12px;color:var(--green-dark);margin-bottom:6px;">✅ Верно — все три одинаковой формы (-ing):</div>
+          <div class="parallel-grid">
+            <div class="pg-connector">She likes</div><div class="pg-item-box right-item"><span class="hl-g">reading</span> books</div>
+            <div class="pg-connector">and</div><div class="pg-item-box right-item"><span class="hl-g">swimming</span> in the lake</div>
+            <div class="pg-connector">and</div><div class="pg-item-box right-item"><span class="hl-g">hiking</span> on weekends.</div>
+          </div>
+        </div>
+        <div class="tip-box">💡 <strong>Как проверить параллелизм:</strong> найди and/or/but → посмотри что стоит справа → то же самое должно быть слева. Если форма разная — ошибка.</div>
+      </div>
+    </div>
+
+    <div class="type-label">Параллелизм с «both...and», «either...or», «neither...nor»</div>
+    <div class="gram-card">
+      <div class="gc-header gc-h-teal">
+        <div class="gc-icon ic-teal">±</div>
+        <div><div class="gc-title-teal">Парные союзы — Correlative Conjunctions</div><div class="gc-sub">both...and · either...or · neither...nor · not only...but also</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Эти союзы работают парами. Элементы после каждого члена пары должны быть <strong>параллельны</strong> — одинаковой грамматической формы.
+        </div>
+
+        <div class="ex-correct"><span class="ex-label">✅</span> She is <span class="hl-t">both</span> intelligent <span class="hl-t">and</span> hardworking. (adj + adj)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She is <span class="hl-r">both</span> intelligent <span class="hl-r">and</span> works hard. (adj + verb — не параллельно!)</div>
+
+        <div class="ex-correct" style="margin-top:8px"><span class="ex-label">✅</span> <span class="hl-t">Not only</span> did he win the prize, <span class="hl-t">but</span> he <span class="hl-t">also</span> set a record. (verb + verb)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> <span class="hl-r">Not only</span> winning the prize, <span class="hl-r">but also</span> he set a record.</div>
+
+        <div class="ex-correct" style="margin-top:8px"><span class="ex-label">✅</span> <span class="hl-t">Either</span> she will call <span class="hl-t">or</span> she will email. (verb phrase + verb phrase)</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> <span class="hl-r">Either</span> calling <span class="hl-r">or</span> she will email.</div>
+
+        <div class="warn-box">⚠️ <strong>Особое правило для «neither...nor»:</strong> глагол согласуется с <em>ближайшим</em> подлежащим.<br>«Neither the students nor <span class="hl-t">the professor</span> <span class="hl-g">was</span> late.» (professor = ед.ч. → was)</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('compare',document.querySelectorAll('.tab')[1])">Дальше: Сравнения →</button>
+  </div>
+
+  <!-- ===== COMPARATIVES ===== -->
+  <div class="section" id="tab-compare">
+    <div class="section-title">Сравнительные конструкции</div>
+    <div class="section-intro">
+      TOEFL проверяет три типа сравнений — степени сравнения прилагательных, конструкцию as...as, и сравнения с than. У каждого есть свои ловушки.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-amber">
+        <div class="gc-icon ic-amber">CMP</div>
+        <div><div class="gc-title-amber">Степени сравнения прилагательных</div><div class="gc-sub">Comparative & Superlative</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Три ступени: положительная → сравнительная (двое) → превосходная (три и более).</div>
+        <div class="comp-row">
+          <div class="comp-cell">
+            <div class="comp-label" style="color:var(--teal)">Короткие (1–2 слога)</div>
+            <div class="comp-en">fast → <span class="hl-t">faster</span> → <span class="hl-t">fastest</span></div>
+            <div class="comp-en">big → <span class="hl-t">bigger</span> → <span class="hl-t">biggest</span></div>
+            <div class="comp-ru">+er / +est (удвоить согласную)</div>
+          </div>
+          <div class="comp-cell">
+            <div class="comp-label" style="color:var(--amber)">Длинные (3+ слога)</div>
+            <div class="comp-en">beautiful → <span class="hl-a">more beautiful</span></div>
+            <div class="comp-en">→ <span class="hl-a">most beautiful</span></div>
+            <div class="comp-ru">more / most + прилагательное</div>
+          </div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-cell">
+            <div class="comp-label" style="color:var(--coral-mid)">Исключения</div>
+            <div class="comp-en">good → <span class="hl-c">better</span> → <span class="hl-c">best</span></div>
+            <div class="comp-en">bad → <span class="hl-c">worse</span> → <span class="hl-c">worst</span></div>
+            <div class="comp-en">far → <span class="hl-c">farther/further</span> → <span class="hl-c">farthest/furthest</span></div>
+          </div>
+          <div class="comp-cell">
+            <div class="comp-label" style="color:var(--red)">Двойная ошибка!</div>
+            <div class="comp-en" style="color:var(--red)">❌ more faster</div>
+            <div class="comp-en" style="color:var(--red)">❌ more better</div>
+            <div class="comp-en" style="color:var(--red)">❌ the most fastest</div>
+            <div class="comp-ru">Нельзя «more» + «-er» одновременно!</div>
+          </div>
+        </div>
+        <div class="warn-box">⚠️ <strong>Double Comparative Trap</strong> — самая частая ошибка!<br>❌ «more faster» — нельзя использовать и «more», и «-er» одновременно.<br>✅ «faster» ИЛИ «more fast» (но «faster» предпочтительнее)</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-amber">
+        <div class="gc-icon ic-amber">AS</div>
+        <div><div class="gc-title-amber">Конструкция as...as — равное сравнение</div><div class="gc-sub">«такой же ... как»</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="formula-box" style="font-size:14px">
+          as + [прилагательное/наречие] + as<br>
+          not as + [прилагательное/наречие] + as
+          <div class="formula-note">Между двумя «as» — всегда положительная степень, никогда сравнительная!</div>
+        </div>
+        <div class="ex-correct"><span class="ex-label">✅</span> This experiment is <span class="hl-t">as important as</span> the previous one.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> This experiment is <span class="hl-r">as more important as</span> the previous one.</div>
+        <div class="ex-correct" style="margin-top:6px"><span class="ex-label">✅</span> The results were <span class="hl-t">not as clear as</span> expected.</div>
+        <div class="tip-box">💡 <strong>Три структуры сравнения на TOEFL:</strong><br>
+          «A is <span class="hl-t">as X as</span> B» → A и B одинаковые по X<br>
+          «A is <span class="hl-t">Xer than</span> B» → A больше B по X<br>
+          «A is the <span class="hl-t">Xest</span> of all» → A самый X из всех
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-amber">
+        <div class="gc-icon ic-amber">≠</div>
+        <div><div class="gc-title-amber">Сравнение с «than» — параллелизм объектов</div><div class="gc-sub">Что с чем сравниваем?</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          В сравнении с «than» нужно сравнивать <strong>одинаковые категории</strong>. Нельзя сравнить «книгу» с «автором» — только «книгу с книгой» или «стиль со стилем».
+        </div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The climate of Canada is colder than <span class="hl-r">Mexico</span>. (климат ≠ страна)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The climate of Canada is colder than <span class="hl-g">that of Mexico</span>. (климат = климат)</div>
+        <div class="ex-wrong" style="margin-top:6px"><span class="ex-label">❌</span> Darwin's theories are more influential than <span class="hl-r">other scientists</span>.</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> Darwin's theories are more influential than <span class="hl-g">those of other scientists</span>.</div>
+        <div class="note-box">📌 «that of» = заменяет ед.ч. существительное чтобы избежать повтора<br>«those of» = заменяет мн.ч. существительное</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('connect',document.querySelectorAll('.tab')[2])">Дальше: Союзы и коннекторы →</button>
+  </div>
+
+  <!-- ===== CONNECTORS ===== -->
+  <div class="section" id="tab-connect">
+    <div class="section-title">Союзы и переходные слова</div>
+    <div class="section-intro">
+      TOEFL проверяет умение выбрать правильный союз или переходное слово по смыслу. Это не просто словарь — каждый союз имеет строго определённую грамматическую функцию.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-blue">
+        <div class="gc-icon ic-blue">∧</div>
+        <div><div class="gc-title-blue">Координирующие союзы (FANBOYS)</div><div class="gc-sub">Соединяют два независимых предложения</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Аббревиатура <strong>FANBOYS</strong>: For, And, Nor, But, Or, Yet, So. Они соединяют два полных предложения через запятую.</div>
+        <table class="conn-table">
+          <tr><th>Союз</th><th>Значение</th><th>Пример</th></tr>
+          <tr><td><span class="conn-word">and</span></td><td>и, также (добавление)</td><td style="font-style:italic">She studied hard, <span class="hl-b">and</span> she passed.</td></tr>
+          <tr><td><span class="conn-word">but</span></td><td>но (противопоставление)</td><td style="font-style:italic">He tried, <span class="hl-b">but</span> he failed.</td></tr>
+          <tr><td><span class="conn-word">or</span></td><td>или (выбор)</td><td style="font-style:italic">You can study, <span class="hl-b">or</span> you can rest.</td></tr>
+          <tr><td><span class="conn-word">so</span></td><td>поэтому (следствие)</td><td style="font-style:italic">It rained, <span class="hl-b">so</span> they stayed home.</td></tr>
+          <tr><td><span class="conn-word">yet</span></td><td>однако (неожиданное противопоставление)</td><td style="font-style:italic">She is busy, <span class="hl-b">yet</span> she helps others.</td></tr>
+        </table>
+        <div class="warn-box">⚠️ <strong>Run-on sentence</strong> — запрещено! Два предложения нельзя соединить просто запятой без союза.<br>❌ «It rained<span class="hl-r">,</span> they stayed home.»<br>✅ «It rained<span class="hl-g">, so</span> they stayed home.»</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-blue">
+        <div class="gc-icon ic-blue">⇄</div>
+        <div><div class="gc-title-blue">Подчинительные союзы — Subordinating Conjunctions</div><div class="gc-sub">Вводят придаточное предложение</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Эти союзы вводят <em>зависимое</em> (придаточное) предложение. После них нельзя ставить запятую в конце (перед главным) — только если придаточное стоит в начале.</div>
+        <table class="conn-table">
+          <tr><th>Значение</th><th>Союзы</th><th>Пример</th></tr>
+          <tr><td>Время</td><td><span class="conn-word">when, while, before, after, since, until, as soon as</span></td><td style="font-style:italic"><span class="hl-b">When</span> the results came in, they celebrated.</td></tr>
+          <tr><td>Причина</td><td><span class="conn-word">because, since, as</span></td><td style="font-style:italic">She left early <span class="hl-b">because</span> she was tired.</td></tr>
+          <tr><td>Уступка</td><td><span class="conn-word">although, even though, though, while</span></td><td style="font-style:italic"><span class="hl-b">Although</span> it was cold, they swam.</td></tr>
+          <tr><td>Условие</td><td><span class="conn-word">if, unless, provided that</span></td><td style="font-style:italic">Call me <span class="hl-b">if</span> you need help.</td></tr>
+          <tr><td>Цель</td><td><span class="conn-word">so that, in order that</span></td><td style="font-style:italic">She studied <span class="hl-b">so that</span> she could pass.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-h-blue">
+        <div class="gc-icon ic-blue">→</div>
+        <div><div class="gc-title-blue">Переходные слова — Transition Words</div><div class="gc-sub">Связывают идеи между предложениями</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Переходные слова — это <strong>не союзы</strong>! Они стоят в начале нового предложения (после точки или после точки с запятой) и описывают <em>логическую связь</em> между идеями.</div>
+        <table class="conn-table">
+          <tr><th>Значение</th><th>Слова</th></tr>
+          <tr><td>Добавление</td><td><span class="conn-word">furthermore, moreover, in addition, also</span></td></tr>
+          <tr><td>Противопоставление</td><td><span class="conn-word">however, nevertheless, on the other hand, in contrast</span></td></tr>
+          <tr><td>Следствие</td><td><span class="conn-word">therefore, thus, consequently, as a result</span></td></tr>
+          <tr><td>Пример</td><td><span class="conn-word">for example, for instance, such as, specifically</span></td></tr>
+          <tr><td>Вывод</td><td><span class="conn-word">in conclusion, in summary, overall, ultimately</span></td></tr>
+        </table>
+        <div class="ex-wrong"><span class="ex-label">❌</span> It rained, <span class="hl-r">however</span> they went outside. («however» — не союз, нельзя с запятой!)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> It rained. <span class="hl-g">However,</span> they went outside.</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> It rained<span class="hl-g">; however,</span> they went outside. (точка с запятой + however)</div>
+        <div class="tip-box">💡 <strong>Главное различие:</strong><br>
+          <span class="hl-t">Союз</span> (but, although) → внутри предложения, с запятой перед ним<br>
+          <span class="hl-a">Переходное слово</span> (however, therefore) → начало нового предложения или после «;»
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ===== PRACTICE ===== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 8 вопросов</div>
+    <div class="section-intro">Формат Part 1 — предложение с пропуском, 4 варианта. Выбери правильный.</div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 1 / 8</span><span class="pq-type tp-par">Parallel Structure</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The study found that regular exercise improves mood, increases energy, and _____.</div>
+        <div class="pq-options" id="q1-opts">
+          <button class="pq-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol">A</span> cognitive function is enhanced</button>
+          <button class="pq-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol">B</span> enhancing cognitive function</button>
+          <button class="pq-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol">C</span> enhances cognitive function</button>
+          <button class="pq-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol">D</span> to enhance cognitive function</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: C — enhances cognitive function</div>
+          Список: «improves», «increases» → оба глагола в Present Simple. Третий элемент должен быть параллельным → <strong>«enhances»</strong>.<br><br>
+          <div class="explain-rule">📌 Параллелизм: verb + verb + verb. «improves... increases... enhances» — все три одной формы.</div>
+          <div class="explain-wrong">❌ A — пассивная конструкция нарушает параллелизм<br>❌ B — «enhancing» (-ing) — другая форма<br>❌ D — «to enhance» — инфинитив, другая форма</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 2 / 8</span><span class="pq-type tp-par">Correlative Conjunction</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The new policy will affect not only small businesses _____ large corporations.</div>
+        <div class="pq-options" id="q2-opts">
+          <button class="pq-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol">A</span> but also</button>
+          <button class="pq-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol">B</span> and also</button>
+          <button class="pq-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol">C</span> but</button>
+          <button class="pq-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol">D</span> as well</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: A — but also</div>
+          «Not only» требует пары <strong>«but also»</strong> — это фиксированная конструкция. Между ними должны быть параллельные элементы: «small businesses» ∥ «large corporations».<br><br>
+          <div class="explain-rule">📌 Correlative conjunctions: not only...but also / both...and / either...or / neither...nor — это фиксированные пары!</div>
+          <div class="explain-wrong">❌ B — «and also» не является парой для «not only»<br>❌ D — «as well» стоит в конце предложения, не перед существительным</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 3 / 8</span><span class="pq-type tp-com">Comparative</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The Amazon River carries _____ water than any other river in the world.</div>
+        <div class="pq-options" id="q3-opts">
+          <button class="pq-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol">A</span> more</button>
+          <button class="pq-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol">B</span> most</button>
+          <button class="pq-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol">C</span> much more</button>
+          <button class="pq-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol">D</span> the most</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: A — more</div>
+          Слово «<strong>than</strong>» требует сравнительной степени → <strong>«more»</strong>. «Most/the most» — превосходная степень, используется с «of all / in the world» без «than».<br><br>
+          <div class="explain-rule">📌 Правило: «than» → сравнительная (more/Xer). Без «than» → превосходная (most/Xest).</div>
+          <div class="explain-wrong">❌ B/D — «most / the most» — превосходная степень, не сочетается с «than»<br>❌ C — «much more» технически возможно, но «more» достаточно и именно оно проверяется здесь</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 4 / 8</span><span class="pq-type tp-com">Comparison — that of</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The population of China is larger than _____ any other country in the world.</div>
+        <div class="pq-options" id="q4-opts">
+          <button class="pq-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol">A</span> that of</button>
+          <button class="pq-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol">B</span> those of</button>
+          <button class="pq-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol">C</span> of</button>
+          <button class="pq-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol">D</span> which of</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: A — that of</div>
+          Сравниваем «population of China» с «population of any other country». Чтобы не повторять «population», используем <strong>«that of»</strong> (ед.ч.).<br><br>
+          <div class="explain-rule">📌 «that of» = заменяет ед.ч. существительное в сравнении. «those of» = заменяет мн.ч.</div>
+          <div class="explain-wrong">❌ B — «those of» — для множественного числа, «population» = ед.ч.<br>❌ C — «of» без «that» — неполная конструкция</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 5 / 8</span><span class="pq-type tp-con">Connector</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The experiment failed the first time; _____, the researchers tried a different approach.</div>
+        <div class="pq-options" id="q5-opts">
+          <button class="pq-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol">A</span> but</button>
+          <button class="pq-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol">B</span> although</button>
+          <button class="pq-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol">C</span> therefore</button>
+          <button class="pq-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol">D</span> however</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: C — therefore</div>
+          После точки с запятой нужно <strong>переходное слово</strong> (не союз). Смысл: «провалился → <em>поэтому</em> попробовали другой подход» — логическое следствие → <strong>«therefore»</strong>.<br><br>
+          <div class="explain-rule">📌 Структура: [предложение]; therefore/however/moreover, [предложение]. Точка с запятой + переходное слово + запятая.</div>
+          <div class="explain-wrong">❌ A — «but» — союз, нельзя после «;» как переходное слово в такой позиции<br>❌ B — «although» — подчинительный союз, нельзя после «;»<br>❌ D — «however» = «однако» (противопоставление), не подходит по смыслу (здесь причинно-следственная связь)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 6 / 8</span><span class="pq-type tp-con">Subordinating Conjunction</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">_____ the data was incomplete, the scientists decided to publish their preliminary findings.</div>
+        <div class="pq-options" id="q6-opts">
+          <button class="pq-opt" onclick="answer(6,'A')" id="q6-A"><span class="ol">A</span> Because</button>
+          <button class="pq-opt" onclick="answer(6,'B')" id="q6-B"><span class="ol">B</span> Although</button>
+          <button class="pq-opt" onclick="answer(6,'C')" id="q6-C"><span class="ol">C</span> Since</button>
+          <button class="pq-opt" onclick="answer(6,'D')" id="q6-D"><span class="ol">D</span> So that</button>
+        </div>
+        <div class="pq-explain" id="q6-explain">
+          <div class="explain-correct">✅ Верный ответ: B — Although</div>
+          Смысл: данные неполные, <em>но несмотря на это</em> учёные публикуют результаты. Это уступка → <strong>«although»</strong> (хотя, несмотря на то что).<br><br>
+          <div class="explain-rule">📌 «Although» = уступка (противоположное ожиданиям). Данные неполные → ожидаем, что не публикуют → но публикуют = уступка.</div>
+          <div class="explain-wrong">❌ A — «Because» = причина. «Потому что данные неполные, они публикуют» — нелогично<br>❌ C — «Since» здесь = причина (= because) — та же проблема<br>❌ D — «So that» = цель, нелогично</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 7 / 8</span><span class="pq-type tp-par">Parallel — сложный</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The professor asked the students to read the chapter, _____, and prepare questions.</div>
+        <div class="pq-options" id="q7-opts">
+          <button class="pq-opt" onclick="answer(7,'A')" id="q7-A"><span class="ol">A</span> taking notes</button>
+          <button class="pq-opt" onclick="answer(7,'B')" id="q7-B"><span class="ol">B</span> to take notes</button>
+          <button class="pq-opt" onclick="answer(7,'C')" id="q7-C"><span class="ol">C</span> notes should be taken</button>
+          <button class="pq-opt" onclick="answer(7,'D')" id="q7-D"><span class="ol">D</span> took notes</button>
+        </div>
+        <div class="pq-explain" id="q7-explain">
+          <div class="explain-correct">✅ Верный ответ: B — to take notes</div>
+          Структура: «asked students <strong>to read</strong>... <strong>to take</strong>... <strong>to prepare</strong>» (implied «to» для последнего). Список из трёх инфинитивов — параллельная структура. После «asked to» — продолжение с «to + verb».<br><br>
+          <div class="explain-rule">📌 «ask someone to do» → список: to read, to take, (to) prepare — все инфинитивы.</div>
+          <div class="explain-wrong">❌ A — «taking notes» — герундий нарушает параллелизм с «to read» и «prepare»<br>❌ C — пассивная конструкция с подлежащим — нарушает структуру</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 8 / 8</span><span class="pq-type tp-mix">Mixed — сложный</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">Neither the lab equipment nor the research methods _____ approved by the committee.</div>
+        <div class="pq-options" id="q8-opts">
+          <button class="pq-opt" onclick="answer(8,'A')" id="q8-A"><span class="ol">A</span> were</button>
+          <button class="pq-opt" onclick="answer(8,'B')" id="q8-B"><span class="ol">B</span> was</button>
+          <button class="pq-opt" onclick="answer(8,'C')" id="q8-C"><span class="ol">C</span> have been</button>
+          <button class="pq-opt" onclick="answer(8,'D')" id="q8-D"><span class="ol">D</span> are</button>
+        </div>
+        <div class="pq-explain" id="q8-explain">
+          <div class="explain-correct">✅ Верный ответ: A — were</div>
+          Конструкция «neither...nor» → глагол согласуется с <em>ближайшим</em> подлежащим — «the research methods» (мн.ч.) → <strong>«were»</strong>.<br><br>
+          <div class="explain-rule">📌 Правило proximity: «neither A nor B» → глагол согласуется с B (ближайшим). «methods» = мн.ч. → «were».</div>
+          <div class="explain-wrong">❌ B — «was» — согласование с «equipment» (ед.ч.), но «equipment» не ближайшее к глаголу<br>❌ C/D — время неверное (контекст прошлого)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/8</div>
+      <div class="score-label">Результат · Parallel, Comparatives, Connectors · Урок 4</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Стратегия →</button>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия — три темы в одном</div>
+    <div class="section-intro">Параллелизм, сравнения и союзы проверяются часто и вместе. Вот как их быстро распознавать на тесте.</div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Видишь and/or/but — проверь параллелизм</div>
+        <div class="tip-body">Как только видишь «and», «or», «but» — автоматически проверяй: все ли элементы по обе стороны одинаковой грамматической формы? Это занимает 5 секунд и даёт верный ответ в ~30% вопросов Part 1.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Видишь «than» — нужна сравнительная степень</div>
+        <div class="tip-body">«Than» всегда требует comparative: «more», «Xer», «better», «worse». Никогда «most» или «the most». И проверь: что сравниваем с чем — нужен ли «that of / those of»?</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Союз или переходное слово?</div>
+        <div class="tip-body">Смотри на знак препинания перед пропуском. После точки/точки с запятой — нужно переходное слово (however, therefore, moreover). Внутри предложения — союз (but, although, because). Это разные грамматические категории!</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">Not only — ищи «but also»</div>
+        <div class="tip-body">Парные союзы — фиксированные конструкции. Если видишь «not only» — в пропуске будет «but also». «Both» → «and». «Either» → «or». «Neither» → «nor». Это гарантированный балл.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">«Neither...nor» — глагол с ближайшим</div>
+        <div class="tip-body">Для «neither A nor B» и «either A or B» — глагол согласуется с ближайшим подлежащим (B). Это нелогично интуитивно, но это правило. Запомни один раз — и всегда отвечай верно.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="background:var(--teal-pale);border:1px solid #9FE1CB;border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--teal);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:var(--teal);line-height:1.9;opacity:0.85;">
+        1. Напиши 3 предложения с «not only...but also», «both...and», «neither...nor»<br>
+        2. Найди 5 предложений со сравнением в любом тексте — определи тип (comparative/superlative/as...as)<br>
+        3. Пройди Unit 7–9 из Longman Preparation Course (Parallel Structure + Connectors)<br>
+        4. Составь таблицу: союзы причины / уступки / следствия (по 3 примера каждый)
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:8px;letter-spacing:0.04em;">ПРОГРЕСС · SECTION II</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:2;">
+        ✅ Урок 3 — Clause & Verb Patterns<br>
+        ✅ Урок 4 — Parallel, Comparatives, Connectors<br>
+        ⬜ Урок 5 — Articles, Prepositions, Word Form<br>
+        ⬜ Урок 6 — Verb Tense, Agreement, Pronouns<br>
+        ⬜ Урок 7 — Advanced Clauses & Reduction<br>
+        ⬜ Урок 8 — Grammar Mini-Test
+      </div>
+    </div>
+
+    <button class="btn-primary">✅ Урок 4 завершён!</button>
+    <div style="margin-top:10px;padding:16px;background:var(--teal-pale);border:1px solid #9FE1CB;border-radius:var(--radius);font-size:14px;color:var(--teal);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 5 — Articles, Prepositions & Word Form (Written Expression)</strong><br>
+      <span style="font-size:13px;opacity:0.8;">Попроси своего преподавателя отправить Урок 5</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const correct = {1:'C',2:'A',3:'A',4:'A',5:'C',6:'B',7:'B',8:'A'};
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+  document.querySelectorAll('#q'+q+'-opts .pq-opt').forEach(b => b.disabled = true);
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+  if (choice === correct[q]) { chosen.classList.add('correct'); score++; }
+  else { chosen.classList.add('wrong'); correctBtn.classList.add('correct'); }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (done / 8 * 100) + '%';
+  if (done === 8) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson4', 'Урок 4: Parallel Structure & Comparatives', score, 8, Math.round(score/8*100));
+    document.getElementById('score-display').textContent = score + '/8';
+    document.getElementById('score-bar').style.width = (score / 8 * 100) + '%';
+    const msgs = ['Повтори все три темы — параллелизм, сравнения, союзы.','Неплохо! Особое внимание на сравнения.','Хорошо! Ещё немного практики.','Очень хорошо! Ты уверенно справляешься.','Отлично! Почти идеально.','Превосходно!','Превосходно!','Превосходно!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['theory','compare','connect','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 9: Reading — Main Idea, Detail & Inference</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;--rust:#9A3412;--rust-mid:#C2410C;--rust-bg:#FFF7ED;--rust-brd:#FED7AA;--teal:#0F766E;--teal-mid:#0D9488;--teal-bg:#F0FDFA;--teal-brd:#99F6E4;--indigo:#3730A3;--indigo-bg:#EEF2FF;--indigo-brd:#C7D2FE;--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;--rd:#991B1B;--rd-bg:#FEF2F2;--rd-brd:#FECACA;--am:#92400E;--am-bg:#FFFBEB;--am-brd:#FDE68A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+.hero{background:linear-gradient(135deg,#1C1917,#292524,#44403C);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 15% 60%,rgba(194,65,12,.18),transparent 50%),radial-gradient(circle at 85% 15%,rgba(13,148,136,.12),transparent 45%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:36px 24px 28px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#D6D3D1;letter-spacing:.05em;margin-bottom:14px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#FB923C;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:8px}
+.hsub{font-size:15px;color:#A8A29E;line-height:1.5;margin-bottom:20px}
+.hpills{display:flex;gap:8px;flex-wrap:wrap}
+.hpill{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.08);color:#E7E5E4;border:1px solid rgba(255,255,255,.12)}
+.pt{height:3px;background:rgba(255,255,255,.12);margin-top:20px;border-radius:2px}
+.pf{height:3px;background:#FB923C;border-radius:2px;width:0%;transition:width .4s}
+.tabs-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.tabs{max-width:720px;margin:0 auto;display:flex;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 18px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:all .15s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab.active{color:var(--rust);border-bottom-color:var(--rust-mid)}
+.content{max-width:720px;margin:0 auto;padding:24px 20px}
+.section{display:none}
+.section.active{display:block}
+.sec-title{font-family:'Lora',serif;font-size:22px;color:var(--text);margin-bottom:8px}
+.sec-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.tlbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px;margin-top:28px;display:flex;align-items:center;gap:8px}
+.tlbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.gram-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
+.gc-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.gc-icon{width:32px;height:32px;border-radius:8px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.ic-r{background:var(--rust-mid)}.ic-t{background:var(--teal-mid)}.ic-i{background:var(--indigo)}
+.gc-title{font-size:14px;font-weight:600}
+.gc-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.gc-body{padding:16px}
+.ru-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.kw{background:#FED7AA;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600}
+.kw-t{background:#BBF7D0;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600}
+.kw-i{background:#C7D2FE;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600}
+.passage-box{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:20px 22px;margin-bottom:14px;font-family:'Lora',serif;font-size:14px;line-height:1.9;color:#1C1917}
+.passage-box p{margin-bottom:10px}
+.passage-box p:last-child{margin-bottom:0}
+.plbl{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.hl-mi{background:#FED7AA;border-radius:2px;padding:0 2px}
+.hl-dt{background:#BBF7D0;border-radius:2px;padding:0 2px}
+.hl-inf{background:#C7D2FE;border-radius:2px;padding:0 2px}
+.ex-box{background:#f9f9f7;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.ex-q{font-weight:600;color:var(--text);margin-bottom:5px}
+.ex-a{color:var(--gn);font-weight:500}
+.ex-n{color:var(--muted);font-size:12px;margin-top:3px;font-style:italic}
+.tip-box{border-left:3px solid var(--rust-mid);background:var(--rust-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--rust);line-height:1.6;margin-top:12px}
+.note-box{border-left:3px solid var(--teal-mid);background:var(--teal-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--teal);line-height:1.6;margin-top:10px}
+.strat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.sc{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:12px}
+.sc-n{font-size:20px;font-weight:700;color:var(--rust-mid);margin-bottom:5px;font-family:'Lora',serif}
+.sc-t{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.sc-b{font-size:12px;color:var(--muted);line-height:1.5}
+.practice-passage{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:20px 22px;margin-bottom:20px;font-family:'Lora',serif;font-size:14px;line-height:1.9;color:#1C1917}
+.practice-passage p{margin-bottom:10px}
+.practice-passage p:last-child{margin-bottom:0}
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.qh{padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:12px;font-weight:600;color:var(--muted)}
+.qt{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px}
+.tmi{background:#FEF3C7;color:#92400E}.tdt{background:#DCFCE7;color:#166534}.tinf{background:#E0E7FF;color:#3730A3}
+.qbody{padding:16px}
+.q-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .15s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:18px}
+.opt:hover:not([disabled]){border-color:var(--rust-mid);background:var(--rust-bg)}
+.opt.picked{border-color:var(--rust-mid);background:var(--rust-bg)}
+.opt.picked .L{color:var(--rust-mid)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--rd-bg);border-color:var(--rd-brd);color:var(--rd)}
+.opt.ng .L{color:var(--rd)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:12px;padding:12px 14px;background:var(--am-bg);border-radius:var(--rsm);font-size:13px;line-height:1.7;color:var(--am);border-left:3px solid #F59E0B;display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;font-size:13px;margin-bottom:5px}
+.erule{background:#FEF3C7;border-radius:4px;padding:5px 8px;font-size:12px;margin-top:6px;font-weight:500;color:var(--am)}
+.score-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-top:8px;display:none}
+.score-card.show{display:block}
+.score-big{font-family:'Lora',serif;font-size:52px;color:var(--rust-mid);line-height:1}
+.score-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+.score-bw{margin:14px 0;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-b{height:8px;background:var(--rust-mid);border-radius:4px;transition:width 1s ease;width:0%}
+.score-msg{font-size:14px;color:var(--text);font-weight:500;margin-top:8px}
+.tip-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
+.tip-num{width:32px;height:32px;border-radius:50%;background:#1C1917;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;margin-top:2px}
+.tip-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.tip-body{font-size:14px;color:var(--muted);line-height:1.7}
+.btn-p{display:block;width:100%;background:#1C1917;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:500;cursor:pointer;margin-top:20px;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn-p:hover{opacity:.88}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.next-box{padding:16px;background:var(--rust-bg);border:1px solid var(--rust-brd);border-radius:var(--r);font-size:14px;color:var(--rust);line-height:1.6;text-align:center;margin-top:10px}
+@media(max-width:480px){.htitle{font-size:24px}.strat-grid{grid-template-columns:1fr}.tab{padding:12px 10px;font-size:12px}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 9 из 14 · Section III</div>
+    <div class="htitle">Reading Comprehension:<br>Main Idea, Detail & Inference</div>
+    <div class="hsub">Section III · Три базовых типа вопросов · Стратегии · Практика</div>
+    <div class="hpills">
+      <span class="hpill">📖 3 типа вопросов</span>
+      <span class="hpill">🎯 Стратегии</span>
+      <span class="hpill">✏️ 8 вопросов</span>
+      <span class="hpill">💡 Советы</span>
+    </div>
+    <div class="pt"><div class="pf" id="progress"></div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('theory',this)">📖 Типы вопросов</button>
+    <button class="tab" onclick="showTab('strategy',this)">🎯 Стратегии</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Советы</button>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="section active" id="tab-theory">
+  <div class="sec-title">Section III — Reading Comprehension</div>
+  <div class="sec-intro"><strong>Section III</strong> — последняя секция TOEFL ITP. <strong>50 вопросов</strong> к пяти академическим текстам (~55 минут). Тексты о науке, истории, природе, социологии. Каждый текст ~200–350 слов, 10 вопросов.<br><br>Сегодня — три <strong>базовых типа</strong> которые составляют ~70% всех вопросов.</div>
+
+  <div class="tlbl">Тип 1 · Main Idea — главная мысль</div>
+  <div class="gram-card">
+    <div class="gc-head" style="background:#FFF7ED">
+      <div class="gc-icon ic-r">MI</div>
+      <div><div class="gc-title" style="color:var(--rust)">Main Idea / Topic / Purpose</div><div class="gc-sub">О чём весь текст? Какова главная идея?</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Вопрос о <strong>главной теме или цели всего текста</strong> — не об одной детали.<br><br>Ключевые слова: <span class="kw">What is the passage mainly about?</span> <span class="kw" style="margin-left:4px">What is the main topic?</span> <span class="kw" style="margin-left:4px">What is the author's purpose?</span></div>
+      <div class="passage-box">
+        <div class="plbl">📄 Пример текста</div>
+        <p><span class="hl-mi">Bioluminescence — the ability of living organisms to produce light — is found in a surprising variety of marine species.</span> Deep-sea fish, jellyfish, squid, and certain bacteria all possess this ability. Scientists believe bioluminescence serves multiple functions: attracting prey, communicating with other members of the species, and confusing predators. <span class="hl-mi">The chemical reaction responsible is remarkably efficient, generating almost no heat.</span> Researchers are now studying bioluminescent organisms hoping to apply this technology in medicine.</p>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:12px">🟠 выделено = ключевые идеи для Main Idea</div>
+      <div class="ex-box">
+        <div class="ex-q">Q: What is the passage mainly about?</div>
+        <div class="ex-a">✅ (B) The characteristics and uses of bioluminescence in marine organisms</div>
+        <div class="ex-n">Охватывает весь текст: что это, у кого есть, зачем, как работает, применение.</div>
+      </div>
+      <div class="tip-box">💡 <strong>Ловушки Main Idea:</strong><br>❌ Слишком узкий — только одна деталь (например «Scientists study bacteria»)<br>❌ Слишком широкий — шире темы текста (например «Marine biology»)<br>✅ Верный ответ охватывает весь текст, но не выходит за его рамки</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Тип 2 · Detail — конкретная деталь</div>
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--teal-bg)">
+      <div class="gc-icon ic-t">DT</div>
+      <div><div class="gc-title" style="color:var(--teal)">Specific Detail / Fact</div><div class="gc-sub">Конкретный факт прямо из текста</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Вопрос о конкретном факте который <strong>прямо написан в тексте</strong>. Найди нужное предложение и выбери правильный перефраз.<br><br>Ключевые слова: <span class="kw-t">According to the passage...</span> <span class="kw-t" style="margin-left:4px">The author states that...</span> <span class="kw-t" style="margin-left:4px">Which of the following is mentioned?</span></div>
+      <div class="passage-box">
+        <div class="plbl">📄 Тот же текст — Detail</div>
+        <p>Bioluminescence — the ability of living organisms to produce light — is found in a surprising variety of marine species. Deep-sea fish, jellyfish, squid, and certain bacteria all possess this ability. Scientists believe bioluminescence serves multiple functions: attracting prey, communicating with other members of the species, and confusing predators. <span class="hl-dt">The chemical reaction responsible is remarkably efficient, generating almost no heat.</span> Researchers are now studying bioluminescent organisms hoping to apply this technology in medicine.</p>
+      </div>
+      <div class="ex-box">
+        <div class="ex-q">Q: According to the passage, what is one characteristic of bioluminescent reactions?</div>
+        <div class="ex-a">✅ (C) They produce very little heat</div>
+        <div class="ex-n">В тексте: «generating almost no heat» = «produce very little heat» — это перефраз.</div>
+      </div>
+      <div class="tip-box">💡 <strong>Стратегия для Detail:</strong> Найди ключевое слово из вопроса в тексте → прочитай это предложение → выбери вариант-перефраз. Правильный ответ никогда не копирует текст дословно!</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Тип 3 · Inference — вывод / скрытый смысл</div>
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--indigo-bg)">
+      <div class="gc-icon ic-i">INF</div>
+      <div><div class="gc-title" style="color:var(--indigo)">Inference / Implied Meaning</div><div class="gc-sub">То, что подразумевается, но прямо не сказано</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Вопрос о том, что <strong>логически следует</strong> из текста — не написано прямо, но вытекает из сказанного.<br><br>Ключевые слова: <span class="kw-i">It can be inferred that...</span> <span class="kw-i" style="margin-left:4px">What does the author imply?</span> <span class="kw-i" style="margin-left:4px">It is most likely that...</span></div>
+      <div class="passage-box">
+        <div class="plbl">📄 Тот же текст — Inference</div>
+        <p>Bioluminescence — the ability of living organisms to produce light — is found in a surprising variety of marine species. Deep-sea fish, jellyfish, squid, and certain bacteria all possess this ability. Scientists believe bioluminescence serves multiple functions: attracting prey, communicating with other members of the species, and confusing predators. The chemical reaction responsible is remarkably efficient, generating almost no heat. <span class="hl-inf">Researchers are now studying bioluminescent organisms hoping to apply this technology in medicine.</span></p>
+      </div>
+      <div class="ex-box">
+        <div class="ex-q">Q: It can be inferred from the passage that bioluminescence...</div>
+        <div class="ex-a">✅ (A) may have practical applications outside of nature</div>
+        <div class="ex-n">Текст: «hoping to apply this technology in medicine» → вывод: у биолюминесценции есть потенциальное применение. Это не написано прямо — это следует логически.</div>
+      </div>
+      <div class="tip-box">💡 <strong>Ловушки Inference:</strong><br>❌ Слишком далёкий вывод — текст это не поддерживает<br>❌ Прямо написано в тексте — это уже Detail, не Inference<br>✅ Верный вывод: логически следует из текста, но не написан дословно</div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('strategy',document.querySelectorAll('.tab')[1])">Дальше: Стратегии →</button>
+</div>
+
+<div class="section" id="tab-strategy">
+  <div class="sec-title">Стратегии для Reading</div>
+  <div class="sec-intro">У тебя ~55 минут на 50 вопросов — примерно <strong>65 секунд на вопрос</strong>. Без стратегии не хватит времени.</div>
+
+  <div class="tlbl">Алгоритм работы с каждым текстом</div>
+  <div class="strat-grid">
+    <div class="sc"><div class="sc-n">1</div><div class="sc-t">Сначала — вопросы</div><div class="sc-b">Просмотри все 10 вопросов ДО чтения текста. Знай что искать. Запомни ключевые слова из Detail-вопросов.</div></div>
+    <div class="sc"><div class="sc-n">2</div><div class="sc-t">Первое предложение = тема</div><div class="sc-b">Главная идея почти всегда в первом или втором предложении первого абзаца. Читай внимательно.</div></div>
+    <div class="sc"><div class="sc-n">3</div><div class="sc-t">Scanning для Detail</div><div class="sc-b">Не читай весь текст заново. Найди ключевое слово из вопроса в тексте (scan) → прочитай только это предложение.</div></div>
+    <div class="sc"><div class="sc-n">4</div><div class="sc-t">Inference = логика + текст</div><div class="sc-b">Найди нужный фрагмент → спроси «что из этого следует?». Ответ поддержан текстом, но не написан прямо.</div></div>
+  </div>
+
+  <div class="tlbl">Метод исключения вариантов</div>
+  <div class="gram-card">
+    <div class="gc-body" style="padding-top:16px">
+      <div class="ex-box"><div class="ex-q">❌ Исключи: слишком широкий / слишком узкий</div><div class="ex-n">Для Main Idea: если шире темы текста или говорит об одной детали — неверно.</div></div>
+      <div class="ex-box"><div class="ex-q">❌ Исключи: противоречит тексту</div><div class="ex-n">Если вариант утверждает обратное тому что написано — сразу убирай.</div></div>
+      <div class="ex-box"><div class="ex-q">❌ Исключи: не упоминается в тексте</div><div class="ex-n">Для Detail: если этого нет в тексте — неверно, даже если звучит правдоподобно.</div></div>
+      <div class="ex-box"><div class="ex-q">✅ Выбирай: перефраз из текста</div><div class="ex-n">Правильный ответ почти всегда перефразирует текст — не копирует дословно.</div></div>
+      <div class="note-box">📌 <strong>«NOT / EXCEPT / LEAST»:</strong> как только видишь эти слова в вопросе — обведи их карандашом! Логика меняется: нужно найти то, чего в тексте НЕ было. Студенты теряют баллы именно здесь.</div>
+    </div>
+  </div>
+
+  <div class="tlbl">Управление временем</div>
+  <div class="gram-card">
+    <div class="gc-body" style="padding-top:16px;overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <tr style="background:#1C1917;color:#fff"><th style="padding:9px 12px;text-align:left">Действие</th><th style="padding:9px 12px;text-align:left">Время</th><th style="padding:9px 12px;text-align:left">Как</th></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 12px">Просмотр вопросов</td><td style="padding:9px 12px;font-weight:600;color:var(--rust-mid)">~30 сек</td><td style="padding:9px 12px;color:var(--muted)">Быстро прочитай все 10 вопросов</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:#fafaf8"><td style="padding:9px 12px">Чтение текста</td><td style="padding:9px 12px;font-weight:600;color:var(--rust-mid)">~2 мин</td><td style="padding:9px 12px;color:var(--muted)">Первые предложения абзацев + ключевые детали</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 12px">10 вопросов</td><td style="padding:9px 12px;font-weight:600;color:var(--rust-mid)">~8 мин</td><td style="padding:9px 12px;color:var(--muted)">~45 сек на вопрос, scan для деталей</td></tr>
+        <tr><td style="padding:9px 12px"><strong>Итого на текст</strong></td><td style="padding:9px 12px;font-weight:700;color:var(--rust-mid)">~11 мин</td><td style="padding:9px 12px;color:var(--muted)">5 текстов × 11 мин = 55 мин ✓</td></tr>
+      </table>
+      <div class="tip-box" style="margin-top:12px">💡 Застрял на вопросе? → ставь лучшую догадку и двигайся дальше. Пропущенный вопрос = 0 баллов. Угадка = шанс на балл.</div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('practice',document.querySelectorAll('.tab')[2])">Дальше: Практика →</button>
+</div>
+
+<div class="section" id="tab-practice">
+  <div class="sec-title">Практика — 8 вопросов</div>
+  <div class="sec-intro">Один академический текст · 8 вопросов · Формат реального теста.<br>⚠️ <strong>Сначала прочитай весь текст, потом отвечай.</strong> Ответ появляется сразу после выбора — это учебный режим.</div>
+
+  <div class="practice-passage">
+    <div class="plbl" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">📄 Академический текст · Прочитай перед ответами</div>
+    <p>The domestication of plants approximately 10,000 years ago fundamentally transformed human civilization. Before agriculture, humans lived as nomadic hunter-gatherers, moving from place to place in search of food. The shift to farming allowed communities to settle in permanent locations, leading to the development of towns, cities, and eventually complex civilizations.</p>
+    <p>Early agricultural societies first emerged in a region known as the Fertile Crescent, an area spanning parts of modern-day Iraq, Syria, Turkey, and surrounding territories. This region was particularly suited to early farming due to its mild climate and the presence of wild varieties of wheat, barley, and legumes that could be cultivated. Over time, farmers selectively bred these plants to produce larger, more nutritious yields.</p>
+    <p>The consequences of agriculture extended far beyond food production. Permanent settlements required new forms of social organization, leading to the development of governments and legal systems. Surplus food allowed some members of society to pursue occupations unrelated to farming — craftspeople, merchants, priests, and administrators all emerged as distinct social roles. Writing systems were invented partly to record agricultural transactions and manage the distribution of food supplies.</p>
+    <p>However, agriculture also brought significant challenges. Early farming communities were more vulnerable to crop failures caused by drought, floods, or disease. Settled populations were also more susceptible to infectious diseases, which spread rapidly in dense communities. Despite these drawbacks, the advantages of agriculture — including the ability to support far larger populations — meant that farming spread rapidly across the globe.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">1 / 8</span><span class="qt tmi">Main Idea</span></div><div class="qbody">
+    <div class="q-text">What is the main topic of the passage?</div>
+    <div class="opts" id="o1">
+      <button class="opt" onclick="pick(1,'A')" id="q1A"><span class="L">A</span>The geography of the Fertile Crescent</button>
+      <button class="opt" onclick="pick(1,'B')" id="q1B"><span class="L">B</span>How the development of agriculture changed human society</button>
+      <button class="opt" onclick="pick(1,'C')" id="q1C"><span class="L">C</span>The diseases caused by early farming settlements</button>
+      <button class="opt" onclick="pick(1,'D')" id="q1D"><span class="L">D</span>The invention of writing systems in ancient civilizations</button>
+    </div>
+    <div class="exp" id="e1"><div class="eok">✅ B — How the development of agriculture changed human society</div>Текст охватывает: переход к оседлости, возникновение городов, новые социальные роли, изобретение письма, плюсы и минусы. Всё это про влияние сельского хозяйства на общество.<div class="erule">📌 A, C, D — детали из одного абзаца. Main Idea = охватывает весь текст.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">2 / 8</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, where did early agricultural societies first emerge?</div>
+    <div class="opts" id="o2">
+      <button class="opt" onclick="pick(2,'A')" id="q2A"><span class="L">A</span>In the valleys of the Nile River</button>
+      <button class="opt" onclick="pick(2,'B')" id="q2B"><span class="L">B</span>Along the coast of the Mediterranean Sea</button>
+      <button class="opt" onclick="pick(2,'C')" id="q2C"><span class="L">C</span>In a region known as the Fertile Crescent</button>
+      <button class="opt" onclick="pick(2,'D')" id="q2D"><span class="L">D</span>On the plains of central Asia</button>
+    </div>
+    <div class="exp" id="e2"><div class="eok">✅ C — In a region known as the Fertile Crescent</div>Абзац 2: «Early agricultural societies first emerged in a region known as the Fertile Crescent» — почти дословно.<div class="erule">📌 Ключевые слова «first emerged» → scan по тексту → найди предложение → выбери перефраз.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">3 / 8</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, why was the Fertile Crescent suitable for early farming?</div>
+    <div class="opts" id="o3">
+      <button class="opt" onclick="pick(3,'A')" id="q3A"><span class="L">A</span>It had a large population of animals that could be domesticated</button>
+      <button class="opt" onclick="pick(3,'B')" id="q3B"><span class="L">B</span>It had a mild climate and wild plants that could be cultivated</button>
+      <button class="opt" onclick="pick(3,'C')" id="q3C"><span class="L">C</span>It was located near major trade routes</button>
+      <button class="opt" onclick="pick(3,'D')" id="q3D"><span class="L">D</span>Its soil was enriched by regular river flooding</button>
+    </div>
+    <div class="exp" id="e3"><div class="eok">✅ B — It had a mild climate and wild plants that could be cultivated</div>Текст: «suited to early farming due to its mild climate and the presence of wild varieties of wheat, barley, and legumes that could be cultivated».<div class="erule">📌 Перефраз: «mild climate» + «wild varieties that could be cultivated» = ответ B.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">4 / 8</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">The passage mentions that writing systems were invented partly to...</div>
+    <div class="opts" id="o4">
+      <button class="opt" onclick="pick(4,'A')" id="q4A"><span class="L">A</span>communicate with neighboring societies</button>
+      <button class="opt" onclick="pick(4,'B')" id="q4B"><span class="L">B</span>record stories and religious beliefs</button>
+      <button class="opt" onclick="pick(4,'C')" id="q4C"><span class="L">C</span>record agricultural transactions and manage food distribution</button>
+      <button class="opt" onclick="pick(4,'D')" id="q4D"><span class="L">D</span>teach farming techniques to new generations</button>
+    </div>
+    <div class="exp" id="e4"><div class="eok">✅ C — record agricultural transactions and manage food distribution</div>Абзац 3: «Writing systems were invented partly to record agricultural transactions and manage the distribution of food supplies».<div class="erule">📌 Ключевые слова «writing systems», «invented» → прямой ответ в абзаце 3.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">5 / 8</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">It can be inferred from the passage that before agriculture, human populations were probably...</div>
+    <div class="opts" id="o5">
+      <button class="opt" onclick="pick(5,'A')" id="q5A"><span class="L">A</span>larger than those of early farming communities</button>
+      <button class="opt" onclick="pick(5,'B')" id="q5B"><span class="L">B</span>smaller and more spread out than agricultural populations</button>
+      <button class="opt" onclick="pick(5,'C')" id="q5C"><span class="L">C</span>more resistant to infectious diseases</button>
+      <button class="opt" onclick="pick(5,'D')" id="q5D"><span class="L">D</span>already organized into complex governments</button>
+    </div>
+    <div class="exp" id="e5"><div class="eok">✅ B — smaller and more spread out than agricultural populations</div>Текст: сельское хозяйство позволило «support far larger populations» (гораздо большие популяции). Вывод: до него популяции были меньше. Кочевники по определению рассредоточены.<div class="erule">📌 «far larger populations» → вывод: до этого популяции были меньше. Логическое следствие.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">6 / 8</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">What can be inferred about craftspeople and merchants in early agricultural societies?</div>
+    <div class="opts" id="o6">
+      <button class="opt" onclick="pick(6,'A')" id="q6A"><span class="L">A</span>They were considered the most important members of society</button>
+      <button class="opt" onclick="pick(6,'B')" id="q6B"><span class="L">B</span>They existed because not everyone needed to farm for food</button>
+      <button class="opt" onclick="pick(6,'C')" id="q6C"><span class="L">C</span>They were responsible for inventing new farming techniques</button>
+      <button class="opt" onclick="pick(6,'D')" id="q6D"><span class="L">D</span>They moved from place to place selling their goods</button>
+    </div>
+    <div class="exp" id="e6"><div class="eok">✅ B — They existed because not everyone needed to farm for food</div>Текст: «Surplus food allowed some members of society to pursue occupations unrelated to farming». Вывод: если есть излишки, не все должны производить еду → поэтому появились ремесленники.<div class="erule">📌 «Surplus food allowed» → вывод: они появились потому что еды хватало — не все должны были её производить.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">7 / 8</span><span class="qt tdt">Detail — EXCEPT</span></div><div class="qbody">
+    <div class="q-text">According to the passage, all of the following were consequences of agriculture EXCEPT...</div>
+    <div class="opts" id="o7">
+      <button class="opt" onclick="pick(7,'A')" id="q7A"><span class="L">A</span>The development of governments and legal systems</button>
+      <button class="opt" onclick="pick(7,'B')" id="q7B"><span class="L">B</span>The invention of writing systems</button>
+      <button class="opt" onclick="pick(7,'C')" id="q7C"><span class="L">C</span>The elimination of infectious diseases</button>
+      <button class="opt" onclick="pick(7,'D')" id="q7D"><span class="L">D</span>The emergence of new social roles</button>
+    </div>
+    <div class="exp" id="e7"><div class="eok">✅ C — The elimination of infectious diseases</div>Текст говорит НАОБОРОТ: «more susceptible to infectious diseases». Болезни не исчезли — наоборот, стало хуже. Это и есть исключение.<div class="erule">📌 EXCEPT: найди три варианта которые ЕСТЬ в тексте → четвёртый которого нет = ответ.</div></div>
+  </div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">8 / 8</span><span class="qt tinf">Inference — Attitude</span></div><div class="qbody">
+    <div class="q-text">The author's attitude toward the development of agriculture can best be described as...</div>
+    <div class="opts" id="o8">
+      <button class="opt" onclick="pick(8,'A')" id="q8A"><span class="L">A</span>Strongly critical — agriculture caused more harm than good</button>
+      <button class="opt" onclick="pick(8,'B')" id="q8B"><span class="L">B</span>Balanced — presenting both advantages and disadvantages</button>
+      <button class="opt" onclick="pick(8,'C')" id="q8C"><span class="L">C</span>Enthusiastic — agriculture was entirely positive for humanity</button>
+      <button class="opt" onclick="pick(8,'D')" id="q8D"><span class="L">D</span>Uncertain — the author does not take a clear position</button>
+    </div>
+    <div class="exp" id="e8"><div class="eok">✅ B — Balanced — presenting both advantages and disadvantages</div>Последний абзац: «However, agriculture also brought significant challenges» (болезни, неурожаи) — но заканчивается: «advantages… meant that farming spread rapidly». Автор объективно показывает обе стороны.<div class="erule">📌 «However» и «Despite» — сигналы что автор видит обе стороны → позиция сбалансированная.</div></div>
+  </div></div>
+
+  <div class="score-card" id="score-card">
+    <div class="score-big" id="score-display">—</div>
+    <div class="score-lbl">из 8 вопросов · Reading · Урок 9</div>
+    <div class="score-bw"><div class="score-b" id="score-bar"></div></div>
+    <div class="score-msg" id="score-msg"></div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('tips',document.querySelectorAll('.tab')[3])">Дальше: Советы →</button>
+</div>
+
+<div class="section" id="tab-tips">
+  <div class="sec-title">Практические советы</div>
+  <div class="sec-intro">Эти приёмы помогают набирать баллы даже когда текст сложный или незнакомый.</div>
+
+  <div class="tip-card"><div class="tip-num">1</div><div><div class="tip-title">Первое предложение каждого абзаца — topic sentence</div><div class="tip-body">В текстах TOEFL каждый абзац начинается с главной мысли. Если читать только первые предложения — уже понимаешь структуру. Экономит время.</div></div></div>
+  <div class="tip-card"><div class="tip-num">2</div><div><div class="tip-title">Не нужно знать тему — ответы в тексте</div><div class="tip-body">TOEFL Reading проверяет умение читать и анализировать, а не знания по биологии или истории. Все нужные факты в тексте. Не угадывай из общих знаний.</div></div></div>
+  <div class="tip-card"><div class="tip-num">3</div><div><div class="tip-title">Слова-ловушки в вариантах ответов</div><div class="tip-body">ETS вставляет в неверные ответы слова из текста. Слова знакомые — смысл другой. Всегда проверяй смысл, не только слова.</div></div></div>
+  <div class="tip-card"><div class="tip-num">4</div><div><div class="tip-title">«EXCEPT / NOT / LEAST» — обведи карандашом</div><div class="tip-body">Как только видишь эти слова — сразу обведи их. Логика меняется полностью: нужно найти то чего НЕ было в тексте. Здесь теряется больше всего баллов.</div></div></div>
+  <div class="tip-card"><div class="tip-num">5</div><div><div class="tip-title">Для Inference — не уходи далеко от текста</div><div class="tip-body">Вывод должен следовать непосредственно из написанного. Если нужно много рассуждать или привлекать внешние знания — скорее всего это неверный вариант.</div></div></div>
+
+  <div class="divider"></div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:20px">
+    <div style="font-size:15px;font-weight:600;margin-bottom:12px">📚 Домашнее задание</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.9">
+      1. Пройди 1 полный текст из Longman Preparation Course for TOEFL ITP (Reading Section)<br>
+      2. Для каждого вопроса — определи тип: Main Idea / Detail / Inference<br>
+      3. Для Detail-вопросов — найди в тексте предложение с ответом и подчеркни его<br>
+      4. Потренируй scanning: открой любой академический текст и найди 3 конкретных факта за 2 минуты
+    </div>
+  </div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:20px">
+    <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:.04em">ПРОГРЕСС · SECTION III</div>
+    <div style="font-size:14px;color:var(--muted);line-height:2">
+      ✅ Урок 9 — Main Idea, Detail, Inference<br>
+      ⬜ Урок 10 — Vocabulary in Context, Reference, Negative Facts<br>
+      ⬜ Урок 11 — Academic Vocabulary &amp; Speed Reading<br>
+      ⬜ Урок 12 — Full Passage Practice
+    </div>
+  </div>
+  <button class="btn-p">✅ Урок 9 завершён!</button>
+  <div class="next-box">
+    Следующий: <strong>Урок 10 — Reading: Vocabulary in Context, Reference &amp; Negative Facts</strong><br>
+    <span style="font-size:13px;opacity:.8">Попроси своего преподавателя отправить Урок 10</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+const ANS={1:'B',2:'C',3:'B',4:'C',5:'B',6:'B',7:'C',8:'B'};
+const picked={};
+let score=0;
+
+function pick(q,letter){
+  if(picked[q]) return;
+  picked[q]=letter;
+  document.querySelectorAll('#o'+q+' .opt').forEach(b=>{b.classList.remove('picked');b.disabled=true;});
+  const btn=document.getElementById('q'+q+letter);
+  const correct=ANS[q];
+  const cb=document.getElementById('q'+q+correct);
+  if(letter===correct){if(btn){btn.classList.add('ok');}score++;}
+  else{if(btn){btn.classList.add('ng');}if(cb)cb.classList.add('ok');}
+  document.getElementById('e'+q).classList.add('show');
+  const done=Object.keys(picked).length;
+  document.getElementById('progress').style.width=(done/8*100)+'%';
+  if(done===8){
+    const card=document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson9', 'Урок 9: Main Idea, Detail & Inference', score, 8, Math.round(score/8*100));
+    document.getElementById('score-display').textContent=score+'/8';
+    setTimeout(()=>document.getElementById('score-bar').style.width=(score/8*100)+'%',300);
+    const msgs=['Повтори стратегии и попробуй снова.','Обрати внимание на Inference.','Хорошо! Ещё практики.','Хорошо! Разбираешься в типах.','Отлично!','Отлично!','Превосходно!','Превосходно! Все правильно!'];
+    document.getElementById('score-msg').textContent=msgs[score];
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  else{const ids=['theory','strategy','practice','tips'];document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

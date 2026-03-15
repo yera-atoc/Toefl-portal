@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 14B: Mock Test · Section III Reading</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;
+--ink:#1C1917;--teal:#065F46;--teal-mid:#059669;--teal-bg:#ECFDF5;--teal-brd:#6EE7B7;
+--blue:#1E40AF;--blue-mid:#2563EB;--blue-bg:#EFF6FF;
+--amber:#92400E;--amber-mid:#D97706;--amber-bg:#FFFBEB;--amber-brd:#FDE68A;
+--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;
+--rd:#991B1B;--rd-bg:#FEF2F2;--rd-brd:#FECACA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+.hero{background:linear-gradient(135deg,#1C1917,#292524,#44403C);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 15%60%,rgba(5,150,105,.15),transparent 50%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:30px 24px 24px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#D6D3D1;letter-spacing:.05em;margin-bottom:12px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#6EE7B7;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:26px;color:#fff;line-height:1.2;margin-bottom:6px}
+.hsub{font-size:14px;color:#A8A29E;margin-bottom:16px}
+.hstats{display:flex;gap:20px;flex-wrap:wrap}
+.hs{text-align:center}
+.hsn{font-family:'Lora',serif;font-size:26px;color:#fff}
+.hsl{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.04em}
+.pt{height:4px;background:rgba(255,255,255,.15);margin-top:16px;border-radius:2px}
+.pf{height:4px;background:#6EE7B7;border-radius:2px;width:0%;transition:width .3s}
+.pl{font-size:12px;color:rgba(255,255,255,.45);margin-top:4px;text-align:right}
+.page{max-width:720px;margin:0 auto;padding:20px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.ct{font-size:16px;font-weight:600;margin-bottom:10px}
+.cb{font-size:14px;color:var(--muted);line-height:1.8}
+.btn{display:block;width:100%;background:#1C1917;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn:hover{opacity:.88}
+.timer-box{background:#1C1917;border-radius:var(--r);padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.tdisplay{font-family:'Lora',serif;font-size:36px;color:#6EE7B7;min-width:80px;line-height:1}
+.tlabel{font-size:13px;color:#A8A29E;line-height:1.5}
+.tbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:var(--rsm);padding:7px 14px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-right:6px}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.tbtn:disabled{opacity:.4;cursor:default}
+/* text divider */
+.tdiv{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:20px 0 14px;display:flex;align-items:center;gap:10px}
+.ti{width:34px;height:34px;border-radius:8px;background:#1C1917;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.ttitle{font-size:14px;font-weight:600;color:var(--text)}
+.tsub{font-size:12px;color:var(--muted);margin-top:1px}
+/* passage */
+.passage{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:18px 20px;margin-bottom:16px;font-family:'Lora',serif;font-size:14px;line-height:1.95;color:#1C1917}
+.passage p{margin-bottom:10px}
+.passage p:last-child{margin-bottom:0}
+.plbl{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+/* questions */
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:10px}
+.qh{padding:8px 14px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:11px;font-weight:600;color:var(--muted)}
+.qt{font-size:10px;font-weight:600;padding:2px 7px;border-radius:8px}
+.tmi{background:#CCFBF1;color:#042F2E}.tdt{background:#DCFCE7;color:#166534}.tinf{background:#E0E7FF;color:#3730A3}.tvc{background:#DBEAFE;color:#1E40AF}.tnf{background:#FFE4E6;color:#9F1239}.trf{background:#EDE9FE;color:#5B21B6}
+.qbody{padding:14px}
+.q-text{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;align-items:flex-start;gap:8px;border:1px solid var(--border);border-radius:var(--rsm);padding:9px 12px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .13s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.4}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:16px}
+.opt:hover:not([disabled]){border-color:var(--teal-mid);background:var(--teal-bg)}
+.opt.picked{border-color:var(--teal-mid);background:var(--teal-bg)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--rd-bg);border-color:var(--rd-brd);color:var(--rd)}
+.opt.ng .L{color:var(--rd)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:8px;padding:9px 12px;background:var(--amber-bg);border-radius:var(--rsm);font-size:12px;line-height:1.6;color:var(--amber);border-left:3px solid var(--amber-mid);display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;margin-bottom:3px}
+/* results */
+.res-hero{background:linear-gradient(135deg,#1C1917,#292524);border-radius:var(--r);padding:28px;text-align:center;margin-bottom:14px;color:#fff}
+.rbig{font-family:'Lora',serif;font-size:60px;color:#fff;line-height:1}
+.rlbl{font-size:14px;color:#A8A29E;margin-top:4px}
+.rpct{font-size:26px;font-weight:600;color:#6EE7B7;margin-top:6px}
+.rmsg{font-size:14px;color:rgba(255,255,255,.7);margin-top:8px}
+.bkdn{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.bk{background:var(--white);border:1px solid var(--border);border-radius:var(--rsm);padding:10px 6px;text-align:center}
+.bkn{font-family:'Lora',serif;font-size:22px}
+.bkl{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.3}
+.bkbw{margin-top:6px;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.bkb{height:4px;border-radius:2px;transition:width 1s ease;width:0%}
+.next-box{padding:14px 16px;background:var(--teal-bg);border:1px solid var(--teal-brd);border-radius:var(--r);font-size:14px;color:var(--teal);line-height:1.6;text-align:center;margin-top:10px}
+@media(max-width:480px){.htitle{font-size:22px}.bkdn{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 14B · Full Mock Test</div>
+    <div class="htitle">Section III — Reading<br>Comprehension</div>
+    <div class="hsub">5 текстов · 50 вопросов · 55 минут · Все типы вопросов</div>
+    <div class="hstats">
+      <div class="hs"><div class="hsn">5</div><div class="hsl">ТЕКСТОВ</div></div>
+      <div class="hs"><div class="hsn">50</div><div class="hsl">ВОПРОСОВ</div></div>
+      <div class="hs"><div class="hsn">55</div><div class="hsl">МИН</div></div>
+    </div>
+    <div class="pt"><div class="pf" id="pbar"></div></div>
+    <div class="pl" id="plbl">0 / 50 отвечено</div>
+  </div>
+</div>
+
+<!-- INSTR -->
+<div class="page" id="pg-instr">
+  <div class="card">
+    <div class="ct">📋 Section III — Reading Comprehension</div>
+    <div class="cb">
+      5 академических текстов · 10 вопросов к каждому.<br><br>
+      <b>Стратегия:</b> Запусти таймер → просмотри 10 вопросов → читай текст (первые предложения абзацев) → отвечай на вопросы (~45 сек каждый).<br><br>
+      <b>Ответы</b> появляются сразу после выбора — учебный режим.
+    </div>
+  </div>
+  <button class="btn" onclick="document.getElementById('pg-instr').style.display='none';document.getElementById('pg-test').style.display='block';window.scrollTo({top:0})">Начать Section III →</button>
+</div>
+
+<!-- TEST -->
+<div class="page" id="pg-test" style="display:none">
+
+  <div class="timer-box">
+    <div><div class="tdisplay" id="tdisplay">55:00</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px">оставшееся время</div></div>
+    <div style="flex:1">
+      <div class="tlabel">~11 мин на текст · 45 сек на вопрос</div>
+      <div style="margin-top:8px">
+        <button class="tbtn" id="tstart" onclick="startTimer()">▶ Старт</button>
+        <button class="tbtn" onclick="resetTimer()">↺ Сброс</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TEXT 1: Oceanography ═══ -->
+  <div class="tdiv"><div class="ti">1</div><div><div class="ttitle">Текст 1 — Oceanography</div><div class="tsub">~260 слов · вопросы 1–10</div></div></div>
+
+  <div class="passage">
+    <div class="plbl">📄 Прочитай перед ответами</div>
+    <p>The deep ocean, generally defined as water below 200 meters, remains one of the least explored environments on Earth. Despite covering more than sixty percent of the planet's surface, the deep sea was long considered inhospitable to life due to its extreme cold, crushing pressure, and complete absence of sunlight. The discovery of hydrothermal vents in 1977 fundamentally changed scientists' understanding of life's potential in extreme environments.</p>
+    <p>Hydrothermal vents are cracks in the seafloor through which superheated, mineral-rich water is expelled. Unlike surface ecosystems that depend on sunlight for energy, the ecosystems around hydrothermal vents are powered by a process called chemosynthesis. Bacteria at the base of the food chain convert chemicals from the vent water — particularly hydrogen sulfide — into organic matter. These bacteria support a surprisingly diverse community of organisms, including giant tube worms, clams, shrimp, and crabs.</p>
+    <p>The discovery of hydrothermal vent communities had profound implications for astrobiology — the study of the potential for life elsewhere in the universe. If life can thrive without sunlight in the extreme conditions of the deep sea, scientists reasoned, similar ecosystems might exist on other planetary bodies. Europa, one of Jupiter's moons, is considered a particularly promising candidate because it possesses a vast subsurface ocean kept liquid by tidal heating from Jupiter's gravity.</p>
+    <p>Research into deep-sea ecosystems remains challenging due to the technological requirements of deep-ocean exploration. However, advances in remotely operated vehicles and pressure-resistant equipment have progressively expanded our knowledge of this hidden world.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·1/10</span><span class="qt tmi">Main Idea</span></div><div class="qbody"><div class="q-text">What is the passage mainly about?</div><div class="opts" id="o1"><button class="opt" onclick="pick(1,'A')" id="q1A"><span class="L">A</span>The technology used to explore deep-sea environments</button><button class="opt" onclick="pick(1,'B')" id="q1B"><span class="L">B</span>The discovery of hydrothermal vents and their significance for science</button><button class="opt" onclick="pick(1,'C')" id="q1C"><span class="L">C</span>Why most of the ocean remains unexplored</button><button class="opt" onclick="pick(1,'D')" id="q1D"><span class="L">D</span>The similarities between Earth's oceans and Europa's subsurface water</button></div><div class="exp" id="e1"><div class="eok">✅ B</div>Текст: открытие гидротермальных источников (абз.1), их экосистемы (абз.2), значение для астробиологии (абз.3). Всё связано с открытием источников и их влиянием на науку.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·2/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, when were hydrothermal vents discovered?</div><div class="opts" id="o2"><button class="opt" onclick="pick(2,'A')" id="q2A"><span class="L">A</span>In the 1950s</button><button class="opt" onclick="pick(2,'B')" id="q2B"><span class="L">B</span>In the 1960s</button><button class="opt" onclick="pick(2,'C')" id="q2C"><span class="L">C</span>In 1977</button><button class="opt" onclick="pick(2,'D')" id="q2D"><span class="L">D</span>In the 1990s</button></div><div class="exp" id="e2"><div class="eok">✅ C</div>Абзац 1: «The discovery of hydrothermal vents in 1977».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·3/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what is chemosynthesis?</div><div class="opts" id="o3"><button class="opt" onclick="pick(3,'A')" id="q3A"><span class="L">A</span>A process by which organisms convert sunlight into energy</button><button class="opt" onclick="pick(3,'B')" id="q3B"><span class="L">B</span>A process by which bacteria convert chemicals into organic matter</button><button class="opt" onclick="pick(3,'C')" id="q3C"><span class="L">C</span>The study of chemical reactions in the deep ocean</button><button class="opt" onclick="pick(3,'D')" id="q3D"><span class="L">D</span>A method of deep-sea exploration using chemical sensors</button></div><div class="exp" id="e3"><div class="eok">✅ B</div>Абзац 2: «Bacteria... convert chemicals from the vent water into organic matter».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·4/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«expelled»</strong> (paragraph 2) is closest in meaning to...</div><div class="opts" id="o4"><button class="opt" onclick="pick(4,'A')" id="q4A"><span class="L">A</span>absorbed</button><button class="opt" onclick="pick(4,'B')" id="q4B"><span class="L">B</span>forced out</button><button class="opt" onclick="pick(4,'C')" id="q4C"><span class="L">C</span>collected</button><button class="opt" onclick="pick(4,'D')" id="q4D"><span class="L">D</span>filtered</button></div><div class="exp" id="e4"><div class="eok">✅ B — forced out</div>«superheated water is expelled» = выбрасывается под давлением. expel = выталкивать, изгонять.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·5/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">What can be inferred from the passage about Europa?</div><div class="opts" id="o5"><button class="opt" onclick="pick(5,'A')" id="q5A"><span class="L">A</span>It definitely has living organisms in its ocean</button><button class="opt" onclick="pick(5,'B')" id="q5B"><span class="L">B</span>It may have conditions suitable for life similar to Earth's deep ocean</button><button class="opt" onclick="pick(5,'C')" id="q5C"><span class="L">C</span>Its ocean is warmer than Earth's deep ocean</button><button class="opt" onclick="pick(5,'D')" id="q5D"><span class="L">D</span>It has already been explored by remotely operated vehicles</button></div><div class="exp" id="e5"><div class="eok">✅ B</div>Текст: if life can thrive in extreme deep-sea conditions → «similar ecosystems might exist» on Europa. «might» = возможно, не точно.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·6/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what keeps Europa's subsurface ocean liquid?</div><div class="opts" id="o6"><button class="opt" onclick="pick(6,'A')" id="q6A"><span class="L">A</span>Hydrothermal vents similar to those on Earth</button><button class="opt" onclick="pick(6,'B')" id="q6B"><span class="L">B</span>Tidal heating from Jupiter's gravity</button><button class="opt" onclick="pick(6,'C')" id="q6C"><span class="L">C</span>Solar radiation penetrating the ice surface</button><button class="opt" onclick="pick(6,'D')" id="q6D"><span class="L">D</span>Chemical reactions in the water</button></div><div class="exp" id="e6"><div class="eok">✅ B</div>Абзац 3: «kept liquid by tidal heating from Jupiter's gravity».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·7/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«progressively»</strong> (paragraph 4) is closest in meaning to...</div><div class="opts" id="o7"><button class="opt" onclick="pick(7,'A')" id="q7A"><span class="L">A</span>suddenly</button><button class="opt" onclick="pick(7,'B')" id="q7B"><span class="L">B</span>gradually and continuously</button><button class="opt" onclick="pick(7,'C')" id="q7C"><span class="L">C</span>unsuccessfully</button><button class="opt" onclick="pick(7,'D')" id="q7D"><span class="L">D</span>recently</button></div><div class="exp" id="e7"><div class="eok">✅ B — gradually and continuously</div>progressively = постепенно, всё больше. «have progressively expanded» = постепенно расширили.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·8/10</span><span class="qt tnf">NOT/EXCEPT</span></div><div class="qbody"><div class="q-text">According to the passage, all of the following are true about the deep ocean EXCEPT...</div><div class="opts" id="o8"><button class="opt" onclick="pick(8,'A')" id="q8A"><span class="L">A</span>It covers more than sixty percent of Earth's surface</button><button class="opt" onclick="pick(8,'B')" id="q8B"><span class="L">B</span>It was once considered inhospitable to life</button><button class="opt" onclick="pick(8,'C')" id="q8C"><span class="L">C</span>It has been fully explored using modern technology</button><button class="opt" onclick="pick(8,'D')" id="q8D"><span class="L">D</span>It has extreme cold and crushing pressure</button></div><div class="exp" id="e8"><div class="eok">✅ C</div>Текст: «remains one of the least explored» + «Research remains challenging». Полностью исследован — противоречит тексту.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·9/10</span><span class="qt trf">Reference</span></div><div class="qbody"><div class="q-text">The word <strong>«They»</strong> in paragraph 2 («They support a surprisingly diverse community») refers to...</div><div class="opts" id="o9"><button class="opt" onclick="pick(9,'A')" id="q9A"><span class="L">A</span>Hydrothermal vents</button><button class="opt" onclick="pick(9,'B')" id="q9B"><span class="L">B</span>Bacteria</button><button class="opt" onclick="pick(9,'C')" id="q9C"><span class="L">C</span>Chemicals</button><button class="opt" onclick="pick(9,'D')" id="q9D"><span class="L">D</span>Tube worms</button></div><div class="exp" id="e9"><div class="eok">✅ B — Bacteria</div>«Bacteria... convert chemicals into organic matter. These bacteria support a diverse community». They = These bacteria.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T1·10/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">It can be inferred that before 1977, scientists believed that...</div><div class="opts" id="o10"><button class="opt" onclick="pick(10,'A')" id="q10A"><span class="L">A</span>life could not exist without sunlight</button><button class="opt" onclick="pick(10,'B')" id="q10B"><span class="L">B</span>hydrothermal vents existed but were not studied</button><button class="opt" onclick="pick(10,'C')" id="q10C"><span class="L">C</span>the deep ocean contained more species than the surface</button><button class="opt" onclick="pick(10,'D')" id="q10D"><span class="L">D</span>chemosynthesis was more common than photosynthesis</button></div><div class="exp" id="e10"><div class="eok">✅ A</div>«considered inhospitable... due to... complete absence of sunlight» → учёные думали, что без света жизни нет. Открытие 1977 изменило это.</div></div></div>
+
+  <!-- ═══ TEXT 2: History / Renaissance ═══ -->
+  <div class="tdiv"><div class="ti">2</div><div><div class="ttitle">Текст 2 — History</div><div class="tsub">~270 слов · вопросы 11–20</div></div></div>
+
+  <div class="passage">
+    <div class="plbl">📄 Прочитай перед ответами</div>
+    <p>The Renaissance, which flourished in Europe between the fourteenth and seventeenth centuries, represented a profound cultural and intellectual transformation. The term itself, meaning "rebirth" in French, refers to the renewed interest in the art, philosophy, and literature of ancient Greece and Rome. This classical revival, combined with new humanist ideas placing human beings at the center of inquiry, produced some of the most celebrated works in Western civilization.</p>
+    <p>The Renaissance originated in the prosperous city-states of northern Italy, particularly Florence. Wealthy merchant families, most notably the Medici, became prominent patrons of the arts, sponsoring artists, architects, and scholars. This patronage system enabled talented individuals such as Leonardo da Vinci and Michelangelo to devote themselves entirely to creative and intellectual pursuits, producing works that continue to define the era.</p>
+    <p>A crucial development that accelerated the spread of Renaissance ideas was the invention of the printing press by Johannes Gutenberg around 1440. Before this invention, books were copied by hand and available only to the wealthy and educated elite. The printing press made texts far more accessible and affordable, enabling ideas to spread rapidly across Europe. Within decades, thousands of books were in circulation, dramatically expanding literacy and facilitating the exchange of knowledge.</p>
+    <p>The Renaissance also had a significant impact on scientific thinking. Scholars began to challenge the authority of ancient texts and the medieval Church, emphasizing direct observation and experimentation. This spirit of inquiry laid the groundwork for the Scientific Revolution of the seventeenth century, which would transform humanity's understanding of the natural world.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·1/10</span><span class="qt tmi">Main Idea</span></div><div class="qbody"><div class="q-text">What is the main topic of the passage?</div><div class="opts" id="o11"><button class="opt" onclick="pick(11,'A')" id="q11A"><span class="L">A</span>The lives of Leonardo da Vinci and Michelangelo</button><button class="opt" onclick="pick(11,'B')" id="q11B"><span class="L">B</span>The invention of the printing press and its effects</button><button class="opt" onclick="pick(11,'C')" id="q11C"><span class="L">C</span>The Renaissance as a cultural and intellectual transformation in Europe</button><button class="opt" onclick="pick(11,'D')" id="q11D"><span class="L">D</span>The relationship between Italy and ancient Greece and Rome</button></div><div class="exp" id="e11"><div class="eok">✅ C</div>Весь текст: определение Ренессанса, происхождение, патронаж, книгопечатание, влияние на науку. Всё это = культурная трансформация.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·2/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, where did the Renaissance originate?</div><div class="opts" id="o12"><button class="opt" onclick="pick(12,'A')" id="q12A"><span class="L">A</span>In ancient Greece</button><button class="opt" onclick="pick(12,'B')" id="q12B"><span class="L">B</span>In the prosperous city-states of northern Italy</button><button class="opt" onclick="pick(12,'C')" id="q12C"><span class="L">C</span>In France, where the term «Renaissance» was coined</button><button class="opt" onclick="pick(12,'D')" id="q12D"><span class="L">D</span>In the religious centers of medieval Europe</button></div><div class="exp" id="e12"><div class="eok">✅ B</div>Абзац 2: «The Renaissance originated in the prosperous city-states of northern Italy, particularly Florence».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·3/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«patrons»</strong> (paragraph 2) is closest in meaning to...</div><div class="opts" id="o13"><button class="opt" onclick="pick(13,'A')" id="q13A"><span class="L">A</span>critics</button><button class="opt" onclick="pick(13,'B')" id="q13B"><span class="L">B</span>financial supporters</button><button class="opt" onclick="pick(13,'C')" id="q13C"><span class="L">C</span>students</button><button class="opt" onclick="pick(13,'D')" id="q13D"><span class="L">D</span>religious leaders</button></div><div class="exp" id="e13"><div class="eok">✅ B — financial supporters</div>«became prominent patrons of the arts, sponsoring artists» — спонсировали = финансово поддерживали.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·4/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, approximately when was the printing press invented?</div><div class="opts" id="o14"><button class="opt" onclick="pick(14,'A')" id="q14A"><span class="L">A</span>Around 1350</button><button class="opt" onclick="pick(14,'B')" id="q14B"><span class="L">B</span>Around 1440</button><button class="opt" onclick="pick(14,'C')" id="q14C"><span class="L">C</span>Around 1500</button><button class="opt" onclick="pick(14,'D')" id="q14D"><span class="L">D</span>Around 1600</button></div><div class="exp" id="e14"><div class="eok">✅ B</div>Абзац 3: «invention of the printing press by Johannes Gutenberg around 1440».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·5/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">It can be inferred from the passage that before the printing press, most people were...</div><div class="opts" id="o15"><button class="opt" onclick="pick(15,'A')" id="q15A"><span class="L">A</span>uninterested in learning to read</button><button class="opt" onclick="pick(15,'B')" id="q15B"><span class="L">B</span>unable to afford or access books easily</button><button class="opt" onclick="pick(15,'C')" id="q15C"><span class="L">C</span>taught to read by the Church</button><button class="opt" onclick="pick(15,'D')" id="q15D"><span class="L">D</span>already literate throughout Europe</button></div><div class="exp" id="e15"><div class="eok">✅ B</div>«books were copied by hand and available only to the wealthy and educated elite» → большинство не имели доступа к книгам → вывод B.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·6/10</span><span class="qt tnf">NOT/EXCEPT</span></div><div class="qbody"><div class="q-text">According to the passage, all of the following contributed to the spread of Renaissance ideas EXCEPT...</div><div class="opts" id="o16"><button class="opt" onclick="pick(16,'A')" id="q16A"><span class="L">A</span>Wealthy patrons who supported artists and scholars</button><button class="opt" onclick="pick(16,'B')" id="q16B"><span class="L">B</span>The invention of the printing press</button><button class="opt" onclick="pick(16,'C')" id="q16C"><span class="L">C</span>Military conquests by Italian city-states</button><button class="opt" onclick="pick(16,'D')" id="q16D"><span class="L">D</span>Increased accessibility of books and texts</button></div><div class="exp" id="e16"><div class="eok">✅ C — Military conquests</div>A ✓ (абз.2), B ✓ (абз.3), D ✓ (абз.3). Военные завоевания в тексте не упоминаются.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·7/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">The author implies that the Scientific Revolution of the seventeenth century...</div><div class="opts" id="o17"><button class="opt" onclick="pick(17,'A')" id="q17A"><span class="L">A</span>had nothing to do with the Renaissance</button><button class="opt" onclick="pick(17,'B')" id="q17B"><span class="L">B</span>was a direct continuation of Renaissance intellectual inquiry</button><button class="opt" onclick="pick(17,'C')" id="q17C"><span class="L">C</span>was caused by the invention of the printing press alone</button><button class="opt" onclick="pick(17,'D')" id="q17D"><span class="L">D</span>replaced all ideas developed during the Renaissance</button></div><div class="exp" id="e17"><div class="eok">✅ B</div>«This spirit of inquiry laid the groundwork for the Scientific Revolution» — Ренессанс создал основу для Научной революции = прямое продолжение.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·8/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«flourished»</strong> (paragraph 1) is closest in meaning to...</div><div class="opts" id="o18"><button class="opt" onclick="pick(18,'A')" id="q18A"><span class="L">A</span>declined</button><button class="opt" onclick="pick(18,'B')" id="q18B"><span class="L">B</span>thrived and developed strongly</button><button class="opt" onclick="pick(18,'C')" id="q18C"><span class="L">C</span>began suddenly</button><button class="opt" onclick="pick(18,'D')" id="q18D"><span class="L">D</span>spread to other countries</button></div><div class="exp" id="e18"><div class="eok">✅ B — thrived and developed strongly</div>«flourished in Europe» = процветал, активно развивался. flourish = thrive, bloom.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·9/10</span><span class="qt trf">Reference</span></div><div class="qbody"><div class="q-text">«This patronage system» (paragraph 2) refers to...</div><div class="opts" id="o19"><button class="opt" onclick="pick(19,'A')" id="q19A"><span class="L">A</span>The system of hand-copying books in medieval monasteries</button><button class="opt" onclick="pick(19,'B')" id="q19B"><span class="L">B</span>The practice of wealthy families supporting artists and scholars</button><button class="opt" onclick="pick(19,'C')" id="q19C"><span class="L">C</span>The government funding of Italian universities</button><button class="opt" onclick="pick(19,'D')" id="q19D"><span class="L">D</span>The trading networks between Italian city-states</button></div><div class="exp" id="e19"><div class="eok">✅ B</div>«Wealthy merchant families... became prominent patrons of the arts, sponsoring artists... This patronage system» → ссылается на практику спонсирования.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T2·10/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what did Renaissance scholars emphasize?</div><div class="opts" id="o20"><button class="opt" onclick="pick(20,'A')" id="q20A"><span class="L">A</span>The authority of ancient Greek texts</button><button class="opt" onclick="pick(20,'B')" id="q20B"><span class="L">B</span>Direct observation and experimentation</button><button class="opt" onclick="pick(20,'C')" id="q20C"><span class="L">C</span>Religious interpretation of natural phenomena</button><button class="opt" onclick="pick(20,'D')" id="q20D"><span class="L">D</span>The importance of maintaining medieval traditions</button></div><div class="exp" id="e20"><div class="eok">✅ B</div>Абзац 4: «emphasizing direct observation and experimentation».</div></div></div>
+
+  <!-- ═══ TEXT 3: Psychology ═══ -->
+  <div class="tdiv"><div class="ti">3</div><div><div class="ttitle">Текст 3 — Psychology</div><div class="tsub">~265 слов · вопросы 21–30</div></div></div>
+
+  <div class="passage">
+    <div class="plbl">📄 Прочитай перед ответами</div>
+    <p>The study of human motivation has been a central concern of psychology since the field's earliest days. One of the most influential frameworks for understanding motivation is Abraham Maslow's hierarchy of needs, first proposed in 1943. Maslow argued that human needs can be arranged in a hierarchical pyramid, with the most fundamental physiological needs at the base and more complex psychological needs at higher levels.</p>
+    <p>At the foundation of Maslow's pyramid are physiological needs — the basic requirements for survival, including food, water, sleep, and shelter. Above these are safety needs, encompassing physical security, employment, and financial stability. The third level consists of social needs, reflecting humans' innate desire for belonging, friendship, and intimate relationships. Esteem needs — the desire for achievement, recognition, and self-respect — occupy the fourth level. At the apex of the pyramid sits self-actualization, which Maslow described as the desire to realize one's full potential.</p>
+    <p>Maslow proposed that individuals generally pursue higher-level needs only after lower-level needs have been adequately satisfied. However, subsequent research has challenged this strict sequential interpretation. Studies have shown that people frequently pursue multiple needs simultaneously and that the prioritization of needs varies considerably across different cultures.</p>
+    <p>Despite these criticisms, Maslow's framework has proven remarkably durable and has been widely applied in fields ranging from education and management to healthcare. Its enduring influence lies partly in its intuitive appeal — the idea that human motivation is fundamentally layered and progressive resonates with many people's lived experiences.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·1/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, when did Maslow first propose his hierarchy of needs?</div><div class="opts" id="o21"><button class="opt" onclick="pick(21,'A')" id="q21A"><span class="L">A</span>In 1900</button><button class="opt" onclick="pick(21,'B')" id="q21B"><span class="L">B</span>In 1943</button><button class="opt" onclick="pick(21,'C')" id="q21C"><span class="L">C</span>In 1960</button><button class="opt" onclick="pick(21,'D')" id="q21D"><span class="L">D</span>In 1975</button></div><div class="exp" id="e21"><div class="eok">✅ B</div>Абзац 1: «first proposed in 1943».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·2/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what is at the apex of Maslow's pyramid?</div><div class="opts" id="o22"><button class="opt" onclick="pick(22,'A')" id="q22A"><span class="L">A</span>Physiological needs</button><button class="opt" onclick="pick(22,'B')" id="q22B"><span class="L">B</span>Safety needs</button><button class="opt" onclick="pick(22,'C')" id="q22C"><span class="L">C</span>Esteem needs</button><button class="opt" onclick="pick(22,'D')" id="q22D"><span class="L">D</span>Self-actualization</button></div><div class="exp" id="e22"><div class="eok">✅ D</div>Абзац 2: «At the apex of the pyramid sits self-actualization».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·3/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«durable»</strong> (paragraph 4) is closest in meaning to...</div><div class="opts" id="o23"><button class="opt" onclick="pick(23,'A')" id="q23A"><span class="L">A</span>controversial</button><button class="opt" onclick="pick(23,'B')" id="q23B"><span class="L">B</span>long-lasting and resistant to change</button><button class="opt" onclick="pick(23,'C')" id="q23C"><span class="L">C</span>simple and easy to understand</button><button class="opt" onclick="pick(23,'D')" id="q23D"><span class="L">D</span>recently developed</button></div><div class="exp" id="e23"><div class="eok">✅ B — long-lasting</div>«remarkably durable... enduring influence» — контекст устойчивости со временем. durable = прочный, долговечный.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·4/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">According to paragraph 3, later research suggests that Maslow's original theory...</div><div class="opts" id="o24"><button class="opt" onclick="pick(24,'A')" id="q24A"><span class="L">A</span>was completely incorrect</button><button class="opt" onclick="pick(24,'B')" id="q24B"><span class="L">B</span>oversimplified the order in which people pursue needs</button><button class="opt" onclick="pick(24,'C')" id="q24C"><span class="L">C</span>applied only to people in wealthy countries</button><button class="opt" onclick="pick(24,'D')" id="q24D"><span class="L">D</span>failed to identify basic human needs correctly</button></div><div class="exp" id="e24"><div class="eok">✅ B</div>«subsequent research has challenged this strict sequential interpretation. people frequently pursue multiple needs simultaneously» — теория упрощала порядок потребностей.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·5/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what are esteem needs?</div><div class="opts" id="o25"><button class="opt" onclick="pick(25,'A')" id="q25A"><span class="L">A</span>The desire for food, water, and shelter</button><button class="opt" onclick="pick(25,'B')" id="q25B"><span class="L">B</span>The need for belonging and friendship</button><button class="opt" onclick="pick(25,'C')" id="q25C"><span class="L">C</span>The desire for achievement, recognition, and self-respect</button><button class="opt" onclick="pick(25,'D')" id="q25D"><span class="L">D</span>The desire to realize one's full potential</button></div><div class="exp" id="e25"><div class="eok">✅ C</div>Абзац 2: «Esteem needs — the desire for achievement, recognition, and self-respect».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·6/10</span><span class="qt tnf">NOT/EXCEPT</span></div><div class="qbody"><div class="q-text">According to the passage, Maslow's framework has been applied in all of the following fields EXCEPT...</div><div class="opts" id="o26"><button class="opt" onclick="pick(26,'A')" id="q26A"><span class="L">A</span>Education</button><button class="opt" onclick="pick(26,'B')" id="q26B"><span class="L">B</span>Management</button><button class="opt" onclick="pick(26,'C')" id="q26C"><span class="L">C</span>Healthcare</button><button class="opt" onclick="pick(26,'D')" id="q26D"><span class="L">D</span>Engineering</button></div><div class="exp" id="e26"><div class="eok">✅ D — Engineering</div>Абзац 4: education ✓, management ✓, healthcare ✓. Engineering не упоминается.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·7/10</span><span class="qt trf">Reference</span></div><div class="qbody"><div class="q-text">«These criticisms» (paragraph 4) refers to...</div><div class="opts" id="o27"><button class="opt" onclick="pick(27,'A')" id="q27A"><span class="L">A</span>The view that psychology is not a true science</button><button class="opt" onclick="pick(27,'B')" id="q27B"><span class="L">B</span>The arguments that Maslow's hierarchy is too strict and culturally limited</button><button class="opt" onclick="pick(27,'C')" id="q27C"><span class="L">C</span>The criticism that self-actualization cannot be measured</button><button class="opt" onclick="pick(27,'D')" id="q27D"><span class="L">D</span>The view that physiological needs are not important</button></div><div class="exp" id="e27"><div class="eok">✅ B</div>Абзац 3 содержит критику: strict sequential interpretation неверна, культурные различия. «Despite these criticisms» → ссылается на критику из абз.3.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·8/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">The author's attitude toward Maslow's hierarchy can best be described as...</div><div class="opts" id="o28"><button class="opt" onclick="pick(28,'A')" id="q28A"><span class="L">A</span>Strongly supportive — the theory is perfect</button><button class="opt" onclick="pick(28,'B')" id="q28B"><span class="L">B</span>Strongly critical — the theory is outdated</button><button class="opt" onclick="pick(28,'C')" id="q28C"><span class="L">C</span>Balanced — acknowledging both its limitations and lasting value</button><button class="opt" onclick="pick(28,'D')" id="q28D"><span class="L">D</span>Indifferent — the author shows no opinion</button></div><div class="exp" id="e28"><div class="eok">✅ C</div>Абзац 3 = критика. Абзац 4 = «remarkably durable», «enduring influence». Автор признаёт и недостатки и достоинства = balanced.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·9/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«innate»</strong> (paragraph 2) is closest in meaning to...</div><div class="opts" id="o29"><button class="opt" onclick="pick(29,'A')" id="q29A"><span class="L">A</span>learned through experience</button><button class="opt" onclick="pick(29,'B')" id="q29B"><span class="L">B</span>naturally present from birth</button><button class="opt" onclick="pick(29,'C')" id="q29C"><span class="L">C</span>culturally determined</button><button class="opt" onclick="pick(29,'D')" id="q29D"><span class="L">D</span>recently developed</button></div><div class="exp" id="e29"><div class="eok">✅ B — naturally present from birth</div>«humans' innate desire for belonging» — врождённое желание. innate = врождённый, от природы.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T3·10/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to Maslow's theory as described in the passage, when do people pursue higher-level needs?</div><div class="opts" id="o30"><button class="opt" onclick="pick(30,'A')" id="q30A"><span class="L">A</span>When they are biologically programmed to do so</button><button class="opt" onclick="pick(30,'B')" id="q30B"><span class="L">B</span>After lower-level needs have been adequately satisfied</button><button class="opt" onclick="pick(30,'C')" id="q30C"><span class="L">C</span>Simultaneously with all other levels</button><button class="opt" onclick="pick(30,'D')" id="q30D"><span class="L">D</span>Only after reaching self-actualization</button></div><div class="exp" id="e30"><div class="eok">✅ B</div>Абзац 3: «individuals generally pursue higher-level needs only after lower-level needs have been adequately satisfied».</div></div></div>
+
+  <!-- ═══ TEXT 4: Environment ═══ -->
+  <div class="tdiv"><div class="ti">4</div><div><div class="ttitle">Текст 4 — Environmental Science</div><div class="tsub">~260 слов · вопросы 31–40</div></div></div>
+
+  <div class="passage">
+    <div class="plbl">📄 Прочитай перед ответами</div>
+    <p>Soil degradation has emerged as one of the most pressing but underappreciated environmental challenges of the twenty-first century. Healthy soil is essential not only for food production but also for regulating water cycles, storing carbon, and supporting biodiversity. Yet human activities — including intensive agriculture, deforestation, and urban expansion — have significantly diminished soil quality across vast areas of the globe.</p>
+    <p>Intensive agricultural practices are among the primary drivers of soil degradation. The repeated use of heavy machinery compacts the soil, reducing its ability to absorb water and support plant roots. Excessive use of synthetic fertilizers and pesticides depletes natural soil microorganisms that are critical for nutrient cycling. Monoculture farming — the cultivation of a single crop over large areas — further reduces biodiversity and makes soils more vulnerable to erosion.</p>
+    <p>The consequences of soil degradation are severe and wide-ranging. Degraded soils produce lower crop yields, contributing to food insecurity in already vulnerable regions. The loss of topsoil through erosion can be nearly irreversible on human timescales, as the formation of just one centimeter of topsoil requires hundreds to thousands of years. Furthermore, degraded soils release stored carbon into the atmosphere, exacerbating climate change.</p>
+    <p>Addressing soil degradation requires a combination of policy changes and shifts in agricultural practice. Techniques such as crop rotation, reduced tillage, and the use of organic fertilizers have been shown to restore and maintain soil health. Many experts argue that protecting soil should be accorded the same level of priority as protecting forests and oceans in global environmental policy.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·1/10</span><span class="qt tmi">Main Idea</span></div><div class="qbody"><div class="q-text">What is the main topic of the passage?</div><div class="opts" id="o31"><button class="opt" onclick="pick(31,'A')" id="q31A"><span class="L">A</span>How synthetic fertilizers harm soil microorganisms</button><button class="opt" onclick="pick(31,'B')" id="q31B"><span class="L">B</span>The causes, consequences, and potential solutions to soil degradation</button><button class="opt" onclick="pick(31,'C')" id="q31C"><span class="L">C</span>Why monoculture farming should be banned worldwide</button><button class="opt" onclick="pick(31,'D')" id="q31D"><span class="L">D</span>The role of soil in storing carbon and regulating climate</button></div><div class="exp" id="e31"><div class="eok">✅ B</div>Текст: важность почвы + причины деградации + последствия + решения = полная картина проблемы.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·2/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what does monoculture farming involve?</div><div class="opts" id="o32"><button class="opt" onclick="pick(32,'A')" id="q32A"><span class="L">A</span>Growing multiple crops in rotation</button><button class="opt" onclick="pick(32,'B')" id="q32B"><span class="L">B</span>Using no synthetic fertilizers or pesticides</button><button class="opt" onclick="pick(32,'C')" id="q32C"><span class="L">C</span>Cultivating a single crop over large areas</button><button class="opt" onclick="pick(32,'D')" id="q32D"><span class="L">D</span>Farming on hillsides to prevent erosion</button></div><div class="exp" id="e32"><div class="eok">✅ C</div>Абзац 2: «Monoculture farming — the cultivation of a single crop over large areas».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·3/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«exacerbating»</strong> (paragraph 3) is closest in meaning to...</div><div class="opts" id="o33"><button class="opt" onclick="pick(33,'A')" id="q33A"><span class="L">A</span>reducing</button><button class="opt" onclick="pick(33,'B')" id="q33B"><span class="L">B</span>causing</button><button class="opt" onclick="pick(33,'C')" id="q33C"><span class="L">C</span>worsening</button><button class="opt" onclick="pick(33,'D')" id="q33D"><span class="L">D</span>reversing</button></div><div class="exp" id="e33"><div class="eok">✅ C — worsening</div>«release carbon, exacerbating climate change» = делая климатические изменения хуже. exacerbate = ухудшать, усугублять.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·4/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">It can be inferred from paragraph 3 that restoring lost topsoil is...</div><div class="opts" id="o34"><button class="opt" onclick="pick(34,'A')" id="q34A"><span class="L">A</span>easy with modern technology</button><button class="opt" onclick="pick(34,'B')" id="q34B"><span class="L">B</span>extremely difficult within a human lifetime</button><button class="opt" onclick="pick(34,'C')" id="q34C"><span class="L">C</span>impossible even over geological timescales</button><button class="opt" onclick="pick(34,'D')" id="q34D"><span class="L">D</span>possible if farming is stopped immediately</button></div><div class="exp" id="e34"><div class="eok">✅ B</div>«loss of topsoil can be nearly irreversible on human timescales, as formation requires hundreds to thousands of years» → восстановление = не в течение человеческой жизни.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·5/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what is one effect of using heavy machinery in farming?</div><div class="opts" id="o35"><button class="opt" onclick="pick(35,'A')" id="q35A"><span class="L">A</span>It improves crop yields by loosening the soil</button><button class="opt" onclick="pick(35,'B')" id="q35B"><span class="L">B</span>It compacts the soil, reducing its ability to absorb water</button><button class="opt" onclick="pick(35,'C')" id="q35C"><span class="L">C</span>It increases biodiversity by mixing different soil layers</button><button class="opt" onclick="pick(35,'D')" id="q35D"><span class="L">D</span>It deposits organic matter that enriches the soil</button></div><div class="exp" id="e35"><div class="eok">✅ B</div>Абзац 2: «The repeated use of heavy machinery compacts the soil, reducing its ability to absorb water».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·6/10</span><span class="qt tnf">NOT/EXCEPT</span></div><div class="qbody"><div class="q-text">According to the passage, all of the following are consequences of soil degradation EXCEPT...</div><div class="opts" id="o36"><button class="opt" onclick="pick(36,'A')" id="q36A"><span class="L">A</span>Lower crop yields</button><button class="opt" onclick="pick(36,'B')" id="q36B"><span class="L">B</span>Release of stored carbon into the atmosphere</button><button class="opt" onclick="pick(36,'C')" id="q36C"><span class="L">C</span>Increased biodiversity in affected regions</button><button class="opt" onclick="pick(36,'D')" id="q36D"><span class="L">D</span>Food insecurity in vulnerable regions</button></div><div class="exp" id="e36"><div class="eok">✅ C — Increased biodiversity</div>A ✓, B ✓, D ✓ в абз.3. «Increased biodiversity» — наоборот, деградация снижает биоразнообразие.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·7/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, which technique helps restore soil health?</div><div class="opts" id="o37"><button class="opt" onclick="pick(37,'A')" id="q37A"><span class="L">A</span>Increasing the use of synthetic fertilizers</button><button class="opt" onclick="pick(37,'B')" id="q37B"><span class="L">B</span>Expanding monoculture farming</button><button class="opt" onclick="pick(37,'C')" id="q37C"><span class="L">C</span>Crop rotation</button><button class="opt" onclick="pick(37,'D')" id="q37D"><span class="L">D</span>Removing all topsoil and starting fresh</button></div><div class="exp" id="e37"><div class="eok">✅ C</div>Абзац 4: «Techniques such as crop rotation, reduced tillage, and the use of organic fertilizers have been shown to restore soil health».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·8/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">What does the author imply about soil protection in current global environmental policy?</div><div class="opts" id="o38"><button class="opt" onclick="pick(38,'A')" id="q38A"><span class="L">A</span>It already receives the same attention as forest protection</button><button class="opt" onclick="pick(38,'B')" id="q38B"><span class="L">B</span>It is currently not given sufficient priority</button><button class="opt" onclick="pick(38,'C')" id="q38C"><span class="L">C</span>It is impossible to address through policy alone</button><button class="opt" onclick="pick(38,'D')" id="q38D"><span class="L">D</span>It is only relevant to developing countries</button></div><div class="exp" id="e38"><div class="eok">✅ B</div>«experts argue that protecting soil should be accorded the SAME level of priority as protecting forests» — implies it currently is NOT at that level.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·9/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«accorded»</strong> (paragraph 4) is closest in meaning to...</div><div class="opts" id="o39"><button class="opt" onclick="pick(39,'A')" id="q39A"><span class="L">A</span>removed</button><button class="opt" onclick="pick(39,'B')" id="q39B"><span class="L">B</span>given or granted</button><button class="opt" onclick="pick(39,'C')" id="q39C"><span class="L">C</span>reduced</button><button class="opt" onclick="pick(39,'D')" id="q39D"><span class="L">D</span>discussed</button></div><div class="exp" id="e39"><div class="eok">✅ B — given or granted</div>«should be accorded the same level of priority» = должны дать (предоставить) тот же приоритет. accord = давать, наделять.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T4·10/10</span><span class="qt trf">Reference</span></div><div class="qbody"><div class="q-text">«Its» in paragraph 1 («its ability to absorb water») refers to...</div><div class="opts" id="o40"><button class="opt" onclick="pick(40,'A')" id="q40A"><span class="L">A</span>heavy machinery</button><button class="opt" onclick="pick(40,'B')" id="q40B"><span class="L">B</span>the soil</button><button class="opt" onclick="pick(40,'C')" id="q40C"><span class="L">C</span>the farm</button><button class="opt" onclick="pick(40,'D')" id="q40D"><span class="L">D</span>the plant root</button></div><div class="exp" id="e40"><div class="eok">✅ B — the soil</div>«compacts the soil, reducing its ability to absorb water» — «its» = the soil's ability.</div></div></div>
+
+  <!-- ═══ TEXT 5: Technology ═══ -->
+  <div class="tdiv"><div class="ti">5</div><div><div class="ttitle">Текст 5 — Technology & Society</div><div class="tsub">~255 слов · вопросы 41–50</div></div></div>
+
+  <div class="passage">
+    <div class="plbl">📄 Прочитай перед ответами</div>
+    <p>Artificial intelligence (AI) is transforming industries and societies at a pace that many experts describe as unprecedented. Unlike earlier waves of automation, which primarily displaced routine physical labor, AI systems are increasingly capable of performing complex cognitive tasks — from diagnosing medical conditions and translating languages to generating creative content and making financial decisions.</p>
+    <p>The economic implications of AI are deeply contested. Optimists argue that AI will create new industries and jobs, just as previous technological revolutions did. They point to historical precedents such as the Industrial Revolution and the rise of computing, both of which ultimately generated more employment than they eliminated. Pessimists, however, warn that AI's ability to perform cognitive tasks fundamentally differs from earlier automation, potentially displacing workers far more broadly and rapidly.</p>
+    <p>Beyond economic concerns, AI raises profound ethical questions. The use of AI in criminal justice — particularly in algorithms that predict recidivism or assess bail — has drawn criticism for perpetuating racial and socioeconomic biases present in historical data. AI-powered surveillance systems have raised concerns about privacy and the potential for authoritarian misuse. Additionally, the environmental cost of training large AI models, which consume enormous amounts of energy, has attracted increasing attention.</p>
+    <p>Despite these concerns, there is broad consensus that AI also offers significant benefits. In healthcare, AI systems have demonstrated remarkable accuracy in detecting certain cancers and rare diseases at early stages. In climate science, AI is being used to improve the precision of weather forecasts and to model the complex dynamics of climate change. The challenge for society, therefore, is to govern AI development in ways that maximize its benefits while minimizing its risks.</p>
+  </div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·1/10</span><span class="qt tmi">Main Idea</span></div><div class="qbody"><div class="q-text">What is the main topic of the passage?</div><div class="opts" id="o41"><button class="opt" onclick="pick(41,'A')" id="q41A"><span class="L">A</span>The history of automation and its economic effects</button><button class="opt" onclick="pick(41,'B')" id="q41B"><span class="L">B</span>Why artificial intelligence will eliminate most jobs</button><button class="opt" onclick="pick(41,'C')" id="q41C"><span class="L">C</span>The opportunities, risks, and challenges posed by artificial intelligence</button><button class="opt" onclick="pick(41,'D')" id="q41D"><span class="L">D</span>How AI is used in healthcare and climate science</button></div><div class="exp" id="e41"><div class="eok">✅ C</div>Текст: возможности AI (абз.1,4), экономические споры (абз.2), этические вопросы (абз.3), задача управления (абз.4). Всё = возможности + риски + задачи.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·2/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what distinguishes AI from earlier automation?</div><div class="opts" id="o42"><button class="opt" onclick="pick(42,'A')" id="q42A"><span class="L">A</span>AI works faster than earlier machines</button><button class="opt" onclick="pick(42,'B')" id="q42B"><span class="L">B</span>AI can perform complex cognitive tasks, not just physical ones</button><button class="opt" onclick="pick(42,'C')" id="q42C"><span class="L">C</span>AI was developed in universities, not corporations</button><button class="opt" onclick="pick(42,'D')" id="q42D"><span class="L">D</span>AI has no economic implications</button></div><div class="exp" id="e42"><div class="eok">✅ B</div>Абзац 1: «earlier automation primarily displaced routine physical labor» vs AI «performs complex cognitive tasks».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·3/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«contested»</strong> (paragraph 2) is closest in meaning to...</div><div class="opts" id="o43"><button class="opt" onclick="pick(43,'A')" id="q43A"><span class="L">A</span>settled and agreed upon</button><button class="opt" onclick="pick(43,'B')" id="q43B"><span class="L">B</span>debated and disputed</button><button class="opt" onclick="pick(43,'C')" id="q43C"><span class="L">C</span>well understood</button><button class="opt" onclick="pick(43,'D')" id="q43D"><span class="L">D</span>unpredictable</button></div><div class="exp" id="e43"><div class="eok">✅ B — debated and disputed</div>«economic implications are deeply contested» — показывается спор оптимистов и пессимистов. contested = оспариваемый, спорный.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·4/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, what do AI optimists argue?</div><div class="opts" id="o44"><button class="opt" onclick="pick(44,'A')" id="q44A"><span class="L">A</span>AI will eliminate all jobs within a decade</button><button class="opt" onclick="pick(44,'B')" id="q44B"><span class="L">B</span>AI will create new industries and jobs, as technology did before</button><button class="opt" onclick="pick(44,'C')" id="q44C"><span class="L">C</span>AI poses no ethical concerns</button><button class="opt" onclick="pick(44,'D')" id="q44D"><span class="L">D</span>Governments should ban AI development</button></div><div class="exp" id="e44"><div class="eok">✅ B</div>Абзац 2: «Optimists argue that AI will create new industries and jobs, just as previous technological revolutions did».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·5/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">It can be inferred from paragraph 3 that AI systems used in criminal justice...</div><div class="opts" id="o45"><button class="opt" onclick="pick(45,'A')" id="q45A"><span class="L">A</span>are entirely objective and free from bias</button><button class="opt" onclick="pick(45,'B')" id="q45B"><span class="L">B</span>may reflect and amplify existing social inequalities</button><button class="opt" onclick="pick(45,'C')" id="q45C"><span class="L">C</span>have been proven to reduce crime rates</button><button class="opt" onclick="pick(45,'D')" id="q45D"><span class="L">D</span>are only used in the United States</button></div><div class="exp" id="e45"><div class="eok">✅ B</div>«perpetuating racial and socioeconomic biases present in historical data» → вывод: системы отражают и усиливают существующее неравенство.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·6/10</span><span class="qt tnf">NOT/EXCEPT</span></div><div class="qbody"><div class="q-text">According to the passage, concerns about AI include all of the following EXCEPT...</div><div class="opts" id="o46"><button class="opt" onclick="pick(46,'A')" id="q46A"><span class="L">A</span>Displacement of workers</button><button class="opt" onclick="pick(46,'B')" id="q46B"><span class="L">B</span>Privacy and surveillance risks</button><button class="opt" onclick="pick(46,'C')" id="q46C"><span class="L">C</span>High energy consumption</button><button class="opt" onclick="pick(46,'D')" id="q46D"><span class="L">D</span>Lack of accuracy in medical diagnosis</button></div><div class="exp" id="e46"><div class="eok">✅ D — Lack of accuracy in medical diagnosis</div>Наоборот: «AI has demonstrated remarkable accuracy in detecting cancers». A ✓ (абз.2), B ✓ (абз.3), C ✓ (абз.3). D противоречит тексту.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·7/10</span><span class="qt tdt">Detail</span></div><div class="qbody"><div class="q-text">According to the passage, how is AI being used in climate science?</div><div class="opts" id="o47"><button class="opt" onclick="pick(47,'A')" id="q47A"><span class="L">A</span>To reduce the energy consumption of power plants</button><button class="opt" onclick="pick(47,'B')" id="q47B"><span class="L">B</span>To improve weather forecasts and model climate dynamics</button><button class="opt" onclick="pick(47,'C')" id="q47C"><span class="L">C</span>To develop new renewable energy sources</button><button class="opt" onclick="pick(47,'D')" id="q47D"><span class="L">D</span>To monitor deforestation from satellites</button></div><div class="exp" id="e47"><div class="eok">✅ B</div>Абзац 4: «improve the precision of weather forecasts and to model the complex dynamics of climate change».</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·8/10</span><span class="qt tinf">Inference</span></div><div class="qbody"><div class="q-text">The author's view on AI development can best be described as...</div><div class="opts" id="o48"><button class="opt" onclick="pick(48,'A')" id="q48A"><span class="L">A</span>AI should be stopped because the risks outweigh the benefits</button><button class="opt" onclick="pick(48,'B')" id="q48B"><span class="L">B</span>AI should be embraced without restriction</button><button class="opt" onclick="pick(48,'C')" id="q48C"><span class="L">C</span>AI should be governed thoughtfully to balance benefits and risks</button><button class="opt" onclick="pick(48,'D')" id="q48D"><span class="L">D</span>AI poses no significant risks to society</button></div><div class="exp" id="e48"><div class="eok">✅ C</div>Абзац 4: «The challenge for society is to govern AI development in ways that maximize its benefits while minimizing its risks» = balanced governance.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·9/10</span><span class="qt tvc">Vocabulary</span></div><div class="qbody"><div class="q-text">The word <strong>«unprecedented»</strong> (paragraph 1) is closest in meaning to...</div><div class="opts" id="o49"><button class="opt" onclick="pick(49,'A')" id="q49A"><span class="L">A</span>gradual and predictable</button><button class="opt" onclick="pick(49,'B')" id="q49B"><span class="L">B</span>never seen before</button><button class="opt" onclick="pick(49,'C')" id="q49C"><span class="L">C</span>well documented</button><button class="opt" onclick="pick(49,'D')" id="q49D"><span class="L">D</span>internationally recognised</button></div><div class="exp" id="e49"><div class="eok">✅ B — never seen before</div>un- (не) + precedent (прецедент) = без прецедента = никогда раньше не было.</div></div></div>
+
+  <div class="qb"><div class="qh"><span class="qn">T5·10/10</span><span class="qt trf">Reference</span></div><div class="qbody"><div class="q-text">«They» in paragraph 2 («They point to historical precedents») refers to...</div><div class="opts" id="o50"><button class="opt" onclick="pick(50,'A')" id="q50A"><span class="L">A</span>pessimists</button><button class="opt" onclick="pick(50,'B')" id="q50B"><span class="L">B</span>economists</button><button class="opt" onclick="pick(50,'C')" id="q50C"><span class="L">C</span>optimists</button><button class="opt" onclick="pick(50,'D')" id="q50D"><span class="L">D</span>AI developers</button></div><div class="exp" id="e50"><div class="eok">✅ C — optimists</div>«Optimists argue... They point to historical precedents». They = Optimists (ближайшее мн.ч. существительное).</div></div></div>
+
+  <div class="submit-area" style="text-align:center;padding:16px 0">
+    <button class="btn" id="submit-btn" style="display:none;max-width:400px;margin:0 auto" onclick="showResults()">Посмотреть результаты Section III →</button>
+    <p id="remind" style="font-size:13px;color:var(--light);margin-top:6px">Ответь на все 50 вопросов</p>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="page" id="pg-results" style="display:none">
+  <div class="res-hero">
+    <div class="rbig" id="r-total">—</div>
+    <div class="rlbl">из 50 · Section III Reading</div>
+    <div class="rpct" id="r-pct">—</div>
+    <div class="rmsg" id="r-msg"></div>
+  </div>
+  <div class="bkdn" id="text-breakdown"></div>
+  <button class="btn" onclick="reviewTest()" style="margin-bottom:10px">Просмотреть ответы с объяснениями</button>
+  <div style="background:#1C1917;border-radius:var(--r);padding:20px;margin-bottom:14px;color:#fff">
+    <div style="font-size:14px;font-weight:600;color:#6EE7B7;margin-bottom:12px">🏆 Курс пройден полностью!</div>
+    <div style="font-size:14px;color:#A8A29E;line-height:1.9">
+      ✅ Уроки 1–2 — Listening<br>
+      ✅ Уроки 3–8 — Grammar<br>
+      ✅ Уроки 9–12 — Reading<br>
+      ✅ Урок 13 — Test Strategy<br>
+      ✅ Урок 14 — Full Mock Test
+    </div>
+  </div>
+  <div class="next-box">
+    <strong>🎓 Подготовка к TOEFL ITP завершена!</strong><br>
+    Ты прошла все 14 уроков. Используй результаты мок-теста чтобы определить темы для последнего повторения перед реальным экзаменом.
+  </div>
+</div>
+
+<script>
+const ANS={
+  1:'B',2:'C',3:'B',4:'B',5:'B',6:'B',7:'B',8:'C',9:'B',10:'A',
+  11:'C',12:'B',13:'B',14:'B',15:'B',16:'C',17:'B',18:'B',19:'B',20:'B',
+  21:'B',22:'D',23:'B',24:'B',25:'C',26:'D',27:'B',28:'C',29:'B',30:'B',
+  31:'B',32:'C',33:'C',34:'B',35:'B',36:'C',37:'C',38:'B',39:'B',40:'B',
+  41:'C',42:'B',43:'B',44:'B',45:'B',46:'D',47:'B',48:'C',49:'B',50:'C'
+};
+const TEXTS={1:[1,10],2:[11,20],3:[21,30],4:[31,40],5:[41,50]};
+const picked={};let cnt=0;
+
+function pick(q,l){
+  if(picked[q]) return;
+  picked[q]=l;cnt++;
+  document.querySelectorAll('#o'+q+' .opt').forEach(b=>{b.disabled=true;});
+  const btn=document.getElementById('q'+q+l);
+  const cb=document.getElementById('q'+q+ANS[q]);
+  if(l===ANS[q]){if(btn)btn.classList.add('ok');}
+  else{if(btn)btn.classList.add('ng');if(cb)cb.classList.add('ok');}
+  document.getElementById('e'+q).classList.add('show');
+  document.getElementById('pbar').style.width=Math.round(cnt/50*100)+'%';
+  document.getElementById('plbl').textContent=cnt+' / 50 отвечено';
+  if(cnt===50){
+    const s=document.getElementById('submit-btn');
+    s.style.display='block';
+    document.getElementById('remind').style.display='none';
+    setTimeout(()=>s.scrollIntoView({behavior:'smooth',block:'center'}),100);
+  }
+}
+
+function showResults(){
+  let total=0;
+  const textScores={};
+  for(let q=1;q<=50;q++){
+    const t=Math.ceil(q/10);
+    if(!textScores[t]) textScores[t]=0;
+    if(picked[q]===ANS[q]){total++;textScores[t]++;}
+  }
+  document.getElementById('pg-test').style.display='none';
+  document.getElementById('pg-results').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  const pct=Math.round(total/50*100);
+  document.getElementById('r-total').textContent=total+'/50';
+  sendResult('lesson14b', 'Урок 14B: Mock Test · Reading', total, 50, pct);
+  document.getElementById('r-pct').textContent=pct+'%';
+  const msg=pct>=75?'Отличный результат! Section III сдана уверенно.':pct>=55?'Хорошо! Повтори слабые типы вопросов.':'Повтори уроки 9–12 перед экзаменом.';
+  document.getElementById('r-msg').textContent=msg;
+  const colors=['#6EE7B7','#60A5FA','#FCD34D','#F87171','#C084FC'];
+  const bd=document.getElementById('text-breakdown');
+  bd.innerHTML='';
+  for(let t=1;t<=5;t++){
+    const s=textScores[t]||0;
+    const col=colors[t-1];
+    bd.innerHTML+=`<div class="bk"><div class="bkn" style="color:${col}">${s}/10</div><div class="bkl">Текст ${t}</div><div class="bkbw"><div class="bkb" data-w="${s*10}" style="background:${col}"></div></div></div>`;
+  }
+  setTimeout(()=>document.querySelectorAll('.bkb').forEach(b=>b.style.width=b.dataset.w+'%'),400);
+}
+
+function reviewTest(){
+  document.getElementById('pg-results').style.display='none';
+  document.getElementById('pg-test').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+let tsec=3300,trun=false,tiv=null;
+function startTimer(){
+  if(trun) return;
+  trun=true;
+  document.getElementById('tstart').disabled=true;
+  document.getElementById('tstart').textContent='▶ Идёт...';
+  tiv=setInterval(()=>{
+    tsec--;
+    if(tsec<=0){clearInterval(tiv);document.getElementById('tdisplay').textContent='0:00';document.getElementById('tdisplay').style.color='#F87171';return;}
+    const m=Math.floor(tsec/60),s=tsec%60;
+    document.getElementById('tdisplay').textContent=m+':'+(s<10?'0':'')+s;
+    if(tsec<=300) document.getElementById('tdisplay').style.color='#FBBF24';
+    if(tsec<=120) document.getElementById('tdisplay').style.color='#F87171';
+  },1000);
+}
+function resetTimer(){
+  clearInterval(tiv);trun=false;tsec=3300;
+  document.getElementById('tdisplay').textContent='55:00';
+  document.getElementById('tdisplay').style.color='#6EE7B7';
+  document.getElementById('tstart').disabled=false;
+  document.getElementById('tstart').textContent='▶ Старт';
+}
+</script>
+</body>
+</html>

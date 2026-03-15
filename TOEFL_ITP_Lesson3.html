@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 3: Structure — Clause & Verb Patterns</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0C447C;
+    --navy-mid: #185FA5;
+    --navy-light: #E6F1FB;
+    --navy-pale: #f0f6fd;
+    --green-dark: #085041;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --amber: #EF9F27;
+    --amber-light: #FAEEDA;
+    --amber-dark: #633806;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --purple-dark: #3C3489;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+
+  /* Hero */
+  .hero { background: #1a1a2e; padding: 0; position: relative; overflow: hidden; }
+  .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 15% 50%, rgba(127,119,221,0.2) 0%, transparent 45%), radial-gradient(circle at 85% 20%, rgba(24,95,165,0.15) 0%, transparent 40%); }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 36px 24px 28px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #AFA9EC; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #7F77DD; display: inline-block; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: #ffffff; line-height: 1.2; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: #AFA9EC; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.08); color: #EEEDFE; border: 1px solid rgba(255,255,255,0.15); }
+  .progress-track { height: 3px; background: rgba(255,255,255,0.12); }
+  .progress-fill { height: 3px; background: #7F77DD; transition: width 0.5s ease; }
+
+  /* Tabs */
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs { max-width: 720px; margin: 0 auto; display: flex; overflow-x: auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 14px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-left: none; border-right: none; border-top: none; }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: #3C3489; border-bottom-color: #7F77DD; }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .section-intro { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* Grammar cards */
+  .gram-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .gc-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .gc-icon { width: 32px; height: 32px; border-radius: 8px; color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .ic-purple { background: var(--purple); }
+  .ic-navy { background: var(--navy); }
+  .ic-green { background: var(--green-dark); }
+  .ic-amber { background: #BA7517; }
+  .ic-coral { background: var(--coral); }
+  .gc-title { font-size: 14px; font-weight: 600; }
+  .gc-title-purple { color: var(--purple-dark); }
+  .gc-title-navy { color: var(--navy); }
+  .gc-title-green { color: var(--green-dark); }
+  .gc-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+  .gc-body { padding: 16px; }
+
+  .gc-header-purple { background: var(--purple-light); }
+  .gc-header-navy { background: var(--navy-pale); }
+  .gc-header-green { background: var(--green-light); background: #f0faf6; }
+  .gc-header-amber { background: var(--amber-light); }
+  .gc-header-coral { background: var(--coral-light); }
+
+  .ru-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+  .formula-box { background: #1a1a2e; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; font-family: 'DM Serif Display', serif; font-size: 16px; color: #E6F1FB; text-align: center; letter-spacing: 0.02em; }
+  .formula-note { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #AFA9EC; margin-top: 6px; font-style: italic; }
+
+  .example-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+  .ex-wrong { background: var(--red-light); border: 1px solid #F7C1C1; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #501313; line-height: 1.6; }
+  .ex-correct { background: var(--green-light); border: 1px solid #9FE1CB; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #04342C; line-height: 1.6; }
+  .ex-label { font-weight: 700; margin-right: 6px; }
+  .ex-neutral { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.6; }
+
+  .hl { font-weight: 600; text-decoration: underline; text-decoration-style: dotted; }
+  .hl-p { color: var(--purple); }
+  .hl-n { color: var(--navy); }
+  .hl-g { color: var(--green-dark); }
+  .hl-a { color: #BA7517; }
+  .hl-r { color: var(--red); }
+
+  .tip-box { border-left: 3px solid var(--amber); background: var(--amber-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--amber-dark); line-height: 1.6; margin-top: 12px; }
+  .warn-box { border-left: 3px solid var(--red); background: var(--red-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #A32D2D; line-height: 1.6; margin-top: 10px; }
+
+  /* Pattern grid */
+  .pattern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pg-item { background: var(--bg); border-radius: var(--radius-sm); padding: 10px 12px; border: 1px solid var(--border); }
+  .pg-label { font-size: 11px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 5px; }
+  .pg-en { font-size: 13px; font-weight: 500; color: var(--text); font-style: italic; margin-bottom: 3px; }
+  .pg-ru { font-size: 12px; color: var(--text-muted); }
+
+  /* Practice */
+  .pq-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .pq-header { padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; letter-spacing: 0.03em; }
+  .tp-sv { background: var(--purple-light); color: var(--purple-dark); }
+  .tp-vb { background: var(--navy-light); color: var(--navy); }
+  .tp-cl { background: var(--green-light); color: var(--green-dark); }
+  .tp-pp { background: var(--amber-light); color: var(--amber-dark); }
+  .tp-mx { background: var(--coral-light); color: #4A1B0C; }
+
+  .pq-body { padding: 16px; }
+  .pq-instr { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+  .pq-sentence { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 14px; font-style: italic; padding: 12px 14px; background: #f9f9f7; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .blank { display: inline-block; border-bottom: 2px solid var(--purple); min-width: 80px; text-align: center; color: var(--purple); font-weight: 600; font-style: normal; }
+  .pq-question { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .pq-options { display: flex; flex-direction: column; gap: 8px; }
+  .pq-opt { display: flex; align-items: flex-start; gap: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 14px; font-size: 14px; cursor: pointer; background: var(--white); text-align: left; width: 100%; transition: all 0.15s; color: var(--text); font-family: 'DM Sans', sans-serif; }
+  .pq-opt:hover:not(:disabled) { border-color: var(--purple); background: var(--purple-light); }
+  .pq-opt .ol { font-weight: 600; color: var(--text-muted); flex-shrink: 0; min-width: 18px; }
+  .pq-opt.correct { background: var(--green-light); border-color: var(--green-mid); color: #04342C; }
+  .pq-opt.correct .ol { color: var(--green-dark); }
+  .pq-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .pq-opt.wrong .ol { color: var(--red); }
+  .pq-opt:disabled { cursor: default; }
+
+  .pq-explain { margin-top: 14px; padding: 14px 16px; background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.7; color: var(--text-muted); display: none; border-left: 3px solid var(--purple); }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--green-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+  .explain-rule { background: var(--purple-light); color: var(--purple-dark); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 12px; margin-top: 8px; font-weight: 500; }
+
+  .score-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; margin-top: 8px; display: none; }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--purple-dark); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--purple); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  /* Tip cards */
+  .tip-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-num { width: 32px; height: 32px; border-radius: 50%; background: #1a1a2e; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .btn-primary { display: block; width: 100%; background: #1a1a2e; color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 20px; text-align: center; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary { display: block; width: 100%; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 10px; text-align: center; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
+  .btn-secondary:hover { background: var(--bg); }
+
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+  .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border); color: var(--text-muted); }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 24px; }
+    .pattern-grid { grid-template-columns: 1fr; }
+    .tab { padding: 12px 14px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP · Урок 3 из 14 · Section II</div>
+    <div class="hero-title">Structure:<br>Clause & Verb Patterns</div>
+    <div class="hero-sub">Section II · Part 1 · Sentence Completion<br>Подлежащее, сказуемое, типы придаточных — основа грамматики теста</div>
+    <div class="hero-pills">
+      <span class="hero-pill">📖 5 паттернов</span>
+      <span class="hero-pill">⚠️ Ловушки</span>
+      <span class="hero-pill">✏️ 8 вопросов</span>
+      <span class="hero-pill">💡 Стратегия</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('theory',this)">📖 Теория</button>
+    <button class="tab" onclick="showTab('patterns',this)">🔑 Паттерны</button>
+    <button class="tab" onclick="showTab('traps',this)">⚠️ Ловушки</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== THEORY ===== -->
+  <div class="section active" id="tab-theory">
+    <div class="section-title">Что такое Section II Part 1?</div>
+    <div class="section-intro">
+      <strong>Structure (Part 1)</strong> — это 15 предложений, в каждом из которых пропущена часть. Тебе нужно выбрать из 4 вариантов тот, который грамматически правильно завершает предложение.<br><br>
+      Это не перевод и не словарь — это <strong>чистая грамматика</strong>. Хорошая новость: все 15 вопросов проверяют одни и те же ~10 структур. Зная их — решаешь быстро и уверенно.
+    </div>
+
+    <div class="type-label">Паттерн 1 · Subject + Verb — основа всего</div>
+    <div class="gram-card">
+      <div class="gc-header gc-header-purple">
+        <div class="gc-icon ic-purple">S+V</div>
+        <div>
+          <div class="gc-title gc-title-purple">Каждое предложение должно иметь подлежащее И сказуемое</div>
+          <div class="gc-sub">Самое фундаментальное правило TOEFL</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          В английском предложении <strong>обязательно</strong> должны быть подлежащее (кто? что?) и сказуемое (что делает?). Если одного нет — предложение неграмматично. TOEFL часто «прячет» подлежащее или сказуемое за длинными фразами.
+        </div>
+        <div class="formula-box">
+          [Подлежащее] + [Сказуемое] + (остаток)
+          <div class="formula-note">Найди сначала сказуемое → потом подлежащее к нему</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> The discovery of new planets <span class="hl hl-r">fascinates</span> — правильно<br><span style="opacity:0.7">— но: «The discovery of new planets in distant solar systems ___» → нужно сказуемое</span></div>
+          <div class="ex-correct"><span class="ex-label">✅</span> The discovery of new planets <span class="hl hl-g">has fascinated</span> astronomers for centuries.</div>
+        </div>
+        <div class="tip-box">💡 <strong>Как найти подлежащее:</strong> найди глагол-сказуемое → задай вопрос «КТО/ЧТО» делает это действие? → это и есть подлежащее. Не путай с существительными внутри предложных оборотов!</div>
+      </div>
+    </div>
+
+    <div class="type-label">Паттерн 2 · Inverted Sentences — инверсия</div>
+    <div class="gram-card">
+      <div class="gc-header gc-header-navy">
+        <div class="gc-icon ic-navy">INV</div>
+        <div>
+          <div class="gc-title gc-title-navy">Инверсия — порядок слов меняется</div>
+          <div class="gc-sub">После определённых слов подлежащее и глагол меняются местами</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          После некоторых слов и конструкций в начале предложения порядок <strong>Subject + Verb</strong> меняется на <strong>Verb + Subject</strong> (как в вопросе). TOEFL часто проверяет именно это.
+        </div>
+        <div class="pattern-grid">
+          <div class="pg-item">
+            <div class="pg-label">После «there»</div>
+            <div class="pg-en">There <span class="hl hl-p">is</span> a book on the table.</div>
+            <div class="pg-ru">«there» — не подлежащее! Подлежащее — «a book»</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">После «here»</div>
+            <div class="pg-en">Here <span class="hl hl-p">comes</span> the professor.</div>
+            <div class="pg-ru">Глагол стоит перед подлежащим</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">После отрицаний</div>
+            <div class="pg-en">Never <span class="hl hl-p">has she</span> seen such a sight.</div>
+            <div class="pg-ru">Never / Rarely / Seldom → инверсия</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">После «only»</div>
+            <div class="pg-en">Only then <span class="hl hl-p">did they</span> understand.</div>
+            <div class="pg-ru">Only + time expression → инверсия</div>
+          </div>
+        </div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> There <span class="hl hl-g">are</span> several reasons why scientists study volcanoes.</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> There <span class="hl hl-r">is</span> several reasons... (ошибка согласования: «reasons» = мн.ч. → «are»)</div>
+        </div>
+        <div class="tip-box">💡 При конструкции «There + to be» — глагол согласуется с настоящим подлежащим, которое идёт <em>после</em> глагола.</div>
+      </div>
+    </div>
+
+    <div class="type-label">Паттерн 3 · Noun Clauses — именные придаточные</div>
+    <div class="gram-card">
+      <div class="gc-header gc-header-green">
+        <div class="gc-icon ic-green">NC</div>
+        <div>
+          <div class="gc-title gc-title-green">Noun Clause — придаточное в роли существительного</div>
+          <div class="gc-sub">Что + глагол = подлежащее или дополнение</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Именное придаточное предложение выполняет функцию существительного — может быть подлежащим или дополнением. Начинается с союза: <strong>that, what, where, when, why, how, whether, who</strong>.
+        </div>
+        <div class="formula-box">
+          [that / what / where / when / why / how / whether / who] + [S + V]
+          <div class="formula-note">После союза — ВСЕГДА прямой порядок слов (не вопросительный!)</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> Scientists discovered <span class="hl hl-g">that the earth is round</span>. (дополнение)</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> <span class="hl hl-g">What the researchers found</span> was surprising. (подлежащее)</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> Scientists discovered that <span class="hl hl-r">is the earth round</span>. (нельзя — порядок вопроса!)</div>
+        </div>
+        <div class="tip-box">💡 <strong>Ловушка TOEFL:</strong> после «that/what/where» многие ставят вопросительный порядок. Запомни: в именном придаточном — ВСЕГДА прямой порядок слов.</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('patterns',document.querySelectorAll('.tab')[1])">Дальше: Все 5 паттернов →</button>
+  </div>
+
+  <!-- ===== PATTERNS ===== -->
+  <div class="section" id="tab-patterns">
+    <div class="section-title">Паттерны 4 и 5 + обзор всех структур</div>
+    <div class="section-intro">
+      Продолжаем. Паттерны 4 и 5 — самые частые в тесте. После них — сводная таблица всех структур.
+    </div>
+
+    <div class="type-label">Паттерн 4 · Reduced Clauses — сокращённые придаточные</div>
+    <div class="gram-card">
+      <div class="gc-header gc-header-amber">
+        <div class="gc-icon ic-amber">RC</div>
+        <div>
+          <div class="gc-title" style="color:var(--amber-dark)">Participial Phrases — причастные обороты</div>
+          <div class="gc-sub">Сокращение придаточных → самая частая тема в Part 1!</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Придаточное предложение можно сократить до причастного оборота. TOEFL обожает эту структуру — она встречается в ~30% вопросов Part 1.
+        </div>
+        <div class="formula-box">
+          Активное действие → <strong>Verb-ing</strong> (doing, running, having)<br>
+          Пассивное действие → <strong>Verb-ed / past participle</strong> (done, found, written)
+          <div class="formula-note">Субъект причастного оборота = субъект главного предложения</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-neutral">Полное: <em>The scientist <span class="hl hl-n">who discovered</span> penicillin changed medicine.</em></div>
+          <div class="ex-correct">Сокращённое (активное): <em>The scientist <span class="hl hl-g">discovering</span> penicillin changed medicine.</em></div>
+        </div>
+        <div class="example-row">
+          <div class="ex-neutral">Полное: <em>The report <span class="hl hl-n">that was written</span> last year...</em></div>
+          <div class="ex-correct">Сокращённое (пассивное): <em>The report <span class="hl hl-g">written</span> last year...</em></div>
+        </div>
+        <div class="pattern-grid">
+          <div class="pg-item">
+            <div class="pg-label">Активное (Ving)</div>
+            <div class="pg-en"><span class="hl hl-a">Running</span> fast, she missed the bus.</div>
+            <div class="pg-ru">Она бежала → она пропустила автобус</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">Пассивное (Ved)</div>
+            <div class="pg-en">The letter, <span class="hl hl-a">written</span> in 1850, was found.</div>
+            <div class="pg-ru">Письмо было написано (не само писало)</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">Having + Ved</div>
+            <div class="pg-en"><span class="hl hl-a">Having finished</span> the test, she left.</div>
+            <div class="pg-ru">Завершив тест (раньше), она ушла</div>
+          </div>
+          <div class="pg-item">
+            <div class="pg-label">Being + Ved</div>
+            <div class="pg-en"><span class="hl hl-a">Being studied</span> widely, it is known.</div>
+            <div class="pg-ru">Широко изучаемый, он известен</div>
+          </div>
+        </div>
+        <div class="warn-box">⚠️ <strong>Dangling participle (висячий причастный оборот)</strong> — частая ошибка на тесте. Субъект причастного оборота ДОЛЖЕН совпадать с субъектом главного предложения.<br><br>❌ «Running fast, <span class="hl hl-r">the bus</span> was missed.» (автобус не бежал!)<br>✅ «Running fast, <span class="hl hl-g">she</span> missed the bus.»</div>
+      </div>
+    </div>
+
+    <div class="type-label">Паттерн 5 · Verb Complements — после каких глаголов что ставить</div>
+    <div class="gram-card">
+      <div class="gc-header gc-header-coral">
+        <div class="gc-icon ic-coral">VC</div>
+        <div>
+          <div class="gc-title" style="color:#4A1B0C">Verb + Infinitive vs Verb + Gerund</div>
+          <div class="gc-sub">После одних глаголов — «to do», после других — «doing»</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Одна из самых частых ошибок в грамматике — неправильная форма глагола после другого глагола. TOEFL проверяет это в каждом тесте.
+        </div>
+        <div class="pattern-grid">
+          <div class="pg-item" style="border-color:#9FE1CB">
+            <div class="pg-label" style="color:var(--green-dark)">Verb + to infinitive</div>
+            <div class="pg-en">want, need, decide, hope, plan, expect, agree, refuse, manage, fail, tend, seem</div>
+            <div class="pg-ru">She <span class="hl hl-g">wants to study</span>. They <span class="hl hl-g">decided to leave</span>.</div>
+          </div>
+          <div class="pg-item" style="border-color:#F5C4B3">
+            <div class="pg-label" style="color:var(--coral)">Verb + gerund (-ing)</div>
+            <div class="pg-en">enjoy, avoid, finish, suggest, consider, keep, mind, practice, admit, deny, miss</div>
+            <div class="pg-ru">She <span class="hl hl-r" style="color:var(--coral)">enjoys studying</span>. They <span class="hl hl-r" style="color:var(--coral)">finished working</span>.</div>
+          </div>
+        </div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> The researchers <span class="hl hl-g">decided to conduct</span> further experiments.</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> The researchers <span class="hl hl-r">decided conducting</span> further experiments.</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> Scientists <span class="hl hl-g">avoid using</span> untested methods.</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> Scientists <span class="hl hl-r">avoid to use</span> untested methods.</div>
+        </div>
+        <div class="tip-box">💡 <strong>Особые глаголы — значение меняется!</strong><br>
+          «stop <span class="hl hl-a">to do</span>» = остановиться чтобы сделать<br>
+          «stop <span class="hl hl-a">doing</span>» = перестать делать<br>
+          «remember <span class="hl hl-a">to do</span>» = не забыть сделать (будущее)<br>
+          «remember <span class="hl hl-a">doing</span>» = помнить что делал (прошлое)
+        </div>
+      </div>
+    </div>
+
+    <div class="type-label">Сводная таблица — все 5 паттернов</div>
+    <div class="gram-card">
+      <div class="gc-body" style="padding:0; overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <tr style="background:#1a1a2e;color:white;">
+            <th style="padding:10px 12px;text-align:left;font-weight:600;">#</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:600;">Структура</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:600;">Пример</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:600;">Частота</th>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--purple)">1</td>
+            <td style="padding:10px 12px;">Subject + Verb</td>
+            <td style="padding:10px 12px;color:var(--text-muted);font-style:italic;">The book <u>was</u> found.</td>
+            <td style="padding:10px 12px;"><span style="background:var(--purple-light);color:var(--purple-dark);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Очень высокая</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:#fafaf8;">
+            <td style="padding:10px 12px;font-weight:600;color:var(--navy)">2</td>
+            <td style="padding:10px 12px;">Inverted Sentences</td>
+            <td style="padding:10px 12px;color:var(--text-muted);font-style:italic;">There <u>are</u> three methods.</td>
+            <td style="padding:10px 12px;"><span style="background:var(--navy-light);color:var(--navy);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Высокая</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--green-dark)">3</td>
+            <td style="padding:10px 12px;">Noun Clauses</td>
+            <td style="padding:10px 12px;color:var(--text-muted);font-style:italic;">She knew <u>that it was</u> true.</td>
+            <td style="padding:10px 12px;"><span style="background:var(--green-light);color:var(--green-dark);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Высокая</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:#fafaf8;">
+            <td style="padding:10px 12px;font-weight:600;color:#BA7517">4</td>
+            <td style="padding:10px 12px;">Reduced Clauses</td>
+            <td style="padding:10px 12px;color:var(--text-muted);font-style:italic;"><u>Written</u> in 1900, the book...</td>
+            <td style="padding:10px 12px;"><span style="background:var(--amber-light);color:var(--amber-dark);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Очень высокая</span></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-weight:600;color:var(--coral)">5</td>
+            <td style="padding:10px 12px;">Verb Complements</td>
+            <td style="padding:10px 12px;color:var(--text-muted);font-style:italic;">She avoided <u>making</u> mistakes.</td>
+            <td style="padding:10px 12px;"><span style="background:var(--coral-light);color:#4A1B0C;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Средняя</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('traps',document.querySelectorAll('.tab')[2])">Дальше: Ловушки →</button>
+  </div>
+
+  <!-- ===== TRAPS ===== -->
+  <div class="section" id="tab-traps">
+    <div class="section-title">Ловушки Part 1 — Structure</div>
+    <div class="section-intro">В Part 1 ловушки — это всегда грамматические конструкции, которые выглядят правильно, но нарушают одно из 5 правил.</div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-header-purple">
+        <div class="gc-icon ic-purple">!</div>
+        <div><div class="gc-title gc-title-purple">Ловушка 1 — Лишнее подлежащее</div><div class="gc-sub">Double Subject Trap</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Придаточное предложение как подлежащее — и затем <em>ещё раз</em> подлежащее в виде местоимения. В английском так нельзя!</div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> What the scientists discovered <span class="hl hl-r">it</span> was remarkable. (лишнее «it»)</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> What the scientists discovered was remarkable.</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> The book that she wrote <span class="hl hl-r">it</span> became famous.</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> The book that she wrote became famous.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-header-navy">
+        <div class="gc-icon ic-navy">!</div>
+        <div><div class="gc-title gc-title-navy">Ловушка 2 — Длинная фраза «прячет» субъект</div><div class="gc-sub">Hidden Subject Trap</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Между подлежащим и сказуемым стоит длинный предложный оборот. Студент «теряет» настоящее подлежащее и согласует глагол с ближайшим существительным.</div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> The results of the experiment <span class="hl hl-r">was</span> surprising. (согласовали с «experiment»)</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> The results of the experiment <span class="hl hl-g">were</span> surprising. (подлежащее — «results», мн.ч.)</div>
+        </div>
+        <div class="tip-box">💡 <strong>Приём:</strong> мысленно зачеркни все фразы с «of», «in», «on», «with» — и подлежащее станет очевидным.</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-header-amber">
+        <div class="gc-icon ic-amber">!</div>
+        <div><div class="gc-title" style="color:var(--amber-dark)">Ловушка 3 — Активное vs Пассивное причастие</div><div class="gc-sub">-ing vs -ed Trap</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">Самая частая ошибка в паттерне 4. Нужно правильно выбрать: существительное само совершает действие (→ -ing) или над ним совершают действие (→ -ed)?</div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> The letter <span class="hl hl-g">written</span> by Darwin is now in a museum. (письмо написали — пассив)</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> The letter <span class="hl hl-r">writing</span> by Darwin... (письмо не писало само себя!)</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-correct"><span class="ex-label">✅</span> The scientist <span class="hl hl-g">conducting</span> the research found new data. (учёный сам проводит — актив)</div>
+          <div class="ex-wrong"><span class="ex-label">❌</span> The scientist <span class="hl hl-r">conducted</span> the research found... (нет — это уже глагол, не причастие)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header gc-header-coral">
+        <div class="gc-icon ic-coral">!</div>
+        <div><div class="gc-title" style="color:#4A1B0C">Ловушка 4 — Вопросительный порядок в придаточном</div><div class="gc-sub">Word Order in Noun Clause Trap</div></div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">После союзов what/where/when/how/why — прямой порядок слов. Никогда не вопросительный.</div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> No one knows <span class="hl hl-r">where did the species originate</span>. (вопросительный порядок)</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> No one knows <span class="hl hl-g">where the species originated</span>. (прямой порядок)</div>
+        </div>
+        <div class="example-row">
+          <div class="ex-wrong"><span class="ex-label">❌</span> Scientists wonder <span class="hl hl-r">how do birds navigate</span>.</div>
+          <div class="ex-correct"><span class="ex-label">✅</span> Scientists wonder <span class="hl hl-g">how birds navigate</span>.</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ===== PRACTICE ===== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 8 вопросов</div>
+    <div class="section-intro">
+      Формат точно как на тесте: предложение с пропуском, 4 варианта. Выбери правильный вариант для заполнения пропуска.
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 1 / 8</span><span class="pq-type tp-sv">Subject + Verb</span></div>
+      <div class="pq-body">
+        <div class="pq-instr">Choose the word or phrase that best completes the sentence.</div>
+        <div class="pq-sentence">The migration patterns of monarch butterflies _____ scientists for decades.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q1-opts">
+          <button class="pq-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol">A</span> fascinating</button>
+          <button class="pq-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol">B</span> have fascinated</button>
+          <button class="pq-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol">C</span> to fascinate</button>
+          <button class="pq-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol">D</span> fascination</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: B — have fascinated</div>
+          Предложению нужно <strong>сказуемое</strong> (глагол). Подлежащее — «The migration patterns» (мн.ч.), поэтому нужен глагол во мн.ч. — «have fascinated».<br><br>
+          <div class="explain-rule">📌 Паттерн 1: Subject + Verb. «patterns» → мн.ч. → «have», не «has».</div>
+          <div class="explain-wrong">❌ A — «fascinating» — причастие/прилагательное, не глагол-сказуемое<br>❌ C — «to fascinate» — инфинитив, не может быть сказуемым<br>❌ D — «fascination» — существительное</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 2 / 8</span><span class="pq-type tp-sv">Subject + Verb</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">There _____ numerous studies on the effects of sleep deprivation.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q2-opts">
+          <button class="pq-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol">A</span> has been</button>
+          <button class="pq-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol">B</span> have been</button>
+          <button class="pq-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol">C</span> is</button>
+          <button class="pq-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol">D</span> was</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: B — have been</div>
+          Конструкция «There + to be»: глагол согласуется с настоящим подлежащим — <strong>«studies»</strong> (мн.ч.) → нужен «have been», а не «has been».<br><br>
+          <div class="explain-rule">📌 Паттерн 2: Inverted Sentences. «There» — не подлежащее! Настоящее подлежащее — «studies» (мн.ч.).</div>
+          <div class="explain-wrong">❌ A — «has been» — ед.ч., а «studies» мн.ч.<br>❌ C/D — простое Present/Past, но нужен Present Perfect (numerous studies = накопленный опыт)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 3 / 8</span><span class="pq-type tp-cl">Noun Clause</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">Early astronomers did not understand _____ planets orbit the Sun.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q3-opts">
+          <button class="pq-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol">A</span> why do</button>
+          <button class="pq-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol">B</span> that why</button>
+          <button class="pq-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol">C</span> why</button>
+          <button class="pq-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol">D</span> the reason of</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: C — why</div>
+          Нужен союз именного придаточного. После «why» — прямой порядок слов: «why planets orbit» (не «why do planets orbit»).<br><br>
+          <div class="explain-rule">📌 Паттерн 3: Noun Clause. После why/how/where/when — ПРЯМОЙ порядок, не вопросительный!</div>
+          <div class="explain-wrong">❌ A — «why do» — вопросительный порядок, нельзя в придаточном<br>❌ B — «that why» — два союза, нельзя<br>❌ D — «the reason of» — неидиоматично и не союз</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 4 / 8</span><span class="pq-type tp-pp">Reduced Clause</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">_____ in the 16th century, the Aztec calendar accurately predicted solar eclipses.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q4-opts">
+          <button class="pq-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol">A</span> Creating</button>
+          <button class="pq-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol">B</span> It was created</button>
+          <button class="pq-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol">C</span> Created</button>
+          <button class="pq-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol">D</span> Having creating</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: C — Created</div>
+          Субъект главного предложения — «the Aztec calendar». Календарь <em>создали</em> (не он сам создавал) → пассивное причастие → <strong>Created</strong>.<br><br>
+          <div class="explain-rule">📌 Паттерн 4: Reduced Clause. Календарь = объект действия → -ed форма (пассив).</div>
+          <div class="explain-wrong">❌ A — «Creating» — активное причастие: выходит «Создавая в 16 веке, календарь...» — нелогично<br>❌ B — «It was created» — полное предложение создаёт два сказуемых без союза<br>❌ D — «Having creating» — грамматически неверно (нужно «having created»)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 5 / 8</span><span class="pq-type tp-pp">Reduced Clause</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The researchers, _____ the data for months, finally published their findings.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q5-opts">
+          <button class="pq-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol">A</span> analyzed</button>
+          <button class="pq-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol">B</span> having analyzed</button>
+          <button class="pq-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol">C</span> to analyze</button>
+          <button class="pq-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol">D</span> they analyzed</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: B — having analyzed</div>
+          Действие (анализ данных) произошло <em>до</em> публикации. Субъект — «researchers» сами анализировали (активное действие) → <strong>having analyzed</strong> (завершённое действие перед другим).<br><br>
+          <div class="explain-rule">📌 Паттерн 4: «Having + past participle» = действие завершилось ДО действия главного предложения.</div>
+          <div class="explain-wrong">❌ A — «analyzed» — это просто глагол прошедшего времени, создаёт два сказуемых<br>❌ D — «they analyzed» — лишнее подлежащее (Double Subject Trap!)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 6 / 8</span><span class="pq-type tp-vb">Verb Complement</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">The committee decided _____ the new environmental regulations immediately.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q6-opts">
+          <button class="pq-opt" onclick="answer(6,'A')" id="q6-A"><span class="ol">A</span> implementing</button>
+          <button class="pq-opt" onclick="answer(6,'B')" id="q6-B"><span class="ol">B</span> to implement</button>
+          <button class="pq-opt" onclick="answer(6,'C')" id="q6-C"><span class="ol">C</span> implement</button>
+          <button class="pq-opt" onclick="answer(6,'D')" id="q6-D"><span class="ol">D</span> implemented</button>
+        </div>
+        <div class="pq-explain" id="q6-explain">
+          <div class="explain-correct">✅ Верный ответ: B — to implement</div>
+          Глагол <strong>«decide»</strong> относится к группе «Verb + to infinitive» — после него всегда идёт инфинитив с «to».<br><br>
+          <div class="explain-rule">📌 Паттерн 5: decide → to do (не doing). Запомни список: want, need, decide, hope, plan, agree, refuse + to infinitive.</div>
+          <div class="explain-wrong">❌ A — «implementing» — герундий, нельзя после «decide»<br>❌ C — «implement» — голый инфинитив без «to», нельзя после «decide»</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 7 / 8</span><span class="pq-type tp-vb">Verb Complement</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">Many students avoid _____ under pressure, which can lead to poor performance.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q7-opts">
+          <button class="pq-opt" onclick="answer(7,'A')" id="q7-A"><span class="ol">A</span> to study</button>
+          <button class="pq-opt" onclick="answer(7,'B')" id="q7-B"><span class="ol">B</span> studied</button>
+          <button class="pq-opt" onclick="answer(7,'C')" id="q7-C"><span class="ol">C</span> studying</button>
+          <button class="pq-opt" onclick="answer(7,'D')" id="q7-D"><span class="ol">D</span> study</button>
+        </div>
+        <div class="pq-explain" id="q7-explain">
+          <div class="explain-correct">✅ Верный ответ: C — studying</div>
+          Глагол <strong>«avoid»</strong> относится к группе «Verb + gerund (-ing)» — после него всегда герундий.<br><br>
+          <div class="explain-rule">📌 Паттерн 5: avoid → doing. Запомни: enjoy, avoid, finish, suggest, consider, keep + gerund (-ing).</div>
+          <div class="explain-wrong">❌ A — «to study» — инфинитив, нельзя после «avoid»<br>❌ D — «study» — голый инфинитив, нельзя</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 8 / 8</span><span class="pq-type tp-mx">Mixed — сложный</span></div>
+      <div class="pq-body">
+        <div class="pq-sentence">What most historians agree on _____ that the causes of the war were complex.</div>
+        <div class="pq-question">Choose the correct answer:</div>
+        <div class="pq-options" id="q8-opts">
+          <button class="pq-opt" onclick="answer(8,'A')" id="q8-A"><span class="ol">A</span> it is</button>
+          <button class="pq-opt" onclick="answer(8,'B')" id="q8-B"><span class="ol">B</span> is</button>
+          <button class="pq-opt" onclick="answer(8,'C')" id="q8-C"><span class="ol">C</span> they are</button>
+          <button class="pq-opt" onclick="answer(8,'D')" id="q8-D"><span class="ol">D</span> are</button>
+        </div>
+        <div class="pq-explain" id="q8-explain">
+          <div class="explain-correct">✅ Верный ответ: B — is</div>
+          Подлежащее здесь — именное придаточное <strong>«What most historians agree on»</strong>. Именные придаточные с «what» считаются единственным числом → глагол «is».<br><br>
+          <div class="explain-rule">📌 Паттерн 3 + Паттерн 1: «What-clause» как подлежащее = единственное число. «What + S + V» → is/was (ед.ч.).</div>
+          <div class="explain-wrong">❌ A — «it is» — лишнее подлежащее «it» (Double Subject Trap!)<br>❌ C — «they are» — тоже лишнее подлежащее<br>❌ D — «are» — мн.ч., но «what-clause» = ед.ч.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/8</div>
+      <div class="score-label">Результат · Structure Part 1 · Урок 3</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Стратегия →</button>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия для Part 1 — Structure</div>
+    <div class="section-intro">15 вопросов за ~12 минут — это меньше минуты на вопрос. Нужна система, а не угадывание.</div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Шаг 1: найди сказуемое</div>
+        <div class="tip-body">Первым делом ищи глагол-сказуемое в предложении. Если его нет — нужен глагол. Если он есть — пропуск нужен для другой функции (причастие, союз, дополнение).</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Шаг 2: найди подлежащее и проверь согласование</div>
+        <div class="tip-body">Зачеркни все предложные обороты (of, in, on, with...) — осталось настоящее подлежащее. Оно единственное или множественное? Проверь глагол.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Шаг 3: проверь структуру придаточного</div>
+        <div class="tip-body">Если есть союз (that, what, where, when, why, how) — проверь: после него прямой порядок слов? Нет лишнего местоимения? Это убирает сразу 2 ловушки.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">Шаг 4: -ing или -ed для причастий?</div>
+        <div class="tip-body">Задай вопрос: существительное само делает действие (→ -ing) или над ним делают действие (→ -ed)? Это решает большинство вопросов с причастными оборотами.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">Не читай всё предложение целиком с каждым вариантом</div>
+        <div class="tip-body">Это потеря времени. Определи структуру → сразу убери 2–3 неподходящих варианта → проверь оставшийся 1–2. Предложения в Structure длинные и академические — не пытайся понять смысл, анализируй грамматику.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="background:var(--purple-light);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--purple-dark);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:#534AB7;line-height:1.9;">
+        1. Выпиши 10 глаголов + to infinitive и 10 глаголов + gerund — и запомни их<br>
+        2. Составь 5 своих предложений с причастными оборотами (-ing и -ed)<br>
+        3. Пройди 15 вопросов Part 1 из Longman Preparation Course for TOEFL ITP (Unit 4–6)<br>
+        4. Для каждого вопроса — укажи какой паттерн (1–5) проверяется
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:8px;letter-spacing:0.04em;">ПРОГРЕСС · SECTION II</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:2;">
+        ✅ Урок 3 — Clause & Verb Patterns<br>
+        ⬜ Урок 4 — Parallel Structure, Comparatives, Connectors<br>
+        ⬜ Урок 5 — Articles, Prepositions, Word Form<br>
+        ⬜ Урок 6 — Verb Tense, Agreement, Pronouns<br>
+        ⬜ Урок 7 — Advanced Clauses & Reduction<br>
+        ⬜ Урок 8 — Grammar Mini-Test
+      </div>
+    </div>
+
+    <button class="btn-primary">✅ Урок 3 завершён!</button>
+    <div style="margin-top:10px;padding:16px;background:var(--purple-light);border:1px solid #AFA9EC;border-radius:var(--radius);font-size:14px;color:var(--purple-dark);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 4 — Parallel Structure, Comparatives & Connectors</strong><br>
+      <span style="font-size:13px;opacity:0.8;">Попроси своего преподавателя отправить Урок 4</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const correct = {1:'B',2:'B',3:'C',4:'C',5:'B',6:'B',7:'C',8:'B'};
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+  document.querySelectorAll('#q'+q+'-opts .pq-opt').forEach(b => b.disabled = true);
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+  if (choice === correct[q]) { chosen.classList.add('correct'); score++; }
+  else { chosen.classList.add('wrong'); correctBtn.classList.add('correct'); }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (done / 8 * 100) + '%';
+  if (done === 8) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson3', 'Урок 3: Clause & Verb Patterns', score, 8, Math.round(score/8*100));
+    document.getElementById('score-display').textContent = score + '/8';
+    document.getElementById('score-bar').style.width = (score / 8 * 100) + '%';
+    const msgs = ['Повтори теорию — особенно паттерны 3 и 4.','Неплохо! Повтори ловушки.','Хорошо! Чуть больше практики.','Очень хорошо — ты понимаешь структуры!','Отлично! Почти идеально.','Превосходно! Все правильно — отличный результат!','Превосходно! Все правильно — отличный результат!','Превосходно! Все правильно — отличный результат!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['theory','patterns','traps','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

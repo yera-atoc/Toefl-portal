@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 2: Listening Long Conversations & Talks</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-dark: #0C447C;
+    --blue-mid: #378ADD;
+    --blue-light: #E6F1FB;
+    --blue-pale: #f0f6fd;
+    --green-dark: #085041;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --amber: #EF9F27;
+    --amber-light: #FAEEDA;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+
+  .hero { background: var(--blue-dark); padding: 0; position: relative; overflow: hidden; }
+  .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(55,138,221,0.18) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(181,212,244,0.1) 0%, transparent 40%); }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 36px 24px 28px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #B5D4F4; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #85B7EB; display: inline-block; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: #ffffff; line-height: 1.2; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: #B5D4F4; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.1); color: #E6F1FB; border: 1px solid rgba(255,255,255,0.15); }
+  .progress-track { height: 3px; background: rgba(255,255,255,0.15); }
+  .progress-fill { height: 3px; background: #85B7EB; width: 0%; transition: width 0.5s ease; }
+
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs { max-width: 720px; margin: 0 auto; display: flex; overflow-x: auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 14px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-left: none; border-right: none; border-top: none; }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: var(--blue-dark); border-bottom-color: var(--blue-dark); }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .section-intro { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .lesson-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .lc-header { padding: 14px 16px; background: var(--blue-pale); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .lc-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--blue-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; }
+  .lc-title { font-size: 14px; font-weight: 600; color: var(--blue-dark); }
+  .lc-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+  .lc-body { padding: 16px; }
+  .lc-ru { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+
+  .highlight { background: var(--blue-light); color: var(--blue-dark); padding: 1px 6px; border-radius: 4px; font-weight: 500; font-size: 13px; }
+  .highlight-g { background: var(--green-light); color: var(--green-dark); padding: 1px 6px; border-radius: 4px; font-weight: 500; font-size: 13px; }
+  .highlight-r { background: var(--red-light); color: #A32D2D; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+
+  .dialog-box { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; font-size: 14px; line-height: 1.8; }
+  .dialog-label { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 8px; text-transform: uppercase; }
+  .spk { font-weight: 600; color: var(--blue-dark); }
+  .spk-w { font-weight: 600; color: var(--green-dark); }
+  .spk-prof { font-weight: 600; color: var(--purple); }
+  .q-line { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); font-weight: 600; color: var(--text); font-size: 14px; }
+  .q-answer { font-size: 13px; color: var(--green-dark); font-weight: 500; margin-top: 6px; }
+  .q-note { font-size: 12px; color: var(--text-light); margin-top: 4px; font-style: italic; }
+
+  .lc-tip { background: var(--amber-light); border-left: 3px solid var(--amber); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #5a3a00; line-height: 1.6; margin-top: 12px; }
+
+  /* Compare table */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+  .compare-table th { background: var(--blue-pale); color: var(--blue-dark); font-weight: 600; padding: 10px 12px; text-align: left; border: 1px solid var(--border); }
+  .compare-table td { padding: 9px 12px; border: 1px solid var(--border); color: var(--text-muted); vertical-align: top; line-height: 1.6; background: var(--white); }
+  .compare-table tr:nth-child(even) td { background: #fafaf8; }
+
+  /* Note-taking box */
+  .notes-box { background: #fffdf5; border: 2px dashed #EF9F27; border-radius: var(--radius); padding: 16px; margin-bottom: 16px; }
+  .notes-title { font-size: 13px; font-weight: 600; color: #5a3a00; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .note-item { background: white; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; }
+  .note-key { font-size: 12px; font-weight: 600; color: var(--blue-dark); margin-bottom: 4px; }
+  .note-val { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Trap cards */
+  .trap-card { background: var(--white); border: 1px solid #F0997B; border-radius: var(--radius); padding: 16px; margin-bottom: 12px; }
+  .trap-num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--coral); color: white; font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .trap-title { font-size: 14px; font-weight: 600; color: var(--coral); margin-bottom: 8px; }
+  .trap-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .trap-ex { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; margin-top: 10px; font-size: 13px; line-height: 1.7; font-style: italic; }
+
+  /* Practice */
+  .pq-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; }
+  .pq-header { padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; letter-spacing: 0.04em; }
+  .type-b { background: var(--blue-light); color: var(--blue-dark); }
+  .type-c { background: var(--purple-light); color: #3C3489; }
+  .type-inf { background: #EEEDFE; color: #3C3489; }
+  .type-det { background: var(--green-light); color: var(--green-dark); }
+  .type-ord { background: var(--amber-light); color: #633806; }
+
+  .pq-body { padding: 16px; }
+  .pq-context { background: var(--blue-pale); border: 1px solid #B5D4F4; border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 12px; font-size: 13px; color: var(--blue-dark); font-weight: 500; }
+  .pq-dialog { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 14px; font-size: 14px; line-height: 1.9; }
+  .pq-dlabel { font-size: 11px; font-weight: 600; color: var(--text-light); margin-bottom: 8px; letter-spacing: 0.04em; display: flex; align-items: center; gap: 6px; }
+  .pq-question { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .pq-options { display: flex; flex-direction: column; gap: 8px; }
+  .pq-opt { display: flex; align-items: flex-start; gap: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 14px; font-size: 14px; cursor: pointer; background: var(--white); text-align: left; width: 100%; transition: all 0.15s; color: var(--text); font-family: 'DM Sans', sans-serif; }
+  .pq-opt:hover:not(:disabled) { border-color: var(--blue-mid); background: var(--blue-pale); }
+  .pq-opt .ol { font-weight: 600; color: var(--text-muted); flex-shrink: 0; min-width: 18px; }
+  .pq-opt.correct { background: var(--green-light); border-color: var(--green-mid); color: #04342C; }
+  .pq-opt.correct .ol { color: var(--green-dark); }
+  .pq-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .pq-opt.wrong .ol { color: var(--red); }
+  .pq-opt:disabled { cursor: default; }
+
+  .pq-explain { margin-top: 14px; padding: 14px 16px; background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.7; color: var(--text-muted); display: none; border-left: 3px solid var(--blue-mid); }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--green-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+  .score-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; margin-top: 8px; display: none; }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--blue-dark); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--blue-mid); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  .tip-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-num { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .btn-primary { display: block; width: 100%; background: var(--blue-dark); color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 20px; text-align: center; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary { display: block; width: 100%; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 10px; text-align: center; font-family: 'DM Sans', sans-serif; transition: background 0.15s; }
+  .btn-secondary:hover { background: var(--bg); }
+
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Abbreviation grid */
+  .abbr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+  .abbr-item { background: var(--bg); border-radius: var(--radius-sm); padding: 8px 10px; text-align: center; }
+  .abbr-sym { font-size: 18px; font-weight: 700; color: var(--blue-dark); font-family: 'DM Serif Display', serif; }
+  .abbr-mean { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  .goal-card { background: var(--blue-dark); border-radius: var(--radius); padding: 20px; color: white; margin-bottom: 20px; }
+  .goal-title { font-size: 14px; font-weight: 600; color: #B5D4F4; margin-bottom: 12px; letter-spacing: 0.03em; }
+  .goal-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .goal-label { font-size: 13px; color: #B5D4F4; min-width: 110px; }
+  .goal-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; }
+  .goal-fill { height: 6px; border-radius: 3px; }
+  .goal-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 24px; }
+    .abbr-grid { grid-template-columns: repeat(2, 1fr); }
+    .notes-grid { grid-template-columns: 1fr; }
+    .tab { padding: 12px 14px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP · Урок 2 из 14</div>
+    <div class="hero-title">Listening: Long Conversations<br>& Academic Talks</div>
+    <div class="hero-sub">Section I · Parts B & C · 20 вопросов на реальном тесте<br>Длинные диалоги и академические мини-лекции</div>
+    <div class="hero-pills">
+      <span class="hero-pill">📖 Part B vs C</span>
+      <span class="hero-pill">📝 Note-taking</span>
+      <span class="hero-pill">⚠️ Ловушки</span>
+      <span class="hero-pill">✏️ 6 вопросов</span>
+      <span class="hero-pill">💡 Стратегия</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('theory', this)">📖 Теория</button>
+    <button class="tab" onclick="showTab('notetaking', this)">📝 Note-taking</button>
+    <button class="tab" onclick="showTab('traps', this)">⚠️ Ловушки</button>
+    <button class="tab" onclick="showTab('practice', this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips', this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== THEORY ===== -->
+  <div class="section active" id="tab-theory">
+    <div class="section-title">Что такое Parts B и C?</div>
+    <div class="section-intro">
+      После 30 коротких диалогов (Part A) идут <strong>Parts B и C</strong> — длинные аудиозаписи с несколькими вопросами к каждой. Всего <strong>20 вопросов</strong>. Это другой формат — здесь нужно удерживать информацию в памяти сразу по нескольким вопросам.
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th></th>
+        <th>Part B — Long Conversations</th>
+        <th>Part C — Talks / Lectures</th>
+      </tr>
+      <tr>
+        <td><strong>Что слышишь</strong></td>
+        <td>Диалог между двумя студентами или студентом и преподавателем</td>
+        <td>Монолог: лекция, объявление, экскурсия, инструкция</td>
+      </tr>
+      <tr>
+        <td><strong>Длина</strong></td>
+        <td>~60–90 секунд</td>
+        <td>~60–120 секунд</td>
+      </tr>
+      <tr>
+        <td><strong>Вопросов</strong></td>
+        <td>3–4 вопроса на диалог</td>
+        <td>3–5 вопросов на лекцию</td>
+      </tr>
+      <tr>
+        <td><strong>Тема</strong></td>
+        <td>Студенческая жизнь, расписание, задания, проблемы</td>
+        <td>Наука, история, природа, искусство, технологии</td>
+      </tr>
+      <tr>
+        <td><strong>Главная сложность</strong></td>
+        <td>Следить за двумя говорящими и их позициями</td>
+        <td>Запоминать много деталей из монолога</td>
+      </tr>
+    </table>
+
+    <div class="type-label">Part B — Длинные диалоги</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">B</div>
+        <div>
+          <div class="lc-title">Long Conversations</div>
+          <div class="lc-sub">Диалог → 3–4 вопроса подряд</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Ты услышишь один длинный диалог, а потом — <strong>3–4 вопроса к нему подряд</strong>. Вопросы идут в том же порядке, что и информация в диалоге (это важно!).<br><br>
+          Типичные темы: студент просит помощи у профессора, два студента обсуждают проект, студент решает проблему с расписанием.
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример Part B (сокращённый)</div>
+          <span class="spk-w">Woman:</span> Professor Harrison, do you have a minute? I'm having trouble understanding the assignment.<br>
+          <span class="spk-prof">Professor:</span> Of course. Which part is confusing you?<br>
+          <span class="spk-w">Woman:</span> The part about comparing two economic theories. I'm not sure which ones to choose.<br>
+          <span class="spk-prof">Professor:</span> Well, for this assignment, I'd suggest Keynesian and classical economics — they contrast nicely. And make sure you use at least three sources.<br>
+          <span class="spk-w">Woman:</span> Three sources — got it. When is it due again?<br>
+          <span class="spk-prof">Professor:</span> Friday at noon. But if you need an extension, just email me by Wednesday.<br><br>
+          <div class="q-line">Q1: Why does the woman go to see the professor?</div>
+          <div class="q-answer">✅ To get help with an assignment</div>
+          <div class="q-line">Q2: What does the professor recommend?</div>
+          <div class="q-answer">✅ Comparing Keynesian and classical economics</div>
+          <div class="q-line">Q3: What should the woman do if she needs more time?</div>
+          <div class="q-answer">✅ Email the professor by Wednesday</div>
+        </div>
+        <div class="lc-tip">💡 Вопросы идут <strong>в хронологическом порядке</strong> — первый вопрос о начале диалога, последний о конце. Это помогает отслеживать, где ты находишься.</div>
+      </div>
+    </div>
+
+    <div class="type-label">Part C — Академические лекции и монологи</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">C</div>
+        <div>
+          <div class="lc-title">Talks & Lectures</div>
+          <div class="lc-sub">Монолог → 3–5 вопросов подряд</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Один говорящий — лектор, гид, диктор. Говорит об академической теме. После монолога — <strong>3–5 вопросов</strong>. Здесь нужно запомнить <strong>структуру</strong>: введение → основные факты → детали → вывод.
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример Part C (сокращённый)</div>
+          <span class="spk-prof">Professor:</span> Today I'd like to talk about bioluminescence — the ability of certain organisms to produce and emit light. This phenomenon occurs in many marine species, including deep-sea fish, jellyfish, and some bacteria. Scientists believe bioluminescence serves several purposes: attracting prey, communicating with other members of the same species, and confusing predators. Interestingly, the chemical reaction that produces this light is extremely efficient — almost no heat is generated, unlike in artificial light sources. This is why researchers are studying it for potential applications in medicine and environmental monitoring.<br><br>
+          <div class="q-line">Q1: What is the main topic of the talk?</div>
+          <div class="q-answer">✅ How and why some organisms produce light</div>
+          <div class="q-line">Q2: According to the professor, what are THREE purposes of bioluminescence?</div>
+          <div class="q-answer">✅ Attracting prey · Communication · Confusing predators</div>
+          <div class="q-line">Q3: Why are researchers interested in bioluminescence?</div>
+          <div class="q-answer">✅ It may have uses in medicine and environmental monitoring</div>
+        </div>
+        <div class="lc-tip">💡 В Part C часто спрашивают: «According to the professor, what are THREE reasons / examples / factors?» — слушай и сразу записывай списками!</div>
+      </div>
+    </div>
+
+    <div class="type-label">Типы вопросов в Parts B и C</div>
+    <div class="lesson-card">
+      <div class="lc-body" style="padding-top:16px">
+        <div class="lc-ru">Всего <strong>4 типа вопросов</strong> — те же, что в Part A, но применяются к более длинным текстам:</div>
+        <table class="compare-table" style="margin-top:10px">
+          <tr>
+            <th>Тип</th>
+            <th>Вопрос (пример)</th>
+            <th>Что слушать</th>
+          </tr>
+          <tr>
+            <td><span class="highlight-g">Main idea</span></td>
+            <td>What is the main topic of the talk?</td>
+            <td>Первые 2–3 предложения лекции — там обычно тема</td>
+          </tr>
+          <tr>
+            <td><span class="highlight">Detail</span></td>
+            <td>According to the professor, what is...?</td>
+            <td>Конкретные факты, цифры, имена, примеры</td>
+          </tr>
+          <tr>
+            <td><span class="highlight" style="background:#EEEDFE;color:#3C3489">Inference</span></td>
+            <td>What can be inferred about...?</td>
+            <td>Что подразумевается, но не сказано прямо</td>
+          </tr>
+          <tr>
+            <td><span class="highlight" style="background:#FAEEDA;color:#633806">Order/List</span></td>
+            <td>Which of the following is mentioned?</td>
+            <td>Перечисления, списки, шаги по порядку</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('notetaking', document.querySelectorAll('.tab')[1])">Дальше: Как делать заметки →</button>
+  </div>
+
+  <!-- ===== NOTE-TAKING ===== -->
+  <div class="section" id="tab-notetaking">
+    <div class="section-title">Note-taking — как делать заметки</div>
+    <div class="section-intro">
+      На тесте TOEFL ITP <strong>разрешено делать заметки в буклете</strong>. Это огромное преимущество в Parts B и C — используй его! Заметки не нужно перечитывать целиком, они просто помогают памяти.
+    </div>
+
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">📝</div>
+        <div>
+          <div class="lc-title">Система быстрых сокращений</div>
+          <div class="lc-sub">Пиши быстро — не успеешь записать всё словами</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">Не пиши полными словами — только ключевые символы и сокращения. Пока пишешь слово целиком, пропустишь следующую фразу.</div>
+        <div class="abbr-grid">
+          <div class="abbr-item"><div class="abbr-sym">→</div><div class="abbr-mean">leads to / causes</div></div>
+          <div class="abbr-item"><div class="abbr-sym">↑</div><div class="abbr-mean">increases / more</div></div>
+          <div class="abbr-item"><div class="abbr-sym">↓</div><div class="abbr-mean">decreases / less</div></div>
+          <div class="abbr-item"><div class="abbr-sym">≠</div><div class="abbr-mean">different from</div></div>
+          <div class="abbr-item"><div class="abbr-sym">≈</div><div class="abbr-mean">similar to</div></div>
+          <div class="abbr-item"><div class="abbr-sym">∵</div><div class="abbr-mean">because</div></div>
+          <div class="abbr-item"><div class="abbr-sym">∴</div><div class="abbr-mean">therefore</div></div>
+          <div class="abbr-item"><div class="abbr-sym">w/</div><div class="abbr-mean">with</div></div>
+          <div class="abbr-item"><div class="abbr-sym">w/o</div><div class="abbr-mean">without</div></div>
+          <div class="abbr-item"><div class="abbr-sym">imp</div><div class="abbr-mean">important</div></div>
+          <div class="abbr-item"><div class="abbr-sym">ex</div><div class="abbr-mean">example</div></div>
+          <div class="abbr-item"><div class="abbr-sym">def</div><div class="abbr-mean">definition</div></div>
+        </div>
+        <div class="lc-tip">💡 Создай <strong>свои</strong> сокращения для частых слов: «prof» = professor, «std» = student, «univ» = university. Главное — чтобы ты сама понимала что написала.</div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon" style="font-size:18px">🗂️</div>
+        <div>
+          <div class="lc-title">Структура заметок для Part B (диалог)</div>
+          <div class="lc-sub">Две колонки — для каждого говорящего</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">Для диалога делай две колонки: кто что говорит. Так легче ответить на вопрос «What does the woman say about...?»</div>
+        <div class="notes-box">
+          <div class="notes-title">✏️ Пример заметок для Part B</div>
+          <div class="notes-grid">
+            <div class="note-item">
+              <div class="note-key">Student (W)</div>
+              <div class="note-val">— confused abt assign<br>— which theories?<br>— when due?</div>
+            </div>
+            <div class="note-item">
+              <div class="note-key">Prof (M)</div>
+              <div class="note-val">— Keynesian + classical<br>— 3 sources<br>— due Fri noon<br>— ext → email Wed</div>
+            </div>
+          </div>
+        </div>
+        <div class="lc-tip">💡 Не нужно записывать всё — только <strong>факты с цифрами, именами, датами</strong> и ключевые решения/рекомендации. Это именно то, о чём спрашивают.</div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon" style="font-size:18px">🎓</div>
+        <div>
+          <div class="lc-title">Структура заметок для Part C (лекция)</div>
+          <div class="lc-sub">Вертикальный список с отступами</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">Для лекции пиши вертикально: тема сверху, потом факты с отступом. Нумеруй перечисления — их часто спрашивают.</div>
+        <div class="notes-box">
+          <div class="notes-title">✏️ Пример заметок для Part C (лекция о биолюминесценции)</div>
+          <div style="font-size:13px; color:#5a3a00; line-height:2; font-family:monospace;">
+            TOPIC: bioluminescence = organisms → emit light<br>
+            WHERE: marine — fish, jellyfish, bacteria<br>
+            WHY (3):<br>
+            &nbsp;&nbsp;1. attract prey<br>
+            &nbsp;&nbsp;2. communicate<br>
+            &nbsp;&nbsp;3. confuse predators<br>
+            SPECIAL: no heat (≠ artificial light)<br>
+            USE: medicine + env monitoring
+          </div>
+        </div>
+        <div class="lc-tip">💡 Слова-сигналы, после которых надо записывать: <strong>«first», «second», «also», «in addition», «however», «for example», «most importantly»</strong> — это структурные маркеры лекции.</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('traps', document.querySelectorAll('.tab')[2])">Дальше: Ловушки Parts B & C →</button>
+  </div>
+
+  <!-- ===== TRAPS ===== -->
+  <div class="section" id="tab-traps">
+    <div class="section-title">Ловушки Parts B и C</div>
+    <div class="section-intro">
+      В длинных текстах ловушки сложнее, чем в коротких диалогах — у ETS больше места спрятать обманные варианты.
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">1</div>
+      <div class="trap-title">Beginning Trap — ловушка первой фразы</div>
+      <div class="trap-body">В лекции профессор часто начинает с одной идеи, а потом её опровергает или уточняет. Если вопрос — «What is the main point?», ответ — это <strong>уточнённая</strong> идея, а не первая.</div>
+      <div class="trap-ex">
+        Профессор: <em>"Many people think dolphins are fish. However, as we'll discuss today, they are actually mammals..."</em><br>
+        Вопрос: What is the talk mainly about?<br>
+        ❌ Ловушка: «Why dolphins are fish»<br>
+        ✅ Верно: «Why dolphins are classified as mammals»
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">2</div>
+      <div class="trap-title">True But Not Mentioned Trap</div>
+      <div class="trap-body">Вариант ответа звучит правдоподобно и может быть правдой в реальной жизни — но в тексте этого <strong>не было сказано</strong>. TOEFL спрашивает только о том, что сказал говорящий.</div>
+      <div class="trap-ex">
+        Лекция о пчёлах. Вариант: «Bees produce honey that is sold in stores»<br>
+        → Это правда в жизни, но если в лекции про это не говорили — это <span class="highlight-r">неверный ответ</span>.<br>
+        Правило: «According to the talk» = только то, что прозвучало.
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">3</div>
+      <div class="trap-title">Mixed Information Trap — перепутанные детали</div>
+      <div class="trap-body">Правильные факты из текста, но <strong>перемешанные неверно</strong>. Например, правильное число — но к неправильному предмету.</div>
+      <div class="trap-ex">
+        Диалог: <em>«The paper is due Monday, and you need 5 sources»</em><br>
+        ❌ Ловушка: «The paper needs 5 sources and is due Friday»<br>
+        ✅ Верно: «The paper is due Monday and requires 5 sources»<br><br>
+        → Числа и детали правильные, но перепутаны местами!
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">4</div>
+      <div class="trap-title">Distractor from Part A — ловушка из короткой части</div>
+      <div class="trap-body">Мозг устаёт после 30 диалогов Part A. В Parts B и C студенты начинают торопиться и хуже концентрируются. ETS специально ставит сложные вопросы именно в конце Parts B и C.</div>
+      <div class="trap-ex">
+        Стратегия: перед Parts B и C сделай глубокий вдох. Это новый раздел — забудь про Part A. Сфокусируйся заново.
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">5</div>
+      <div class="trap-title">Negative Question Trap — «EXCEPT / NOT»</div>
+      <div class="trap-body">Вопрос: <strong>«Which of the following is NOT mentioned?»</strong> или <strong>«All of the following EXCEPT...»</strong> — нужно найти единственный вариант, которого в тексте <em>не было</em>. Студенты часто выбирают то, что было.</div>
+      <div class="trap-ex">
+        Правило: при виде слов <span class="highlight-r">NOT / EXCEPT / LEAST</span> — обведи их карандашом! Это меняет логику всего вопроса.
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice', document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ===== PRACTICE ===== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 6 вопросов</div>
+    <div class="section-intro">
+      Два блока: сначала Part B (диалог → 3 вопроса), потом Part C (лекция → 3 вопроса). Читай текст как будто слышишь его впервые. Можешь делать заметки на листке бумаги.
+    </div>
+
+    <!-- PART B HEADER -->
+    <div style="background:var(--blue-pale);border:1px solid #B5D4F4;border-radius:var(--radius);padding:14px 16px;margin-bottom:16px;">
+      <div style="font-size:12px;font-weight:600;color:var(--blue-dark);letter-spacing:0.05em;margin-bottom:4px;">PART B — LONG CONVERSATION</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:1.6;">Прочитай весь диалог целиком, потом отвечай на вопросы 1–3 по памяти (как на реальном тесте).</div>
+    </div>
+
+    <!-- Full dialog for Part B -->
+    <div class="pq-dialog" style="margin-bottom:20px;">
+      <div class="pq-dlabel">🎧 Диалог (Part B) — прочитай один раз, потом закрой глаза и вспомни</div>
+      <span class="spk-w">Woman:</span> Hi, Mark. Have you started working on the history presentation yet?<br>
+      <span class="spk">Man:</span> Not really. I've been trying to figure out how to organize it. Dr. Patel said it should be about 15 minutes long.<br>
+      <span class="spk-w">Woman:</span> Right. I was thinking we could split it into three parts: background, main events, and impact.<br>
+      <span class="spk">Man:</span> That sounds good. Who's going to do the research on the background section?<br>
+      <span class="spk-w">Woman:</span> I can do that. You take the main events part since you're better at finding sources.<br>
+      <span class="spk">Man:</span> Okay. What about the impact section?<br>
+      <span class="spk-w">Woman:</span> We can do that together. Oh, and Dr. Patel wants us to include at least two visual aids — like maps or charts.<br>
+      <span class="spk">Man:</span> Got it. Should we meet Thursday to put it all together?<br>
+      <span class="spk-w">Woman:</span> Thursday works. Let's say 4 o'clock in the library.
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part B · Вопрос 1 / 3</span>
+        <span class="pq-type type-b">Main Idea</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">What are the students mainly discussing?</div>
+        <div class="pq-options" id="q1-opts">
+          <button class="pq-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol">A</span> A history exam they need to study for.</button>
+          <button class="pq-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol">B</span> How to organize and prepare a presentation.</button>
+          <button class="pq-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol">C</span> Finding sources for a research paper.</button>
+          <button class="pq-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol">D</span> Their professor's requirements for the course.</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: B</div>
+          Весь диалог посвящён тому, как организовать презентацию: структура (3 части), распределение задач, визуальные материалы, встреча. Это типичный вопрос <strong>Main Idea</strong> в Part B.<br><br>
+          <div class="explain-wrong">❌ C — ловушка! Упоминаются «sources», но это только деталь, а не главная тема.<br>❌ D — требования профессора упоминаются вскользь, это не главная тема.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part B · Вопрос 2 / 3</span>
+        <span class="pq-type type-det">Detail</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">What will the woman be responsible for?</div>
+        <div class="pq-options" id="q2-opts">
+          <button class="pq-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol">A</span> The main events section.</button>
+          <button class="pq-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol">B</span> Finding visual aids for the presentation.</button>
+          <button class="pq-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol">C</span> The background section.</button>
+          <button class="pq-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol">D</span> Organizing the meeting on Thursday.</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          Женщина прямо говорит: <strong>«I can do that»</strong> в ответ на вопрос о background section. Мужчина берёт main events.<br><br>
+          <div class="explain-wrong">❌ A — ловушка! Main events берёт мужчина, а не женщина. Классический «First Speaker Trap» — перепутаны роли.<br>❌ B — visual aids — это требование профессора для обоих, не личная задача женщины.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part B · Вопрос 3 / 3</span>
+        <span class="pq-type type-det">Detail</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">When and where will the students meet?</div>
+        <div class="pq-options" id="q3-opts">
+          <button class="pq-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol">A</span> Thursday at 4 o'clock in the library.</button>
+          <button class="pq-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol">B</span> Thursday at 4 o'clock in Dr. Patel's office.</button>
+          <button class="pq-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol">C</span> Friday at 4 o'clock in the library.</button>
+          <button class="pq-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol">D</span> Wednesday at 3 o'clock in the library.</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: A</div>
+          Женщина говорит: <strong>«Thursday works. Let's say 4 o'clock in the library.»</strong> — все три детали: день, время, место.<br><br>
+          <div class="explain-wrong">❌ B — место неверное. Library ≠ Dr. Patel's office.<br>❌ C — день неверный: Thursday, не Friday.<br>❌ D — оба варианта неверны (Mixed Information Trap).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART C HEADER -->
+    <div style="background:var(--purple-light);border:1px solid #AFA9EC;border-radius:var(--radius);padding:14px 16px;margin:24px 0 16px;">
+      <div style="font-size:12px;font-weight:600;color:#3C3489;letter-spacing:0.05em;margin-bottom:4px;">PART C — ACADEMIC TALK</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:1.6;">Прочитай лекцию целиком один раз, делая заметки на бумаге, потом отвечай на вопросы 4–6.</div>
+    </div>
+
+    <!-- Full lecture for Part C -->
+    <div class="pq-dialog" style="margin-bottom:20px;border-color:#AFA9EC;">
+      <div class="pq-dlabel">🎧 Лекция (Part C) — читай один раз, делай заметки</div>
+      <span class="spk-prof">Professor:</span> Today I want to discuss the phenomenon of coral bleaching — a serious threat to ocean ecosystems worldwide. Coral bleaching occurs when water temperatures rise above normal levels. When this happens, corals expel the algae that live in their tissues. These algae, called zooxanthellae, are responsible for giving corals their color and providing them with up to 90 percent of their energy. Without the algae, the coral turns white — or "bleaches" — and begins to starve.<br><br>
+      Now, bleaching doesn't immediately kill coral. If temperatures return to normal quickly, corals can recover. However, if high temperatures persist for more than eight weeks, the coral dies. Once dead, coral reefs can take decades to recover — if they recover at all.<br><br>
+      The main cause of coral bleaching is rising ocean temperatures due to climate change. Other contributing factors include pollution, disease, and changes in ocean chemistry. Scientists are currently studying heat-resistant coral species that may help restore damaged reefs in the future.
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part C · Вопрос 4 / 3</span>
+        <span class="pq-type type-c">Main Idea</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">What is the lecture mainly about?</div>
+        <div class="pq-options" id="q4-opts">
+          <button class="pq-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol">A</span> The types of algae found in ocean ecosystems.</button>
+          <button class="pq-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol">B</span> Why coral reefs are important to marine life.</button>
+          <button class="pq-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol">C</span> What coral bleaching is and why it is dangerous.</button>
+          <button class="pq-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol">D</span> How scientists are building new coral reefs.</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          Профессор объясняет: что такое coral bleaching, как это происходит, почему опасно и каковы причины. Это главная тема всей лекции.<br><br>
+          <div class="explain-wrong">❌ A — зооксантеллы упоминаются, но это деталь, не тема.<br>❌ D — исследования тепловыносливых кораллов — только последнее предложение, не вся лекция.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part C · Вопрос 5 / 3</span>
+        <span class="pq-type type-det">Detail</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">According to the professor, what percentage of energy do the algae provide to coral?</div>
+        <div class="pq-options" id="q5-opts">
+          <button class="pq-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol">A</span> 8 percent.</button>
+          <button class="pq-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol">B</span> 80 percent.</button>
+          <button class="pq-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol">C</span> 90 percent.</button>
+          <button class="pq-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol">D</span> 100 percent.</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          Профессор говорит прямо: <strong>«providing them with up to 90 percent of their energy»</strong>.<br><br>
+          <div class="explain-wrong">❌ A — «8 weeks» упоминается в другом контексте (время до гибели коралла). Это ловушка Mixed Information.<br>❌ B — «80%» — похоже на слух на «90%», классическая Sound-alike ловушка.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Part C · Вопрос 6 / 3</span>
+        <span class="pq-type type-inf">Inference</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-question">What can be inferred about coral reefs from the lecture?</div>
+        <div class="pq-options" id="q6-opts">
+          <button class="pq-opt" onclick="answer(6,'A')" id="q6-A"><span class="ol">A</span> They can survive high temperatures indefinitely.</button>
+          <button class="pq-opt" onclick="answer(6,'B')" id="q6-B"><span class="ol">B</span> They are very difficult to restore once destroyed.</button>
+          <button class="pq-opt" onclick="answer(6,'C')" id="q6-C"><span class="ol">C</span> They are found only in warm tropical waters.</button>
+          <button class="pq-opt" onclick="answer(6,'D')" id="q6-D"><span class="ol">D</span> They have no natural ability to recover from bleaching.</button>
+        </div>
+        <div class="pq-explain" id="q6-explain">
+          <div class="explain-correct">✅ Верный ответ: B</div>
+          Профессор говорит: <strong>«dead coral reefs can take decades to recover — if they recover at all»</strong>. Это подразумевает, что восстановление крайне сложное и может не произойти вовсе.<br><br>
+          <div class="explain-wrong">❌ A — противоположное тому, что сказано: высокая температура убивает коралл.<br>❌ D — слишком крайнее: профессор говорит, что коралл <em>может</em> восстановиться, если температура нормализуется быстро.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/6</div>
+      <div class="score-label">Результат · Parts B & C · Урок 2</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips', document.querySelectorAll('.tab')[4])">Дальше: Стратегия →</button>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия для Parts B и C</div>
+    <div class="section-intro">
+      Parts B и C — это где студенты теряют больше всего баллов, потому что не готовятся к <em>длинному</em> формату. Эти 5 приёмов исправят это.
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Читай ВСЕ вопросы до начала аудио</div>
+        <div class="tip-body">Перед каждым блоком Part B/C у тебя есть ~10–15 секунд. Быстро прочитай все 3–4 вопроса. Теперь ты знаешь, что именно искать в тексте — это как читать детектив зная заранее кто убийца.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Делай заметки — особенно цифры и имена</div>
+        <div class="tip-body">Мозг плохо удерживает числа (даты, проценты, время) и имена собственные после длинного текста. Запиши их сразу. Остальное часто можно вспомнить по контексту.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Слушай сигнальные слова структуры</div>
+        <div class="tip-body">В лекциях профессора дают «карту» своей речи: <strong>«Today I'll discuss...»</strong> = тема. <strong>«There are three reasons...»</strong> = будут 3 детали. <strong>«However...»</strong> = сейчас будет поворот. <strong>«Most importantly...»</strong> = это скорее всего будет в вопросе.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">Обводи NOT / EXCEPT / LEAST карандашом</div>
+        <div class="tip-body">При виде этих слов в вопросе — немедленно обведи их. Без этого очень легко перепутать и выбрать то, что было сказано, вместо того, чего не было. Это механическая привычка, которая спасает баллы.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">Вопросы идут по порядку — используй это</div>
+        <div class="tip-body">В Parts B и C вопросы всегда идут в хронологическом порядке относительно текста. Если ты не знаешь ответ на вопрос 2, вспомни: он о средней части текста, не о начале и не о конце. Это помогает сузить воспоминания.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="goal-card">
+      <div class="goal-title">📊 ПРОГРЕСС ПО SECTION I</div>
+      <div class="goal-row">
+        <span class="goal-label">Part A (Урок 1)</span>
+        <div class="goal-bar"><div class="goal-fill" style="width:100%;background:#5DCAA5"></div></div>
+        <span class="goal-val" style="color:#9FE1CB">✓</span>
+      </div>
+      <div class="goal-row">
+        <span class="goal-label">Parts B&C (Урок 2)</span>
+        <div class="goal-bar"><div class="goal-fill" style="width:100%;background:#5DCAA5"></div></div>
+        <span class="goal-val" style="color:#9FE1CB">✓</span>
+      </div>
+      <div class="goal-row">
+        <span class="goal-label">Section II (след.)</span>
+        <div class="goal-bar"><div class="goal-fill" style="width:0%;background:rgba(255,255,255,0.4)"></div></div>
+        <span class="goal-val">→</span>
+      </div>
+      <div class="goal-note">Section I пройдена полностью! Следующий шаг — Grammar (уроки 3–8)</div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:1.9;">
+        1. Потренируй note-taking: включи любую лекцию на английском (YouTube, TED) на 2–3 минуты, делай заметки по схеме из урока<br>
+        2. Пройди 1 полный блок Part B и 1 блок Part C из Longman Preparation Course for TOEFL ITP<br>
+        3. После каждого блока — проверь заметки: всё ли важное записал(а)?<br>
+        4. Выпиши все сигнальные слова, которые услышал(а) в лекциях
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:16px 0 8px;">
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:16px;">Урок 2 из 14 · Section I завершена ✓</div>
+    </div>
+
+    <button class="btn-primary" style="background:var(--blue-dark);">✅ Урок 2 завершён!</button>
+    <div style="margin-top:10px;padding:16px;background:var(--blue-pale);border:1px solid #B5D4F4;border-radius:var(--radius);font-size:14px;color:var(--text-muted);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 3 — Structure: Clause & Verb Patterns (Section II)</strong><br>
+      <span style="font-size:13px;">Попроси своего преподавателя отправить Урок 3</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const correct = { 1:'B', 2:'C', 3:'A', 4:'C', 5:'C', 6:'B' };
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+  document.querySelectorAll('#q'+q+'-opts .pq-opt').forEach(b => { b.disabled = true; });
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+  if (choice === correct[q]) { chosen.classList.add('correct'); score++; }
+  else { chosen.classList.add('wrong'); correctBtn.classList.add('correct'); }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (done / 6 * 100) + '%';
+  if (done === 6) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson2', 'Урок 2: Listening Long Conversations', score, 6, Math.round(score/6*100));
+    document.getElementById('score-display').textContent = score + '/6';
+    document.getElementById('score-bar').style.width = (score / 6 * 100) + '%';
+    const msgs = ['Повтори теорию и попробуй ещё раз.', 'Неплохое начало! Повтори ловушки.', 'Хорошо! Ещё немного практики.', 'Очень хорошо! Ты на правильном пути.', 'Отлично! Почти без ошибок.', 'Превосходно! Все правильно!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['theory','notetaking','traps','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

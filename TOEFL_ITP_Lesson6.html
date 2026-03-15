@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 6: Verb Tense, Agreement & Pronouns</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --main: #3B6D11;
+    --main-mid: #639922;
+    --main-light: #EAF3DE;
+    --main-pale: #f4faea;
+    --navy: #0C447C;
+    --navy-light: #E6F1FB;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #fff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); padding-bottom: 60px; }
+
+  .hero { background: linear-gradient(135deg, #1a3208 0%, #3B6D11 100%); position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background-image: radial-gradient(circle at 15% 60%, rgba(99,153,34,0.25) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(93,202,165,0.1) 0%, transparent 40%); }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; padding: 36px 24px 28px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #C0DD97; letter-spacing: 0.05em; margin-bottom: 14px; }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #97C459; display: inline-block; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 30px; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+  .hero-sub { font-size: 15px; color: #C0DD97; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.1); color: #EAF3DE; border: 1px solid rgba(255,255,255,0.15); }
+  .progress-track { height: 3px; background: rgba(255,255,255,0.15); }
+  .progress-fill { height: 3px; background: #97C459; transition: width 0.5s; }
+
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs { max-width: 720px; margin: 0 auto; display: flex; overflow-x: auto; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 14px 16px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-left: none; border-right: none; border-top: none; }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: var(--main); border-bottom-color: var(--main-mid); }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
+  .section-intro { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+
+  .type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; margin-top: 28px; display: flex; align-items: center; gap: 8px; }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .gram-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .gc-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .gc-icon { width: 32px; height: 32px; border-radius: 8px; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .ic-green { background: var(--main); }
+  .ic-navy { background: var(--navy); }
+  .ic-amber { background: var(--amber); }
+  .ic-coral { background: var(--coral); }
+  .gc-body { padding: 16px; }
+  .ru-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+
+  .formula-box { background: #1a3208; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; font-size: 14px; color: #C0DD97; line-height: 1.8; }
+  .formula-note { font-size: 12px; color: rgba(192,221,151,0.6); margin-top: 6px; font-style: italic; }
+
+  .ex-wrong { background: var(--red-light); border: 1px solid #F7C1C1; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #501313; line-height: 1.6; margin-bottom: 8px; }
+  .ex-correct { background: var(--main-light); border: 1px solid #97C459; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: #1a3208; line-height: 1.6; margin-bottom: 8px; }
+  .ex-neutral { background: #f9f9f7; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 8px; }
+  .ex-label { font-weight: 700; margin-right: 6px; }
+
+  .hl-g { color: var(--main); font-weight: 600; }
+  .hl-n { color: var(--navy); font-weight: 600; }
+  .hl-a { color: var(--amber); font-weight: 600; }
+  .hl-r { color: var(--red); font-weight: 600; }
+  .hl-c { color: var(--coral); font-weight: 600; }
+  .hl-p { color: var(--purple); font-weight: 600; }
+
+  .tip-box { border-left: 3px solid var(--main-mid); background: var(--main-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--main); line-height: 1.6; margin-top: 12px; }
+  .warn-box { border-left: 3px solid var(--red); background: var(--red-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: #A32D2D; line-height: 1.6; margin-top: 10px; }
+  .note-box { border-left: 3px solid var(--navy); background: var(--navy-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 10px 12px; font-size: 13px; color: var(--navy); line-height: 1.6; margin-top: 10px; }
+
+  /* Tense timeline */
+  .timeline { position: relative; margin: 16px 0 20px; padding: 0 8px; }
+  .tl-line { height: 3px; background: var(--border); border-radius: 2px; position: relative; margin: 32px 0 8px; }
+  .tl-arrow { position: absolute; right: -8px; top: -4px; width: 0; height: 0; border-left: 10px solid var(--border); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .tl-now { position: absolute; left: 50%; top: -20px; transform: translateX(-50%); font-size: 11px; font-weight: 600; color: var(--text-muted); }
+  .tl-now-line { position: absolute; left: 50%; top: -8px; width: 2px; height: 18px; background: var(--text-muted); transform: translateX(-50%); }
+  .tl-dot { position: absolute; top: -6px; width: 14px; height: 14px; border-radius: 50%; transform: translateX(-50%); }
+  .tl-label { position: absolute; top: 12px; transform: translateX(-50%); font-size: 11px; font-weight: 600; white-space: nowrap; }
+
+  /* Tense table */
+  .tense-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+  .tense-table th { background: #1a3208; color: #C0DD97; font-weight: 600; padding: 9px 12px; text-align: left; }
+  .tense-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; background: var(--white); line-height: 1.6; }
+  .tense-table tr:nth-child(even) td { background: #fafaf8; }
+  .tense-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .signal-word { background: var(--main-light); color: var(--main); padding: 1px 6px; border-radius: 4px; font-size: 12px; font-weight: 500; margin: 1px; display: inline-block; }
+
+  /* Agreement grid */
+  .agree-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .agree-card { background: var(--bg); border-radius: var(--radius-sm); padding: 12px; border: 1px solid var(--border); }
+  .agree-title { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.04em; }
+  .agree-item { font-size: 13px; color: var(--text); margin-bottom: 6px; line-height: 1.5; }
+  .agree-sg { color: var(--main); font-weight: 600; }
+  .agree-pl { color: var(--navy); font-weight: 600; }
+
+  /* Pronoun table */
+  .pron-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+  .pron-table th { background: #1a3208; color: #C0DD97; font-weight: 600; padding: 9px 12px; text-align: center; }
+  .pron-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: center; color: var(--text-muted); background: var(--white); }
+  .pron-table tr:nth-child(even) td { background: #fafaf8; }
+  .pron-table td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+  .pron-key { font-weight: 600; color: var(--main); }
+
+  /* Practice */
+  .pq-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .pq-header { padding: 10px 16px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+  .tp-tns { background: var(--main-light); color: var(--main); }
+  .tp-agr { background: var(--navy-light); color: var(--navy); }
+  .tp-pro { background: var(--amber-light); color: var(--amber); }
+  .tp-mix { background: var(--coral-light); color: var(--coral); }
+
+  .pq-body { padding: 16px; }
+  .we-instr { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+  .we-q { font-size: 15px; line-height: 2; margin-bottom: 16px; padding: 14px 16px; background: #f9f9f7; border-radius: var(--radius-sm); border: 1px solid var(--border); color: var(--text); font-style: italic; }
+  .ul-a { text-decoration: underline; color: #BA7517; font-weight: 500; font-style: normal; }
+  .ul-b { text-decoration: underline; color: var(--navy); font-weight: 500; font-style: normal; }
+  .ul-c { text-decoration: underline; color: var(--main); font-weight: 500; font-style: normal; }
+  .ul-d { text-decoration: underline; color: var(--purple); font-weight: 500; font-style: normal; }
+
+  .we-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .we-opt { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; cursor: pointer; background: var(--white); text-align: left; width: 100%; transition: all 0.15s; color: var(--text); font-family: 'DM Sans', sans-serif; display: flex; align-items: center; gap: 8px; }
+  .we-opt:hover:not(:disabled) { border-color: var(--main-mid); background: var(--main-pale); }
+  .we-opt .ol { font-weight: 700; flex-shrink: 0; min-width: 18px; }
+  .ol-a { color: #BA7517; }
+  .ol-b { color: var(--navy); }
+  .ol-c { color: var(--main); }
+  .ol-d { color: var(--purple); }
+  .we-opt.correct { background: var(--main-light); border-color: var(--main-mid); color: #1a3208; }
+  .we-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .we-opt:disabled { cursor: default; }
+
+  .pq-explain { margin-top: 14px; padding: 14px 16px; background: var(--bg); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.7; color: var(--text-muted); display: none; border-left: 3px solid var(--main-mid); }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--main); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-rule { background: var(--main-light); color: var(--main); border-radius: var(--radius-sm); padding: 8px 10px; font-size: 12px; margin-top: 8px; font-weight: 500; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+  .score-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; margin-top: 8px; display: none; }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--main); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--main-mid); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  .tip-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .tip-num { width: 32px; height: 32px; border-radius: 50%; background: #1a3208; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  .btn-primary { display: block; width: 100%; background: #1a3208; color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 20px; text-align: center; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.88; }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  @media (max-width: 540px) {
+    .hero-title { font-size: 24px; }
+    .agree-grid { grid-template-columns: 1fr; }
+    .we-opts { grid-template-columns: 1fr; }
+    .tab { padding: 12px 10px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP · Урок 6 из 14 · Section II Part 2</div>
+    <div class="hero-title">Written Expression:<br>Verb Tense, Agreement & Pronouns</div>
+    <div class="hero-sub">Три темы с высокой частотой ошибок · Written Expression Part 2<br>Объяснение на русском · Примеры как на тесте</div>
+    <div class="hero-pills">
+      <span class="hero-pill">⏰ Времена глагола</span>
+      <span class="hero-pill">🔢 Согласование</span>
+      <span class="hero-pill">👤 Местоимения</span>
+      <span class="hero-pill">✏️ 9 вопросов</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('tense',this)">⏰ Времена</button>
+    <button class="tab" onclick="showTab('agreement',this)">🔢 Согласование</button>
+    <button class="tab" onclick="showTab('pronouns',this)">👤 Местоимения</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== TENSE ===== -->
+  <div class="section active" id="tab-tense">
+    <div class="section-title">Времена глагола</div>
+    <div class="section-intro">
+      TOEFL проверяет не всю таблицу времён, а <strong>конкретные случаи</strong> где студенты чаще всего делают ошибки. В Part 2 ошибка времени — это когда в предложении использован неправильный тип глагольной формы относительно контекста.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">KEY</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Сигнальные слова времён</div>
+          <div style="font-size:12px;color:var(--text-muted)">Эти слова — подсказки какое время нужно</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">На TOEFL ошибки времён почти всегда сопровождаются <strong>сигнальным словом</strong> — словом-подсказкой которое указывает на нужное время. Выучи их — и будешь решать такие вопросы автоматически.</div>
+        <table class="tense-table">
+          <tr><th>Время</th><th>Сигнальные слова</th><th>Пример</th></tr>
+          <tr>
+            <td><span class="tense-name">Simple Past</span></td>
+            <td><span class="signal-word">yesterday</span> <span class="signal-word">ago</span> <span class="signal-word">last year</span> <span class="signal-word">in 1900</span> <span class="signal-word">once</span></td>
+            <td style="font-style:italic">Darwin <span class="hl-g">published</span> his theory in 1859.</td>
+          </tr>
+          <tr>
+            <td><span class="tense-name">Present Perfect</span></td>
+            <td><span class="signal-word">since</span> <span class="signal-word">for</span> <span class="signal-word">already</span> <span class="signal-word">yet</span> <span class="signal-word">recently</span> <span class="signal-word">ever</span> <span class="signal-word">just</span></td>
+            <td style="font-style:italic">Scientists <span class="hl-g">have discovered</span> new species since 2000.</td>
+          </tr>
+          <tr>
+            <td><span class="tense-name">Past Perfect</span></td>
+            <td><span class="signal-word">before</span> <span class="signal-word">after</span> <span class="signal-word">by the time</span> <span class="signal-word">when</span> (два прошлых действия)</td>
+            <td style="font-style:italic">By the time she arrived, he <span class="hl-g">had left</span>.</td>
+          </tr>
+          <tr>
+            <td><span class="tense-name">Present Simple</span></td>
+            <td><span class="signal-word">always</span> <span class="signal-word">usually</span> <span class="signal-word">every day</span> <span class="signal-word">general facts</span></td>
+            <td style="font-style:italic">Water <span class="hl-g">boils</span> at 100°C.</td>
+          </tr>
+          <tr>
+            <td><span class="tense-name">Future (will)</span></td>
+            <td><span class="signal-word">tomorrow</span> <span class="signal-word">next year</span> <span class="signal-word">in the future</span> <span class="signal-word">soon</span></td>
+            <td style="font-style:italic">The results <span class="hl-g">will be</span> published next month.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="type-label">Самые частые ошибки времён на TOEFL</div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">1</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Simple Past vs Present Perfect</div>
+          <div style="font-size:12px;color:var(--text-muted)">Самая частая ошибка времени на TOEFL</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          <strong>Simple Past</strong> (did) — действие завершилось в конкретный момент прошлого (есть дата/слово-маркер)<br>
+          <strong>Present Perfect</strong> (have done) — действие связано с настоящим, началось в прошлом и продолжается или имеет актуальный результат
+        </div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> Scientists <span class="hl-r">have discovered</span> penicillin in 1928. («in 1928» = конкретная дата → Simple Past)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> Scientists <span class="hl-g">discovered</span> penicillin in 1928.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> She <span class="hl-r">worked</span> here since 2010. («since» = от прошлого до сейчас → Present Perfect)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> She <span class="hl-g">has worked</span> here since 2010.</div>
+        <div class="tip-box">💡 <strong>Ключ:</strong> «since» и «for» (длящийся период) → Present Perfect. Конкретная дата/«ago»/«last» → Simple Past.</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">2</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Past Perfect — два действия в прошлом</div>
+          <div style="font-size:12px;color:var(--text-muted)">«had done» — одно действие было ДО другого</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Если в предложении два прошлых действия — то которое произошло <strong>раньше</strong> требует <strong>Past Perfect</strong> (had + V3).
+        </div>
+        <div class="formula-box">
+          [более раннее: had + V3] + before/when + [более позднее: Past Simple]
+          <div class="formula-note">By the time / Before / When + два прошлых = Past Perfect для более раннего</div>
+        </div>
+        <div class="ex-correct"><span class="ex-label">✅</span> By the time the doctors arrived, the patient <span class="hl-g">had already recovered</span>.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> When she <span class="hl-r">arrived</span>, the meeting already started. → <span class="hl-g">had already started</span></div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The scientists reported that they <span class="hl-g">had completed</span> the experiment the previous year.</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">3</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Согласование времён в придаточных</div>
+          <div style="font-size:12px;color:var(--text-muted)">Sequence of tenses</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          Если главное предложение в прошлом — придаточное тоже должно быть в прошлом. Исключение: научные факты и общие истины остаются в Present Simple.
+        </div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> He said that he <span class="hl-r">is</span> tired. → главное в прошлом → придаточное тоже</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> He said that he <span class="hl-g">was</span> tired.</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The teacher explained that water <span class="hl-g">boils</span> at 100°C. (научный факт → Present Simple сохраняется)</div>
+        <div class="note-box">📌 Исключение из правила согласования: <strong>общеизвестные факты и научные истины</strong> всегда остаются в Present Simple, даже если главный глагол в прошедшем.</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('agreement',document.querySelectorAll('.tab')[1])">Дальше: Согласование →</button>
+  </div>
+
+  <!-- ===== AGREEMENT ===== -->
+  <div class="section" id="tab-agreement">
+    <div class="section-title">Согласование подлежащего и сказуемого</div>
+    <div class="section-intro">
+      <strong>Subject-Verb Agreement</strong> — глагол должен совпадать с подлежащим по числу (единственное/множественное). Звучит просто, но TOEFL делает это сложным через хитрые конструкции.
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">∑</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Базовое правило + 6 сложных случаев</div>
+          <div style="font-size:12px;color:var(--text-muted)">Именно эти случаи проверяет TOEFL</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="formula-box">
+          Ед.ч. подлежащее → глагол + <strong>s</strong> (he runs, she studies)<br>
+          Мн.ч. подлежащее → глагол без <strong>s</strong> (they run, scientists study)
+          <div class="formula-note">Если не уверен в подлежащем — зачеркни все предложные обороты (of/in/on...) и останется только оно</div>
+        </div>
+
+        <div class="agree-grid">
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--red)">⚠️ Случай 1: «of» скрывает подлежащее</div>
+            <div class="agree-item">The results <em>of the study</em> <span class="agree-sg">were</span> surprising.</div>
+            <div class="agree-item" style="font-size:12px;color:var(--text-light)">подлежащее = results (мн.ч.), не study</div>
+          </div>
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--red)">⚠️ Случай 2: Indefinite pronouns</div>
+            <div class="agree-item"><span class="agree-sg">Everyone / Everyone</span> <span class="agree-sg">is</span> ready.</div>
+            <div class="agree-item"><span class="agree-sg">Each / Either / Neither / No one / Nobody / Someone / Anyone</span> → всегда ед.ч.</div>
+          </div>
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--navy)">📌 Случай 3: Collective nouns</div>
+            <div class="agree-item">The committee <span class="agree-sg">has</span> decided. (группа как единое целое → ед.ч.)</div>
+            <div class="agree-item" style="font-size:12px;color:var(--text-light)">team, group, committee, government, family → обычно ед.ч. в американском английском</div>
+          </div>
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--navy)">📌 Случай 4: Uncountable nouns</div>
+            <div class="agree-item">The information <span class="agree-sg">is</span> correct.</div>
+            <div class="agree-item" style="font-size:12px;color:var(--text-light)">news, information, advice, evidence, furniture, equipment, luggage → всегда ед.ч.</div>
+          </div>
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--amber)">⚡ Случай 5: «The number of» vs «A number of»</div>
+            <div class="agree-item"><span style="color:var(--main);font-weight:600">The number of</span> students <span class="agree-sg">is</span> large. (ед.ч.)</div>
+            <div class="agree-item"><span style="color:var(--navy);font-weight:600">A number of</span> students <span class="agree-pl">are</span> absent. (мн.ч.)</div>
+          </div>
+          <div class="agree-card">
+            <div class="agree-title" style="color:var(--amber)">⚡ Случай 6: «Neither...nor» / «Either...or»</div>
+            <div class="agree-item">Neither the cats nor <span style="text-decoration:underline">the dog</span> <span class="agree-sg">is</span> here.</div>
+            <div class="agree-item" style="font-size:12px;color:var(--text-light)">Глагол согласуется с БЛИЖАЙШИМ подлежащим (dog = ед.ч. → is)</div>
+          </div>
+        </div>
+
+        <div class="warn-box">⚠️ <strong>Самые частые ловушки согласования на TOEFL:</strong><br>
+          ❌ «The news about the elections <span class="hl-r">are</span> shocking.» → «news» — несчётное → <span class="hl-g">is</span><br>
+          ❌ «Each of the students <span class="hl-r">have</span> a book.» → «each» → всегда ед.ч. → <span class="hl-g">has</span><br>
+          ❌ «The data <span class="hl-r">shows</span>...» → «data» — мн.ч. (от datum) → <span class="hl-g">show</span>
+        </div>
+        <div class="tip-box">💡 <strong>Особый случай — «data»:</strong> на TOEFL «data» обычно используется как множественное число → «data <em>are</em>» (хотя в повседневном английском часто говорят «data is»).</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('pronouns',document.querySelectorAll('.tab')[2])">Дальше: Местоимения →</button>
+  </div>
+
+  <!-- ===== PRONOUNS ===== -->
+  <div class="section" id="tab-pronouns">
+    <div class="section-title">Местоимения</div>
+    <div class="section-intro">
+      TOEFL проверяет два типа ошибок с местоимениями: <strong>неправильная форма</strong> (subject/object/possessive) и <strong>неправильная референция</strong> (местоимение не совпадает по числу или роду с тем словом, к которому относится).
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">PRN</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Формы местоимений</div>
+          <div style="font-size:12px;color:var(--text-muted)">Subject · Object · Possessive · Reflexive</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <table class="pron-table">
+          <tr>
+            <th style="text-align:left">Лицо</th>
+            <th>Subject<br><span style="font-weight:400;font-size:11px">подлежащее</span></th>
+            <th>Object<br><span style="font-weight:400;font-size:11px">дополнение</span></th>
+            <th>Possessive adj<br><span style="font-weight:400;font-size:11px">притяж.прил.</span></th>
+            <th>Possessive pron<br><span style="font-weight:400;font-size:11px">притяж.мест.</span></th>
+            <th>Reflexive<br><span style="font-weight:400;font-size:11px">возвратное</span></th>
+          </tr>
+          <tr><td>1 ед.</td><td><span class="pron-key">I</span></td><td><span class="pron-key">me</span></td><td><span class="pron-key">my</span></td><td><span class="pron-key">mine</span></td><td><span class="pron-key">myself</span></td></tr>
+          <tr><td>2 ед./мн.</td><td><span class="pron-key">you</span></td><td><span class="pron-key">you</span></td><td><span class="pron-key">your</span></td><td><span class="pron-key">yours</span></td><td><span class="pron-key">yourself</span></td></tr>
+          <tr><td>3 ед. м.</td><td><span class="pron-key">he</span></td><td><span class="pron-key">him</span></td><td><span class="pron-key">his</span></td><td><span class="pron-key">his</span></td><td><span class="pron-key">himself</span></td></tr>
+          <tr><td>3 ед. ж.</td><td><span class="pron-key">she</span></td><td><span class="pron-key">her</span></td><td><span class="pron-key">her</span></td><td><span class="pron-key">hers</span></td><td><span class="pron-key">herself</span></td></tr>
+          <tr><td>3 ед. ср.</td><td><span class="pron-key">it</span></td><td><span class="pron-key">it</span></td><td><span class="pron-key">its</span></td><td><span class="pron-key">its</span></td><td><span class="pron-key">itself</span></td></tr>
+          <tr><td>1 мн.</td><td><span class="pron-key">we</span></td><td><span class="pron-key">us</span></td><td><span class="pron-key">our</span></td><td><span class="pron-key">ours</span></td><td><span class="pron-key">ourselves</span></td></tr>
+          <tr><td>3 мн.</td><td><span class="pron-key">they</span></td><td><span class="pron-key">them</span></td><td><span class="pron-key">their</span></td><td><span class="pron-key">theirs</span></td><td><span class="pron-key">themselves</span></td></tr>
+        </table>
+
+        <div class="ex-wrong"><span class="ex-label">❌</span> Between you and <span class="hl-r">I</span>, the results seem wrong. → после предлога нужен object form</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> Between you and <span class="hl-g">me</span>, the results seem wrong.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> <span class="hl-r">Him</span> and his colleagues presented the findings. → подлежащее = subject form</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> <span class="hl-g">He</span> and his colleagues presented the findings.</div>
+      </div>
+    </div>
+
+    <div class="gram-card">
+      <div class="gc-header" style="background:var(--main-pale)">
+        <div class="gc-icon ic-green">REF</div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--main)">Референция местоимений</div>
+          <div style="font-size:12px;color:var(--text-muted)">Местоимение должно совпадать с антецедентом</div>
+        </div>
+      </div>
+      <div class="gc-body">
+        <div class="ru-text">
+          <strong>Антецедент</strong> (antecedent) — это слово, которое заменяет местоимение. Местоимение должно совпадать с антецедентом по <strong>числу</strong> и <strong>роду</strong>.
+        </div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> Each student must submit <span class="hl-r">their</span> paper by Friday. («each» = ед.ч. → местоимение тоже ед.ч.)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> Each student must submit <span class="hl-g">his or her</span> paper by Friday.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The committee made <span class="hl-r">their</span> decision. (committee = ед.ч. в амер. английском)</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The committee made <span class="hl-g">its</span> decision.</div>
+        <div class="ex-wrong"><span class="ex-label">❌</span> The company announced that <span class="hl-r">they</span> would expand. → ед.ч.</div>
+        <div class="ex-correct"><span class="ex-label">✅</span> The company announced that <span class="hl-g">it</span> would expand.</div>
+
+        <div class="warn-box">⚠️ <strong>its vs it's — классическая ошибка:</strong><br>
+          <span class="hl-g">its</span> = притяжательное (принадлежность): «The cat licked <em>its</em> paw.»<br>
+          <span class="hl-r">it's</span> = it is / it has (сокращение): «<em>It's</em> raining.» — на TOEFL это ошибка в академическом тексте!
+        </div>
+        <div class="tip-box">💡 <strong>Reflexive pronouns (myself, himself...):</strong> используются только когда субъект и объект — одно и то же лицо.<br>
+          ✅ «He hurt <span class="hl-g">himself</span>.» (он сам себя)<br>
+          ❌ «She gave the book to <span class="hl-r">herself</span>.» → «<span class="hl-g">her</span>» (другой человек)
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ===== PRACTICE ===== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 9 вопросов</div>
+    <div class="section-intro">
+      Формат Written Expression: найди одну ошибку среди четырёх подчёркнутых частей (A, B, C, D).
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 1 / 9</span><span class="pq-type tp-tns">Verb Tense</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          Marie Curie <span class="ul-a">(A) has discovered</span> radium <span class="ul-b">(B) in</span> 1898, becoming <span class="ul-c">(C) the</span> first woman <span class="ul-d">(D) to win</span> a Nobel Prize.
+        </div>
+        <div class="we-opts" id="q1-opts">
+          <button class="we-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol ol-a">A</span> has discovered</button>
+          <button class="we-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol ol-b">B</span> in</button>
+          <button class="we-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol ol-c">C</span> the</button>
+          <button class="we-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol ol-d">D</span> to win</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «has discovered» → «discovered»</div>
+          Сигнальное слово <strong>«in 1898»</strong> — конкретная дата в прошлом → нужен <strong>Simple Past</strong> «discovered». Present Perfect нельзя использовать с конкретной датой.<br><br>
+          <div class="explain-rule">📌 Правило: конкретная дата/год + ago/last = Simple Past. Since/for/recently/ever = Present Perfect.</div>
+          <div class="explain-wrong">❌ B — «in 1898» — предлог правильный (год → in)<br>❌ C — «the first woman» — правильно (единственная в своём роде → the)<br>❌ D — «to win» — правильно (первая, которая выиграла → to-infinitive)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 2 / 9</span><span class="pq-type tp-tns">Present Perfect</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          Researchers <span class="ul-a">(A) studied</span> the effects of climate change <span class="ul-b">(B) since</span> the early 1970s and <span class="ul-c">(C) have gathered</span> <span class="ul-d">(D) significant</span> evidence.
+        </div>
+        <div class="we-opts" id="q2-opts">
+          <button class="we-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol ol-a">A</span> studied</button>
+          <button class="we-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol ol-b">B</span> since</button>
+          <button class="we-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol ol-c">C</span> have gathered</button>
+          <button class="we-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol ol-d">D</span> significant</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: A — «studied» → «have studied»</div>
+          Сигнальное слово <strong>«since the early 1970s»</strong> — действие началось в прошлом и продолжается до сейчас → <strong>Present Perfect</strong>. Второй глагол «have gathered» уже правильный — первый должен быть параллельным.<br><br>
+          <div class="explain-rule">📌 «since» + период = Present Perfect. Оба глагола в параллельном списке должны быть одного времени: «have studied and have gathered».</div>
+          <div class="explain-wrong">❌ C — «have gathered» — правильно, это нужная форма<br>❌ D — «significant» — прилагательное перед noun, правильно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 3 / 9</span><span class="pq-type tp-tns">Past Perfect</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          By the time the <span class="ul-a">(A) expedition</span> <span class="ul-b">(B) reached</span> the summit, three of the climbers <span class="ul-c">(C) already turned</span> back due to <span class="ul-d">(D) severe</span> weather.
+        </div>
+        <div class="we-opts" id="q3-opts">
+          <button class="we-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol ol-a">A</span> expedition</button>
+          <button class="we-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol ol-b">B</span> reached</button>
+          <button class="we-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol ol-c">C</span> already turned</button>
+          <button class="we-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol ol-d">D</span> severe</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: C — «already turned» → «had already turned»</div>
+          <strong>«By the time»</strong> — сигнал Past Perfect. Альпинисты повернули назад <em>раньше</em>, чем экспедиция достигла вершины → нужен <strong>Past Perfect: «had already turned»</strong>.<br><br>
+          <div class="explain-rule">📌 «By the time [S + Past Simple]» → [S + Past Perfect] — более раннее действие = had + V3.</div>
+          <div class="explain-wrong">❌ B — «reached» — правильно (это более позднее действие, Simple Past)<br>❌ D — «severe» — прилагательное, правильно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 4 / 9</span><span class="pq-type tp-agr">Agreement</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The number of species <span class="ul-a">(A) found</span> in tropical rainforests <span class="ul-b">(B) are</span> <span class="ul-c">(C) far greater</span> than <span class="ul-d">(D) those</span> in any other biome.
+        </div>
+        <div class="we-opts" id="q4-opts">
+          <button class="we-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol ol-a">A</span> found</button>
+          <button class="we-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol ol-b">B</span> are</button>
+          <button class="we-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol ol-c">C</span> far greater</button>
+          <button class="we-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol ol-d">D</span> those</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «are» → «is»</div>
+          Подлежащее — <strong>«The number»</strong> (ед.ч.). «of species found in rainforests» — это предложный оборот, не подлежащее. «The number of» всегда требует глагол в ед.ч.<br><br>
+          <div class="explain-rule">📌 «The number of» + noun = ед.ч. (is/was). «A number of» + noun = мн.ч. (are/were).</div>
+          <div class="explain-wrong">❌ A — «found» — причастие (сокращение от «that are found»), правильно<br>❌ C — «far greater» — усиленная сравнительная степень, правильно<br>❌ D — «those» — заменяет «species» (мн.ч.) в сравнении, правильно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 5 / 9</span><span class="pq-type tp-agr">Agreement — Indefinite Pronoun</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          Each of <span class="ul-a">(A) the</span> participants <span class="ul-b">(B) were asked</span> to complete <span class="ul-c">(C) a</span> detailed questionnaire about <span class="ul-d">(D) their</span> dietary habits.
+        </div>
+        <div class="we-opts" id="q5-opts">
+          <button class="we-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol ol-a">A</span> the</button>
+          <button class="we-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol ol-b">B</span> were asked</button>
+          <button class="we-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol ol-c">C</span> a</button>
+          <button class="we-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol ol-d">D</span> their</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «were asked» → «was asked»</div>
+          Подлежащее — <strong>«Each»</strong>. «Each» — indefinite pronoun, всегда единственное число → глагол тоже ед.ч. → <strong>«was asked»</strong>.<br><br>
+          <div class="explain-rule">📌 Each / Every / Either / Neither / No one / Everyone / Anyone → всегда единственное число!</div>
+          <div class="explain-wrong">❌ A — «the participants» — правильно (конкретные участники)<br>❌ C — «a detailed questionnaire» — правильно (один из анкет)<br>❌ D — «their» — в разговорном и академическом языке допустимо как гендерно-нейтральное (хотя формально спорно — на TOEFL это не ошибка)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 6 / 9</span><span class="pq-type tp-agr">Agreement — Uncountable</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The <span class="ul-a">(A) evidence</span> gathered by <span class="ul-b">(B) the</span> research team <span class="ul-c">(C) strongly suggest</span> that the new treatment <span class="ul-d">(D) is</span> effective.
+        </div>
+        <div class="we-opts" id="q6-opts">
+          <button class="we-opt" onclick="answer(6,'A')" id="q6-A"><span class="ol ol-a">A</span> evidence</button>
+          <button class="we-opt" onclick="answer(6,'B')" id="q6-B"><span class="ol ol-b">B</span> the</button>
+          <button class="we-opt" onclick="answer(6,'C')" id="q6-C"><span class="ol ol-c">C</span> strongly suggest</button>
+          <button class="we-opt" onclick="answer(6,'D')" id="q6-D"><span class="ol ol-d">D</span> is</button>
+        </div>
+        <div class="pq-explain" id="q6-explain">
+          <div class="explain-correct">✅ Верный ответ: C — «strongly suggest» → «strongly suggests»</div>
+          Подлежащее — <strong>«The evidence»</strong>. «Evidence» — несчётное существительное, всегда единственное число → глагол должен быть «<strong>suggests</strong>» (с -s).<br><br>
+          <div class="explain-rule">📌 Несчётные существительные: evidence, information, news, advice, furniture, equipment → всегда ед.ч.!</div>
+          <div class="explain-wrong">❌ A — «evidence» — правильная форма слова<br>❌ B — «the research team» — правильно<br>❌ D — «is effective» — правильно (treatment = ед.ч.)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 7 / 9</span><span class="pq-type tp-pro">Pronoun Form</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The award was presented to <span class="ul-a">(A) both</span> Dr. Chen and <span class="ul-b">(B) I</span> at <span class="ul-c">(C) the</span> annual conference held <span class="ul-d">(D) in</span> Geneva.
+        </div>
+        <div class="we-opts" id="q7-opts">
+          <button class="we-opt" onclick="answer(7,'A')" id="q7-A"><span class="ol ol-a">A</span> both</button>
+          <button class="we-opt" onclick="answer(7,'B')" id="q7-B"><span class="ol ol-b">B</span> I</button>
+          <button class="we-opt" onclick="answer(7,'C')" id="q7-C"><span class="ol ol-c">C</span> the</button>
+          <button class="we-opt" onclick="answer(7,'D')" id="q7-D"><span class="ol ol-d">D</span> in</button>
+        </div>
+        <div class="pq-explain" id="q7-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «I» → «me»</div>
+          После предлога <strong>«to»</strong> нужна объектная форма местоимения → <strong>«me»</strong>, не «I». «I» — только для позиции подлежащего.<br><br>
+          <div class="explain-rule">📌 После предлога ВСЕГДА объектная форма: to me/him/her/us/them. «Between you and me» (не «I»). «For him and her» (не «he and she»).</div>
+          <div class="explain-wrong">❌ A — «both» — правильно (both Dr. Chen and me)<br>❌ C — «the annual conference» — правильно (конкретная конференция)<br>❌ D — «in Geneva» — правильно (место → in)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 8 / 9</span><span class="pq-type tp-pro">Pronoun Reference</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          The corporation <span class="ul-a">(A) announced</span> that <span class="ul-b">(B) they</span> would <span class="ul-c">(C) significantly</span> reduce <span class="ul-d">(D) its</span> carbon emissions by 2030.
+        </div>
+        <div class="we-opts" id="q8-opts">
+          <button class="we-opt" onclick="answer(8,'A')" id="q8-A"><span class="ol ol-a">A</span> announced</button>
+          <button class="we-opt" onclick="answer(8,'B')" id="q8-B"><span class="ol ol-b">B</span> they</button>
+          <button class="we-opt" onclick="answer(8,'C')" id="q8-C"><span class="ol ol-c">C</span> significantly</button>
+          <button class="we-opt" onclick="answer(8,'D')" id="q8-D"><span class="ol ol-d">D</span> its</button>
+        </div>
+        <div class="pq-explain" id="q8-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «they» → «it»</div>
+          Антецедент — <strong>«The corporation»</strong> — ед.ч. (компания как единое целое в американском английском). Местоимение должно быть ед.ч. → <strong>«it»</strong>.<br><br>
+          <div class="explain-rule">📌 Organisations/companies в американском английском = ед.ч.: «The corporation announced that IT would...». «Its» в конце — правильно (его = корпорации).</div>
+          <div class="explain-wrong">❌ A — «announced» — правильно<br>❌ C — «significantly» — наречие при глаголе, правильно<br>❌ D — «its» — правильно (притяжательное для corporation = ед.ч.)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="pq-block">
+      <div class="pq-header"><span class="pq-num">Вопрос 9 / 9</span><span class="pq-type tp-mix">Mixed — сложный</span></div>
+      <div class="pq-body">
+        <div class="we-instr">Identify the ONE underlined word or phrase that must be changed.</div>
+        <div class="we-q">
+          Neither the principal investigator nor the <span class="ul-a">(A) assistants</span> <span class="ul-b">(B) was able</span> to explain why the results <span class="ul-c">(C) differed</span> so <span class="ul-d">(D) dramatically</span> from previous findings.
+        </div>
+        <div class="we-opts" id="q9-opts">
+          <button class="we-opt" onclick="answer(9,'A')" id="q9-A"><span class="ol ol-a">A</span> assistants</button>
+          <button class="we-opt" onclick="answer(9,'B')" id="q9-B"><span class="ol ol-b">B</span> was able</button>
+          <button class="we-opt" onclick="answer(9,'C')" id="q9-C"><span class="ol ol-c">C</span> differed</button>
+          <button class="we-opt" onclick="answer(9,'D')" id="q9-D"><span class="ol ol-d">D</span> dramatically</button>
+        </div>
+        <div class="pq-explain" id="q9-explain">
+          <div class="explain-correct">✅ Верный ответ: B — «was able» → «were able»</div>
+          Конструкция «Neither A nor B» → глагол согласуется с ближайшим подлежащим — <strong>«the assistants»</strong> (мн.ч.) → нужно «<strong>were able</strong>».<br><br>
+          <div class="explain-rule">📌 Правило proximity для neither...nor / either...or: глагол согласуется с БЛИЖАЙШИМ подлежащим. «assistants» = мн.ч. → were.</div>
+          <div class="explain-wrong">❌ A — «assistants» — правильно (мн.ч. существительное)<br>❌ C — «differed» — Simple Past, правильно (контекст прошлого)<br>❌ D — «dramatically» — наречие при глаголе, правильно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/9</div>
+      <div class="score-label">Результат · Tense, Agreement, Pronouns · Урок 6</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Стратегия →</button>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия — три темы вместе</div>
+    <div class="section-intro">Времена, согласование и местоимения — три темы, которые часто смешиваются в одном вопросе. Вот как их быстро распутать.</div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Ищи сигнальные слова времени ПЕРВЫМ делом</div>
+        <div class="tip-body">Как только видишь подчёркнутый глагол — ищи в предложении сигнальное слово: since, for, ago, yesterday, in 1900, by the time, already. Оно сразу подсказывает правильное время. Это даёт верный ответ в ~40% вопросов на время.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Зачёркивай «of-фразы» чтобы найти подлежащее</div>
+        <div class="tip-body">Когда видишь подчёркнутый глагол — зачеркни все фразы от «of», «in», «on»... Оставшееся слово = настоящее подлежащее. Потом проверь: глагол совпадает с ним по числу?</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Список «вечно единственного числа» — запомни раз</div>
+        <div class="tip-body">each · every · either · neither · everyone · no one · anyone · someone · news · information · evidence · advice · furniture · equipment · «The number of» → всегда ед.ч. Видишь одно из этих слов — глагол или местоимение ед.ч.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">Местоимение после предлога = object form</div>
+        <div class="tip-body">После любого предлога (to, for, between, with, by, about...) — только me/him/her/us/them. Никогда I/he/she/we/they. Это механическое правило — проверяй автоматически.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">Проверяй «they/their» — не относится ли к ед.ч.?</div>
+        <div class="tip-body">Найди антецедент (слово, которое заменяет местоимение). Оно ед.ч.? — тогда нужно it/its. Особенно следи за: company, government, committee, organization, team → в американском английском это ед.ч.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="background:var(--main-pale);border:1px solid #97C459;border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--main);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:var(--main);line-height:1.9;opacity:0.85;">
+        1. Выпиши все сигнальные слова времён — и по 2 примера предложения для каждого<br>
+        2. Запомни список «вечно ед.ч.»: each, every, either, neither, everyone, news, information, evidence, advice<br>
+        3. Пройди Unit 13–15 из Longman Preparation Course (Agreement + Tense)<br>
+        4. Составь 5 предложений с «neither...nor» и «either...or» — разные числа у обоих подлежащих
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:20px;">
+      <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:8px;letter-spacing:0.04em;">ПРОГРЕСС · SECTION II</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:2;">
+        ✅ Урок 3 — Clause & Verb Patterns<br>
+        ✅ Урок 4 — Parallel, Comparatives, Connectors<br>
+        ✅ Урок 5 — Articles, Prepositions, Word Form<br>
+        ✅ Урок 6 — Verb Tense, Agreement, Pronouns<br>
+        ⬜ Урок 7 — Advanced Clauses & Reduction<br>
+        ⬜ Урок 8 — Grammar Mini-Test
+      </div>
+    </div>
+
+    <button class="btn-primary">✅ Урок 6 завершён!</button>
+    <div style="margin-top:10px;padding:16px;background:var(--main-pale);border:1px solid #97C459;border-radius:var(--radius);font-size:14px;color:var(--main);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 7 — Advanced Clauses & Reduction (Section II финал)</strong><br>
+      <span style="font-size:13px;opacity:0.8;">Попроси своего преподавателя отправить Урок 7</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const correct = {1:'A',2:'A',3:'C',4:'B',5:'B',6:'C',7:'B',8:'B',9:'B'};
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+  document.querySelectorAll('#q'+q+'-opts .we-opt').forEach(b => b.disabled = true);
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+  if (choice === correct[q]) { chosen.classList.add('correct'); score++; }
+  else { chosen.classList.add('wrong'); correctBtn.classList.add('correct'); }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (done / 9 * 100) + '%';
+  if (done === 9) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson6', 'Урок 6: Verb Tense, Agreement & Pronouns', score, 9, Math.round(score/9*100));
+    document.getElementById('score-display').textContent = score + '/9';
+    document.getElementById('score-bar').style.width = (score / 9 * 100) + '%';
+    const msgs = ['Повтори все три темы — особенно согласование.','Неплохо! Повтори сигнальные слова времён.','Хорошо! Ещё практики.','Хорошо! Ты разбираешься в темах.','Отлично! Уверенный результат.','Отлично! Почти идеально.','Превосходно!','Превосходно!','Превосходно!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['tense','agreement','pronouns','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

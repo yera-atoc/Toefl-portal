@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 11: Academic Vocabulary & Speed Reading</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;
+--teal:#0F766E;--teal-mid:#0D9488;--teal-bg:#F0FDFA;--teal-brd:#99F6E4;
+--blue:#1E40AF;--blue-mid:#2563EB;--blue-bg:#EFF6FF;--blue-brd:#BFDBFE;
+--amber:#92400E;--amber-mid:#D97706;--amber-bg:#FFFBEB;--amber-brd:#FDE68A;
+--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;
+--rd:#991B1B;--rd-bg:#FEF2F2;--rd-brd:#FECACA;
+--purple:#4C1D95;--purple-mid:#7C3AED;--purple-bg:#F5F3FF;--purple-brd:#DDD6FE}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+.hero{background:linear-gradient(135deg,#042F2E,#0F766E,#115E59);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 20% 60%,rgba(13,148,136,.25),transparent 50%),radial-gradient(circle at 85% 15%,rgba(6,78,59,.3),transparent 45%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:36px 24px 28px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#99F6E4;letter-spacing:.05em;margin-bottom:14px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#5EEAD4;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:8px}
+.hsub{font-size:15px;color:#99F6E4;line-height:1.5;margin-bottom:20px}
+.hpills{display:flex;gap:8px;flex-wrap:wrap}
+.hpill{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.08);color:#CCFBF1;border:1px solid rgba(255,255,255,.12)}
+.pt{height:3px;background:rgba(255,255,255,.12);margin-top:20px;border-radius:2px}
+.pf{height:3px;background:#5EEAD4;border-radius:2px;width:0%;transition:width .4s}
+.tabs-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.tabs{max-width:720px;margin:0 auto;display:flex;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:all .15s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab.active{color:var(--teal);border-bottom-color:var(--teal-mid)}
+.content{max-width:720px;margin:0 auto;padding:24px 20px}
+.section{display:none}.section.active{display:block}
+.sec-title{font-family:'Lora',serif;font-size:22px;color:var(--text);margin-bottom:8px}
+.sec-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.tlbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px;margin-top:28px;display:flex;align-items:center;gap:8px}
+.tlbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.gram-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
+.gc-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.gc-icon{width:32px;height:32px;border-radius:8px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.ic-t{background:var(--teal-mid)}.ic-b{background:var(--blue-mid)}.ic-a{background:var(--amber-mid)}
+.gc-title{font-size:14px;font-weight:600}
+.gc-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.gc-body{padding:16px}
+.ru-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+
+/* Vocab cards grid */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.vc{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:14px;cursor:pointer;transition:all .15s}
+.vc:hover{border-color:var(--teal-mid);background:var(--teal-bg)}
+.vc.flipped{background:var(--teal-bg);border-color:var(--teal-mid)}
+.vc-word{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Lora',serif}
+.vc-pos{font-size:11px;color:var(--light);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.vc-ru{font-size:13px;color:var(--teal);display:none;line-height:1.5}
+.vc-en{font-size:12px;color:var(--muted);font-style:italic;display:none;line-height:1.4;margin-top:4px}
+.vc.flipped .vc-ru{display:block}
+.vc.flipped .vc-en{display:block}
+.vc-hint{font-size:11px;color:var(--light);margin-top:6px}
+.vc.flipped .vc-hint{display:none}
+
+/* Prefix/suffix table */
+.ps-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px}
+.ps-table th{background:#042F2E;color:#99F6E4;font-weight:600;padding:9px 12px;text-align:left}
+.ps-table td{padding:8px 12px;border-bottom:1px solid var(--border);color:var(--muted);background:var(--white);vertical-align:top}
+.ps-table tr:nth-child(even) td{background:#fafaf8}
+.ps-key{font-weight:600;color:var(--text)}
+.ps-ex{color:var(--teal);font-style:italic}
+
+/* Speed reading strategies */
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.sp-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:14px}
+.sp-num{font-size:22px;font-weight:700;color:var(--teal-mid);font-family:'Lora',serif;margin-bottom:6px}
+.sp-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:5px}
+.sp-body{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* Practice */
+.practice-passage{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:20px 22px;margin-bottom:20px;font-family:'Lora',serif;font-size:14px;line-height:1.9;color:#1C1917}
+.practice-passage p{margin-bottom:10px}
+.practice-passage p:last-child{margin-bottom:0}
+.pp-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.hl-w{background:#CCFBF1;border-radius:2px;padding:0 2px;font-style:normal;font-weight:600;color:#042F2E}
+
+/* Timer */
+.timer-box{background:#042F2E;border-radius:var(--r);padding:20px;margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.timer-display{font-family:'Lora',serif;font-size:40px;color:#5EEAD4;min-width:80px;font-weight:600}
+.timer-label{font-size:14px;color:#99F6E4;line-height:1.5}
+.timer-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--rsm);padding:8px 16px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-right:8px}
+.timer-btn:hover{background:rgba(255,255,255,.2)}
+
+/* Questions */
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.qh{padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:12px;font-weight:600;color:var(--muted)}
+.qt{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px}
+.tmi{background:#CCFBF1;color:#042F2E}.tdt{background:#DCFCE7;color:#166534}.tinf{background:#E0E7FF;color:#3730A3}.tvc{background:#DBEAFE;color:#1E40AF}.tsp{background:#FEF3C7;color:#92400E}
+.qbody{padding:16px}
+.q-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .15s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:18px}
+.opt:hover:not([disabled]){border-color:var(--teal-mid);background:var(--teal-bg)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--rd-bg);border-color:var(--rd-brd);color:var(--rd)}
+.opt.ng .L{color:var(--rd)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:12px;padding:12px 14px;background:var(--amber-bg);border-radius:var(--rsm);font-size:13px;line-height:1.7;color:var(--amber);border-left:3px solid var(--amber-mid);display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;font-size:13px;margin-bottom:5px}
+.erule{background:#FEF3C7;border-radius:4px;padding:5px 8px;font-size:12px;margin-top:6px;font-weight:500;color:var(--amber)}
+.score-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-top:8px;display:none}
+.score-card.show{display:block}
+.score-big{font-family:'Lora',serif;font-size:52px;color:var(--teal-mid);line-height:1}
+.score-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+.score-bw{margin:14px 0;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-b{height:8px;background:var(--teal-mid);border-radius:4px;transition:width 1s ease;width:0%}
+.score-msg{font-size:14px;color:var(--text);font-weight:500;margin-top:8px}
+.tip-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
+.tip-num{width:32px;height:32px;border-radius:50%;background:#042F2E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;margin-top:2px}
+.tip-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.tip-body{font-size:14px;color:var(--muted);line-height:1.7}
+.btn-p{display:block;width:100%;background:#042F2E;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:500;cursor:pointer;margin-top:20px;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn-p:hover{opacity:.88}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.tip-box{border-left:3px solid var(--teal-mid);background:var(--teal-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--teal);line-height:1.6;margin-top:12px}
+.next-box{padding:16px;background:var(--teal-bg);border:1px solid var(--teal-brd);border-radius:var(--r);font-size:14px;color:var(--teal);line-height:1.6;text-align:center;margin-top:10px}
+@media(max-width:480px){.htitle{font-size:24px}.vocab-grid{grid-template-columns:1fr}.sp-grid{grid-template-columns:1fr}.tab{padding:12px 10px;font-size:12px}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 11 из 14 · Section III</div>
+    <div class="htitle">Academic Vocabulary<br>& Speed Reading</div>
+    <div class="hsub">60 ключевых слов TOEFL · Приставки и суффиксы · Техники скоростного чтения</div>
+    <div class="hpills">
+      <span class="hpill">📚 60 слов AWL</span>
+      <span class="hpill">🔤 Приставки/суффиксы</span>
+      <span class="hpill">⚡ Speed Reading</span>
+      <span class="hpill">✏️ Практика с таймером</span>
+    </div>
+    <div class="pt"><div class="pf" id="progress"></div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('vocab',this)">📚 Словарь TOEFL</button>
+    <button class="tab" onclick="showTab('affixes',this)">🔤 Приставки</button>
+    <button class="tab" onclick="showTab('speed',this)">⚡ Speed Reading</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Советы</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ═══ VOCAB ═══ -->
+<div class="section active" id="tab-vocab">
+  <div class="sec-title">60 ключевых слов TOEFL ITP</div>
+  <div class="sec-intro">Эти слова взяты из <strong>Academic Word List (AWL)</strong> — они чаще всего встречаются в текстах TOEFL ITP. Нажми на карточку — увидишь перевод и пример. Изучай по 10–15 слов в день.</div>
+
+  <div class="tlbl">Группа 1 · Процессы и изменения</div>
+  <div class="vocab-grid" id="vg1"></div>
+
+  <div class="tlbl">Группа 2 · Анализ и исследование</div>
+  <div class="vocab-grid" id="vg2"></div>
+
+  <div class="tlbl">Группа 3 · Описание и характеристика</div>
+  <div class="vocab-grid" id="vg3"></div>
+
+  <div class="tlbl">Группа 4 · Причина и следствие</div>
+  <div class="vocab-grid" id="vg4"></div>
+
+  <div class="tlbl">Группа 5 · Академические глаголы</div>
+  <div class="vocab-grid" id="vg5"></div>
+
+  <div class="tlbl">Группа 6 · Важные прилагательные</div>
+  <div class="vocab-grid" id="vg6"></div>
+
+  <div class="tip-box" style="margin-top:8px">💡 <strong>Как учить эти слова эффективно:</strong> Не зубри списки — учи слова в контексте. Встретив незнакомое слово в тексте, попробуй угадать его значение по контексту, потом проверь. Это в 3 раза эффективнее, чем учить по карточкам без контекста.</div>
+
+  <button class="btn-p" onclick="showTab('affixes',document.querySelectorAll('.tab')[1])">Дальше: Приставки и суффиксы →</button>
+</div>
+
+<!-- ═══ AFFIXES ═══ -->
+<div class="section" id="tab-affixes">
+  <div class="sec-title">Приставки и суффиксы</div>
+  <div class="sec-intro">Знание приставок и суффиксов помогает <strong>угадывать значение незнакомых слов</strong> прямо на тесте. Это одна из самых ценных стратегий для Vocabulary questions.</div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--teal-bg)">
+      <div class="gc-icon ic-t">PRE</div>
+      <div><div class="gc-title" style="color:var(--teal)">Важные приставки (prefixes)</div><div class="gc-sub">Стоят в начале слова и меняют его значение</div></div>
+    </div>
+    <div class="gc-body">
+      <table class="ps-table">
+        <tr><th>Приставка</th><th>Значение</th><th>Примеры</th></tr>
+        <tr><td><span class="ps-key">un-, in-, im-, il-, ir-</span></td><td>не-, без-</td><td><span class="ps-ex">uncertain, impossible, irregular</span></td></tr>
+        <tr><td><span class="ps-key">re-</span></td><td>снова, повторно</td><td><span class="ps-ex">reforestation, reexamine, redistribute</span></td></tr>
+        <tr><td><span class="ps-key">pre-</span></td><td>до, заранее</td><td><span class="ps-ex">prehistoric, precede, predict</span></td></tr>
+        <tr><td><span class="ps-key">post-</span></td><td>после</td><td><span class="ps-ex">postwar, postmodern, postpone</span></td></tr>
+        <tr><td><span class="ps-key">over-</span></td><td>слишком, чрезмерно</td><td><span class="ps-ex">overpopulation, overestimate</span></td></tr>
+        <tr><td><span class="ps-key">under-</span></td><td>недостаточно, под</td><td><span class="ps-ex">underestimate, undermine</span></td></tr>
+        <tr><td><span class="ps-key">inter-</span></td><td>между, взаимо-</td><td><span class="ps-ex">interaction, interdependent</span></td></tr>
+        <tr><td><span class="ps-key">multi-</span></td><td>много-</td><td><span class="ps-ex">multicultural, multifaceted</span></td></tr>
+        <tr><td><span class="ps-key">sub-</span></td><td>под-, ниже</td><td><span class="ps-ex">subtropical, subsurface, subdivide</span></td></tr>
+        <tr><td><span class="ps-key">bio-</span></td><td>жизнь, биологический</td><td><span class="ps-ex">biodiversity, bioluminescence</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--blue-bg)">
+      <div class="gc-icon ic-b">SUF</div>
+      <div><div class="gc-title" style="color:var(--blue)">Важные суффиксы (suffixes)</div><div class="gc-sub">Стоят в конце слова и указывают на часть речи</div></div>
+    </div>
+    <div class="gc-body">
+      <table class="ps-table">
+        <tr><th>Суффикс</th><th>Часть речи</th><th>Примеры</th></tr>
+        <tr><td><span class="ps-key">-tion, -sion, -ation</span></td><td>существительное</td><td><span class="ps-ex">conservation, expansion, cultivation</span></td></tr>
+        <tr><td><span class="ps-key">-ity, -ty</span></td><td>существительное</td><td><span class="ps-ex">biodiversity, complexity, stability</span></td></tr>
+        <tr><td><span class="ps-key">-ment</span></td><td>существительное</td><td><span class="ps-ex">development, environment, assessment</span></td></tr>
+        <tr><td><span class="ps-key">-ance, -ence</span></td><td>существительное</td><td><span class="ps-ex">significance, evidence, dependence</span></td></tr>
+        <tr><td><span class="ps-key">-ize, -ise</span></td><td>глагол</td><td><span class="ps-ex">modernize, emphasize, colonize</span></td></tr>
+        <tr><td><span class="ps-key">-ify</span></td><td>глагол</td><td><span class="ps-ex">classify, justify, intensify</span></td></tr>
+        <tr><td><span class="ps-key">-al, -ial</span></td><td>прилагательное</td><td><span class="ps-ex">environmental, fundamental, colonial</span></td></tr>
+        <tr><td><span class="ps-key">-ous, -ious</span></td><td>прилагательное</td><td><span class="ps-ex">numerous, significant, various</span></td></tr>
+        <tr><td><span class="ps-key">-ive, -ative</span></td><td>прилагательное</td><td><span class="ps-ex">effective, productive, innovative</span></td></tr>
+        <tr><td><span class="ps-key">-ly</span></td><td>наречие</td><td><span class="ps-ex">significantly, rapidly, primarily</span></td></tr>
+      </table>
+      <div class="tip-box">💡 <strong>Практика:</strong> Возьми слово «unprecedented». Разбери его: «un-» (не) + «precedent» (прецедент) + «-ed» (прил.) = «не имеющий прецедента» = впервые. Так можно разобрать большинство незнакомых слов прямо на тесте.</div>
+    </div>
+  </div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--amber-bg)">
+      <div class="gc-icon ic-a">EX</div>
+      <div><div class="gc-title" style="color:var(--amber)">Семейства слов TOEFL — практика</div><div class="gc-sub">Одна основа → 4 части речи</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">TOEFL часто проверяет знание семейств слов в Vocabulary вопросах. Знай четыре формы каждого ключевого слова.</div>
+      <table class="ps-table">
+        <tr><th>Основа</th><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+        <tr><td><span class="ps-key">signif-</span></td><td>significance</td><td>—</td><td>significant</td><td>significantly</td></tr>
+        <tr><td><span class="ps-key">produc-</span></td><td>production</td><td>produce</td><td>productive</td><td>productively</td></tr>
+        <tr><td><span class="ps-key">conserv-</span></td><td>conservation</td><td>conserve</td><td>conservative</td><td>conservatively</td></tr>
+        <tr><td><span class="ps-key">environ-</span></td><td>environment</td><td>—</td><td>environmental</td><td>environmentally</td></tr>
+        <tr><td><span class="ps-key">sustain-</span></td><td>sustainability</td><td>sustain</td><td>sustainable</td><td>sustainably</td></tr>
+        <tr><td><span class="ps-key">distribut-</span></td><td>distribution</td><td>distribute</td><td>distributive</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('speed',document.querySelectorAll('.tab')[2])">Дальше: Speed Reading →</button>
+</div>
+
+<!-- ═══ SPEED READING ═══ -->
+<div class="section" id="tab-speed">
+  <div class="sec-title">Техники скоростного чтения</div>
+  <div class="sec-intro">У тебя ~65 секунд на вопрос в Reading. Чтобы успеть — нужно читать быстро и точно. Эти техники помогают читать на 30–40% быстрее без потери понимания.</div>
+
+  <div class="sp-grid">
+    <div class="sp-card">
+      <div class="sp-num">1</div>
+      <div class="sp-title">Skimming — обзорное чтение</div>
+      <div class="sp-body">Читай только первое и последнее предложение каждого абзаца. За 60–90 секунд получишь общее представление о тексте. Используй для Main Idea.</div>
+    </div>
+    <div class="sp-card">
+      <div class="sp-num">2</div>
+      <div class="sp-title">Scanning — поиск информации</div>
+      <div class="sp-body">Не читай текст — ищи конкретное слово или фразу из вопроса. Взгляд скользит по тексту пока не найдёт ключевое слово. Используй для Detail.</div>
+    </div>
+    <div class="sp-card">
+      <div class="sp-num">3</div>
+      <div class="sp-title">Topic sentences</div>
+      <div class="sp-body">В каждом абзаце первое предложение = тема абзаца. Читая только их, понимаешь структуру текста и где искать конкретные факты.</div>
+    </div>
+    <div class="sp-card">
+      <div class="sp-num">4</div>
+      <div class="sp-title">Signal words — маркеры</div>
+      <div class="sp-body">«However», «therefore», «in contrast», «for example» — эти слова показывают структуру мысли. Замечай их и понимаешь текст быстрее.</div>
+    </div>
+  </div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--teal-bg)">
+      <div class="gc-icon ic-t">MAP</div>
+      <div><div class="gc-title" style="color:var(--teal)">Сигнальные слова и их значение</div><div class="gc-sub">Знай эти слова — и понимаешь структуру текста мгновенно</div></div>
+    </div>
+    <div class="gc-body">
+      <table class="ps-table">
+        <tr><th>Сигнал</th><th>Что означает</th><th>Примеры</th></tr>
+        <tr><td><span class="ps-key">however, but, although, despite, in contrast, on the other hand, yet, nevertheless</span></td><td>⚡ ПОВОРОТ — сейчас будет противоположная мысль</td><td><span class="ps-ex">важно для Inference и Attitude</span></td></tr>
+        <tr><td><span class="ps-key">therefore, thus, consequently, as a result, hence</span></td><td>➡️ СЛЕДСТВИЕ — результат предыдущего</td><td><span class="ps-ex">важно для Inference</span></td></tr>
+        <tr><td><span class="ps-key">furthermore, moreover, in addition, also, additionally</span></td><td>➕ ДОБАВЛЕНИЕ — ещё один аргумент</td><td><span class="ps-ex">важно для NOT/EXCEPT</span></td></tr>
+        <tr><td><span class="ps-key">for example, for instance, such as, including, specifically</span></td><td>📍 ПРИМЕР — конкретизация общего</td><td><span class="ps-ex">важно для Detail</span></td></tr>
+        <tr><td><span class="ps-key">first, second, finally, in conclusion, to summarize</span></td><td">🗺️ СТРУКТУРА — порядок изложения</td><td><span class="ps-ex">важно для Main Idea</span></td></tr>
+        <tr><td><span class="ps-key">because, since, due to, owing to, as a result of</span></td><td>🔍 ПРИЧИНА — объяснение</td><td><span class="ps-ex">важно для Detail</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--teal-bg)">
+      <div class="gc-icon ic-t">11</div>
+      <div><div class="gc-title" style="color:var(--teal)">Формула 11 минут на текст</div><div class="gc-sub">Тайминг для набора 500+ баллов</div></div>
+    </div>
+    <div class="gc-body">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:#f9f9f7;border-radius:var(--rsm)">
+          <div style="font-weight:700;color:var(--teal-mid);min-width:60px;font-size:14px">0:00–0:30</div>
+          <div style="font-size:13px;color:var(--muted)">Просмотр 10 вопросов — запомни ключевые слова Detail-вопросов</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:#f9f9f7;border-radius:var(--rsm)">
+          <div style="font-weight:700;color:var(--teal-mid);min-width:60px;font-size:14px">0:30–2:30</div>
+          <div style="font-size:13px;color:var(--muted)">Чтение текста: первые предложения абзацев + scan для ключевых деталей</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:#f9f9f7;border-radius:var(--rsm)">
+          <div style="font-weight:700;color:var(--teal-mid);min-width:60px;font-size:14px">2:30–11:00</div>
+          <div style="font-size:13px;color:var(--muted)">Ответы на 10 вопросов (~45 сек каждый) — scan для нужных фрагментов</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--teal-bg);border-radius:var(--rsm);border:1px solid var(--teal-brd)">
+          <div style="font-weight:700;color:var(--teal);min-width:60px;font-size:14px">× 5</div>
+          <div style="font-size:13px;color:var(--teal)">5 текстов × 11 мин = 55 мин. Успеваешь пройти весь Section III.</div>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:12px">💡 Если застрял на вопросе дольше 50 секунд — ставь лучшую догадку и двигайся. Один сложный вопрос не стоит потери времени на три лёгких.</div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика с таймером →</button>
+</div>
+
+<!-- ═══ PRACTICE ═══ -->
+<div class="section" id="tab-practice">
+  <div class="sec-title">Практика с таймером — 8 вопросов</div>
+  <div class="sec-intro">Этот блок — с таймером как на реальном тесте. Текст + 8 вопросов. Рекомендуемое время: <strong>8 минут</strong>. Запусти таймер и начинай читать.</div>
+
+  <!-- Timer -->
+  <div class="timer-box">
+    <div>
+      <div class="timer-display" id="timer-display">8:00</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">оставшееся время</div>
+    </div>
+    <div style="flex:1">
+      <div class="timer-label">Нажми «Старт» — и начинай читать текст</div>
+      <div style="margin-top:10px">
+        <button class="timer-btn" id="timer-start" onclick="startTimer()">▶ Старт</button>
+        <button class="timer-btn" onclick="resetTimer()">↺ Сброс</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="practice-passage">
+    <div class="pp-label">📄 Академический текст · Прочитай перед ответами</div>
+    <p>The relationship between sleep and memory consolidation has been a subject of intense scientific investigation over the past several decades. Researchers have found compelling evidence that sleep plays a <span class="hl-w">crucial</span> role in the process by which newly acquired information is transferred from short-term to long-term memory.</p>
+    <p>During sleep, the brain does not simply rest but instead engages in <span class="hl-w">complex</span> processes of memory reactivation and consolidation. Studies using brain imaging technology have demonstrated that specific brain regions active during learning are reactivated during slow-wave sleep — the deep, dreamless phase of the sleep cycle. This reactivation is thought to strengthen the neural connections formed during waking hours.</p>
+    <p>The role of REM (Rapid Eye Movement) sleep in memory consolidation is particularly well-documented for procedural memories — the type of memories involved in learning skills such as playing a musical instrument or riding a bicycle. Research indicates that individuals who are deprived of REM sleep following a learning task <span class="hl-w">subsequently</span> perform worse on tests of that skill compared to those who sleep normally. This finding has significant implications for students and professionals who regularly sacrifice sleep in pursuit of productivity.</p>
+    <p>Despite the substantial evidence supporting the sleep-memory link, scientists continue to debate the precise mechanisms involved. Some researchers argue that it is the overall duration of sleep that matters most, while others emphasize the importance of specific sleep stages. What remains clear, however, is that <span class="hl-w">consistently</span> obtaining adequate sleep is essential for optimal cognitive function and memory performance.</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qb"><div class="qh"><span class="qn">1 / 8</span><span class="qt tmi">Main Idea</span></div><div class="qbody">
+    <div class="q-text">What is the main topic of the passage?</div>
+    <div class="opts" id="o1">
+      <button class="opt" onclick="pick(1,'A')" id="q1A"><span class="L">A</span>The differences between REM and slow-wave sleep</button>
+      <button class="opt" onclick="pick(1,'B')" id="q1B"><span class="L">B</span>How sleep contributes to the formation and consolidation of memories</button>
+      <button class="opt" onclick="pick(1,'C')" id="q1C"><span class="L">C</span>Why students should sleep more before exams</button>
+      <button class="opt" onclick="pick(1,'D')" id="q1D"><span class="L">D</span>Brain imaging technology used in sleep research</button>
+    </div>
+    <div class="exp" id="e1"><div class="eok">✅ B — How sleep contributes to the formation and consolidation of memories</div>Весь текст посвящён связи сна и памяти: что происходит во время сна (абз. 2), REM-сон и процедурная память (абз. 3), дебаты учёных (абз. 4).<div class="erule">📌 A и D — детали из одного абзаца. C — слишком узко (студенты упомянуты вскользь).</div></div>
+  </div></div>
+
+  <!-- Q2 -->
+  <div class="qb"><div class="qh"><span class="qn">2 / 8</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what happens during slow-wave sleep?</div>
+    <div class="opts" id="o2">
+      <button class="opt" onclick="pick(2,'A')" id="q2A"><span class="L">A</span>The brain completely stops all activity</button>
+      <button class="opt" onclick="pick(2,'B')" id="q2B"><span class="L">B</span>People dream most vividly</button>
+      <button class="opt" onclick="pick(2,'C')" id="q2C"><span class="L">C</span>Brain regions active during learning are reactivated</button>
+      <button class="opt" onclick="pick(2,'D')" id="q2D"><span class="L">D</span>New information is transferred from long-term to short-term memory</button>
+    </div>
+    <div class="exp" id="e2"><div class="eok">✅ C — Brain regions active during learning are reactivated</div>Абзац 2: «specific brain regions active during learning are reactivated during slow-wave sleep».<div class="erule">📌 Scan: ключевое слово «slow-wave sleep» → абзац 2 → ответ C.</div></div>
+  </div></div>
+
+  <!-- Q3 -->
+  <div class="qb"><div class="qh"><span class="qn">3 / 8</span><span class="qt tdt">Detail</span></div><div class="qbody">
+    <div class="q-text">According to the passage, what type of memory is particularly linked to REM sleep?</div>
+    <div class="opts" id="o3">
+      <button class="opt" onclick="pick(3,'A')" id="q3A"><span class="L">A</span>Memories of historical facts and dates</button>
+      <button class="opt" onclick="pick(3,'B')" id="q3B"><span class="L">B</span>Emotional memories from childhood</button>
+      <button class="opt" onclick="pick(3,'C')" id="q3C"><span class="L">C</span>Procedural memories involved in learning skills</button>
+      <button class="opt" onclick="pick(3,'D')" id="q3D"><span class="L">D</span>Memories formed during early adulthood</button>
+    </div>
+    <div class="exp" id="e3"><div class="eok">✅ C — Procedural memories involved in learning skills</div>Абзац 3: «The role of REM sleep is particularly well-documented for procedural memories — the type of memories involved in learning skills».<div class="erule">📌 Scan: «REM sleep» → абзац 3 → «procedural memories» = ответ C.</div></div>
+  </div></div>
+
+  <!-- Q4 -->
+  <div class="qb"><div class="qh"><span class="qn">4 / 8</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«subsequently»</strong> (paragraph 3) is closest in meaning to...</div>
+    <div class="opts" id="o4">
+      <button class="opt" onclick="pick(4,'A')" id="q4A"><span class="L">A</span>immediately</button>
+      <button class="opt" onclick="pick(4,'B')" id="q4B"><span class="L">B</span>afterward</button>
+      <button class="opt" onclick="pick(4,'C')" id="q4C"><span class="L">C</span>surprisingly</button>
+      <button class="opt" onclick="pick(4,'D')" id="q4D"><span class="L">D</span>consistently</button>
+    </div>
+    <div class="exp" id="e4"><div class="eok">✅ B — afterward</div>«subsequently» = «впоследствии», «затем» — то есть после лишения REM-сна, позже, на тесте. Контекст: «deprived of REM sleep following a learning task subsequently perform worse» = после этого показывают худшие результаты.<div class="erule">📌 subsequently = после, затем, впоследствии. sub- (под) + sequent (следующий) → следующий за чем-то = afterward.</div></div>
+  </div></div>
+
+  <!-- Q5 -->
+  <div class="qb"><div class="qh"><span class="qn">5 / 8</span><span class="qt tvc">Vocabulary</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«consistently»</strong> (paragraph 4) is closest in meaning to...</div>
+    <div class="opts" id="o5">
+      <button class="opt" onclick="pick(5,'A')" id="q5A"><span class="L">A</span>occasionally</button>
+      <button class="opt" onclick="pick(5,'B')" id="q5B"><span class="L">B</span>regularly and reliably</button>
+      <button class="opt" onclick="pick(5,'C')" id="q5C"><span class="L">C</span>rapidly</button>
+      <button class="opt" onclick="pick(5,'D')" id="q5D"><span class="L">D</span>briefly</button>
+    </div>
+    <div class="exp" id="e5"><div class="eok">✅ B — regularly and reliably</div>«consistently obtaining adequate sleep is essential» — речь о регулярном, надёжном паттерне сна, а не случайном. «consistently» = последовательно, регулярно, неизменно.<div class="erule">📌 consistent = последовательный, неизменный → consistently = regularly and reliably.</div></div>
+  </div></div>
+
+  <!-- Q6 -->
+  <div class="qb"><div class="qh"><span class="qn">6 / 8</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">It can be inferred from the passage that people who regularly sleep less than they need...</div>
+    <div class="opts" id="o6">
+      <button class="opt" onclick="pick(6,'A')" id="q6A"><span class="L">A</span>may have difficulty retaining newly learned information</button>
+      <button class="opt" onclick="pick(6,'B')" id="q6B"><span class="L">B</span>will never be able to learn new skills</button>
+      <button class="opt" onclick="pick(6,'C')" id="q6C"><span class="L">C</span>dream more than people who sleep enough</button>
+      <button class="opt" onclick="pick(6,'D')" id="q6D"><span class="L">D</span>experience faster memory consolidation</button>
+    </div>
+    <div class="exp" id="e6"><div class="eok">✅ A — may have difficulty retaining newly learned information</div>Текст: лишение REM-сна → хуже показатели на тестах навыков. «consistently obtaining adequate sleep is essential for optimal cognitive function and memory performance». Вывод: если не спишь достаточно → память страдает.<div class="erule">📌 «may have difficulty» — осторожная формулировка (не «will never»). B слишком сильно. Inference должен быть поддержан текстом, но сформулирован умеренно.</div></div>
+  </div></div>
+
+  <!-- Q7 -->
+  <div class="qb"><div class="qh"><span class="qn">7 / 8</span><span class="qt tinf">Inference</span></div><div class="qbody">
+    <div class="q-text">What does the author imply about students and professionals who sacrifice sleep for productivity?</div>
+    <div class="opts" id="o7">
+      <button class="opt" onclick="pick(7,'A')" id="q7A"><span class="L">A</span>Their strategy is effective in the long term</button>
+      <button class="opt" onclick="pick(7,'B')" id="q7B"><span class="L">B</span>Their approach may actually be counterproductive</button>
+      <button class="opt" onclick="pick(7,'C')" id="q7C"><span class="L">C</span>They should study different subjects</button>
+      <button class="opt" onclick="pick(7,'D')" id="q7D"><span class="L">D</span>They are not affected by REM sleep deprivation</button>
+    </div>
+    <div class="exp" id="e7"><div class="eok">✅ B — Their approach may actually be counterproductive</div>Абзац 3: «This finding has significant implications for students and professionals who regularly sacrifice sleep in pursuit of productivity» — это намёк что их стратегия неэффективна, потому что без REM-сна память страдает.<div class="erule">📌 «Significant implications» после описания негативных последствий = автор намекает что жертвовать сном = вредить своей же производительности.</div></div>
+  </div></div>
+
+  <!-- Q8 -->
+  <div class="qb"><div class="qh"><span class="qn">8 / 8</span><span class="qt tsp">Speed Reading</span></div><div class="qbody">
+    <div class="q-text">According to paragraph 4, scientists disagree about...</div>
+    <div class="opts" id="o8">
+      <button class="opt" onclick="pick(8,'A')" id="q8A"><span class="L">A</span>whether sleep affects memory at all</button>
+      <button class="opt" onclick="pick(8,'B')" id="q8B"><span class="L">B</span>the exact mechanisms by which sleep affects memory</button>
+      <button class="opt" onclick="pick(8,'C')" id="q8C"><span class="L">C</span>the importance of getting enough sleep</button>
+      <button class="opt" onclick="pick(8,'D')" id="q8D"><span class="L">D</span>whether REM sleep exists in all people</button>
+    </div>
+    <div class="exp" id="e8"><div class="eok">✅ B — the exact mechanisms by which sleep affects memory</div>Абзац 4: «scientists continue to debate the precise mechanisms involved» — спорят о точных механизмах. «What remains clear, however, is that...» — сама связь не оспаривается.<div class="erule">📌 Ключевое слово «debate» + «precise mechanisms». A неверно — связь сна и памяти учёные не оспаривают.</div></div>
+  </div></div>
+
+  <div class="score-card" id="score-card">
+    <div class="score-big" id="score-display">—</div>
+    <div class="score-lbl">из 8 вопросов · Reading · Урок 11</div>
+    <div class="score-bw"><div class="score-b" id="score-bar"></div></div>
+    <div class="score-msg" id="score-msg"></div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Советы →</button>
+</div>
+
+<!-- ═══ TIPS ═══ -->
+<div class="section" id="tab-tips">
+  <div class="sec-title">Финальные советы по Reading</div>
+  <div class="sec-intro">Урок 11 завершает подготовку к Reading. Урок 12 — полная практика с двумя текстами под таймер.</div>
+
+  <div class="tip-card"><div class="tip-num">1</div><div><div class="tip-title">Учи слова семьями, не по одному</div><div class="tip-body">«Significant / significance / significantly» — если знаешь одну форму, угадаешь три остальных. Учи семейства слов — это в 4 раза эффективнее чем учить каждое слово отдельно.</div></div></div>
+  <div class="tip-card"><div class="tip-num">2</div><div><div class="tip-title">Используй сигнальные слова как карту</div><div class="tip-body">«However» = сейчас будет противоположная мысль. «Therefore» = сейчас будет вывод. «For example» = сейчас будет пример. Эти слова показывают структуру текста — читай их особенно внимательно.</div></div></div>
+  <div class="tip-card"><div class="tip-num">3</div><div><div class="tip-title">Не читай весь текст — читай умно</div><div class="tip-body">Skimming (первые предложения) + Scanning (поиск по ключевому слову) + чтение нужного предложения. Читать весь текст несколько раз = потеря времени = меньше баллов.</div></div></div>
+  <div class="tip-card"><div class="tip-num">4</div><div><div class="tip-title">Таймер — тренируй каждый день</div><div class="tip-body">Читай любой академический текст на английском с таймером. Сначала 15 минут, потом 12, потом 11. Через неделю 11 минут будет ощущаться комфортно.</div></div></div>
+  <div class="tip-card"><div class="tip-num">5</div><div><div class="tip-title">Незнакомое слово? Не паникуй</div><div class="tip-body">Даже не зная слова можно правильно ответить на Vocabulary вопрос если использовать контекст. Паника и потеря времени хуже чем незнание слова.</div></div></div>
+
+  <div class="divider"></div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:20px">
+    <div style="font-size:15px;font-weight:600;margin-bottom:12px">📚 Домашнее задание</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.9">
+      1. Выучи все 60 слов из урока — по 10 слов в день (6 дней)<br>
+      2. Для каждого слова из AWL выпиши 4 формы (noun/verb/adj/adv)<br>
+      3. Прочитай один академический текст на английском (Wikipedia, BBC) с таймером — 11 минут<br>
+      4. Выпиши все сигнальные слова которые встретил в тексте
+    </div>
+  </div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:20px">
+    <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:.04em">ПРОГРЕСС · SECTION III</div>
+    <div style="font-size:14px;color:var(--muted);line-height:2">
+      ✅ Урок 9 — Main Idea, Detail, Inference<br>
+      ✅ Урок 10 — Vocabulary, Reference, NOT/EXCEPT<br>
+      ✅ Урок 11 — Academic Vocabulary &amp; Speed Reading<br>
+      ⬜ Урок 12 — Full Passage Practice (2 текста под таймер)
+    </div>
+  </div>
+  <button class="btn-p">✅ Урок 11 завершён!</button>
+  <div class="next-box">
+    Следующий: <strong>Урок 12 — Full Passage Practice · 2 полных текста под таймер</strong><br>
+    <span style="font-size:13px;opacity:.8">Попроси своего преподавателя отправить Урок 12</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ── Vocab data ──
+const VOCAB = {
+  vg1:[
+    {w:'transform',pos:'verb',ru:'коренным образом менять',en:'Agriculture transformed human civilization.'},
+    {w:'emerge',pos:'verb',ru:'появляться, возникать',en:'New technologies emerge every decade.'},
+    {w:'shift',pos:'noun/verb',ru:'сдвиг; смещаться',en:'A shift in climate patterns was observed.'},
+    {w:'decline',pos:'noun/verb',ru:'упадок; снижаться',en:'The population declined rapidly.'},
+    {w:'expand',pos:'verb',ru:'расширяться',en:'The empire expanded its territory.'},
+    {w:'collapse',pos:'noun/verb',ru:'коллапс; рухнуть',en:'The ecosystem could collapse.'},
+    {w:'evolve',pos:'verb',ru:'эволюционировать, развиваться',en:'Species evolve over millions of years.'},
+    {w:'accelerate',pos:'verb',ru:'ускорять(ся)',en:'Climate change accelerated in recent decades.'}
+  ],
+  vg2:[
+    {w:'analyze',pos:'verb',ru:'анализировать',en:'Scientists analyzed the data carefully.'},
+    {w:'demonstrate',pos:'verb',ru:'демонстрировать, доказывать',en:'The study demonstrated a clear link.'},
+    {w:'indicate',pos:'verb',ru:'указывать, показывать',en:'Results indicate a significant change.'},
+    {w:'reveal',pos:'verb',ru:'выявлять, раскрывать',en:'The research revealed unexpected findings.'},
+    {w:'establish',pos:'verb',ru:'устанавливать, доказывать',en:'Scientists established the cause.'},
+    {w:'investigate',pos:'verb',ru:'исследовать',en:'Researchers investigated the phenomenon.'},
+    {w:'conclude',pos:'verb',ru:'делать вывод',en:'The team concluded that the theory was correct.'},
+    {w:'assess',pos:'verb',ru:'оценивать',en:'Experts assessed the environmental impact.'}
+  ],
+  vg3:[
+    {w:'significant',pos:'adjective',ru:'значительный, важный',en:'A significant increase was observed.'},
+    {w:'substantial',pos:'adjective',ru:'существенный',en:'Substantial evidence supports this view.'},
+    {w:'diverse',pos:'adjective',ru:'разнообразный',en:'The Amazon has diverse ecosystems.'},
+    {w:'complex',pos:'adjective',ru:'сложный',en:'Climate is a complex system.'},
+    {w:'crucial',pos:'adjective',ru:'крайне важный, ключевой',en:'Sleep plays a crucial role in memory.'},
+    {w:'predominant',pos:'adjective',ru:'преобладающий',en:'Agriculture was the predominant occupation.'},
+    {w:'abundant',pos:'adjective',ru:'обильный, богатый',en:'Resources were abundant in the region.'},
+    {w:'unprecedented',pos:'adjective',ru:'беспрецедентный',en:'The drought was unprecedented in scale.'}
+  ],
+  vg4:[
+    {w:'contribute to',pos:'phrase',ru:'способствовать, вносить вклад',en:'Deforestation contributes to climate change.'},
+    {w:'result in',pos:'phrase',ru:'приводить к (следствие)',en:'The flood resulted in widespread damage.'},
+    {w:'lead to',pos:'phrase',ru:'вести к, приводить к',en:'Agriculture led to the rise of cities.'},
+    {w:'due to',pos:'phrase',ru:'из-за, вследствие',en:'The decline was due to overhunting.'},
+    {w:'consequently',pos:'adverb',ru:'следовательно, в результате',en:'Forests were cleared; consequently, species declined.'},
+    {w:'therefore',pos:'adverb',ru:'поэтому, таким образом',en:'The data was incomplete; therefore, results varied.'},
+    {w:'nevertheless',pos:'adverb',ru:'тем не менее',en:'Challenges existed; nevertheless, farming spread.'},
+    {w:'whereas',pos:'conjunction',ru:'тогда как, в то время как',en:'Nomads moved often, whereas farmers settled.'}
+  ],
+  vg5:[
+    {w:'sustain',pos:'verb',ru:'поддерживать, сохранять',en:'The ecosystem cannot sustain itself.'},
+    {w:'mitigate',pos:'verb',ru:'смягчать, уменьшать',en:'Trees mitigate the effects of climate change.'},
+    {w:'facilitate',pos:'verb',ru:'облегчать, содействовать',en:'Trade routes facilitated cultural exchange.'},
+    {w:'inhibit',pos:'verb',ru:'препятствовать, сдерживать',en:'Cold temperatures inhibit plant growth.'},
+    {w:'regulate',pos:'verb',ru:'регулировать',en:'Forests regulate the water cycle.'},
+    {w:'attribute to',pos:'phrase',ru:'приписывать, объяснять чем-то',en:'The success was attributed to planning.'},
+    {w:'correspond to',pos:'phrase',ru:'соответствовать',en:'The findings correspond to earlier studies.'},
+    {w:'derive from',pos:'phrase',ru:'происходить от, получать из',en:'This word derives from Latin.'}
+  ],
+  vg6:[
+    {w:'widespread',pos:'adjective',ru:'широко распространённый',en:'Widespread deforestation threatens biodiversity.'},
+    {w:'gradual',pos:'adjective',ru:'постепенный',en:'There was a gradual increase in temperature.'},
+    {w:'consistent',pos:'adjective',ru:'последовательный, стабильный',en:'Results were consistent across experiments.'},
+    {w:'distinct',pos:'adjective',ru:'отчётливый, отдельный',en:'Two distinct phases were identified.'},
+    {w:'subsequent',pos:'adjective',ru:'последующий',en:'Subsequent studies confirmed the findings.'},
+    {w:'extensive',pos:'adjective',ru:'обширный, масштабный',en:'Extensive research has been conducted.'},
+    {w:'inherent',pos:'adjective',ru:'присущий, врождённый',en:'There are inherent risks in the process.'},
+    {w:'viable',pos:'adjective',ru:'жизнеспособный, реалистичный',en:'Sustainable farming is a viable solution.'}
+  ]
+};
+
+// Build vocab cards
+Object.keys(VOCAB).forEach(gid => {
+  const grid = document.getElementById(gid);
+  if(!grid) return;
+  VOCAB[gid].forEach((item,i) => {
+    const id = gid+'_'+i;
+    grid.innerHTML += `
+      <div class="vc" id="${id}" onclick="flipCard('${id}')">
+        <div class="vc-word">${item.w}</div>
+        <div class="vc-pos">${item.pos}</div>
+        <div class="vc-ru">${item.ru}</div>
+        <div class="vc-en">${item.en}</div>
+        <div class="vc-hint" style="font-size:11px;color:var(--light)">нажми — увидишь перевод</div>
+      </div>`;
+  });
+});
+
+function flipCard(id){
+  document.getElementById(id).classList.toggle('flipped');
+}
+
+// Timer
+let timerInterval=null;
+let timerSeconds=480;
+let timerRunning=false;
+
+function startTimer(){
+  if(timerRunning) return;
+  timerRunning=true;
+  document.getElementById('timer-start').textContent='▶ Идёт...';
+  document.getElementById('timer-start').disabled=true;
+  timerInterval=setInterval(()=>{
+    timerSeconds--;
+    if(timerSeconds<=0){
+      clearInterval(timerInterval);
+      document.getElementById('timer-display').textContent='0:00';
+      document.getElementById('timer-display').style.color='#F87171';
+      return;
+    }
+    const m=Math.floor(timerSeconds/60);
+    const s=timerSeconds%60;
+    document.getElementById('timer-display').textContent=m+':'+(s<10?'0':'')+s;
+    if(timerSeconds<=60) document.getElementById('timer-display').style.color='#FBBF24';
+    if(timerSeconds<=30) document.getElementById('timer-display').style.color='#F87171';
+  },1000);
+}
+
+function resetTimer(){
+  clearInterval(timerInterval);
+  timerRunning=false;
+  timerSeconds=480;
+  document.getElementById('timer-display').textContent='8:00';
+  document.getElementById('timer-display').style.color='#5EEAD4';
+  document.getElementById('timer-start').textContent='▶ Старт';
+  document.getElementById('timer-start').disabled=false;
+}
+
+// Practice
+const ANS={1:'B',2:'C',3:'C',4:'B',5:'B',6:'A',7:'B',8:'B'};
+const picked={};
+let score=0;
+
+function pick(q,letter){
+  if(picked[q]) return;
+  picked[q]=letter;
+  document.querySelectorAll('#o'+q+' .opt').forEach(b=>{b.classList.remove('picked');b.disabled=true;});
+  const btn=document.getElementById('q'+q+letter);
+  const correct=ANS[q];
+  const cb=document.getElementById('q'+q+correct);
+  if(letter===correct){if(btn)btn.classList.add('ok');score++;}
+  else{if(btn)btn.classList.add('ng');if(cb)cb.classList.add('ok');}
+  document.getElementById('e'+q).classList.add('show');
+  const done=Object.keys(picked).length;
+  document.getElementById('progress').style.width=(done/8*100)+'%';
+  if(done===8){
+    const card=document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson11', 'Урок 11: Academic Vocabulary & Speed Reading', score, 8, Math.round(score/8*100));
+    document.getElementById('score-display').textContent=score+'/8';
+    setTimeout(()=>document.getElementById('score-bar').style.width=(score/8*100)+'%',300);
+    const msgs=['Повтори стратегии.','Обрати внимание на Vocabulary.','Хорошо!','Хорошо!','Отлично!','Отлично!','Превосходно!','Превосходно!'];
+    document.getElementById('score-msg').textContent=msgs[score];
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  else{const ids=['vocab','affixes','speed','practice','tips'];document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 1: Listening Short Conversations</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #085041;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-pale: #f0faf6;
+    --amber: #EF9F27;
+    --amber-light: #FAEEDA;
+    --red: #E24B4A;
+    --red-light: #FCEBEB;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --border: #e5e5e5;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+
+  /* Hero Header */
+  .hero {
+    background: var(--green-dark);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(29,158,117,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(93,202,165,0.1) 0%, transparent 40%);
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 24px 28px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #9FE1CB;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: #5DCAA5; display: inline-block; }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .hero-sub { font-size: 15px; color: #9FE1CB; line-height: 1.5; margin-bottom: 20px; }
+  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero-pill {
+    font-size: 12px; padding: 4px 12px; border-radius: 20px;
+    background: rgba(255,255,255,0.1); color: #E1F5EE;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* Progress bar */
+  .progress-track { height: 3px; background: rgba(255,255,255,0.15); }
+  .progress-fill { height: 3px; background: #5DCAA5; width: 14%; transition: width 0.5s ease; }
+
+  /* Tabs */
+  .tabs-wrap { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .tabs {
+    max-width: 720px; margin: 0 auto;
+    display: flex; overflow-x: auto;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 14px 18px;
+    font-size: 13px; font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.15s;
+    background: none; border-left: none; border-right: none; border-top: none;
+  }
+  .tab:hover { color: var(--text); background: var(--bg); }
+  .tab.active { color: var(--green-dark); border-bottom-color: var(--green-dark); }
+
+  /* Content */
+  .content { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* Typography */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: var(--text);
+    margin-bottom: 8px;
+  }
+  .section-intro {
+    font-size: 15px; color: var(--text-muted); line-height: 1.7;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .type-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 10px; margin-top: 28px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .type-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* Lesson cards */
+  .lesson-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .lc-header {
+    padding: 14px 16px;
+    background: var(--green-pale);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .lc-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--green-dark); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 600; flex-shrink: 0;
+  }
+  .lc-title { font-size: 14px; font-weight: 600; color: var(--green-dark); }
+  .lc-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+  .lc-body { padding: 16px; }
+  .lc-ru { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+
+  .highlight { background: var(--green-light); color: var(--green-dark); padding: 1px 6px; border-radius: 4px; font-weight: 500; font-size: 13px; }
+  .highlight-r { background: var(--red-light); color: #A32D2D; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+
+  /* Dialog box */
+  .dialog-box {
+    background: #f9f9f7;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    font-size: 14px; line-height: 1.8;
+  }
+  .dialog-label { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 8px; text-transform: uppercase; }
+  .spk { font-weight: 600; color: var(--green-dark); }
+  .q-line {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-weight: 600; color: var(--text); font-size: 14px;
+  }
+  .q-answer {
+    font-size: 13px; color: var(--green-dark); font-weight: 500; margin-top: 6px;
+  }
+  .q-note { font-size: 12px; color: var(--text-light); margin-top: 4px; font-style: italic; }
+
+  .lc-tip {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 10px 12px;
+    font-size: 13px; color: #5a3a00; line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  /* Trap cards */
+  .trap-card {
+    background: var(--white);
+    border: 1px solid #F0997B;
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .trap-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--coral); color: white;
+    font-size: 12px; font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .trap-title { font-size: 14px; font-weight: 600; color: var(--coral); margin-bottom: 8px; }
+  .trap-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .trap-ex {
+    background: #f9f9f7; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 10px 12px;
+    margin-top: 10px; font-size: 13px; line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* Practice questions */
+  .pq-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .pq-header {
+    padding: 10px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .pq-num { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .pq-type {
+    font-size: 11px; font-weight: 600; padding: 2px 10px;
+    border-radius: 20px; letter-spacing: 0.04em;
+  }
+  .type-inf { background: #EEEDFE; color: #3C3489; }
+  .type-det { background: var(--green-light); color: var(--green-dark); }
+  .type-fun { background: var(--amber-light); color: #633806; }
+  .type-idi { background: var(--coral-light); color: #4A1B0C; }
+
+  .pq-body { padding: 16px; }
+  .pq-dialog {
+    background: #f9f9f7; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px 16px;
+    margin-bottom: 14px; font-size: 14px; line-height: 1.8;
+  }
+  .pq-dlabel { font-size: 11px; font-weight: 600; color: var(--text-light); margin-bottom: 8px; letter-spacing: 0.04em; display: flex; align-items: center; gap: 6px; }
+  .audio-icon { font-size: 14px; }
+  .pq-question { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+  .pq-options { display: flex; flex-direction: column; gap: 8px; }
+  .pq-opt {
+    display: flex; align-items: flex-start; gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    font-size: 14px; cursor: pointer;
+    background: var(--white);
+    text-align: left; width: 100%;
+    transition: all 0.15s; color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .pq-opt:hover:not(:disabled) { border-color: var(--green-mid); background: var(--green-pale); }
+  .pq-opt .ol { font-weight: 600; color: var(--text-muted); flex-shrink: 0; min-width: 18px; }
+  .pq-opt.correct { background: var(--green-light); border-color: var(--green-mid); color: #04342C; }
+  .pq-opt.correct .ol { color: var(--green-dark); }
+  .pq-opt.wrong { background: var(--red-light); border-color: var(--red); color: #501313; }
+  .pq-opt.wrong .ol { color: var(--red); }
+  .pq-opt:disabled { cursor: default; }
+
+  .pq-explain {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    font-size: 13px; line-height: 1.7;
+    color: var(--text-muted);
+    display: none;
+    border-left: 3px solid var(--green-mid);
+  }
+  .pq-explain.show { display: block; }
+  .explain-correct { color: var(--green-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .explain-wrong { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+  /* Score */
+  .score-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    margin-top: 8px;
+    display: none;
+  }
+  .score-card.show { display: block; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--green-dark); line-height: 1; }
+  .score-label { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+  .score-bar-wrap { margin: 16px 0; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 8px; background: var(--green-mid); border-radius: 4px; transition: width 1s ease; }
+  .score-msg { font-size: 15px; color: var(--text); font-weight: 500; margin-top: 8px; }
+
+  /* Tip cards */
+  .tip-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .tip-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--green-dark); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px;
+  }
+  .tip-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .tip-body { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  /* Buttons */
+  .btn-primary {
+    display: block; width: 100%;
+    background: var(--green-dark); color: white;
+    border: none; border-radius: var(--radius-sm);
+    padding: 14px; font-size: 15px; font-weight: 500;
+    cursor: pointer; margin-top: 20px; text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity 0.15s;
+    text-decoration: none;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary {
+    display: block; width: 100%;
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 13px; font-size: 14px; font-weight: 500;
+    cursor: pointer; margin-top: 10px; text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .btn-secondary:hover { background: var(--bg); }
+
+  /* Idiom grid */
+  .idiom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  .idiom-item { background: var(--bg); border-radius: var(--radius-sm); padding: 10px 12px; }
+  .idiom-en { font-size: 13px; font-weight: 600; color: var(--green-dark); }
+  .idiom-ru { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Goal bar */
+  .goal-card {
+    background: var(--green-dark); border-radius: var(--radius);
+    padding: 20px; color: white; margin-bottom: 20px;
+  }
+  .goal-title { font-size: 14px; font-weight: 600; color: #9FE1CB; margin-bottom: 12px; letter-spacing: 0.03em; }
+  .goal-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .goal-label { font-size: 13px; color: #9FE1CB; min-width: 80px; }
+  .goal-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.2); border-radius: 3px; }
+  .goal-fill { height: 6px; border-radius: 3px; }
+  .goal-val { font-size: 13px; font-weight: 600; color: white; min-width: 30px; text-align: right; }
+  .goal-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 24px; }
+    .idiom-grid { grid-template-columns: 1fr; }
+    .tab { padding: 12px 14px; font-size: 12px; }
+  }
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>TOEFL ITP Prep · 400→500</div>
+    <div class="hero-title">Урок 1: Listening<br>Short Conversations</div>
+    <div class="hero-sub">Section I · Part A · Короткие диалоги<br>Все 4 типа вопросов с примерами и практикой</div>
+    <div class="hero-pills">
+      <span class="hero-pill">📖 Теория</span>
+      <span class="hero-pill">⚠️ Ловушки</span>
+      <span class="hero-pill">✏️ 5 вопросов</span>
+      <span class="hero-pill">💡 Стратегия</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('theory', this)">📖 Теория</button>
+    <button class="tab" onclick="showTab('traps', this)">⚠️ Ловушки</button>
+    <button class="tab" onclick="showTab('practice', this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips', this)">💡 Стратегия</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ======================== THEORY ======================== -->
+  <div class="section active" id="tab-theory">
+    <div class="section-title">Что такое Part A?</div>
+    <div class="section-intro">
+      В <strong>Part A</strong> ты услышишь <strong>30 коротких диалогов</strong> между двумя людьми (обычно студенты, преподаватели). После каждого — один вопрос. Диалог звучит <strong>только один раз</strong> — нельзя переслушать. Поэтому важно знать заранее, что именно слушать.
+    </div>
+
+    <div class="type-label">Тип 1 · Main Idea — о чём разговор?</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">1</div>
+        <div>
+          <div class="lc-title">Main Idea / Topic</div>
+          <div class="lc-sub">Основная мысль диалога</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Вопрос спрашивает: <em>о чём говорят люди?</em> Нужно понять <strong>общий смысл</strong>, не цепляться за каждое слово.<br><br>
+          Ключевые слова вопроса: <span class="highlight">What are the speakers discussing?</span> · <span class="highlight">What is the topic of the conversation?</span>
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример диалога</div>
+          <span class="spk">Man:</span> I can't believe how long the line is at the bookstore today.<br>
+          <span class="spk">Woman:</span> Yeah, finals are next week. Everyone's grabbing textbooks last minute.
+          <div class="q-line">Q: What are the speakers discussing?</div>
+          <div class="q-answer">✅ (B) Students buying books before exams</div>
+          <div class="q-note">Слова «bookstore» и «textbooks» — подсказки. Ответ всегда перефразирует идею, не повторяет слова дословно.</div>
+        </div>
+        <div class="lc-tip">💡 <strong>Совет:</strong> Правильный ответ — это всегда перефраз (другими словами), а не точные слова из диалога. Если видишь точные слова в ответе — это часто ловушка!</div>
+      </div>
+    </div>
+
+    <div class="type-label">Тип 2 · Inference — что подразумевает говорящий?</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">2</div>
+        <div>
+          <div class="lc-title">Inference / Implied Meaning</div>
+          <div class="lc-sub">Скрытый смысл — самый частый тип!</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Один из говорящих говорит одно, но <strong>подразумевает</strong> другое. Вопрос: <span class="highlight">What does the woman mean?</span> · <span class="highlight">What can be inferred?</span><br><br>
+          Надо понять не слова, а <strong>смысл за ними</strong>. Это самый частый тип — встречается в ~40% вопросов Part A.
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример диалога</div>
+          <span class="spk">Man:</span> Are you coming to the party tonight?<br>
+          <span class="spk">Woman:</span> I have three exams this week.
+          <div class="q-line">Q: What does the woman mean?</div>
+          <div class="q-answer">✅ (A) She probably won't go to the party</div>
+          <div class="q-note">Она не сказала «нет» прямо — но смысл именно такой. Три экзамена = нет времени на вечеринку.</div>
+        </div>
+        <div class="lc-tip">💡 <strong>Совет:</strong> Если женщина/мужчина говорит что-то косвенное или уклончивое — это почти всегда вопрос на inference. Спроси себя: "Что она на самом деле имеет в виду?"</div>
+      </div>
+    </div>
+
+    <div class="type-label">Тип 3 · Function — зачем это сказано?</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">3</div>
+        <div>
+          <div class="lc-title">Function of Utterance</div>
+          <div class="lc-sub">Функция высказывания</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Вопрос: <span class="highlight">Why does the man say "..."?</span><br><br>
+          Нужно понять <strong>зачем</strong> говорящий произносит эту фразу — это просьба? согласие? удивление? отказ? сочувствие? критика?
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример диалога</div>
+          <span class="spk">Woman:</span> Could you help me move this weekend?<br>
+          <span class="spk">Man:</span> You're moving again?
+          <div class="q-line">Q: Why does the man say "You're moving again?"</div>
+          <div class="q-answer">✅ (C) To express surprise</div>
+          <div class="q-note">Вопросительная интонация как реакция = удивление. Не надо слушать буквально — это функция, а не запрос информации.</div>
+        </div>
+        <div class="lc-tip">💡 <strong>Частые функции:</strong> «Sure / Of course» = согласие · «I wish I could» = вежливый отказ · «Really?» = удивление · «That's too bad» = сочувствие</div>
+      </div>
+    </div>
+
+    <div class="type-label">Тип 4 · Detail — конкретный факт</div>
+    <div class="lesson-card">
+      <div class="lc-header">
+        <div class="lc-icon">4</div>
+        <div>
+          <div class="lc-title">Specific Detail</div>
+          <div class="lc-sub">Конкретная деталь из диалога</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-ru">
+          Вопрос о конкретном факте: <span class="highlight">Where will they meet?</span> · <span class="highlight">What time...?</span> · <span class="highlight">Who said...?</span><br><br>
+          Здесь надо слушать точно — <strong>цифры, места, имена, даты</strong>. Часто в диалоге называют два варианта — верный обычно <strong>второй</strong> (исправленный).
+        </div>
+        <div class="dialog-box">
+          <div class="dialog-label">🎧 Пример диалога</div>
+          <span class="spk">Woman:</span> Let's meet at the library at 3 o'clock.<br>
+          <span class="spk">Man:</span> Actually, can we make it 4? I have a class until then.
+          <div class="q-line">Q: What time will they meet?</div>
+          <div class="q-answer">✅ (D) At 4 o'clock</div>
+          <div class="q-note">⚠️ Ловушка: «3 o'clock» — первое число, которое ты слышишь, но это неверный ответ! Верный — второй, исправленный вариант.</div>
+        </div>
+        <div class="lc-tip">💡 <strong>Совет:</strong> Когда слышишь цифру или место — жди второй реплики. Говорящие часто меняют первый вариант на второй. Финальная информация = правильный ответ.</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('traps', document.querySelectorAll('.tab')[1])">Дальше: Типичные ловушки →</button>
+  </div>
+
+  <!-- ======================== TRAPS ======================== -->
+  <div class="section" id="tab-traps">
+    <div class="section-title">5 главных ловушек Part A</div>
+    <div class="section-intro">
+      ETS (создатели TOEFL) специально строят варианты ответов так, чтобы сбить тебя. Зная эти приёмы, ты защищена от самых частых ошибок.
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">1</div>
+      <div class="trap-title">Same Word Trap — ловушка повторения слов</div>
+      <div class="trap-body">
+        Правильный ответ почти <strong>никогда</strong> не содержит те же слова, что в диалоге. Если видишь вариант с точными словами из диалога — это скорее всего ловушка. TOEFL специально включает такие варианты.
+      </div>
+      <div class="trap-ex">
+        Диалог: <em>"I went to the <strong>library</strong>."</em><br>
+        (A) She went to the <span class="highlight-r">library</span> — ❌ ловушка!<br>
+        (B) She wanted to study — ✅ правильно (другими словами)
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">2</div>
+      <div class="trap-title">Sound-alike Trap — похожие по звуку слова</div>
+      <div class="trap-body">
+        В вариантах ответов используют слова, которые <strong>звучат похоже</strong> на слова из диалога, но имеют другой смысл. Это особенно опасно на слух.
+      </div>
+      <div class="trap-ex">
+        Диалог: <em>"He's getting a <strong>raise</strong>."</em> (повышение зарплаты)<br>
+        Ловушка: <em>"He's taking a <span class="highlight-r">race</span>."</em> — похоже на слух, но совсем другой смысл!<br><br>
+        Другие пары: <em>affect / effect</em> · <em>hear / here</em> · <em>two / to / too</em>
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">3</div>
+      <div class="trap-title">First Speaker Trap — путаница кто что сказал</div>
+      <div class="trap-body">
+        Вопрос обычно спрашивает о <strong>второй реплике</strong> (чаще о женщине). Но в ответах включают информацию из первой реплики. Важно чётко разделять: кто что говорил.
+      </div>
+      <div class="trap-ex">
+        Вопрос: <em>"What does the <strong>woman</strong> mean?"</em><br>
+        → Слушай только женщину! Информация из реплики мужчины = ловушка.
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">4</div>
+      <div class="trap-title">Double Negative Trap — двойное отрицание</div>
+      <div class="trap-body">
+        Два отрицания = утверждение. TOEFL любит такие конструкции, потому что студенты часто теряются и выбирают неверный ответ.
+      </div>
+      <div class="trap-ex">
+        <em>"I can't say I <strong>dis</strong>agree"</em> → значит <strong>I agree</strong> (согласна)<br>
+        <em>"Not bad"</em> → значит <strong>pretty good</strong> (довольно хорошо)<br>
+        <em>"It's not like she didn't try"</em> → значит <strong>she tried hard</strong> (она старалась)
+      </div>
+    </div>
+
+    <div class="trap-card">
+      <div class="trap-num">5</div>
+      <div class="trap-title">Literal Meaning Trap — буквальное прочтение идиом</div>
+      <div class="trap-body">
+        Американский английский полон идиом. Если понять фразу буквально — попадёшь в ловушку. TOEFL специально проверяет знание идиом.
+      </div>
+      <div class="trap-ex">
+        <em>"I'm all ears."</em><br>
+        ❌ Ловушка: "She has big ears."<br>
+        ✅ Верно: "She is ready to listen." (я вся внимание)<br><br>
+        <em>"It's on me."</em><br>
+        ❌ Буквально: something is on her body<br>
+        ✅ Верно: She will pay. (я угощаю)
+      </div>
+    </div>
+
+    <div class="lesson-card" style="margin-top:24px">
+      <div class="lc-header">
+        <div class="lc-icon" style="font-size:18px">📝</div>
+        <div>
+          <div class="lc-title">Важные идиомы для Part A</div>
+          <div class="lc-sub">Выучи их — они появляются на каждом тесте</div>
+        </div>
+      </div>
+      <div class="lc-body">
+        <div class="idiom-grid">
+          <div class="idiom-item"><div class="idiom-en">"Tell me about it"</div><div class="idiom-ru">Я полностью согласна / и не говори</div></div>
+          <div class="idiom-item"><div class="idiom-en">"You can say that again"</div><div class="idiom-ru">Абсолютно верно / точно</div></div>
+          <div class="idiom-item"><div class="idiom-en">"I'll say"</div><div class="idiom-ru">Ещё бы / точно</div></div>
+          <div class="idiom-item"><div class="idiom-en">"Not in a million years"</div><div class="idiom-ru">Ни за что / никогда</div></div>
+          <div class="idiom-item"><div class="idiom-en">"Don't even mention it"</div><div class="idiom-ru">Не напоминай мне / не хочу говорить</div></div>
+          <div class="idiom-item"><div class="idiom-en">"I could use some help"</div><div class="idiom-ru">Мне бы не помешала помощь</div></div>
+          <div class="idiom-item"><div class="idiom-en">"Let's just say..."</div><div class="idiom-ru">Скажем так... (намёк на плохое)</div></div>
+          <div class="idiom-item"><div class="idiom-en">"I wish I could"</div><div class="idiom-ru">Вежливый отказ</div></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('practice', document.querySelectorAll('.tab')[2])">Дальше: Практика →</button>
+  </div>
+
+  <!-- ======================== PRACTICE ======================== -->
+  <div class="section" id="tab-practice">
+    <div class="section-title">Практика — 5 вопросов</div>
+    <div class="section-intro">
+      Формат <strong>точно как на реальном тесте</strong>. Читай диалог (на тесте услышишь), выбирай ответ. После выбора появится объяснение на русском — почему верно или нет.
+    </div>
+
+    <!-- Q1 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Вопрос 1 / 5</span>
+        <span class="pq-type type-inf">Inference</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-dialog">
+          <div class="pq-dlabel"><span class="audio-icon">🎧</span> Диалог (читай как будто слушаешь)</div>
+          <span class="spk">Man:</span> Did you finish the assignment Professor Kim gave us?<br>
+          <span class="spk">Woman:</span> Don't even mention it.
+        </div>
+        <div class="pq-question">What does the woman mean?</div>
+        <div class="pq-options" id="q1-opts">
+          <button class="pq-opt" onclick="answer(1,'A')" id="q1-A"><span class="ol">A</span> She completed the assignment easily.</button>
+          <button class="pq-opt" onclick="answer(1,'B')" id="q1-B"><span class="ol">B</span> She does not want to talk about the assignment.</button>
+          <button class="pq-opt" onclick="answer(1,'C')" id="q1-C"><span class="ol">C</span> She mentioned the assignment to Professor Kim.</button>
+          <button class="pq-opt" onclick="answer(1,'D')" id="q1-D"><span class="ol">D</span> She forgot about the assignment.</button>
+        </div>
+        <div class="pq-explain" id="q1-explain">
+          <div class="explain-correct">✅ Верный ответ: B</div>
+          <strong>«Don't even mention it»</strong> — это идиома, которая значит «не напоминай мне об этом» (когда что-то неприятное или не сделано). Женщина явно не в восторге от задания — скорее всего, не выполнила его или оно её расстраивает.<br><br>
+          Это классический <strong>Inference</strong> — она не говорит прямо «не хочу говорить», но именно это подразумевает.<br>
+          <div class="explain-wrong">❌ A — нет информации что «easily» (легко)<br>❌ D — про «forgot» (забыла) ничего не сказано<br>❌ C — буквальное прочтение идиомы, ловушка!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Вопрос 2 / 5</span>
+        <span class="pq-type type-det">Detail</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-dialog">
+          <div class="pq-dlabel"><span class="audio-icon">🎧</span> Диалог</div>
+          <span class="spk">Woman:</span> Is the chemistry lab open on Sundays?<br>
+          <span class="spk">Man:</span> It used to be open until 5, but they changed it. Now it closes at noon.
+        </div>
+        <div class="pq-question">What does the man say about the chemistry lab?</div>
+        <div class="pq-options" id="q2-opts">
+          <button class="pq-opt" onclick="answer(2,'A')" id="q2-A"><span class="ol">A</span> It is closed on Sundays.</button>
+          <button class="pq-opt" onclick="answer(2,'B')" id="q2-B"><span class="ol">B</span> It closes at 5 o'clock on Sundays.</button>
+          <button class="pq-opt" onclick="answer(2,'C')" id="q2-C"><span class="ol">C</span> Its closing time has been changed to noon.</button>
+          <button class="pq-opt" onclick="answer(2,'D')" id="q2-D"><span class="ol">D</span> It opens at noon on Sundays.</button>
+        </div>
+        <div class="pq-explain" id="q2-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          Мужчина прямо говорит: <strong>«they changed it. Now it closes at noon»</strong> — время изменили, теперь закрывается в полдень.<br><br>
+          <div class="explain-wrong">❌ B — классическая ловушка «First Number Trap»! «Until 5» — это старое время, ДО изменения. TOEFL специально ставит первую цифру как неверный ответ.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Вопрос 3 / 5</span>
+        <span class="pq-type type-inf">Inference</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-dialog">
+          <div class="pq-dlabel"><span class="audio-icon">🎧</span> Диалог</div>
+          <span class="spk">Man:</span> How did your presentation go?<br>
+          <span class="spk">Woman:</span> Let's just say I'll be spending a lot more time preparing next time.
+        </div>
+        <div class="pq-question">What can be inferred about the woman's presentation?</div>
+        <div class="pq-options" id="q3-opts">
+          <button class="pq-opt" onclick="answer(3,'A')" id="q3-A"><span class="ol">A</span> She prepared very well for it.</button>
+          <button class="pq-opt" onclick="answer(3,'B')" id="q3-B"><span class="ol">B</span> It did not go well.</button>
+          <button class="pq-opt" onclick="answer(3,'C')" id="q3-C"><span class="ol">C</span> She spent a lot of time preparing.</button>
+          <button class="pq-opt" onclick="answer(3,'D')" id="q3-D"><span class="ol">D</span> She will not present again.</button>
+        </div>
+        <div class="pq-explain" id="q3-explain">
+          <div class="explain-correct">✅ Верный ответ: B</div>
+          <strong>«Let's just say...»</strong> = «скажем так...» — вводная фраза, которая всегда намекает на что-то неприятное. <strong>«I'll spend more time preparing <em>next time</em>»</strong> → значит, на этот раз она не подготовилась достаточно → презентация прошла плохо.<br><br>
+          <div class="explain-wrong">❌ C — ловушка! «A lot more time» — она говорит о БУДУЩЕМ, а не о прошлом. В прошлом она как раз не готовилась достаточно.<br>❌ A — противоположное тому, что подразумевается.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Вопрос 4 / 5</span>
+        <span class="pq-type type-fun">Function</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-dialog">
+          <div class="pq-dlabel"><span class="audio-icon">🎧</span> Диалог</div>
+          <span class="spk">Woman:</span> I'm thinking of dropping the biology course.<br>
+          <span class="spk">Man:</span> Are you sure that's a good idea?
+        </div>
+        <div class="pq-question">Why does the man say "Are you sure that's a good idea?"</div>
+        <div class="pq-options" id="q4-opts">
+          <button class="pq-opt" onclick="answer(4,'A')" id="q4-A"><span class="ol">A</span> To encourage the woman to drop the course.</button>
+          <button class="pq-opt" onclick="answer(4,'B')" id="q4-B"><span class="ol">B</span> To confirm that the woman has a good plan.</button>
+          <button class="pq-opt" onclick="answer(4,'C')" id="q4-C"><span class="ol">C</span> To express doubt about the woman's decision.</button>
+          <button class="pq-opt" onclick="answer(4,'D')" id="q4-D"><span class="ol">D</span> To ask for more information about biology.</button>
+        </div>
+        <div class="pq-explain" id="q4-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          Риторический вопрос <strong>«Are you sure that's a good idea?»</strong> — это способ выразить <strong>сомнение или лёгкое несогласие</strong>. Мужчина не спрашивает буквально — он намекает, что это, возможно, плохая идея. Это вопрос на <strong>Function</strong>.<br><br>
+          <div class="explain-wrong">❌ A — неверно: он не поддерживает её решение, а сомневается.<br>❌ D — буквальное прочтение, ловушка. Про биологию он не спрашивает ничего конкретного.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="pq-block">
+      <div class="pq-header">
+        <span class="pq-num">Вопрос 5 / 5</span>
+        <span class="pq-type type-idi">Idiom</span>
+      </div>
+      <div class="pq-body">
+        <div class="pq-dialog">
+          <div class="pq-dlabel"><span class="audio-icon">🎧</span> Диалог</div>
+          <span class="spk">Man:</span> Did you hear that Professor Davis is leaving?<br>
+          <span class="spk">Woman:</span> Tell me about it. He was the best professor in the department.
+        </div>
+        <div class="pq-question">What does the woman mean?</div>
+        <div class="pq-options" id="q5-opts">
+          <button class="pq-opt" onclick="answer(5,'A')" id="q5-A"><span class="ol">A</span> She wants the man to give her more details.</button>
+          <button class="pq-opt" onclick="answer(5,'B')" id="q5-B"><span class="ol">B</span> She has not heard about Professor Davis yet.</button>
+          <button class="pq-opt" onclick="answer(5,'C')" id="q5-C"><span class="ol">C</span> She agrees and shares the man's feelings.</button>
+          <button class="pq-opt" onclick="answer(5,'D')" id="q5-D"><span class="ol">D</span> She is going to tell the man something important.</button>
+        </div>
+        <div class="pq-explain" id="q5-explain">
+          <div class="explain-correct">✅ Верный ответ: C</div>
+          <strong>«Tell me about it»</strong> — популярная американская идиома, которая означает <em>«Не говори мне об этом, я и так знаю»</em> или <em>«Я полностью согласна»</em>. Это <strong>НЕ</strong> буквальная просьба рассказать подробности.<br><br>
+          Следующая фраза <em>«He was the best professor»</em> подтверждает, что она разделяет огорчение мужчины.<br>
+          <div class="explain-wrong">❌ A — самая частая ошибка в Part A! Буквальное прочтение идиомы. Это именно тот ловушка «Literal Meaning Trap» из теории.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-card" id="score-card">
+      <div class="score-big" id="score-display">0/5</div>
+      <div class="score-label">Результат · Part A практика · Урок 1</div>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+      <div class="score-msg" id="score-msg"></div>
+    </div>
+
+    <button class="btn-primary" onclick="showTab('tips', document.querySelectorAll('.tab')[3])">Дальше: Стратегия на тесте →</button>
+  </div>
+
+  <!-- ======================== TIPS ======================== -->
+  <div class="section" id="tab-tips">
+    <div class="section-title">Стратегия на реальном тесте</div>
+    <div class="section-intro">
+      Эти 5 приёмов дают <strong>+3–5 баллов</strong> в Listening даже без улучшения уровня английского. Это не теория — это конкретные действия на тесте.
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">1</div>
+      <div>
+        <div class="tip-title">Читай вопрос ДО диалога</div>
+        <div class="tip-body">В буклете вопросы напечатаны. Перед каждым диалогом у тебя есть ~5 секунд паузы. Прочитай вопрос — и ты уже знаешь, что именно слушать: детали? общий смысл? намерение говорящего?</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">2</div>
+      <div>
+        <div class="tip-title">Фокус на ВТОРОЙ реплике</div>
+        <div class="tip-body">85% вопросов Part A спрашивают именно о реакции второго человека. Первая реплика — это лишь контекст. Вторая реплика — это ответ на вопрос. Особенно слушай женщину, если вопрос «What does the woman mean?»</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">3</div>
+      <div>
+        <div class="tip-title">Исключай варианты, а не ищи верный</div>
+        <div class="tip-body">Обычно 1–2 варианта можно убрать сразу (слишком буквально, слишком крайне, из первой реплики). Потом выбираешь из 2 оставшихся — шанс уже 50%.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">4</div>
+      <div>
+        <div class="tip-title">Не застревай — ставь догадку и двигайся</div>
+        <div class="tip-body">TOEFL ITP — тест с бумажным буклетом, аудио идёт вперёд без остановки. Если не знаешь — ставь лучшую догадку и двигайся. Пропущенный вопрос = 0 баллов точно. Догадка = шанс на балл.</div>
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-num">5</div>
+      <div>
+        <div class="tip-title">Первый инстинкт — часто верный</div>
+        <div class="tip-body">Исследования показывают: студенты, которые меняют ответ в конце, чаще снижают результат. Если первый инстинкт подсказал что-то — доверяй ему, если нет явного конкретного основания менять.</div>
+      </div>
+    </div>
+
+    <div class="goal-card">
+      <div class="goal-title">📊 ЧТО НУЖНО ДЛЯ БАЛЛА 500</div>
+      <div class="goal-row">
+        <span class="goal-label">Сейчас</span>
+        <div class="goal-bar"><div class="goal-fill" style="width:67%;background:rgba(255,255,255,0.4)"></div></div>
+        <span class="goal-val">400</span>
+      </div>
+      <div class="goal-row">
+        <span class="goal-label">Цель</span>
+        <div class="goal-bar"><div class="goal-fill" style="width:83%;background:#5DCAA5"></div></div>
+        <span class="goal-val">500</span>
+      </div>
+      <div class="goal-note">Для 500 нужно ~60–65% правильных ответов в каждой секции. В Listening это ~30–33 из 50 вопросов. Уроки 1 и 2 покрывают всю Section I полностью.</div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+      <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;">📚 Домашнее задание</div>
+      <div style="font-size:14px;color:var(--text-muted);line-height:1.8;">
+        1. Выучи все 8 идиом из раздела «Ловушки» (карточка внизу раздела)<br>
+        2. Послушай 10–15 коротких диалогов из Longman Preparation Course for TOEFL ITP (Part A)<br>
+        3. Для каждого диалога — сначала определи тип вопроса, потом отвечай<br>
+        4. Запиши все слова, которые не знаешь — разберём в следующем уроке
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:20px 0 8px;">
+      <div style="font-size:13px;color:var(--text-light);margin-bottom:16px;">Урок 1 пройден · Section I · Part A</div>
+    </div>
+
+    <a class="btn-primary" href="#">✅ Урок 1 завершён — молодец!</a>
+    <div style="margin-top:10px;padding:16px;background:var(--green-pale);border:1px solid var(--border);border-radius:var(--radius);font-size:14px;color:var(--text-muted);line-height:1.6;text-align:center;">
+      Следующий: <strong>Урок 2 — Long Conversations &amp; Talks (Parts B &amp; C)</strong><br>
+      <span style="font-size:13px;">Попроси своего преподавателя отправить Урок 2</span>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+const correct = { 1:'B', 2:'C', 3:'B', 4:'C', 5:'C' };
+const answered = {};
+let score = 0;
+
+function answer(q, choice) {
+  if (answered[q]) return;
+  answered[q] = choice;
+
+  const opts = document.querySelectorAll('#q'+q+'-opts .pq-opt');
+  opts.forEach(b => { b.disabled = true; });
+
+  const chosen = document.getElementById('q'+q+'-'+choice);
+  const correctBtn = document.getElementById('q'+q+'-'+correct[q]);
+
+  if (choice === correct[q]) {
+    chosen.classList.add('correct');
+    score++;
+  } else {
+    chosen.classList.add('wrong');
+    correctBtn.classList.add('correct');
+  }
+  document.getElementById('q'+q+'-explain').classList.add('show');
+
+  const done = Object.keys(answered).length;
+  document.getElementById('progress').style.width = (14 + done * 17) + '%';
+
+  if (done === 5) {
+    const card = document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson1', 'Урок 1: Listening Short Conversations', score, 5, Math.round(score/5*100));
+    document.getElementById('score-display').textContent = score + '/5';
+    document.getElementById('score-bar').style.width = (score / 5 * 100) + '%';
+    const msgs = ['Продолжай практиковаться — ты разберёшься!', 'Хорошее начало! Повтори ловушки.', 'Неплохо! Ещё немного практики.', 'Отлично! Почти идеально.', 'Превосходно! Все правильно — ты готова к тесту!'];
+    document.getElementById('score-msg').textContent = msgs[score];
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if (el) el.classList.add('active');
+  else {
+    const ids = ['theory','traps','practice','tips'];
+    document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Урок 10: Vocabulary, Reference & Negative Facts</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--white:#fff;--text:#1a1a1a;--muted:#6b6b6b;--light:#9a9a9a;--border:#e5e5e5;--r:12px;--rsm:8px;
+--blue:#1E40AF;--blue-mid:#2563EB;--blue-bg:#EFF6FF;--blue-brd:#BFDBFE;
+--violet:#5B21B6;--violet-mid:#7C3AED;--violet-bg:#F5F3FF;--violet-brd:#DDD6FE;
+--rose:#9F1239;--rose-mid:#E11D48;--rose-bg:#FFF1F2;--rose-brd:#FECDD3;
+--gn:#065F46;--gn-bg:#ECFDF5;--gn-brd:#6EE7B7;
+--rd:#991B1B;--rd-bg:#FEF2F2;--rd-brd:#FECACA;
+--am:#92400E;--am-bg:#FFFBEB;--am-brd:#FDE68A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);padding-bottom:60px}
+.hero{background:linear-gradient(135deg,#0F172A,#1E1B4B,#312E81);position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(circle at 20% 60%,rgba(124,58,237,.2),transparent 50%),radial-gradient(circle at 80% 15%,rgba(37,99,235,.15),transparent 45%)}
+.hi{position:relative;max-width:720px;margin:0 auto;padding:36px 24px 28px}
+.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-size:12px;color:#C4B5FD;letter-spacing:.05em;margin-bottom:14px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#A78BFA;display:inline-block}
+.htitle{font-family:'Lora',serif;font-size:30px;color:#fff;line-height:1.2;margin-bottom:8px}
+.hsub{font-size:15px;color:#A5B4FC;line-height:1.5;margin-bottom:20px}
+.hpills{display:flex;gap:8px;flex-wrap:wrap}
+.hpill{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.08);color:#E0E7FF;border:1px solid rgba(255,255,255,.12)}
+.pt{height:3px;background:rgba(255,255,255,.12);margin-top:20px;border-radius:2px}
+.pf{height:3px;background:#A78BFA;border-radius:2px;width:0%;transition:width .4s}
+.tabs-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.tabs{max-width:720px;margin:0 auto;display:flex;overflow-x:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;transition:all .15s}
+.tab:hover{color:var(--text);background:var(--bg)}
+.tab.active{color:var(--violet);border-bottom-color:var(--violet-mid)}
+.content{max-width:720px;margin:0 auto;padding:24px 20px}
+.section{display:none}
+.section.active{display:block}
+.sec-title{font-family:'Lora',serif;font-size:22px;color:var(--text);margin-bottom:8px}
+.sec-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.tlbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:10px;margin-top:28px;display:flex;align-items:center;gap:8px}
+.tlbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.gram-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
+.gc-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.gc-icon{width:32px;height:32px;border-radius:8px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.ic-bl{background:var(--blue-mid)}.ic-vi{background:var(--violet-mid)}.ic-ro{background:var(--rose-mid)}
+.gc-title{font-size:14px;font-weight:600}
+.gc-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.gc-body{padding:16px}
+.ru-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.kw-bl{background:#DBEAFE;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600;color:#1E3A8A}
+.kw-vi{background:#EDE9FE;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600;color:#4C1D95}
+.kw-ro{background:#FFE4E6;border-radius:3px;padding:1px 5px;font-size:12px;font-weight:600;color:#881337}
+.passage-box{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:18px 20px;margin-bottom:14px;font-family:'Lora',serif;font-size:14px;line-height:1.9;color:#1C1917}
+.passage-box p{margin-bottom:10px}
+.passage-box p:last-child{margin-bottom:0}
+.plbl{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+/* Vocab highlight */
+.hl-word{background:#DBEAFE;border-radius:3px;padding:0 3px;font-style:normal;font-weight:600;color:#1E3A8A;cursor:help;border-bottom:2px solid #3B82F6}
+/* Reference highlight */
+.hl-ref{background:#EDE9FE;border-radius:3px;padding:0 3px;font-style:normal;font-weight:600;color:#4C1D95;cursor:help;border-bottom:2px solid #8B5CF6}
+/* Negative highlight */
+.hl-neg{background:#FFE4E6;border-radius:3px;padding:0 3px;font-style:normal;font-weight:600;color:#881337;border-bottom:2px solid #F43F5E}
+.ex-box{background:#f9f9f7;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.ex-q{font-weight:600;color:var(--text);margin-bottom:5px}
+.ex-a{color:var(--gn);font-weight:500}
+.ex-n{color:var(--muted);font-size:12px;margin-top:3px;font-style:italic}
+.tip-box{border-left:3px solid var(--violet-mid);background:var(--violet-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--violet);line-height:1.6;margin-top:12px}
+.warn-box{border-left:3px solid var(--rose-mid);background:var(--rose-bg);border-radius:0 var(--rsm) var(--rsm) 0;padding:10px 12px;font-size:13px;color:var(--rose);line-height:1.6;margin-top:10px}
+/* Context strategy */
+.ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.ctx-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:12px}
+.ctx-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px}
+.ctx-body{font-size:12px;color:var(--muted);line-height:1.5}
+/* Practice */
+.practice-passage{background:#FAFAF8;border:1px solid #D6D3D1;border-radius:var(--r);padding:20px 22px;margin-bottom:20px;font-family:'Lora',serif;font-size:14px;line-height:1.9;color:#1C1917}
+.practice-passage p{margin-bottom:10px}
+.practice-passage p:last-child{margin-bottom:0}
+.qb{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.qh{padding:9px 16px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.qn{font-size:12px;font-weight:600;color:var(--muted)}
+.qt{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px}
+.tvc{background:#DBEAFE;color:#1E40AF}
+.trf{background:#EDE9FE;color:#5B21B6}
+.tnf{background:#FFE4E6;color:#9F1239}
+.tmx{background:#DCFCE7;color:#166534}
+.qbody{padding:16px}
+.q-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--rsm);padding:11px 14px;font-size:13px;cursor:pointer;background:var(--white);text-align:left;width:100%;transition:all .15s;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.5}
+.opt .L{font-weight:700;color:var(--muted);flex-shrink:0;min-width:18px}
+.opt:hover:not([disabled]){border-color:var(--violet-mid);background:var(--violet-bg)}
+.opt.picked{border-color:var(--violet-mid);background:var(--violet-bg)}
+.opt.picked .L{color:var(--violet-mid)}
+.opt.ok{background:var(--gn-bg);border-color:var(--gn-brd);color:var(--gn)}
+.opt.ok .L{color:var(--gn)}
+.opt.ng{background:var(--rd-bg);border-color:var(--rd-brd);color:var(--rd)}
+.opt.ng .L{color:var(--rd)}
+.opt[disabled]{cursor:default}
+.exp{margin-top:12px;padding:12px 14px;background:var(--am-bg);border-radius:var(--rsm);font-size:13px;line-height:1.7;color:var(--am);border-left:3px solid #F59E0B;display:none}
+.exp.show{display:block}
+.eok{color:var(--gn);font-weight:600;font-size:13px;margin-bottom:5px}
+.erule{background:#FEF3C7;border-radius:4px;padding:5px 8px;font-size:12px;margin-top:6px;font-weight:500;color:var(--am)}
+.score-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;margin-top:8px;display:none}
+.score-card.show{display:block}
+.score-big{font-family:'Lora',serif;font-size:52px;color:var(--violet-mid);line-height:1}
+.score-lbl{font-size:14px;color:var(--muted);margin-top:4px}
+.score-bw{margin:14px 0;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.score-b{height:8px;background:var(--violet-mid);border-radius:4px;transition:width 1s ease;width:0%}
+.score-msg{font-size:14px;color:var(--text);font-weight:500;margin-top:8px}
+.tip-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
+.tip-num{width:32px;height:32px;border-radius:50%;background:#1E1B4B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;margin-top:2px}
+.tip-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.tip-body{font-size:14px;color:var(--muted);line-height:1.7}
+.btn-p{display:block;width:100%;background:#1E1B4B;color:#fff;border:none;border-radius:var(--rsm);padding:14px;font-size:15px;font-weight:500;cursor:pointer;margin-top:20px;font-family:'DM Sans',sans-serif;transition:opacity .15s}
+.btn-p:hover{opacity:.88}
+.divider{height:1px;background:var(--border);margin:24px 0}
+.next-box{padding:16px;background:var(--violet-bg);border:1px solid var(--violet-brd);border-radius:var(--r);font-size:14px;color:var(--violet);line-height:1.6;text-align:center;margin-top:10px}
+@media(max-width:480px){.htitle{font-size:24px}.ctx-grid{grid-template-columns:1fr}.tab{padding:12px 10px;font-size:12px}}
+</style>
+
+<script>
+// ── TOEFL Portal Tracker ──────────────────────────────────────────
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec';
+
+function getStudentName() {
+  let name = sessionStorage.getItem('toefl_student_name');
+  if (!name) {
+    name = prompt('👋 Введи своё имя перед началом урока:');
+    if (!name || !name.trim()) name = 'Аноним';
+    name = name.trim();
+    sessionStorage.setItem('toefl_student_name', name);
+  }
+  return name;
+}
+
+function sendResult(lessonKey, lessonTitle, score, max, pct) {
+  const name = getStudentName();
+  const data = {
+    student: name,
+    lesson: lessonKey,
+    title: lessonTitle,
+    score: score,
+    max: max,
+    pct: pct,
+    date: new Date().toISOString()
+  };
+  // Save to localStorage for local dashboard
+  localStorage.setItem('toefl_' + lessonKey, JSON.stringify({score, max, pct, date: data.date, student: name}));
+  // Send to Google Sheets
+  if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbw4nr3bJ9-8Kprf-Drf-jYF6log6MxBg5p5Jysk_3iHLAT35_b-FUyAmEw-OgfatWRYhQ/exec') {
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).catch(() => {});
+  }
+}
+// ─────────────────────────────────────────────────────────────────
+</script>
+</head>
+<body>
+<div style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
+</div>
+
+<div class="hero">
+  <div class="hbg"></div>
+  <div class="hi">
+    <div class="hbadge"><span class="hdot"></span>TOEFL ITP · Урок 10 из 14 · Section III</div>
+    <div class="htitle">Reading: Vocabulary in Context,<br>Reference & Negative Facts</div>
+    <div class="hsub">Три сложных типа вопросов Reading · Стратегии · Практика</div>
+    <div class="hpills">
+      <span class="hpill">🔵 Vocabulary in Context</span>
+      <span class="hpill">🟣 Reference</span>
+      <span class="hpill">🔴 NOT/EXCEPT</span>
+      <span class="hpill">✏️ 9 вопросов</span>
+    </div>
+    <div class="pt"><div class="pf" id="progress"></div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('vocab',this)">🔵 Vocabulary</button>
+    <button class="tab" onclick="showTab('reference',this)">🟣 Reference</button>
+    <button class="tab" onclick="showTab('negative',this)">🔴 NOT/EXCEPT</button>
+    <button class="tab" onclick="showTab('practice',this)">✏️ Практика</button>
+    <button class="tab" onclick="showTab('tips',this)">💡 Советы</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ═══ VOCABULARY ═══ -->
+<div class="section active" id="tab-vocab">
+  <div class="sec-title">Vocabulary in Context</div>
+  <div class="sec-intro">Самый частый тип вопросов Reading после Detail и Inference. В каждом тексте обычно <strong>2–3 таких вопроса</strong>. Нужно определить значение слова или фразы исходя из контекста.</div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--blue-bg)">
+      <div class="gc-icon ic-bl">VOC</div>
+      <div><div class="gc-title" style="color:var(--blue)">Как выглядит вопрос</div><div class="gc-sub">Слово выделено в тексте — нужно найти синоним</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Ключевые слова вопроса: <span class="kw-bl">The word "X" in line N is closest in meaning to...</span> · <span class="kw-bl" style="margin-left:4px">The phrase "X" most nearly means...</span><br><br>Важно: нужно найти <strong>синоним в контексте</strong>, а не общее значение слова. Одно слово может иметь разные значения — нужно то, которое подходит именно здесь.</div>
+
+      <div class="passage-box">
+        <div class="plbl">📄 Пример</div>
+        <p>The Renaissance was a period of <span class="hl-word">prolific</span> artistic and intellectual activity that began in Italy during the 14th century. Artists produced an unprecedented number of works, and scholars revived interest in ancient Greek and Roman texts.</p>
+      </div>
+
+      <div class="ex-box">
+        <div class="ex-q">Q: The word «prolific» is closest in meaning to...</div>
+        <div class="ex-a">✅ (B) highly productive</div>
+        <div class="ex-n">Контекст: «Artists produced an unprecedented number of works» — много работ = высокая продуктивность. «prolific» = производящий много.</div>
+      </div>
+
+      <div class="tip-box">💡 <strong>Стратегия Vocabulary in Context (4 шага):</strong><br>
+        1. Прочитай предложение с выделенным словом<br>
+        2. Закрой слово и угадай его значение по контексту<br>
+        3. Выбери вариант который совпадает с твоей догадкой<br>
+        4. Подставь ответ обратно в предложение — смысл сохранился?
+      </div>
+    </div>
+  </div>
+
+  <div class="tlbl">Частые ловушки Vocabulary</div>
+  <div class="gram-card">
+    <div class="gc-body" style="padding-top:16px">
+      <div class="ex-box">
+        <div class="ex-q">⚠️ Ловушка 1 — Другое значение знакомого слова</div>
+        <div class="ex-n">«The bill passed» — «bill» здесь не «счёт в ресторане», а «законопроект». Всегда смотри на контекст, не на первое значение которое знаешь.</div>
+      </div>
+      <div class="ex-box">
+        <div class="ex-q">⚠️ Ловушка 2 — Похожее по звуку слово</div>
+        <div class="ex-n">Если не знаешь слово — TOEFL вставляет в варианты слова похожие по звуку или написанию. Это ловушка. Определяй значение по контексту.</div>
+      </div>
+      <div class="ex-box">
+        <div class="ex-q">⚠️ Ловушка 3 — Правильное значение в другом контексте</div>
+        <div class="ex-n">Вариант ответа может быть верным значением слова — но не в этом конкретном предложении. Всегда проверяй подстановкой.</div>
+      </div>
+
+      <div class="tlbl" style="margin-top:16px">Стратегия если не знаешь слово</div>
+      <div class="ctx-grid">
+        <div class="ctx-card">
+          <div class="ctx-title">🔍 Clue words рядом</div>
+          <div class="ctx-body">Ищи слова-подсказки в том же предложении: «such as», «including», «in other words», «that is», «for example» — они часто объясняют незнакомое слово.</div>
+        </div>
+        <div class="ctx-card">
+          <div class="ctx-title">🔄 Противопоставления</div>
+          <div class="ctx-body">«however», «but», «although», «unlike», «in contrast» — после них идёт антоним или противоположная идея. Помогает определить значение.</div>
+        </div>
+        <div class="ctx-card">
+          <div class="ctx-title">📍 Общий тон абзаца</div>
+          <div class="ctx-body">Позитивный или негативный контекст? «despite the... challenges» — контекст трудностей. «remarkably... efficient» — позитивный контекст.</div>
+        </div>
+        <div class="ctx-card">
+          <div class="ctx-title">🌱 Корень слова</div>
+          <div class="ctx-body">«prolific» → «proli-» (потомство, рост) → много чего-то. «unprecedented» → «un-» + «precedent» → без прецедента = впервые.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('reference',document.querySelectorAll('.tab')[1])">Дальше: Reference →</button>
+</div>
+
+<!-- ═══ REFERENCE ═══ -->
+<div class="section" id="tab-reference">
+  <div class="sec-title">Reference — вопросы на референцию</div>
+  <div class="sec-intro">Reference-вопросы спрашивают: <strong>к чему относится данное местоимение или указательное слово</strong>? В каждом тексте обычно 1–2 таких вопроса.</div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--violet-bg)">
+      <div class="gc-icon ic-vi">REF</div>
+      <div><div class="gc-title" style="color:var(--violet)">Как выглядит вопрос</div><div class="gc-sub">Местоимение выделено — к чему оно относится?</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Ключевые слова: <span class="kw-vi">The word «it» in line N refers to...</span> · <span class="kw-vi" style="margin-left:4px">«They» in paragraph 2 refers to...</span> · <span class="kw-vi" style="margin-left:4px">«This» in line N refers to...</span><br><br>Местоимения которые проверяет TOEFL: <strong>it / they / them / this / these / that / those / which / its / their</strong></div>
+
+      <div class="passage-box">
+        <div class="plbl">📄 Пример</div>
+        <p>Coral reefs are among the most biologically diverse ecosystems on Earth. <span class="hl-ref">They</span> provide habitat for thousands of species of fish, invertebrates, and algae. Although <span class="hl-ref">they</span> cover less than one percent of the ocean floor, <span class="hl-ref">their</span> ecological importance is enormous.</p>
+      </div>
+
+      <div class="ex-box">
+        <div class="ex-q">Q: The word «they» in the second sentence refers to...</div>
+        <div class="ex-a">✅ (C) Coral reefs</div>
+        <div class="ex-n">«They» — множественное число. Ищем ближайшее мн.ч. существительное перед ним → «Coral reefs» (из первого предложения).</div>
+      </div>
+
+      <div class="tip-box">💡 <strong>Алгоритм Reference (3 шага):</strong><br>
+        1. Определи число (ед./мн.) и род местоимения<br>
+        2. Найди ближайшее существительное с тем же числом/родом ПЕРЕД местоимением<br>
+        3. Подставь его вместо местоимения — смысл предложения сохранился?
+      </div>
+    </div>
+  </div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--violet-bg)">
+      <div class="gc-icon ic-vi">!</div>
+      <div><div class="gc-title" style="color:var(--violet)">Сложные случаи Reference</div><div class="gc-sub">Когда ответ не очевиден</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="passage-box">
+        <div class="plbl">📄 Сложный пример</div>
+        <p>Scientists have long studied the migration of monarch butterflies. These insects travel thousands of kilometers each year, navigating by the position of the sun. <span class="hl-ref">This ability</span> has fascinated researchers because the butterflies that make the return journey have never made <span class="hl-ref">it</span> before.</p>
+      </div>
+
+      <div class="ex-box">
+        <div class="ex-q">Q: «This ability» in line 3 refers to...</div>
+        <div class="ex-a">✅ (A) The ability to navigate using the sun</div>
+        <div class="ex-n">«This ability» — указательное местоимение + noun. Указывает на ближайшее действие/свойство перед ним → «navigating by the position of the sun».</div>
+      </div>
+      <div class="ex-box">
+        <div class="ex-q">Q: «it» at the end of the passage refers to...</div>
+        <div class="ex-a">✅ (B) The migration journey</div>
+        <div class="ex-n">«it» = «the return journey» (ед.ч.) → единственное ед.ч. существительное которое имеет смысл в контексте.</div>
+      </div>
+
+      <div class="warn-box">⚠️ <strong>Ловушка Reference:</strong> «this», «these», «that», «those» могут указывать на целое предложение или идею, а не на одно слово. В таких случаях перефразируй предыдущую мысль — это и будет ответ.</div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('negative',document.querySelectorAll('.tab')[2])">Дальше: NOT/EXCEPT →</button>
+</div>
+
+<!-- ═══ NEGATIVE ═══ -->
+<div class="section" id="tab-negative">
+  <div class="sec-title">Negative Fact Questions — NOT / EXCEPT / LEAST</div>
+  <div class="sec-intro">Вопросы с отрицанием — одни из самых коварных в Reading. Студенты теряют на них больше всего баллов из-за невнимательности. Но зная систему — они решаются легко.</div>
+
+  <div class="gram-card">
+    <div class="gc-head" style="background:var(--rose-bg)">
+      <div class="gc-icon ic-ro">NOT</div>
+      <div><div class="gc-title" style="color:var(--rose)">Как выглядят эти вопросы</div><div class="gc-sub">Три варианта отрицательных вопросов</div></div>
+    </div>
+    <div class="gc-body">
+      <div class="ru-text">Эти слова меняют всю логику вопроса:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+        <div style="background:var(--rose-bg);border:1.5px solid var(--rose-brd);border-radius:var(--rsm);padding:10px;text-align:center">
+          <div style="font-size:20px;font-weight:700;color:var(--rose);margin-bottom:4px">NOT</div>
+          <div style="font-size:12px;color:var(--muted)">Which is NOT mentioned?</div>
+        </div>
+        <div style="background:var(--rose-bg);border:1.5px solid var(--rose-brd);border-radius:var(--rsm);padding:10px;text-align:center">
+          <div style="font-size:20px;font-weight:700;color:var(--rose);margin-bottom:4px">EXCEPT</div>
+          <div style="font-size:12px;color:var(--muted)">All of the following EXCEPT...</div>
+        </div>
+        <div style="background:var(--rose-bg);border:1.5px solid var(--rose-brd);border-radius:var(--rsm);padding:10px;text-align:center">
+          <div style="font-size:20px;font-weight:700;color:var(--rose);margin-bottom:4px">LEAST</div>
+          <div style="font-size:12px;color:var(--muted)">Which is LEAST likely...?</div>
+        </div>
+      </div>
+
+      <div class="passage-box">
+        <div class="plbl">📄 Пример</div>
+        <p>Forests provide many essential services to human societies. They regulate water cycles by absorbing rainfall and releasing it slowly into rivers and streams. They also store large amounts of carbon dioxide, helping to mitigate climate change. Additionally, forests are home to the majority of the world's terrestrial biodiversity. The timber and non-timber products derived from forests support the livelihoods of millions of people worldwide.</p>
+      </div>
+
+      <div class="ex-box">
+        <div class="ex-q">Q: According to the passage, all of the following are benefits of forests EXCEPT...</div>
+        <div class="ex-a">✅ (C) providing habitat for marine species</div>
+        <div class="ex-n">В тексте упомянуты: водный цикл ✓, хранение CO₂ ✓, биоразнообразие ✓, поддержка людей ✓. Морские виды (marine species) — НЕ упоминаются. Это и есть ответ.</div>
+      </div>
+
+      <div class="warn-box">⚠️ <strong>Главное правило NOT/EXCEPT:</strong> Три неверных варианта — это то, что В ТЕКСТЕ ЕСТЬ. Один верный вариант — то, чего В ТЕКСТЕ НЕТ (или что противоречит тексту).<br><br>✅ Стратегия: найди в тексте три варианта которые там ЕСТЬ → отметь их ✓ → оставшийся = ответ.</div>
+
+      <div class="tip-box">💡 <strong>Почему студенты ошибаются:</strong> читают вопрос быстро и не замечают «NOT» или «EXCEPT». Потом ищут то что есть в тексте — и находят «верные» варианты. Поэтому: <strong>обведи NOT/EXCEPT карандашом сразу как увидел!</strong></div>
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('practice',document.querySelectorAll('.tab')[3])">Дальше: Практика →</button>
+</div>
+
+<!-- ═══ PRACTICE ═══ -->
+<div class="section" id="tab-practice">
+  <div class="sec-title">Практика — 9 вопросов</div>
+  <div class="sec-intro">Один текст · 9 вопросов всех трёх типов. Сначала прочитай текст, потом отвечай. Ответ появляется сразу после выбора.</div>
+
+  <div class="practice-passage">
+    <div class="plbl" style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">📄 Академический текст</div>
+    <p>The Amazon rainforest, often called the "lungs of the Earth," produces approximately twenty percent of the world's oxygen and absorbs vast quantities of carbon dioxide. Covering more than five and a half million square kilometers, it represents the largest tropical rainforest on the planet and is home to an <span class="hl-word">estimated</span> ten percent of all species on Earth.</p>
+    <p>Deforestation poses the most serious threat to the Amazon's survival. Each year, vast tracts of forest are cleared primarily for cattle ranching and soybean farming. The loss of trees not only eliminates habitat for countless species but also releases stored carbon into the atmosphere, <span class="hl-word">exacerbating</span> global warming. Scientists warn that if deforestation continues at the current rate, the Amazon could reach a <span class="hl-word">tipping point</span> beyond which the ecosystem can no longer sustain itself.</p>
+    <p>Indigenous communities have lived in and depended on the Amazon for thousands of years. <span class="hl-ref">They</span> possess extensive knowledge of the forest's medicinal plants and sustainable farming techniques. However, <span class="hl-ref">their</span> lands and ways of life are increasingly threatened by illegal logging and mining operations. Many conservation experts argue that protecting indigenous land rights is among the most effective strategies for preserving the rainforest, as studies show that deforestation rates are significantly lower in areas governed by indigenous communities.</p>
+    <p>International efforts to protect the Amazon have produced mixed results. While conservation funding and reforestation programs have shown some promise, enforcement of environmental laws remains <span class="hl-word">inconsistent</span>. Some economists argue that sustainable development — finding ways for local communities to benefit economically from the forest without destroying it — offers the most viable long-term solution.</p>
+  </div>
+
+  <!-- Q1 Vocabulary -->
+  <div class="qb"><div class="qh"><span class="qn">1 / 9</span><span class="qt tvc">Vocabulary in Context</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«estimated»</strong> (paragraph 1) is closest in meaning to...</div>
+    <div class="opts" id="o1">
+      <button class="opt" onclick="pick(1,'A')" id="q1A"><span class="L">A</span>exactly calculated</button>
+      <button class="opt" onclick="pick(1,'B')" id="q1B"><span class="L">B</span>approximately calculated</button>
+      <button class="opt" onclick="pick(1,'C')" id="q1C"><span class="L">C</span>recently discovered</button>
+      <button class="opt" onclick="pick(1,'D')" id="q1D"><span class="L">D</span>officially declared</button>
+    </div>
+    <div class="exp" id="e1"><div class="eok">✅ B — approximately calculated</div>«Estimated» в контексте означает «приблизительно посчитанный» — точных данных о количестве видов нет, только оценки. Контекст: невозможно точно посчитать все виды в лесу → оценка.<div class="erule">📌 estimate = давать оценку, приблизительно подсчитывать. «Exactly calculated» (A) — это было бы «calculated precisely», не «estimated».</div></div>
+  </div></div>
+
+  <!-- Q2 Vocabulary -->
+  <div class="qb"><div class="qh"><span class="qn">2 / 9</span><span class="qt tvc">Vocabulary in Context</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«exacerbating»</strong> (paragraph 2) is closest in meaning to...</div>
+    <div class="opts" id="o2">
+      <button class="opt" onclick="pick(2,'A')" id="q2A"><span class="L">A</span>reducing</button>
+      <button class="opt" onclick="pick(2,'B')" id="q2B"><span class="L">B</span>causing</button>
+      <button class="opt" onclick="pick(2,'C')" id="q2C"><span class="L">C</span>worsening</button>
+      <button class="opt" onclick="pick(2,'D')" id="q2D"><span class="L">D</span>preventing</button>
+    </div>
+    <div class="exp" id="e2"><div class="eok">✅ C — worsening</div>Контекст: вырубка леса «also releases stored carbon... exacerbating global warming» — деревья уже вырублены (плохо), теперь ещё и углерод выделяется (ещё хуже). «exacerbate» = делать хуже, усугублять.<div class="erule">📌 Контекст негативный (деструктивное действие) → «reducing» и «preventing» сразу отпадают. Выбор между «causing» и «worsening» → «worsening» точнее (проблема уже существует).</div></div>
+  </div></div>
+
+  <!-- Q3 Vocabulary -->
+  <div class="qb"><div class="qh"><span class="qn">3 / 9</span><span class="qt tvc">Vocabulary in Context</span></div><div class="qbody">
+    <div class="q-text">The phrase <strong>«tipping point»</strong> (paragraph 2) most nearly means...</div>
+    <div class="opts" id="o3">
+      <button class="opt" onclick="pick(3,'A')" id="q3A"><span class="L">A</span>a high point of achievement</button>
+      <button class="opt" onclick="pick(3,'B')" id="q3B"><span class="L">B</span>a critical threshold after which change becomes irreversible</button>
+      <button class="opt" onclick="pick(3,'C')" id="q3C"><span class="L">C</span>the moment when forest fires become uncontrollable</button>
+      <button class="opt" onclick="pick(3,'D')" id="q3D"><span class="L">D</span>a turning point that leads to economic recovery</button>
+    </div>
+    <div class="exp" id="e3"><div class="eok">✅ B — a critical threshold after which change becomes irreversible</div>Контекст: «beyond which the ecosystem can no longer sustain itself» — после этого точки экосистема не сможет восстановиться. «Tipping point» = критический порог после которого назад дороги нет.<div class="erule">📌 Ключ в тексте: «beyond which the ecosystem can no longer sustain itself» прямо объясняет значение фразы!</div></div>
+  </div></div>
+
+  <!-- Q4 Vocabulary -->
+  <div class="qb"><div class="qh"><span class="qn">4 / 9</span><span class="qt tvc">Vocabulary in Context</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«inconsistent»</strong> (paragraph 4) is closest in meaning to...</div>
+    <div class="opts" id="o4">
+      <button class="opt" onclick="pick(4,'A')" id="q4A"><span class="L">A</span>unreliable and uneven</button>
+      <button class="opt" onclick="pick(4,'B')" id="q4B"><span class="L">B</span>strict and effective</button>
+      <button class="opt" onclick="pick(4,'C')" id="q4C"><span class="L">C</span>completely absent</button>
+      <button class="opt" onclick="pick(4,'D')" id="q4D"><span class="L">D</span>internationally recognized</button>
+    </div>
+    <div class="exp" id="e4"><div class="eok">✅ A — unreliable and uneven</div>Контекст: «enforcement of environmental laws remains inconsistent» — законы есть, но выполняются непоследовательно. «inconsistent» = непоследовательный, ненадёжный, неравномерный.<div class="erule">📌 «Completely absent» (C) слишком сильно — laws exist but aren't enforced well. «Inconsistent» = sometimes yes, sometimes no = unreliable.</div></div>
+  </div></div>
+
+  <!-- Q5 Reference -->
+  <div class="qb"><div class="qh"><span class="qn">5 / 9</span><span class="qt trf">Reference</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«They»</strong> at the beginning of paragraph 3 refers to...</div>
+    <div class="opts" id="o5">
+      <button class="opt" onclick="pick(5,'A')" id="q5A"><span class="L">A</span>conservation experts</button>
+      <button class="opt" onclick="pick(5,'B')" id="q5B"><span class="L">B</span>indigenous communities</button>
+      <button class="opt" onclick="pick(5,'C')" id="q5C"><span class="L">C</span>scientists</button>
+      <button class="opt" onclick="pick(5,'D')" id="q5D"><span class="L">D</span>logging companies</button>
+    </div>
+    <div class="exp" id="e5"><div class="eok">✅ B — indigenous communities</div>«They» — множественное число. Последнее мн.ч. существительное в предыдущем предложении: «Indigenous communities have lived...» → «They possess extensive knowledge...». Проверка подстановкой: «Indigenous communities possess extensive knowledge» — смысл сохраняется.<div class="erule">📌 Алгоритм: They (мн.ч.) → ближайший мн.ч. noun перед ним → Indigenous communities ✓</div></div>
+  </div></div>
+
+  <!-- Q6 Reference -->
+  <div class="qb"><div class="qh"><span class="qn">6 / 9</span><span class="qt trf">Reference</span></div><div class="qbody">
+    <div class="q-text">The word <strong>«their»</strong> in paragraph 3 («their lands and ways of life are increasingly threatened») refers to...</div>
+    <div class="opts" id="o6">
+      <button class="opt" onclick="pick(6,'A')" id="q6A"><span class="L">A</span>conservation experts</button>
+      <button class="opt" onclick="pick(6,'B')" id="q6B"><span class="L">B</span>medicinal plants</button>
+      <button class="opt" onclick="pick(6,'C')" id="q6C"><span class="L">C</span>indigenous communities</button>
+      <button class="opt" onclick="pick(6,'D')" id="q6D"><span class="L">D</span>logging companies</button>
+    </div>
+    <div class="exp" id="e6"><div class="eok">✅ C — indigenous communities</div>«their» = притяжательное местоимение мн.ч. → относится к тем же «Indigenous communities» которые упоминаются в начале абзаца. «Their lands» = земли коренных народов.<div class="erule">📌 В абзаце последовательно: Indigenous communities → They (possess knowledge) → their (lands). Все три — про одно и то же.</div></div>
+  </div></div>
+
+  <!-- Q7 Negative -->
+  <div class="qb"><div class="qh"><span class="qn">7 / 9</span><span class="qt tnf">NOT / EXCEPT</span></div><div class="qbody">
+    <div class="q-text">According to the passage, all of the following are threats to the Amazon EXCEPT...</div>
+    <div class="opts" id="o7">
+      <button class="opt" onclick="pick(7,'A')" id="q7A"><span class="L">A</span>cattle ranching</button>
+      <button class="opt" onclick="pick(7,'B')" id="q7B"><span class="L">B</span>illegal logging</button>
+      <button class="opt" onclick="pick(7,'C')" id="q7C"><span class="L">C</span>rising sea levels</button>
+      <button class="opt" onclick="pick(7,'D')" id="q7D"><span class="L">D</span>mining operations</button>
+    </div>
+    <div class="exp" id="e7"><div class="eok">✅ C — rising sea levels</div>В тексте упомянуты угрозы: cattle ranching ✓ (абзац 2), illegal logging ✓ (абзац 3), mining ✓ (абзац 3). «Rising sea levels» — в тексте НЕ упоминается. Это и есть исключение.<div class="erule">📌 EXCEPT: проверь каждый вариант по тексту. A ✓, B ✓, D ✓ → C ✗ = ответ.</div></div>
+  </div></div>
+
+  <!-- Q8 Negative -->
+  <div class="qb"><div class="qh"><span class="qn">8 / 9</span><span class="qt tnf">NOT / EXCEPT</span></div><div class="qbody">
+    <div class="q-text">The passage mentions all of the following as functions of the Amazon EXCEPT...</div>
+    <div class="opts" id="o8">
+      <button class="opt" onclick="pick(8,'A')" id="q8A"><span class="L">A</span>producing oxygen</button>
+      <button class="opt" onclick="pick(8,'B')" id="q8B"><span class="L">B</span>absorbing carbon dioxide</button>
+      <button class="opt" onclick="pick(8,'C')" id="q8C"><span class="L">C</span>regulating ocean temperatures</button>
+      <button class="opt" onclick="pick(8,'D')" id="q8D"><span class="L">D</span>providing habitat for diverse species</button>
+    </div>
+    <div class="exp" id="e8"><div class="eok">✅ C — regulating ocean temperatures</div>Абзац 1: producing oxygen ✓, absorbing CO₂ ✓, habitat for species ✓. «Regulating ocean temperatures» — в тексте НЕ упоминается. (Регулирование водного цикла упоминается — но это реки и ручьи, не температура океана.)<div class="erule">📌 Осторожно: «водный цикл» есть в тексте, но «температура океана» — нет. Не путай похожие темы!</div></div>
+  </div></div>
+
+  <!-- Q9 Mixed -->
+  <div class="qb"><div class="qh"><span class="qn">9 / 9</span><span class="qt tmx">Mixed — Inference</span></div><div class="qbody">
+    <div class="q-text">What can be inferred from the passage about indigenous land rights?</div>
+    <div class="opts" id="o9">
+      <button class="opt" onclick="pick(9,'A')" id="q9A"><span class="L">A</span>They are fully protected by international law</span></button>
+      <button class="opt" onclick="pick(9,'B')" id="q9B"><span class="L">B</span>They are unrelated to forest conservation efforts</button>
+      <button class="opt" onclick="pick(9,'C')" id="q9C"><span class="L">C</span>Protecting them may help preserve the rainforest</button>
+      <button class="opt" onclick="pick(9,'D')" id="q9D"><span class="L">D</span>They have already been successfully established throughout the Amazon</button>
+    </div>
+    <div class="exp" id="e9"><div class="eok">✅ C — Protecting them may help preserve the rainforest</div>Текст: «protecting indigenous land rights is among the most effective strategies for preserving the rainforest» + «deforestation rates are significantly lower in areas governed by indigenous communities». Вывод: защита их прав = защита леса.<div class="erule">📌 Это вывод поддержанный текстом, но сформулированный осторожнее («may help»). A и D противоречат тексту (права угрожаются). B противоречит прямому утверждению в тексте.</div></div>
+  </div></div>
+
+  <div class="score-card" id="score-card">
+    <div class="score-big" id="score-display">—</div>
+    <div class="score-lbl">из 9 вопросов · Reading · Урок 10</div>
+    <div class="score-bw"><div class="score-b" id="score-bar"></div></div>
+    <div class="score-msg" id="score-msg"></div>
+  </div>
+
+  <button class="btn-p" onclick="showTab('tips',document.querySelectorAll('.tab')[4])">Дальше: Советы →</button>
+</div>
+
+<!-- ═══ TIPS ═══ -->
+<div class="section" id="tab-tips">
+  <div class="sec-title">Итоговые советы по Reading</div>
+  <div class="sec-intro">Уроки 9 и 10 покрыли все основные типы вопросов Reading. Вот финальная стратегия.</div>
+
+  <div class="tip-card"><div class="tip-num">1</div><div><div class="tip-title">Vocabulary: подставляй ответ в предложение</div><div class="tip-body">Выбрал вариант? Подставь его вместо выделенного слова и перечитай предложение. Смысл сохранился? — правильно. Звучит странно? — ищи другой вариант.</div></div></div>
+  <div class="tip-card"><div class="tip-num">2</div><div><div class="tip-title">Reference: смотри ПЕРЕД местоимением</div><div class="tip-body">Антецедент (то слово к которому относится местоимение) почти всегда находится в том же или предыдущем предложении. Ищи совпадение по числу (ед./мн.) и роду.</div></div></div>
+  <div class="tip-card"><div class="tip-num">3</div><div><div class="tip-title">NOT/EXCEPT: проверяй каждый вариант</div><div class="tip-body">Не угадывай. Возьми вариант A → найди в тексте ✓ или ✗ → потом B, C, D. Тот которого нет в тексте (или противоречит) = ответ. Это занимает 30 секунд и даёт правильный ответ.</div></div></div>
+  <div class="tip-card"><div class="tip-num">4</div><div><div class="tip-title">Незнакомое слово? Используй контекст</div><div class="tip-body">Слова-подсказки: «such as», «including», «in other words», «however», «but». Они часто объясняют или противопоставляют незнакомое слово. Корень слова тоже помогает.</div></div></div>
+  <div class="tip-card"><div class="tip-num">5</div><div><div class="tip-title">«This», «These», «That» могут указывать на идею</div><div class="tip-body">Если «this» или «these» стоит с существительным («this ability», «these findings»), они указывают на конкретное понятие из предыдущего предложения. Определи это понятие и выбери его перефраз.</div></div></div>
+
+  <div class="divider"></div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:20px">
+    <div style="font-size:15px;font-weight:600;margin-bottom:12px">📚 Домашнее задание</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.9">
+      1. Пройди 1 полный текст из Longman TOEFL ITP (Reading) — обращай внимание на выделенные слова<br>
+      2. Для каждого Vocabulary вопроса: закрой слово, угадай по контексту, потом проверь<br>
+      3. Найди в тексте все местоимения и определи к чему они относятся<br>
+      4. Изучи 20 слов из Academic Word List — они часто встречаются в Reading
+    </div>
+  </div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:20px">
+    <div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:.04em">ПРОГРЕСС · SECTION III</div>
+    <div style="font-size:14px;color:var(--muted);line-height:2">
+      ✅ Урок 9 — Main Idea, Detail, Inference<br>
+      ✅ Урок 10 — Vocabulary, Reference, NOT/EXCEPT<br>
+      ⬜ Урок 11 — Academic Vocabulary &amp; Speed Reading<br>
+      ⬜ Урок 12 — Full Passage Practice
+    </div>
+  </div>
+  <button class="btn-p">✅ Урок 10 завершён!</button>
+  <div class="next-box">
+    Следующий: <strong>Урок 11 — Academic Vocabulary &amp; Speed Reading</strong><br>
+    <span style="font-size:13px;opacity:.8">Попроси своего преподавателя отправить Урок 11</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+const ANS={1:'B',2:'C',3:'B',4:'A',5:'B',6:'C',7:'C',8:'C',9:'C'};
+const picked={};
+let score=0;
+
+function pick(q,letter){
+  if(picked[q]) return;
+  picked[q]=letter;
+  document.querySelectorAll('#o'+q+' .opt').forEach(b=>{b.classList.remove('picked');b.disabled=true;});
+  const btn=document.getElementById('q'+q+letter);
+  const correct=ANS[q];
+  const cb=document.getElementById('q'+q+correct);
+  if(letter===correct){if(btn){btn.classList.add('ok');}score++;}
+  else{if(btn){btn.classList.add('ng');}if(cb)cb.classList.add('ok');}
+  document.getElementById('e'+q).classList.add('show');
+  const done=Object.keys(picked).length;
+  document.getElementById('progress').style.width=(done/9*100)+'%';
+  if(done===9){
+    const card=document.getElementById('score-card');
+    card.classList.add('show');
+    sendResult('lesson10', 'Урок 10: Vocabulary, Reference & Negative Facts', score, 9, Math.round(score/9*100));
+    document.getElementById('score-display').textContent=score+'/9';
+    setTimeout(()=>document.getElementById('score-bar').style.width=(score/9*100)+'%',300);
+    const msgs=['Повтори все три типа.','Обрати внимание на Reference.','Хорошо! Ещё практики.','Хорошо!','Отлично!','Отлично!','Превосходно!','Превосходно!','Превосходно!'];
+    document.getElementById('score-msg').textContent=msgs[score];
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  else{const ids=['vocab','reference','negative','practice','tips'];document.querySelectorAll('.tab')[ids.indexOf(id)].classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

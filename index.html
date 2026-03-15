@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEFL ITP — Учебный Портал</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1F3A;
+  --navy-mid: #132d52;
+  --teal: #0E8A6F;
+  --teal-light: #12B08E;
+  --gold: #F2A93B;
+  --gold-light: #FDEEC8;
+  --cream: #F8F5EE;
+  --white: #FFFFFF;
+  --text: #0B1F3A;
+  --text-muted: #5a6a7e;
+  --border: #dde3ed;
+  --success: #12B08E;
+  --warn: #F2A93B;
+  --danger: #E24B4A;
+  --section-l: #3B82F6;
+  --section-g: #8B5CF6;
+  --section-r: #10B981;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────── */
+.header {
+  background: var(--navy);
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--gold);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-badge {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+.logo-text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.header-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+}
+.header-score strong {
+  color: var(--gold);
+  font-size: 16px;
+}
+
+/* ── Hero ─────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a4a6e 100%);
+  padding: 56px 32px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(14,138,111,0.15) 0%, transparent 70%);
+  top: -200px; right: -100px;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(242,169,59,0.08) 0%, transparent 70%);
+  bottom: -100px; left: 0;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  color: rgba(255,255,255,0.65);
+  font-size: 16px;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+/* Progress overview */
+.progress-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 0;
+}
+.stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+.stat-card .stat-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.stat-card .stat-value {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-card .stat-sub {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+}
+.stat-card.gold .stat-value { color: var(--gold); }
+.stat-card.teal .stat-value { color: var(--teal-light); }
+
+/* Progress bar strip */
+.overall-bar-wrap {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+.overall-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.overall-bar-label span {
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.overall-bar-label strong {
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+}
+.overall-bar {
+  background: rgba(255,255,255,0.1);
+  border-radius: 100px;
+  height: 10px;
+  overflow: hidden;
+}
+.overall-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--gold) 100%);
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+  width: 0%;
+}
+
+/* ── Main content ─────────────────────────────── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+/* Section labels */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+.section-header:first-child { margin-top: 0; }
+.section-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  color: white;
+}
+.pill-l { background: var(--section-l); }
+.pill-g { background: var(--section-g); }
+.pill-r { background: var(--section-r); }
+.section-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.section-header .lesson-count {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* Lesson grid */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.lesson-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.lesson-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--border));
+  transition: all 0.2s;
+}
+.lesson-card:hover {
+  border-color: var(--card-accent, var(--teal));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.lesson-card.done {
+  border-color: transparent;
+  background: linear-gradient(135deg, #f0fdf8 0%, #fff 100%);
+}
+.lesson-card.done::before {
+  background: var(--success);
+  height: 4px;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.lesson-num {
+  background: var(--cream);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+.lesson-card.done .lesson-num {
+  background: #d1fae5;
+  color: #065f46;
+}
+.score-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf8;
+  border: 1px solid #a7f3d0;
+  border-radius: 100px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #065f46;
+  font-family: 'DM Mono', monospace;
+}
+.score-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.lesson-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.lesson-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meta-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+.tag-l { background: #eff6ff; color: #1d4ed8; }
+.tag-g { background: #f5f3ff; color: #6d28d9; }
+.tag-r { background: #f0fdf4; color: #15803d; }
+.tag-exam { background: #fff7ed; color: #c2410c; }
+
+.lesson-progress-bar {
+  background: var(--border);
+  border-radius: 100px;
+  height: 4px;
+  overflow: hidden;
+}
+.lesson-progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  width: 0%;
+  transition: width 0.8s ease;
+}
+.lesson-progress-fill.high { background: linear-gradient(90deg, var(--teal), #22c55e); }
+.lesson-progress-fill.mid { background: linear-gradient(90deg, var(--gold), #f59e0b); }
+.lesson-progress-fill.low { background: linear-gradient(90deg, var(--danger), #f87171); }
+
+.lesson-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+.lesson-card.done .lesson-cta { color: var(--teal); }
+
+/* ── Results Table ─────────────────────────────── */
+.results-section {
+  margin-top: 60px;
+  background: var(--white);
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  overflow: hidden;
+}
+.results-header {
+  background: var(--navy);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.results-header h3 {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+}
+.results-header .clear-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  transition: all 0.2s;
+}
+.results-header .clear-btn:hover {
+  background: rgba(226,75,74,0.3);
+  border-color: rgba(226,75,74,0.5);
+  color: #fca5a5;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.results-table th {
+  text-align: left;
+  padding: 12px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: #fafafa;
+}
+.results-table td {
+  padding: 14px 28px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.results-table tr:last-child td { border-bottom: none; }
+.results-table tr:hover td { background: #fafbff; }
+
+.result-score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+}
+.rsp-high { background: #d1fae5; color: #065f46; }
+.rsp-mid { background: #fef3c7; color: #92400e; }
+.rsp-low { background: #fee2e2; color: #991b1b; }
+.rsp-empty { background: #f1f5f9; color: #94a3b8; }
+
+.pct-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pct-bar {
+  flex: 1;
+  background: var(--border);
+  border-radius: 100px;
+  height: 6px;
+  overflow: hidden;
+  min-width: 80px;
+}
+.pct-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.8s ease;
+}
+.pct-bar-fill.high { background: var(--success); }
+.pct-bar-fill.mid { background: var(--warn); }
+.pct-bar-fill.low { background: var(--danger); }
+.pct-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 35px;
+  text-align: right;
+}
+
+.date-cell {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.no-results .emoji { font-size: 32px; margin-bottom: 8px; display: block; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px 48px; }
+  .main { padding: 28px 20px 60px; }
+  .header { padding: 0 20px; }
+  .progress-overview { grid-template-columns: repeat(2, 1fr); }
+  .lesson-grid { grid-template-columns: 1fr; }
+  .results-table th:nth-child(3),
+  .results-table td:nth-child(3) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-badge">ITP</span>
+      <span class="logo-text">TOEFL Preparation</span>
+    </div>
+    <div class="header-score">
+      Завершено: <strong id="hdr-done">0</strong>&nbsp;/&nbsp;16
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Твой учебный<br><span>прогресс</span></h1>
+    <p>16 уроков по трём секциям TOEFL ITP — Listening, Grammar, Reading</p>
+
+    <div class="progress-overview">
+      <div class="stat-card gold">
+        <div class="stat-label">Средний балл</div>
+        <div class="stat-value" id="avg-pct">—</div>
+        <div class="stat-sub">по завершённым урокам</div>
+      </div>
+      <div class="stat-card teal">
+        <div class="stat-label">Уроков пройдено</div>
+        <div class="stat-value" id="done-count">0</div>
+        <div class="stat-sub">из 16 уроков</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Лучший урок</div>
+        <div class="stat-value" id="best-lesson" style="font-size:18px;margin-top:4px">—</div>
+        <div class="stat-sub" id="best-pct"></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Требует внимания</div>
+        <div class="stat-value" id="weak-lesson" style="font-size:18px;margin-top:4px">—</div>
+        <div class="stat-sub" id="weak-pct"></div>
+      </div>
+    </div>
+
+    <div class="overall-bar-wrap">
+      <div class="overall-bar-label">
+        <span>Общий прогресс курса</span>
+        <strong id="overall-pct-label">0%</strong>
+      </div>
+      <div class="overall-bar">
+        <div class="overall-bar-fill" id="overall-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Listening -->
+  <div class="section-header">
+    <span class="section-pill pill-l">Section I</span>
+    <h2>Listening</h2>
+    <span class="lesson-count" id="count-l"></span>
+  </div>
+  <div class="lesson-grid" id="grid-listening"></div>
+
+  <!-- Grammar -->
+  <div class="section-header">
+    <span class="section-pill pill-g">Section II</span>
+    <h2>Grammar &amp; Structure</h2>
+    <span class="lesson-count" id="count-g"></span>
+  </div>
+  <div class="lesson-grid" id="grid-grammar"></div>
+
+  <!-- Reading -->
+  <div class="section-header">
+    <span class="section-pill pill-r">Section III</span>
+    <h2>Reading Comprehension</h2>
+    <span class="lesson-count" id="count-r"></span>
+  </div>
+  <div class="lesson-grid" id="grid-reading"></div>
+
+  <!-- Mock Tests -->
+  <div class="section-header">
+    <span class="section-pill" style="background:#0B1F3A">Mock Tests</span>
+    <h2>Пробные тесты</h2>
+    <span class="lesson-count" id="count-m"></span>
+  </div>
+  <div class="lesson-grid" id="grid-mock"></div>
+
+  <!-- Results table -->
+  <div class="results-section">
+    <div class="results-header">
+      <h3>📊 Журнал результатов</h3>
+      <button class="clear-btn" onclick="clearAll()">Сбросить всё</button>
+    </div>
+    <div id="results-body">
+      <div class="no-results"><span class="emoji">📝</span>Пройди уроки — здесь появятся твои результаты</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+const LESSONS = [
+  // Listening
+  { key:'lesson1',  file:'TOEFL_ITP_Lesson1.html',  num:'01', title:'Short Conversations',            max:5,  section:'l', tags:['listening'] },
+  { key:'lesson2',  file:'TOEFL_ITP_Lesson2.html',  num:'02', title:'Long Conversations & Talks',     max:6,  section:'l', tags:['listening'] },
+  // Grammar
+  { key:'lesson3',  file:'TOEFL_ITP_Lesson3.html',  num:'03', title:'Clause & Verb Patterns',         max:8,  section:'g', tags:['grammar'] },
+  { key:'lesson4',  file:'TOEFL_ITP_Lesson4.html',  num:'04', title:'Parallel Structure, Comparatives & Connectors', max:8, section:'g', tags:['grammar'] },
+  { key:'lesson5',  file:'TOEFL_ITP_Lesson5.html',  num:'05', title:'Articles, Prepositions & Word Form', max:9, section:'g', tags:['grammar'] },
+  { key:'lesson6',  file:'TOEFL_ITP_Lesson6.html',  num:'06', title:'Verb Tense, Agreement & Pronouns', max:9, section:'g', tags:['grammar'] },
+  { key:'lesson7',  file:'TOEFL_ITP_Lesson7.html',  num:'07', title:'Advanced Clauses & Reduction',   max:9,  section:'g', tags:['grammar'] },
+  { key:'lesson8a', file:'TOEFL_ITP_Lesson8A_Part1.html', num:'08A', title:'Grammar Mini-Test Part 1', max:15, section:'g', tags:['grammar','test'] },
+  { key:'lesson8b', file:'TOEFL_ITP_Lesson8B_Part2.html', num:'08B', title:'Grammar Mini-Test Part 2', max:10, section:'g', tags:['grammar','test'] },
+  // Reading
+  { key:'lesson9',  file:'TOEFL_ITP_Lesson9.html',  num:'09', title:'Main Idea, Detail & Inference',  max:8,  section:'r', tags:['reading'] },
+  { key:'lesson10', file:'TOEFL_ITP_Lesson10.html', num:'10', title:'Vocabulary, Reference & Negative Facts', max:9, section:'r', tags:['reading'] },
+  { key:'lesson11', file:'TOEFL_ITP_Lesson11.html', num:'11', title:'Academic Vocabulary & Speed Reading', max:8, section:'r', tags:['reading'] },
+  { key:'lesson12', file:'TOEFL_ITP_Lesson12.html', num:'12', title:'Full Passage Practice',           max:20, section:'r', tags:['reading'] },
+  { key:'lesson13', file:'TOEFL_ITP_Lesson13.html', num:'13', title:'Test Strategy & Time Management', max:8,  section:'r', tags:['reading','strategy'] },
+  // Mock
+  { key:'lesson14a', file:'TOEFL_ITP_Lesson14A_Grammar.html', num:'14A', title:'Mock Test · Section II Grammar', max:40, section:'m', tags:['grammar','exam'] },
+  { key:'lesson14b', file:'TOEFL_ITP_Lesson14B_Reading.html', num:'14B', title:'Mock Test · Section III Reading', max:50, section:'m', tags:['reading','exam'] },
+];
+
+const TAG_STYLE = {
+  listening: 'tag-l', grammar: 'tag-g', reading: 'tag-r',
+  test: 'tag-exam', exam: 'tag-exam', strategy: 'tag-r'
+};
+const TAG_LABEL = {
+  listening:'Listening', grammar:'Grammar', reading:'Reading',
+  test:'Test', exam:'Exam', strategy:'Strategy'
+};
+
+const ACCENT = { l:'#3B82F6', g:'#8B5CF6', r:'#10B981', m:'#0B1F3A' };
+
+function getResult(key) {
+  try { return JSON.parse(localStorage.getItem('toefl_' + key)); } catch { return null; }
+}
+
+function pctClass(pct) {
+  if (pct === null) return '';
+  if (pct >= 70) return 'high';
+  if (pct >= 50) return 'mid';
+  return 'low';
+}
+
+function buildCard(lesson) {
+  const r = getResult(lesson.key);
+  const done = !!r;
+  const pct = done ? r.pct : null;
+  const cls = pctClass(pct);
+  const accent = ACCENT[lesson.section];
+
+  const tags = lesson.tags.map(t =>
+    `<span class="meta-tag ${TAG_STYLE[t]||'tag-l'}">${TAG_LABEL[t]||t}</span>`
+  ).join('');
+
+  const scoreBadge = done
+    ? `<span class="score-badge"><span class="score-dot"></span>${r.score}/${r.max}</span>`
+    : '';
+
+  const bar = done
+    ? `<div class="lesson-progress-bar">
+        <div class="lesson-progress-fill ${cls}" style="width:${pct}%"></div>
+       </div>`
+    : '';
+
+  const cta = done
+    ? `✓ Пройден · ${pct}% — Повторить`
+    : `Начать урок →`;
+
+  return `<a href="${lesson.file}" class="lesson-card${done?' done':''}" style="--card-accent:${accent}">
+    <div class="card-top">
+      <span class="lesson-num">Урок ${lesson.num}</span>
+      ${scoreBadge}
+    </div>
+    <div class="lesson-title">${lesson.title}</div>
+    <div class="lesson-meta">${tags}</div>
+    ${bar}
+    <div class="lesson-cta">${cta}</div>
+  </a>`;
+}
+
+function buildTable() {
+  const rows = LESSONS.map(lesson => {
+    const r = getResult(lesson.key);
+    if (!r) return `<tr>
+      <td><strong>Урок ${lesson.num}</strong></td>
+      <td>${lesson.title}</td>
+      <td><span class="result-score-pill rsp-empty">не пройден</span></td>
+      <td>
+        <div class="pct-bar-wrap">
+          <div class="pct-bar"><div class="pct-bar-fill" style="width:0%"></div></div>
+          <span class="pct-label">—</span>
+        </div>
+      </td>
+      <td class="date-cell">—</td>
+    </tr>`;
+
+    const cls = pctClass(r.pct);
+    const dateStr = r.date ? new Date(r.date).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'2-digit'}) : '—';
+    return `<tr>
+      <td><strong>Урок ${lesson.num}</strong></td>
+      <td><a href="${lesson.file}" style="color:inherit;text-decoration:none;font-weight:600">${lesson.title}</a></td>
+      <td><span class="result-score-pill rsp-${cls}">${r.score}/${r.max}</span></td>
+      <td>
+        <div class="pct-bar-wrap">
+          <div class="pct-bar"><div class="pct-bar-fill ${cls}" style="width:${r.pct}%"></div></div>
+          <span class="pct-label">${r.pct}%</span>
+        </div>
+      </td>
+      <td class="date-cell">${dateStr}</td>
+    </tr>`;
+  }).join('');
+
+  const hasAny = LESSONS.some(l => getResult(l.key));
+  if (!hasAny) {
+    document.getElementById('results-body').innerHTML = '<div class="no-results"><span class="emoji">📝</span>Пройди уроки — здесь появятся твои результаты</div>';
+    return;
+  }
+
+  document.getElementById('results-body').innerHTML = `
+    <table class="results-table">
+      <thead><tr>
+        <th>Урок</th><th>Тема</th><th>Счёт</th><th>Результат</th><th>Дата</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function updateStats() {
+  const results = LESSONS.map(l => getResult(l.key)).filter(Boolean);
+  const done = results.length;
+  document.getElementById('done-count').textContent = done;
+  document.getElementById('hdr-done').textContent = done;
+
+  const overallPct = Math.round(done / LESSONS.length * 100);
+  document.getElementById('overall-pct-label').textContent = overallPct + '%';
+  setTimeout(() => {
+    document.getElementById('overall-bar-fill').style.width = overallPct + '%';
+  }, 200);
+
+  if (done === 0) {
+    document.getElementById('avg-pct').textContent = '—';
+    return;
+  }
+
+  const avg = Math.round(results.reduce((s, r) => s + r.pct, 0) / done);
+  document.getElementById('avg-pct').textContent = avg + '%';
+
+  const best = results.reduce((a, b) => b.pct > a.pct ? b : a);
+  const weak = results.reduce((a, b) => b.pct < a.pct ? b : a);
+  const bestLesson = LESSONS.find(l => getResult(l.key) === best);
+  const weakLesson = LESSONS.find(l => getResult(l.key) === weak);
+
+  if (bestLesson) {
+    document.getElementById('best-lesson').textContent = 'Урок ' + bestLesson.num;
+    document.getElementById('best-pct').textContent = best.pct + '%';
+  }
+  if (weakLesson && done > 1) {
+    document.getElementById('weak-lesson').textContent = 'Урок ' + weakLesson.num;
+    document.getElementById('weak-pct').textContent = weak.pct + '%';
+  }
+}
+
+function buildGrids() {
+  const grids = { l: 'grid-listening', g: 'grid-grammar', r: 'grid-reading', m: 'grid-mock' };
+  const counts = { l:0, g:0, r:0, m:0 };
+  const dones = { l:0, g:0, r:0, m:0 };
+
+  for (const [sec, id] of Object.entries(grids)) {
+    const lessons = LESSONS.filter(l => l.section === sec);
+    document.getElementById(id).innerHTML = lessons.map(buildCard).join('');
+    counts[sec] = lessons.length;
+    dones[sec] = lessons.filter(l => getResult(l.key)).length;
+  }
+
+  document.getElementById('count-l').textContent = `${dones.l}/${counts.l} пройдено`;
+  document.getElementById('count-g').textContent = `${dones.g}/${counts.g} пройдено`;
+  document.getElementById('count-r').textContent = `${dones.r}/${counts.r} пройдено`;
+  document.getElementById('count-m').textContent = `${dones.m}/${counts.m} пройдено`;
+}
+
+function clearAll() {
+  if (!confirm('Сбросить все результаты? Это действие нельзя отменить.')) return;
+  LESSONS.forEach(l => localStorage.removeItem('toefl_' + l.key));
+  init();
+}
+
+function init() {
+  buildGrids();
+  buildTable();
+  updateStats();
+}
+
+init();
+
+// Re-render if returning from a lesson (visibilitychange)
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') init();
+});
+</script>
+</body>
+</html>
