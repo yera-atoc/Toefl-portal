@@ -172,6 +172,7 @@ function sendResult(lessonKey, lessonTitle, score, max, pct) {
 </script>
 </head>
 <body>
+<script>if(localStorage.getItem("toefl_access")!=="granted"){window.location.href="payment.html";}</script>
 <div style="position:fixed;top:16px;left:16px;z-index:9999">
   <a href="index.html" style="background:#085041;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-family:sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)">← Все уроки</a>
 </div>
