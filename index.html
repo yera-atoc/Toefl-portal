@@ -619,11 +619,6 @@ body {
 </main>
 
 <script>
-// Access guard
-if (localStorage.getItem("toefl_access") !== "granted") {
-  window.location.href = "payment.html";
-}
-
 const LESSONS = [
   // Listening
   { key:'lesson1',  file:'TOEFL_ITP_Lesson1.html',  num:'01', title:'Short Conversations',            max:5,  section:'l', tags:['listening'] },
